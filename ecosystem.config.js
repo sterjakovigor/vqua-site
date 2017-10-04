@@ -1,12 +1,10 @@
 module.exports = {
-
   apps : [
     {
       name      : 'vqua-site',
       script    : 'server/index.js'
     }
   ],
-
   deploy : {
     production : {
       user : 'sterjakov',
@@ -16,8 +14,9 @@ module.exports = {
       path : '/home/sterjakov/vqua-site',
       'post-deploy' : [
         'npm install',
-        'pm2 reload ecosystem.config.js --env production'
+        'webpack --env.production',
+        'pm2 reload ecosystem.config.js --env production',
       ].join(' && ')
     },
   }
-};
+}
