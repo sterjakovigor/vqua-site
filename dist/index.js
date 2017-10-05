@@ -5702,6 +5702,17 @@ var App = __webpack_require__(168);
 var ExampleModel = __webpack_require__(162);
 var createArticle = __webpack_require__(539);
 
+var loadExamples = function loadExamples(_ref, callback) {
+  var ExampleModel = _ref.ExampleModel,
+      props = _ref.props;
+
+
+  ExampleModel.all({
+    humanId: props.humanId,
+    locale: props.locale
+  }).then(callback);
+};
+
 var ArticleContainer = function (_Component) {
   _inherits(ArticleContainer, _Component);
 
@@ -5719,13 +5730,13 @@ var ArticleContainer = function (_Component) {
 
   _createClass(ArticleContainer, [{
     key: 'afterMount',
-    value: function afterMount() {
+    value: function afterMount() {}
+  }, {
+    key: 'afterUpdate',
+    value: function afterUpdate() {
       var _this2 = this;
 
-      ExampleModel.all({
-        humanId: this.props.humanId,
-        locale: this.props.locale
-      }).then(function (examples) {
+      loadExamples({ ExampleModel: ExampleModel, props: this.props }, function (examples) {
 
         _this2.setState({ examples: examples });
       });

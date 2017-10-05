@@ -3,6 +3,15 @@ const App = require('../components/App')
 const ExampleModel = require('../models/Example')
 const createArticle = require('../helpers/createArticle')
 
+const loadExamples = ({ ExampleModel, props }, callback) => {
+
+  ExampleModel.all({
+    humanId: props.humanId,
+    locale: props.locale
+  }).then(callback)
+
+}
+
 class ArticleContainer extends Component {
 
   constructor(props, context) {
@@ -17,10 +26,13 @@ class ArticleContainer extends Component {
 
   afterMount() {
 
-    ExampleModel.all({
-      humanId: this.props.humanId,
-      locale: this.props.locale
-    }).then((examples) => {
+
+
+  }
+
+  afterUpdate() {
+
+    loadExamples({ ExampleModel, props: this.props }, (examples) => {
 
       this.setState({ examples })
 
