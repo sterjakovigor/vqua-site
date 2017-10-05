@@ -5730,15 +5730,22 @@ var ArticleContainer = function (_Component) {
 
   _createClass(ArticleContainer, [{
     key: 'afterMount',
-    value: function afterMount() {}
-  }, {
-    key: 'afterUpdate',
-    value: function afterUpdate() {
+    value: function afterMount() {
       var _this2 = this;
 
       loadExamples({ ExampleModel: ExampleModel, props: this.props }, function (examples) {
 
         _this2.setState({ examples: examples });
+      });
+    }
+  }, {
+    key: 'afterUpdate',
+    value: function afterUpdate() {
+      var _this3 = this;
+
+      loadExamples({ ExampleModel: ExampleModel, props: this.props }, function (examples) {
+
+        _this3.setState({ examples: examples });
       });
     }
   }, {

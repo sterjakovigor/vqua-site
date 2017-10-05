@@ -26,7 +26,11 @@ class ArticleContainer extends Component {
 
   afterMount() {
 
+    loadExamples({ ExampleModel, props: this.props }, (examples) => {
 
+      this.setState({ examples })
+
+    })
 
   }
 
