@@ -53,8 +53,6 @@ module.exports = env => {
     ]
   } : {}
 
-  console.log(production)
-
   return Object.assign({}, common, development, production)
 
 }
