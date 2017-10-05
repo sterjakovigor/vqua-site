@@ -27,7 +27,7 @@ class Toggler extends Component {
     const { div, a, br } = html
 
     const first = (
-      div({ key: 'first' },
+      div({ key: 1 },
         div({},
           'first'
         )
@@ -35,7 +35,7 @@ class Toggler extends Component {
     )
 
     const second = (
-      div({ key: 'second' },
+      div({ key: 2 },
         'second'
       )
     )
@@ -47,9 +47,11 @@ class Toggler extends Component {
       br(),
     ]
 
-    return this.state.active
+    const combination = this.state.active
       ? [ toggle, second, first ]
       : [ toggle, first, second ]
+
+    return combination
 
   }
 
