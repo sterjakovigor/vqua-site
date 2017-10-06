@@ -17299,12 +17299,6 @@ var Content = function (_Component) {
       createNavigationLinks(this.context.navigate);
     }
   }, {
-    key: 'afterUpdate',
-    value: function afterUpdate() {
-
-      createNavigationLinks(this.context.navigate);
-    }
-  }, {
     key: 'render',
     value: function render() {
       var div = html.div,
@@ -17339,14 +17333,17 @@ var createNavigationLinks = function createNavigationLinks(navigate) {
 
   var links = [].concat(_toConsumableArray(document.querySelectorAll('.content a.navigate_link')));
 
-  links.forEach(function (link) {
+  document.querySelector('.content').addEventListener('click', function (event) {
 
-    link.addEventListener('click', function (event) {
+    if (event.target.tagName.toLowerCase() === 'a') {
 
       event.preventDefault();
 
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+
       navigate(event.target.pathname);
-    });
+    }
   });
 };
 

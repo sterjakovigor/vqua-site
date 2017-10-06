@@ -16,12 +16,6 @@ class Content extends Component {
 
   }
 
-  afterUpdate() {
-
-    createNavigationLinks(this.context.navigate)
-
-  }
-
   render() {
 
     const { div, h1 } = html
