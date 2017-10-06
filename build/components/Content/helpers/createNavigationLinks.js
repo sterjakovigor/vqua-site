@@ -1,10 +1,11 @@
 const createNavigationLinks = (navigate) => {
 
-  const links = [ ...document.querySelectorAll('.content a.navigate_link') ]
-
   document.querySelector('.content').addEventListener('click', function(event) {
 
-    if (event.target.tagName.toLowerCase() === 'a') {
+    if (
+      event.target.tagName.toLowerCase() === 'a' &&
+      event.target.classList.contains('navigate_link')
+    ) {
 
       event.preventDefault()
 

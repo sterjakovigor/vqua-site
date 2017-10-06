@@ -17327,15 +17327,11 @@ module.exports = Content;
 "use strict";
 
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
 var createNavigationLinks = function createNavigationLinks(navigate) {
-
-  var links = [].concat(_toConsumableArray(document.querySelectorAll('.content a.navigate_link')));
 
   document.querySelector('.content').addEventListener('click', function (event) {
 
-    if (event.target.tagName.toLowerCase() === 'a') {
+    if (event.target.tagName.toLowerCase() === 'a' && event.target.classList.contains('navigate_link')) {
 
       event.preventDefault();
 
