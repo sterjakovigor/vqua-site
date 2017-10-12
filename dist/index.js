@@ -12904,7 +12904,13 @@ module.exports = function (_ref) {
     childs: templateNode.childs
   };
 
-  return Object.assign({}, newTagNode, refParams, statisticParams, keyParams);
+  var propsParams = templateNode.key ? {
+    props: Object.assign({}, templateNode.props, {
+      'data-vqua-key': templateNode.key
+    })
+  } : {};
+
+  return Object.assign({}, newTagNode, refParams, statisticParams, keyParams, propsParams);
 };
 
 /***/ }),
@@ -14121,17 +14127,22 @@ var _require = __webpack_require__(11),
 
 module.exports = function (node) {
 
-  var props = Array.from(node.attributes).reduce(function (props, attribute) {
+  var propsParams = {
 
-    return Object.assign({}, props, _defineProperty({}, attribute.nodeName, node.getAttribute(attribute.nodeName)));
-  }, {});
+    props: Array.from(node.attributes).reduce(function (props, attribute) {
 
-  return {
+      return Object.assign({}, props, _defineProperty({}, attribute.nodeName, node.getAttribute(attribute.nodeName)));
+    }, {})
+
+  };
+
+  var keyParams = 'data-vqua-key' in propsParams.props ? { key: propsParams.props['data-vqua-key'] } : {};
+
+  return Object.assign({}, propsParams, keyParams, {
     type: TAG_TYPE,
-    props: props,
     tag: node.tagName.toLowerCase(),
     dom: node
-  };
+  });
 };
 
 /***/ }),
