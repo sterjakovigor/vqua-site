@@ -5218,7 +5218,8 @@ module.exports = function (_ref) {
     domNodes: domNodes,
     filterNodes: function filterNodes(liveNodes, templateNodes) {
       var _ref2 = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {},
-          domNodes = _ref2.domNodes;
+          domNodes = _ref2.domNodes,
+          offset = _ref2.offset;
 
       var orderedTemplateNodes = decorateNodes(templateNodes, {
         order: { startFrom: offset }
@@ -5234,7 +5235,8 @@ module.exports = function (_ref) {
       });
 
       var reorderedDeletedLiveNodes = reorderDeletedLiveNodes(sortedLiveNodes, {
-        templateNodes: orderedTemplateNodes
+        templateNodes: orderedTemplateNodes,
+        offset: offset
       });
 
       var reorderedAddedLiveNodes = reorderAddedLiveNodes(reorderedDeletedLiveNodes, {
@@ -13283,7 +13285,7 @@ var createNodes = function createNodes(_ref) {
     };
   } : _ref$filterNodes;
 
-  var _filterNodes = filterNodes(liveNodes, templateNodes, { domNodes: domNodes }),
+  var _filterNodes = filterNodes(liveNodes, templateNodes, { domNodes: domNodes, offset: offset }),
       filteredLiveNodes = _filterNodes.filteredLiveNodes,
       filteredTemplateNodes = _filterNodes.filteredTemplateNodes;
 
