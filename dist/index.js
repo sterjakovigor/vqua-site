@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 170);
+/******/ 	return __webpack_require__(__webpack_require__.s = 171);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -194,9 +194,9 @@ $exports.store = store;
 
 
 module.exports = {
-  Component: __webpack_require__(378),
-  html: __webpack_require__(422),
-  render: __webpack_require__(424)
+  Component: __webpack_require__(379),
+  html: __webpack_require__(423),
+  render: __webpack_require__(425)
 };
 
 /***/ }),
@@ -221,7 +221,7 @@ module.exports = !__webpack_require__(3)(function () {
 
 
 var anObject = __webpack_require__(1);
-var IE8_DOM_DEFINE = __webpack_require__(114);
+var IE8_DOM_DEFINE = __webpack_require__(113);
 var toPrimitive = __webpack_require__(25);
 var dP = Object.defineProperty;
 
@@ -272,11 +272,23 @@ module.exports = function (it) {
 
 
 module.exports = {
-  ROOT_TYPE: 0,
-  TEXT_TYPE: 1,
-  TAG_TYPE: 2,
-  CLASS_TYPE: 3,
-  INSTANCE_TYPE: 4
+  asyncMap: __webpack_require__(380),
+  clone: __webpack_require__(381),
+  flatten: __webpack_require__(147),
+  include: __webpack_require__(103),
+  kindOf: __webpack_require__(102),
+  pick: __webpack_require__(382),
+  omit: __webpack_require__(383),
+  union: __webpack_require__(384),
+  capitalize: __webpack_require__(385),
+  classNames: __webpack_require__(386),
+  first: __webpack_require__(387),
+  last: __webpack_require__(388),
+  intersect: __webpack_require__(389),
+  times: __webpack_require__(390),
+  findRightIndex: __webpack_require__(391),
+  compose: __webpack_require__(392),
+  htmlQuotes: __webpack_require__(393)
 };
 
 /***/ }),
@@ -286,9 +298,12 @@ module.exports = {
 "use strict";
 
 
-module.exports = function (it) {
-  if (typeof it != 'function') throw TypeError(it + ' is not a function!');
-  return it;
+module.exports = {
+  ROOT_TYPE: 0,
+  TEXT_TYPE: 1,
+  TAG_TYPE: 2,
+  CLASS_TYPE: 3,
+  INSTANCE_TYPE: 4
 };
 
 /***/ }),
@@ -298,24 +313,9 @@ module.exports = function (it) {
 "use strict";
 
 
-module.exports = {
-  asyncMap: __webpack_require__(379),
-  clone: __webpack_require__(380),
-  flatten: __webpack_require__(148),
-  include: __webpack_require__(103),
-  kindOf: __webpack_require__(102),
-  pick: __webpack_require__(381),
-  omit: __webpack_require__(382),
-  union: __webpack_require__(383),
-  capitalize: __webpack_require__(384),
-  classNames: __webpack_require__(385),
-  first: __webpack_require__(386),
-  last: __webpack_require__(387),
-  intersect: __webpack_require__(388),
-  times: __webpack_require__(389),
-  findRightIndex: __webpack_require__(390),
-  compose: __webpack_require__(391),
-  htmlQuotes: __webpack_require__(392)
+module.exports = function (it) {
+  if (typeof it != 'function') throw TypeError(it + ' is not a function!');
+  return it;
 };
 
 /***/ }),
@@ -438,7 +438,7 @@ var createDesc = __webpack_require__(36);
 var toIObject = __webpack_require__(17);
 var toPrimitive = __webpack_require__(25);
 var has = __webpack_require__(14);
-var IE8_DOM_DEFINE = __webpack_require__(114);
+var IE8_DOM_DEFINE = __webpack_require__(113);
 var gOPD = Object.getOwnPropertyDescriptor;
 
 exports.f = __webpack_require__(7) ? gOPD : function getOwnPropertyDescriptor(O, P) {
@@ -479,7 +479,7 @@ module.exports = Object.getPrototypeOf || function (O) {
 
 
 // optional / simple context binding
-var aFunction = __webpack_require__(12);
+var aFunction = __webpack_require__(13);
 module.exports = function (fn, that, length) {
   aFunction(fn);
   if (that === undefined) return fn;
@@ -688,7 +688,7 @@ if (__webpack_require__(7)) {
   var redefineAll = __webpack_require__(45);
   var toInteger = __webpack_require__(27);
   var toLength = __webpack_require__(9);
-  var toIndex = __webpack_require__(139);
+  var toIndex = __webpack_require__(138);
   var toAbsoluteIndex = __webpack_require__(39);
   var toPrimitive = __webpack_require__(25);
   var has = __webpack_require__(14);
@@ -710,7 +710,7 @@ if (__webpack_require__(7)) {
   var $iterDetect = __webpack_require__(61);
   var setSpecies = __webpack_require__(42);
   var arrayFill = __webpack_require__(96);
-  var arrayCopyWithin = __webpack_require__(129);
+  var arrayCopyWithin = __webpack_require__(128);
   var $DP = __webpack_require__(8);
   var $GOPD = __webpack_require__(19);
   var dP = $DP.f;
@@ -1163,10 +1163,10 @@ if (__webpack_require__(7)) {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var Map = __webpack_require__(134);
+var Map = __webpack_require__(133);
 var $export = __webpack_require__(0);
 var shared = __webpack_require__(55)('metadata');
-var store = shared.store || (shared.store = new (__webpack_require__(137))());
+var store = shared.store || (shared.store = new (__webpack_require__(136))());
 
 var getOrCreateMetadataMap = function getOrCreateMetadataMap(target, targetKey, create) {
   var targetMetadata = store.get(target);
@@ -1219,33 +1219,6 @@ module.exports = {
 
 /***/ }),
 /* 32 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = {
-  asyncMap: __webpack_require__(437),
-  clone: __webpack_require__(438),
-  flatten: __webpack_require__(160),
-  include: __webpack_require__(110),
-  kindOf: __webpack_require__(109),
-  pick: __webpack_require__(439),
-  omit: __webpack_require__(440),
-  union: __webpack_require__(441),
-  capitalize: __webpack_require__(442),
-  classNames: __webpack_require__(443),
-  first: __webpack_require__(444),
-  last: __webpack_require__(445),
-  intersect: __webpack_require__(446),
-  times: __webpack_require__(447),
-  findRightIndex: __webpack_require__(448),
-  compose: __webpack_require__(449),
-  htmlQuotes: __webpack_require__(450)
-};
-
-/***/ }),
-/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1308,14 +1281,14 @@ var meta = module.exports = {
 };
 
 /***/ }),
-/* 34 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys = __webpack_require__(116);
+var $keys = __webpack_require__(115);
 var enumBugKeys = __webpack_require__(79);
 
 module.exports = Object.keys || function keys(O) {
@@ -1323,7 +1296,7 @@ module.exports = Object.keys || function keys(O) {
 };
 
 /***/ }),
-/* 35 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1335,6 +1308,33 @@ var ArrayProto = Array.prototype;
 if (ArrayProto[UNSCOPABLES] == undefined) __webpack_require__(15)(ArrayProto, UNSCOPABLES, {});
 module.exports = function (key) {
   ArrayProto[UNSCOPABLES][key] = true;
+};
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+  asyncMap: __webpack_require__(445),
+  clone: __webpack_require__(446),
+  flatten: __webpack_require__(161),
+  include: __webpack_require__(109),
+  kindOf: __webpack_require__(108),
+  pick: __webpack_require__(447),
+  omit: __webpack_require__(448),
+  union: __webpack_require__(449),
+  capitalize: __webpack_require__(450),
+  classNames: __webpack_require__(451),
+  first: __webpack_require__(452),
+  last: __webpack_require__(453),
+  intersect: __webpack_require__(454),
+  times: __webpack_require__(455),
+  findRightIndex: __webpack_require__(456),
+  compose: __webpack_require__(457),
+  htmlQuotes: __webpack_require__(458)
 };
 
 /***/ }),
@@ -1399,7 +1399,7 @@ module.exports = function (index, length) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject = __webpack_require__(1);
-var dPs = __webpack_require__(117);
+var dPs = __webpack_require__(116);
 var enumBugKeys = __webpack_require__(79);
 var IE_PROTO = __webpack_require__(78)('IE_PROTO');
 var Empty = function Empty() {/* empty */};
@@ -1448,7 +1448,7 @@ module.exports = Object.create || function create(O, Properties) {
 
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys = __webpack_require__(116);
+var $keys = __webpack_require__(115);
 var hiddenKeys = __webpack_require__(79).concat('length', 'prototype');
 
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
@@ -1498,7 +1498,7 @@ module.exports = function (it, Constructor, name, forbiddenField) {
 
 
 var ctx = __webpack_require__(21);
-var call = __webpack_require__(127);
+var call = __webpack_require__(126);
 var isArrayIter = __webpack_require__(92);
 var anObject = __webpack_require__(1);
 var toLength = __webpack_require__(9);
@@ -1684,7 +1684,7 @@ module.exports = function (it) {
 "use strict";
 
 
-var _require = __webpack_require__(32),
+var _require = __webpack_require__(35),
     last = _require.last;
 
 module.exports = function (pathname) {
@@ -1923,7 +1923,7 @@ module.exports = function (KEY, length, exec) {
 
 // 7.3.20 SpeciesConstructor(O, defaultConstructor)
 var anObject = __webpack_require__(1);
-var aFunction = __webpack_require__(12);
+var aFunction = __webpack_require__(13);
 var SPECIES = __webpack_require__(5)('species');
 module.exports = function (O, D) {
   var C = anObject(O).constructor;
@@ -1942,7 +1942,7 @@ var global = __webpack_require__(2);
 var $export = __webpack_require__(0);
 var redefine = __webpack_require__(16);
 var redefineAll = __webpack_require__(45);
-var meta = __webpack_require__(33);
+var meta = __webpack_require__(32);
 var forOf = __webpack_require__(44);
 var anInstance = __webpack_require__(43);
 var isObject = __webpack_require__(4);
@@ -2108,7 +2108,7 @@ module.exports = function (COLLECTION) {
 // https://tc39.github.io/proposal-setmap-offrom/
 
 var $export = __webpack_require__(0);
-var aFunction = __webpack_require__(12);
+var aFunction = __webpack_require__(13);
 var ctx = __webpack_require__(21);
 var forOf = __webpack_require__(44);
 
@@ -2141,16 +2141,16 @@ module.exports = function (COLLECTION) {
 "use strict";
 
 
-var _require = __webpack_require__(150),
+var _require = __webpack_require__(149),
     removeRef = _require.removeRef;
 
 var eachNodes = __webpack_require__(105);
-var isNodeForUnmount = __webpack_require__(398);
+var isNodeForUnmount = __webpack_require__(399);
 
-var _require2 = __webpack_require__(11),
+var _require2 = __webpack_require__(12),
     INSTANCE_TYPE = _require2.INSTANCE_TYPE;
 
-var _require3 = __webpack_require__(399),
+var _require3 = __webpack_require__(400),
     callBeforeMount = _require3.callBeforeMount,
     callBeforeUnmount = _require3.callBeforeUnmount,
     callBeforeUpdate = _require3.callBeforeUpdate,
@@ -2292,7 +2292,7 @@ module.exports = function () {
       humanId = _ref.humanId,
       raw = _ref.raw;
 
-  var context = raw ? __webpack_require__(481) : __webpack_require__(517);
+  var context = raw ? __webpack_require__(488) : __webpack_require__(524);
 
   return context.keys().reduce(function (examples, pathname) {
 
@@ -2322,7 +2322,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
-var readDir = __webpack_require__(525);
+var readDir = __webpack_require__(532);
 var path = __webpack_require__(46);
 var fs = __webpack_require__(46);
 var getPathInfo = __webpack_require__(54);
@@ -2350,7 +2350,7 @@ module.exports = function () {
 
               if (pathInfo.articleName == humanId) {
 
-                var content = raw ? fs.readFileSync(pathname).toString() : pathInfo.isPreview ? __webpack_require__(530)("" + pathname) : null;
+                var content = raw ? fs.readFileSync(pathname).toString() : pathInfo.isPreview ? __webpack_require__(537)("" + pathname) : null;
 
                 var example = Object.assign({}, pathInfo, { content: content });
 
@@ -2429,7 +2429,7 @@ module.exports = function (it) {
 var global = __webpack_require__(2);
 var core = __webpack_require__(24);
 var LIBRARY = __webpack_require__(38);
-var wksExt = __webpack_require__(115);
+var wksExt = __webpack_require__(114);
 var defineProperty = __webpack_require__(8).f;
 module.exports = function (name) {
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
@@ -2801,7 +2801,7 @@ module.exports = __webpack_require__(24).getIteratorMethod = function (it) {
 
 
 // 9.4.2.3 ArraySpeciesCreate(originalArray, length)
-var speciesConstructor = __webpack_require__(264);
+var speciesConstructor = __webpack_require__(265);
 
 module.exports = function (original, length) {
   return new (speciesConstructor(original))(length);
@@ -2837,8 +2837,8 @@ module.exports = function fill(value /* , start = 0, end = @length */) {
 "use strict";
 
 
-var addToUnscopables = __webpack_require__(35);
-var step = __webpack_require__(130);
+var addToUnscopables = __webpack_require__(34);
+var step = __webpack_require__(129);
 var Iterators = __webpack_require__(49);
 var toIObject = __webpack_require__(17);
 
@@ -3047,7 +3047,7 @@ module.exports = function () {
 
 // 25.4.1.5 NewPromiseCapability(C)
 
-var aFunction = __webpack_require__(12);
+var aFunction = __webpack_require__(13);
 
 function PromiseCapability(C) {
   var resolve, reject;
@@ -3081,7 +3081,7 @@ var fails = __webpack_require__(3);
 var anInstance = __webpack_require__(43);
 var toInteger = __webpack_require__(27);
 var toLength = __webpack_require__(9);
-var toIndex = __webpack_require__(139);
+var toIndex = __webpack_require__(138);
 var gOPN = __webpack_require__(41).f;
 var dP = __webpack_require__(8).f;
 var arrayFill = __webpack_require__(96);
@@ -3424,7 +3424,7 @@ module.exports = include;
 "use strict";
 
 
-var _require = __webpack_require__(11),
+var _require = __webpack_require__(12),
     TEXT_TYPE = _require.TEXT_TYPE,
     TAG_TYPE = _require.TAG_TYPE,
     CLASS_TYPE = _require.CLASS_TYPE,
@@ -3488,7 +3488,7 @@ module.exports = loop;
 "use strict";
 
 
-var mapNodes = __webpack_require__(400);
+var mapNodes = __webpack_require__(401);
 
 module.exports = function (nodes, parentNode) {
 
@@ -3531,19 +3531,6 @@ module.exports = {
 
 /***/ }),
 /* 108 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = {
-  route: __webpack_require__(432),
-  matchRoutes: __webpack_require__(433),
-  separateRoutes: __webpack_require__(436)
-};
-
-/***/ }),
-/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3596,7 +3583,7 @@ var kindOf = function kindOf(param) {
 module.exports = kindOf;
 
 /***/ }),
-/* 110 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3609,7 +3596,7 @@ var include = function include(array, value) {
 module.exports = include;
 
 /***/ }),
-/* 111 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3661,7 +3648,7 @@ var Hello = function (_Component) {
 module.exports = Hello;
 
 /***/ }),
-/* 112 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3679,11 +3666,11 @@ var _require = __webpack_require__(6),
     Component = _require.Component,
     html = _require.html;
 
-var _require2 = __webpack_require__(32),
+var _require2 = __webpack_require__(35),
     classNames = _require2.classNames,
     omit = _require2.omit;
 
-var Link = __webpack_require__(535);
+var Link = __webpack_require__(542);
 
 var MenuItems = function (_Component) {
   _inherits(MenuItems, _Component);
@@ -3730,7 +3717,7 @@ var MenuItems = function (_Component) {
 module.exports = MenuItems;
 
 /***/ }),
-/* 113 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3786,7 +3773,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 114 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3799,7 +3786,7 @@ module.exports = !__webpack_require__(7) && !__webpack_require__(3)(function () 
 });
 
 /***/ }),
-/* 115 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3808,7 +3795,7 @@ module.exports = !__webpack_require__(7) && !__webpack_require__(3)(function () 
 exports.f = __webpack_require__(5);
 
 /***/ }),
-/* 116 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3835,7 +3822,7 @@ module.exports = function (object, names) {
 };
 
 /***/ }),
-/* 117 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3843,7 +3830,7 @@ module.exports = function (object, names) {
 
 var dP = __webpack_require__(8);
 var anObject = __webpack_require__(1);
-var getKeys = __webpack_require__(34);
+var getKeys = __webpack_require__(33);
 
 module.exports = __webpack_require__(7) ? Object.defineProperties : function defineProperties(O, Properties) {
   anObject(O);
@@ -3857,7 +3844,7 @@ module.exports = __webpack_require__(7) ? Object.defineProperties : function def
 };
 
 /***/ }),
-/* 118 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3885,14 +3872,14 @@ module.exports.f = function getOwnPropertyNames(it) {
 };
 
 /***/ }),
-/* 119 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
 
-var getKeys = __webpack_require__(34);
+var getKeys = __webpack_require__(33);
 var gOPS = __webpack_require__(57);
 var pIE = __webpack_require__(52);
 var toObject = __webpack_require__(10);
@@ -3931,13 +3918,13 @@ module.exports = !$assign || __webpack_require__(3)(function () {
 } : $assign;
 
 /***/ }),
-/* 120 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var aFunction = __webpack_require__(12);
+var aFunction = __webpack_require__(13);
 var isObject = __webpack_require__(4);
 var invoke = __webpack_require__(59);
 var arraySlice = [].slice;
@@ -3964,7 +3951,7 @@ module.exports = Function.bind || function bind(that /* , ...args */) {
 };
 
 /***/ }),
-/* 121 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3981,7 +3968,7 @@ module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? f
 } : $parseInt;
 
 /***/ }),
-/* 122 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3997,7 +3984,7 @@ module.exports = 1 / $parseFloat(__webpack_require__(82) + '-0') !== -Infinity ?
 } : $parseFloat;
 
 /***/ }),
-/* 123 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4010,7 +3997,7 @@ module.exports = function (it, msg) {
 };
 
 /***/ }),
-/* 124 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4024,7 +4011,7 @@ module.exports = function isInteger(it) {
 };
 
 /***/ }),
-/* 125 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4036,7 +4023,7 @@ module.exports = Math.log1p || function log1p(x) {
 };
 
 /***/ }),
-/* 126 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4067,7 +4054,7 @@ module.exports = Math.fround || function fround(x) {
 };
 
 /***/ }),
-/* 127 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4087,13 +4074,13 @@ module.exports = function (iterator, fn, value, entries) {
 };
 
 /***/ }),
-/* 128 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var aFunction = __webpack_require__(12);
+var aFunction = __webpack_require__(13);
 var toObject = __webpack_require__(10);
 var IObject = __webpack_require__(51);
 var toLength = __webpack_require__(9);
@@ -4124,7 +4111,7 @@ module.exports = function (that, callbackfn, aLen, memo, isRight) {
 };
 
 /***/ }),
-/* 129 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4156,7 +4143,7 @@ module.exports = [].copyWithin || function copyWithin(target /* = 0 */, start /*
 };
 
 /***/ }),
-/* 130 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4167,7 +4154,7 @@ module.exports = function (done, value) {
 };
 
 /***/ }),
-/* 131 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4180,7 +4167,7 @@ if (__webpack_require__(7) && /./g.flags != 'g') __webpack_require__(8).f(RegExp
 });
 
 /***/ }),
-/* 132 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4195,7 +4182,7 @@ module.exports = function (exec) {
 };
 
 /***/ }),
-/* 133 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4211,13 +4198,13 @@ module.exports = function (C, x) {
 };
 
 /***/ }),
-/* 134 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var strong = __webpack_require__(135);
+var strong = __webpack_require__(134);
 var validate = __webpack_require__(50);
 var MAP = 'Map';
 
@@ -4239,7 +4226,7 @@ module.exports = __webpack_require__(65)(MAP, function (get) {
 }, strong, true);
 
 /***/ }),
-/* 135 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4252,10 +4239,10 @@ var ctx = __webpack_require__(21);
 var anInstance = __webpack_require__(43);
 var forOf = __webpack_require__(44);
 var $iterDefine = __webpack_require__(88);
-var step = __webpack_require__(130);
+var step = __webpack_require__(129);
 var setSpecies = __webpack_require__(42);
 var DESCRIPTORS = __webpack_require__(7);
-var fastKey = __webpack_require__(33).fastKey;
+var fastKey = __webpack_require__(32).fastKey;
 var validate = __webpack_require__(50);
 var SIZE = DESCRIPTORS ? '_s' : 'size';
 
@@ -4393,13 +4380,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 136 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var strong = __webpack_require__(135);
+var strong = __webpack_require__(134);
 var validate = __webpack_require__(50);
 var SET = 'Set';
 
@@ -4416,7 +4403,7 @@ module.exports = __webpack_require__(65)(SET, function (get) {
 }, strong);
 
 /***/ }),
-/* 137 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4424,9 +4411,9 @@ module.exports = __webpack_require__(65)(SET, function (get) {
 
 var each = __webpack_require__(29)(0);
 var redefine = __webpack_require__(16);
-var meta = __webpack_require__(33);
-var assign = __webpack_require__(119);
-var weak = __webpack_require__(138);
+var meta = __webpack_require__(32);
+var assign = __webpack_require__(118);
+var weak = __webpack_require__(137);
 var isObject = __webpack_require__(4);
 var fails = __webpack_require__(3);
 var validate = __webpack_require__(50);
@@ -4484,14 +4471,14 @@ if (fails(function () {
 }
 
 /***/ }),
-/* 138 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var redefineAll = __webpack_require__(45);
-var getWeak = __webpack_require__(33).getWeak;
+var getWeak = __webpack_require__(32).getWeak;
 var anObject = __webpack_require__(1);
 var isObject = __webpack_require__(4);
 var anInstance = __webpack_require__(43);
@@ -4574,7 +4561,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 139 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4592,7 +4579,7 @@ module.exports = function (it) {
 };
 
 /***/ }),
-/* 140 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4610,7 +4597,7 @@ module.exports = Reflect && Reflect.ownKeys || function ownKeys(it) {
 };
 
 /***/ }),
-/* 141 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4656,7 +4643,7 @@ function flattenIntoArray(target, original, source, sourceLen, start, depth, map
 module.exports = flattenIntoArray;
 
 /***/ }),
-/* 142 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4680,13 +4667,13 @@ module.exports = function (that, maxLength, fillString, left) {
 };
 
 /***/ }),
-/* 143 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var getKeys = __webpack_require__(34);
+var getKeys = __webpack_require__(33);
 var toIObject = __webpack_require__(17);
 var isEnum = __webpack_require__(52).f;
 module.exports = function (isEntries) {
@@ -4706,7 +4693,7 @@ module.exports = function (isEntries) {
 };
 
 /***/ }),
-/* 144 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4714,7 +4701,7 @@ module.exports = function (isEntries) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var classof = __webpack_require__(53);
-var from = __webpack_require__(145);
+var from = __webpack_require__(144);
 module.exports = function (NAME) {
   return function toJSON() {
     if (classof(this) != NAME) throw TypeError(NAME + "#toJSON isn't generic");
@@ -4723,7 +4710,7 @@ module.exports = function (NAME) {
 };
 
 /***/ }),
-/* 145 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4738,7 +4725,7 @@ module.exports = function (iter, ITERATOR) {
 };
 
 /***/ }),
-/* 146 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4762,17 +4749,17 @@ module.exports = Math.scale || function scale(x, inLow, inHigh, outLow, outHigh)
 };
 
 /***/ }),
-/* 147 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _require = __webpack_require__(13),
+var _require = __webpack_require__(11),
     include = _require.include,
     omit = _require.omit;
 
-var _require2 = __webpack_require__(11),
+var _require2 = __webpack_require__(12),
     TEXT_TYPE = _require2.TEXT_TYPE,
     TAG_TYPE = _require2.TAG_TYPE,
     CLASS_TYPE = _require2.CLASS_TYPE,
@@ -4819,7 +4806,7 @@ var loop = function loop(node) {
 module.exports = loop;
 
 /***/ }),
-/* 148 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4868,26 +4855,26 @@ var flatten = function flatten(items) {
 module.exports = flatten;
 
 /***/ }),
-/* 149 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _require = __webpack_require__(13),
+var _require = __webpack_require__(11),
     flatten = _require.flatten;
 
-var createNodes = __webpack_require__(393);
-var createCallback = __webpack_require__(394);
+var createNodes = __webpack_require__(394);
+var createCallback = __webpack_require__(395);
 
-var _require2 = __webpack_require__(152),
+var _require2 = __webpack_require__(151),
     sortLiveNodes = _require2.sortLiveNodes,
     sortTemplateNodes = _require2.sortTemplateNodes;
 
-var decorateNodes = __webpack_require__(153);
+var decorateNodes = __webpack_require__(152);
 var createNodesWithRefs = __webpack_require__(106);
-var createTextNodes = __webpack_require__(405);
-var statistic = __webpack_require__(406);
+var createTextNodes = __webpack_require__(406);
+var statistic = __webpack_require__(407);
 
 module.exports = function (liveNodes, templateNodes, options) {
 
@@ -4928,7 +4915,7 @@ module.exports = function (liveNodes, templateNodes, options) {
 };
 
 /***/ }),
-/* 150 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4936,7 +4923,7 @@ module.exports = function (liveNodes, templateNodes, options) {
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var _require = __webpack_require__(13),
+var _require = __webpack_require__(11),
     omit = _require.omit;
 
 var addRef = function addRef(node, payload) {
@@ -4952,7 +4939,7 @@ var removeRef = function removeRef(node) {
 module.exports = { addRef: addRef, removeRef: removeRef };
 
 /***/ }),
-/* 151 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4970,7 +4957,7 @@ module.exports = function (error, errorExists, errorNotExists) {
 };
 
 /***/ }),
-/* 152 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4980,7 +4967,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var _require = __webpack_require__(13),
+var _require = __webpack_require__(11),
     flatten = _require.flatten,
     include = _require.include;
 
@@ -5093,7 +5080,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 153 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5135,7 +5122,7 @@ module.exports = function (nodes, _ref) {
 };
 
 /***/ }),
-/* 154 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5143,11 +5130,11 @@ module.exports = function (nodes, _ref) {
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-var _require = __webpack_require__(13),
+var _require = __webpack_require__(11),
     omit = _require.omit,
     flatten = _require.flatten;
 
-var _require2 = __webpack_require__(11),
+var _require2 = __webpack_require__(12),
     ROOT_TYPE = _require2.ROOT_TYPE,
     TEXT_TYPE = _require2.TEXT_TYPE,
     TAG_TYPE = _require2.TAG_TYPE,
@@ -5187,20 +5174,20 @@ var loop = function loop(node) {
 module.exports = loop;
 
 /***/ }),
-/* 155 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _require = __webpack_require__(152),
+var _require = __webpack_require__(151),
     sortLiveNodes = _require.sortLiveNodes;
 
-var reorderDeletedLiveNodes = __webpack_require__(410);
-var reorderAddedLiveNodes = __webpack_require__(411);
-var decorateNodes = __webpack_require__(153);
-var createNodes = __webpack_require__(412);
-var createCallback = __webpack_require__(413);
+var reorderDeletedLiveNodes = __webpack_require__(411);
+var reorderAddedLiveNodes = __webpack_require__(412);
+var decorateNodes = __webpack_require__(152);
+var createNodes = __webpack_require__(413);
+var createCallback = __webpack_require__(414);
 
 module.exports = function (_ref) {
   var offset = _ref.offset,
@@ -5254,14 +5241,14 @@ module.exports = function (_ref) {
 };
 
 /***/ }),
-/* 156 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var updateDomNode = __webpack_require__(417);
-var updateNodes = __webpack_require__(421);
+var updateDomNode = __webpack_require__(418);
+var updateNodes = __webpack_require__(422);
 
 module.exports = function (_ref) {
   var parentDomNode = _ref.parentDomNode,
@@ -5272,7 +5259,7 @@ module.exports = function (_ref) {
 };
 
 /***/ }),
-/* 157 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5280,7 +5267,7 @@ module.exports = function (_ref) {
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var events = __webpack_require__(158);
+var events = __webpack_require__(157);
 
 module.exports = function (props) {
 
@@ -5307,7 +5294,7 @@ module.exports = function (props) {
 };
 
 /***/ }),
-/* 158 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5384,6 +5371,19 @@ module.exports = (_module$exports = {
 }, _defineProperty(_module$exports, 'onAbort', 'abort'), _defineProperty(_module$exports, 'onCanPlay', 'canplay'), _defineProperty(_module$exports, 'onCanPlayThrough', 'canplaythrough	'), _defineProperty(_module$exports, 'onDurationChange', 'durationchange'), _defineProperty(_module$exports, 'onEmptied', 'emptied'), _defineProperty(_module$exports, 'onEnded', 'ended'), _defineProperty(_module$exports, 'onError', 'error'), _defineProperty(_module$exports, 'onLoadedData', 'loadeddata'), _defineProperty(_module$exports, 'onLoadedMetadata', 'loadedmetadata'), _defineProperty(_module$exports, 'onLoadStart', 'loadstart'), _defineProperty(_module$exports, 'onPause', 'pause'), _defineProperty(_module$exports, 'onPlay', 'play'), _defineProperty(_module$exports, 'onPlaying', 'playing'), _defineProperty(_module$exports, 'onProgress', 'progress'), _defineProperty(_module$exports, 'onRateChange', 'ratechange'), _defineProperty(_module$exports, 'onSeeked', 'seeked'), _defineProperty(_module$exports, 'onSeeking', 'seeking'), _defineProperty(_module$exports, 'onStalled', 'stalled'), _defineProperty(_module$exports, 'onSuspend', 'suspend'), _defineProperty(_module$exports, 'onTimeUpdate', 'timeupdate'), _defineProperty(_module$exports, 'onVolumeChange', 'volumechange'), _defineProperty(_module$exports, 'onWaiting', 'waiting'), _defineProperty(_module$exports, 'animationEnd', 'animationend'), _defineProperty(_module$exports, 'animationIteration', 'animationiteration'), _defineProperty(_module$exports, 'animationStart', 'animationstart'), _defineProperty(_module$exports, 'transitionEnd', 'transitionend'), _defineProperty(_module$exports, 'onError', 'error'), _defineProperty(_module$exports, 'onMessage', 'message'), _defineProperty(_module$exports, 'onOpen', 'open'), _defineProperty(_module$exports, 'onMessage', 'message'), _defineProperty(_module$exports, 'onOnline', 'online'), _defineProperty(_module$exports, 'onOffline', 'offline'), _defineProperty(_module$exports, 'onPopState', 'popstate'), _defineProperty(_module$exports, 'onShow', 'show'), _defineProperty(_module$exports, 'onStorage', 'storage'), _defineProperty(_module$exports, 'onToggle', 'toggle'), _defineProperty(_module$exports, 'onWheel', 'wheel'), _defineProperty(_module$exports, 'onTouchCancel', 'touchcancel'), _defineProperty(_module$exports, 'onTouchEnd', 'touchend'), _defineProperty(_module$exports, 'onTouchMove', 'touchmove'), _defineProperty(_module$exports, 'onTouchStart', 'touchstart'), _module$exports);
 
 /***/ }),
+/* 158 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+  route: __webpack_require__(433),
+  matchRoutes: __webpack_require__(434),
+  separateRoutes: __webpack_require__(437)
+};
+
+/***/ }),
 /* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5399,6 +5399,20 @@ module.exports = function (path) {
 
 /***/ }),
 /* 160 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (path) {
+
+  var boundarySlashes = /^\/+|\/+$/g;
+
+  return path.replace(boundarySlashes, '').split('/');
+};
+
+/***/ }),
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5447,13 +5461,13 @@ var flatten = function flatten(items) {
 module.exports = flatten;
 
 /***/ }),
-/* 161 */
+/* 162 */
 /***/ (function(module, exports) {
 
 module.exports = "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <title>Hello world!</title>\n  </head>\n  <body>\n    <div id='app'></div>\n    <script src=\"./index.js\" type=\"text/javascript\"></script>\n  </body>\n</html>\n"
 
 /***/ }),
-/* 162 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5465,7 +5479,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var escapeHtml = __webpack_require__(480);
+var escapeHtml = __webpack_require__(487);
 
 var Example = function () {
   function Example() {
@@ -5528,7 +5542,7 @@ var Example = function () {
 module.exports = Example;
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5573,7 +5587,7 @@ describe('Examples', function () {
 });
 
 /***/ }),
-/* 164 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5611,7 +5625,7 @@ describe('Get file info', function () {
 });
 
 /***/ }),
-/* 165 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5662,7 +5676,7 @@ describe('Examples', function () {
 });
 
 /***/ }),
-/* 166 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5682,9 +5696,11 @@ var ErrorController = function () {
     value: function notFound(req, res) {
 
       res.send(404, 'ErrorContainer', {
-        path: req.url,
-        segments: req.segments,
-        locale: req.segments[0] || 'en'
+        props: {
+          path: req.url,
+          segments: req.segments,
+          locale: req.segments[0] || 'en'
+        }
       });
     }
   }]);
@@ -5695,7 +5711,7 @@ var ErrorController = function () {
 module.exports = ErrorController;
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5712,9 +5728,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var _require = __webpack_require__(6),
     Component = _require.Component;
 
-var App = __webpack_require__(168);
-var ExampleModel = __webpack_require__(162);
-var createArticle = __webpack_require__(541);
+var App = __webpack_require__(169);
+var ExampleModel = __webpack_require__(163);
+var createArticle = __webpack_require__(548);
 
 var loadExamples = function loadExamples(_ref, callback) {
   var ExampleModel = _ref.ExampleModel,
@@ -5782,7 +5798,7 @@ var ArticleContainer = function (_Component) {
 module.exports = ArticleContainer;
 
 /***/ }),
-/* 168 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5800,8 +5816,8 @@ var _require = __webpack_require__(6),
     Component = _require.Component,
     html = _require.html;
 
-var Sidebar = __webpack_require__(533);
-var Content = __webpack_require__(539);
+var Sidebar = __webpack_require__(540);
+var Content = __webpack_require__(546);
 
 var App = function (_Component) {
   _inherits(App, _Component);
@@ -5838,7 +5854,7 @@ var App = function (_Component) {
 module.exports = App;
 
 /***/ }),
-/* 169 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5855,8 +5871,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var _require = __webpack_require__(6),
     Component = _require.Component;
 
-var App = __webpack_require__(168);
-var Error404 = __webpack_require__(566);
+var App = __webpack_require__(169);
+var Error404 = __webpack_require__(573);
 
 var ErrorContainer = function (_Component) {
   _inherits(ErrorContainer, _Component);
@@ -5881,25 +5897,25 @@ var ErrorContainer = function (_Component) {
 module.exports = ErrorContainer;
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(171);
-module.exports = __webpack_require__(377);
+__webpack_require__(172);
+module.exports = __webpack_require__(378);
 
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
 
-__webpack_require__(172);
+__webpack_require__(173);
 
-__webpack_require__(372);
+__webpack_require__(373);
 
-__webpack_require__(374);
+__webpack_require__(375);
 
 if (global._babelPolyfill) {
   throw new Error("only one instance of babel-polyfill is allowed");
@@ -5924,14 +5940,13 @@ define(String.prototype, "padRight", "".padEnd);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(75)))
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(173);
-__webpack_require__(176);
+__webpack_require__(174);
 __webpack_require__(177);
 __webpack_require__(178);
 __webpack_require__(179);
@@ -5946,7 +5961,7 @@ __webpack_require__(187);
 __webpack_require__(188);
 __webpack_require__(189);
 __webpack_require__(190);
-__webpack_require__(192);
+__webpack_require__(191);
 __webpack_require__(193);
 __webpack_require__(194);
 __webpack_require__(195);
@@ -6007,16 +6022,16 @@ __webpack_require__(249);
 __webpack_require__(250);
 __webpack_require__(251);
 __webpack_require__(252);
-__webpack_require__(254);
+__webpack_require__(253);
 __webpack_require__(255);
-__webpack_require__(257);
+__webpack_require__(256);
 __webpack_require__(258);
 __webpack_require__(259);
 __webpack_require__(260);
 __webpack_require__(261);
 __webpack_require__(262);
 __webpack_require__(263);
-__webpack_require__(265);
+__webpack_require__(264);
 __webpack_require__(266);
 __webpack_require__(267);
 __webpack_require__(268);
@@ -6029,19 +6044,19 @@ __webpack_require__(274);
 __webpack_require__(275);
 __webpack_require__(276);
 __webpack_require__(277);
-__webpack_require__(97);
 __webpack_require__(278);
+__webpack_require__(97);
 __webpack_require__(279);
-__webpack_require__(131);
 __webpack_require__(280);
+__webpack_require__(130);
 __webpack_require__(281);
 __webpack_require__(282);
 __webpack_require__(283);
 __webpack_require__(284);
-__webpack_require__(134);
-__webpack_require__(136);
-__webpack_require__(137);
 __webpack_require__(285);
+__webpack_require__(133);
+__webpack_require__(135);
+__webpack_require__(136);
 __webpack_require__(286);
 __webpack_require__(287);
 __webpack_require__(288);
@@ -6124,12 +6139,13 @@ __webpack_require__(364);
 __webpack_require__(365);
 __webpack_require__(366);
 __webpack_require__(367);
-__webpack_require__(370);
+__webpack_require__(368);
 __webpack_require__(371);
+__webpack_require__(372);
 module.exports = __webpack_require__(24);
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6143,26 +6159,26 @@ var has = __webpack_require__(14);
 var DESCRIPTORS = __webpack_require__(7);
 var $export = __webpack_require__(0);
 var redefine = __webpack_require__(16);
-var META = __webpack_require__(33).KEY;
+var META = __webpack_require__(32).KEY;
 var $fails = __webpack_require__(3);
 var shared = __webpack_require__(55);
 var setToStringTag = __webpack_require__(47);
 var uid = __webpack_require__(37);
 var wks = __webpack_require__(5);
-var wksExt = __webpack_require__(115);
+var wksExt = __webpack_require__(114);
 var wksDefine = __webpack_require__(77);
-var keyOf = __webpack_require__(174);
-var enumKeys = __webpack_require__(175);
+var keyOf = __webpack_require__(175);
+var enumKeys = __webpack_require__(176);
 var isArray = __webpack_require__(58);
 var anObject = __webpack_require__(1);
 var toIObject = __webpack_require__(17);
 var toPrimitive = __webpack_require__(25);
 var createDesc = __webpack_require__(36);
 var _create = __webpack_require__(40);
-var gOPNExt = __webpack_require__(118);
+var gOPNExt = __webpack_require__(117);
 var $GOPD = __webpack_require__(19);
 var $DP = __webpack_require__(8);
-var $keys = __webpack_require__(34);
+var $keys = __webpack_require__(33);
 var gOPD = $GOPD.f;
 var dP = $DP.f;
 var gOPN = gOPNExt.f;
@@ -6378,13 +6394,13 @@ setToStringTag(Math, 'Math', true);
 setToStringTag(global.JSON, 'JSON', true);
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var getKeys = __webpack_require__(34);
+var getKeys = __webpack_require__(33);
 var toIObject = __webpack_require__(17);
 module.exports = function (object, el) {
   var O = toIObject(object);
@@ -6398,14 +6414,14 @@ module.exports = function (object, el) {
 };
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 // all enumerable object keys, includes symbols
-var getKeys = __webpack_require__(34);
+var getKeys = __webpack_require__(33);
 var gOPS = __webpack_require__(57);
 var pIE = __webpack_require__(52);
 module.exports = function (it) {
@@ -6423,7 +6439,7 @@ module.exports = function (it) {
 };
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6434,7 +6450,7 @@ var $export = __webpack_require__(0);
 $export($export.S, 'Object', { create: __webpack_require__(40) });
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6445,7 +6461,7 @@ var $export = __webpack_require__(0);
 $export($export.S + $export.F * !__webpack_require__(7), 'Object', { defineProperty: __webpack_require__(8).f });
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6453,10 +6469,10 @@ $export($export.S + $export.F * !__webpack_require__(7), 'Object', { definePrope
 
 var $export = __webpack_require__(0);
 // 19.1.2.3 / 15.2.3.7 Object.defineProperties(O, Properties)
-$export($export.S + $export.F * !__webpack_require__(7), 'Object', { defineProperties: __webpack_require__(117) });
+$export($export.S + $export.F * !__webpack_require__(7), 'Object', { defineProperties: __webpack_require__(116) });
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6473,7 +6489,7 @@ __webpack_require__(28)('getOwnPropertyDescriptor', function () {
 });
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6490,7 +6506,7 @@ __webpack_require__(28)('getPrototypeOf', function () {
 });
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6498,24 +6514,12 @@ __webpack_require__(28)('getPrototypeOf', function () {
 
 // 19.1.2.14 Object.keys(O)
 var toObject = __webpack_require__(10);
-var $keys = __webpack_require__(34);
+var $keys = __webpack_require__(33);
 
 __webpack_require__(28)('keys', function () {
   return function keys(it) {
     return $keys(toObject(it));
   };
-});
-
-/***/ }),
-/* 182 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// 19.1.2.7 Object.getOwnPropertyNames(O)
-__webpack_require__(28)('getOwnPropertyNames', function () {
-  return __webpack_require__(118).f;
 });
 
 /***/ }),
@@ -6525,14 +6529,9 @@ __webpack_require__(28)('getOwnPropertyNames', function () {
 "use strict";
 
 
-// 19.1.2.5 Object.freeze(O)
-var isObject = __webpack_require__(4);
-var meta = __webpack_require__(33).onFreeze;
-
-__webpack_require__(28)('freeze', function ($freeze) {
-  return function freeze(it) {
-    return $freeze && isObject(it) ? $freeze(meta(it)) : it;
-  };
+// 19.1.2.7 Object.getOwnPropertyNames(O)
+__webpack_require__(28)('getOwnPropertyNames', function () {
+  return __webpack_require__(117).f;
 });
 
 /***/ }),
@@ -6542,13 +6541,13 @@ __webpack_require__(28)('freeze', function ($freeze) {
 "use strict";
 
 
-// 19.1.2.17 Object.seal(O)
+// 19.1.2.5 Object.freeze(O)
 var isObject = __webpack_require__(4);
-var meta = __webpack_require__(33).onFreeze;
+var meta = __webpack_require__(32).onFreeze;
 
-__webpack_require__(28)('seal', function ($seal) {
-  return function seal(it) {
-    return $seal && isObject(it) ? $seal(meta(it)) : it;
+__webpack_require__(28)('freeze', function ($freeze) {
+  return function freeze(it) {
+    return $freeze && isObject(it) ? $freeze(meta(it)) : it;
   };
 });
 
@@ -6559,9 +6558,26 @@ __webpack_require__(28)('seal', function ($seal) {
 "use strict";
 
 
+// 19.1.2.17 Object.seal(O)
+var isObject = __webpack_require__(4);
+var meta = __webpack_require__(32).onFreeze;
+
+__webpack_require__(28)('seal', function ($seal) {
+  return function seal(it) {
+    return $seal && isObject(it) ? $seal(meta(it)) : it;
+  };
+});
+
+/***/ }),
+/* 186 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 // 19.1.2.15 Object.preventExtensions(O)
 var isObject = __webpack_require__(4);
-var meta = __webpack_require__(33).onFreeze;
+var meta = __webpack_require__(32).onFreeze;
 
 __webpack_require__(28)('preventExtensions', function ($preventExtensions) {
   return function preventExtensions(it) {
@@ -6570,7 +6586,7 @@ __webpack_require__(28)('preventExtensions', function ($preventExtensions) {
 });
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6586,7 +6602,7 @@ __webpack_require__(28)('isFrozen', function ($isFrozen) {
 });
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6602,7 +6618,7 @@ __webpack_require__(28)('isSealed', function ($isSealed) {
 });
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6618,7 +6634,7 @@ __webpack_require__(28)('isExtensible', function ($isExtensible) {
 });
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6627,10 +6643,10 @@ __webpack_require__(28)('isExtensible', function ($isExtensible) {
 // 19.1.3.1 Object.assign(target, source)
 var $export = __webpack_require__(0);
 
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(119) });
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(118) });
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6638,10 +6654,10 @@ $export($export.S + $export.F, 'Object', { assign: __webpack_require__(119) });
 
 // 19.1.3.10 Object.is(value1, value2)
 var $export = __webpack_require__(0);
-$export($export.S, 'Object', { is: __webpack_require__(191) });
+$export($export.S, 'Object', { is: __webpack_require__(192) });
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6654,7 +6670,7 @@ module.exports = Object.is || function is(x, y) {
 };
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6665,7 +6681,7 @@ var $export = __webpack_require__(0);
 $export($export.S, 'Object', { setPrototypeOf: __webpack_require__(81).set });
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6682,7 +6698,7 @@ if (test + '' != '[object z]') {
 }
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6691,10 +6707,10 @@ if (test + '' != '[object z]') {
 // 19.2.3.2 / 15.3.4.5 Function.prototype.bind(thisArg, args...)
 var $export = __webpack_require__(0);
 
-$export($export.P, 'Function', { bind: __webpack_require__(120) });
+$export($export.P, 'Function', { bind: __webpack_require__(119) });
 
 /***/ }),
-/* 195 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6718,7 +6734,7 @@ NAME in FProto || __webpack_require__(7) && dP(FProto, NAME, {
 });
 
 /***/ }),
-/* 196 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6739,18 +6755,6 @@ if (!(HAS_INSTANCE in FunctionProto)) __webpack_require__(8).f(FunctionProto, HA
   } });
 
 /***/ }),
-/* 197 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var $export = __webpack_require__(0);
-var $parseInt = __webpack_require__(121);
-// 18.2.5 parseInt(string, radix)
-$export($export.G + $export.F * (parseInt != $parseInt), { parseInt: $parseInt });
-
-/***/ }),
 /* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6758,12 +6762,24 @@ $export($export.G + $export.F * (parseInt != $parseInt), { parseInt: $parseInt }
 
 
 var $export = __webpack_require__(0);
-var $parseFloat = __webpack_require__(122);
+var $parseInt = __webpack_require__(120);
+// 18.2.5 parseInt(string, radix)
+$export($export.G + $export.F * (parseInt != $parseInt), { parseInt: $parseInt });
+
+/***/ }),
+/* 199 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var $export = __webpack_require__(0);
+var $parseFloat = __webpack_require__(121);
 // 18.2.4 parseFloat(string)
 $export($export.G + $export.F * (parseFloat != $parseFloat), { parseFloat: $parseFloat });
 
 /***/ }),
-/* 199 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6841,7 +6857,7 @@ if (!$Number(' 0o1') || !$Number('0b1') || $Number('+0x1')) {
 }
 
 /***/ }),
-/* 200 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6849,7 +6865,7 @@ if (!$Number(' 0o1') || !$Number('0b1') || $Number('+0x1')) {
 
 var $export = __webpack_require__(0);
 var toInteger = __webpack_require__(27);
-var aNumberValue = __webpack_require__(123);
+var aNumberValue = __webpack_require__(122);
 var repeat = __webpack_require__(84);
 var $toFixed = 1.0.toFixed;
 var floor = Math.floor;
@@ -6957,7 +6973,7 @@ $export($export.P + $export.F * (!!$toFixed && (0.00008.toFixed(3) !== '0.000' |
 });
 
 /***/ }),
-/* 201 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6965,7 +6981,7 @@ $export($export.P + $export.F * (!!$toFixed && (0.00008.toFixed(3) !== '0.000' |
 
 var $export = __webpack_require__(0);
 var $fails = __webpack_require__(3);
-var aNumberValue = __webpack_require__(123);
+var aNumberValue = __webpack_require__(122);
 var $toPrecision = 1.0.toPrecision;
 
 $export($export.P + $export.F * ($fails(function () {
@@ -6982,7 +6998,7 @@ $export($export.P + $export.F * ($fails(function () {
 });
 
 /***/ }),
-/* 202 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6994,7 +7010,7 @@ var $export = __webpack_require__(0);
 $export($export.S, 'Number', { EPSILON: Math.pow(2, -52) });
 
 /***/ }),
-/* 203 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7011,7 +7027,7 @@ $export($export.S, 'Number', {
 });
 
 /***/ }),
-/* 204 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7020,10 +7036,10 @@ $export($export.S, 'Number', {
 // 20.1.2.3 Number.isInteger(number)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Number', { isInteger: __webpack_require__(124) });
+$export($export.S, 'Number', { isInteger: __webpack_require__(123) });
 
 /***/ }),
-/* 205 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7040,7 +7056,7 @@ $export($export.S, 'Number', {
 });
 
 /***/ }),
-/* 206 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7048,7 +7064,7 @@ $export($export.S, 'Number', {
 
 // 20.1.2.5 Number.isSafeInteger(number)
 var $export = __webpack_require__(0);
-var isInteger = __webpack_require__(124);
+var isInteger = __webpack_require__(123);
 var abs = Math.abs;
 
 $export($export.S, 'Number', {
@@ -7058,7 +7074,7 @@ $export($export.S, 'Number', {
 });
 
 /***/ }),
-/* 207 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7070,7 +7086,7 @@ var $export = __webpack_require__(0);
 $export($export.S, 'Number', { MAX_SAFE_INTEGER: 0x1fffffffffffff });
 
 /***/ }),
-/* 208 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7082,18 +7098,6 @@ var $export = __webpack_require__(0);
 $export($export.S, 'Number', { MIN_SAFE_INTEGER: -0x1fffffffffffff });
 
 /***/ }),
-/* 209 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var $export = __webpack_require__(0);
-var $parseFloat = __webpack_require__(122);
-// 20.1.2.12 Number.parseFloat(string)
-$export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', { parseFloat: $parseFloat });
-
-/***/ }),
 /* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7101,9 +7105,9 @@ $export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', { 
 
 
 var $export = __webpack_require__(0);
-var $parseInt = __webpack_require__(121);
-// 20.1.2.13 Number.parseInt(string, radix)
-$export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', { parseInt: $parseInt });
+var $parseFloat = __webpack_require__(121);
+// 20.1.2.12 Number.parseFloat(string)
+$export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', { parseFloat: $parseFloat });
 
 /***/ }),
 /* 211 */
@@ -7112,9 +7116,21 @@ $export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', { pars
 "use strict";
 
 
+var $export = __webpack_require__(0);
+var $parseInt = __webpack_require__(120);
+// 20.1.2.13 Number.parseInt(string, radix)
+$export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', { parseInt: $parseInt });
+
+/***/ }),
+/* 212 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 // 20.2.2.3 Math.acosh(x)
 var $export = __webpack_require__(0);
-var log1p = __webpack_require__(125);
+var log1p = __webpack_require__(124);
 var sqrt = Math.sqrt;
 var $acosh = Math.acosh;
 
@@ -7129,7 +7145,7 @@ $export($export.S + $export.F * !($acosh
 });
 
 /***/ }),
-/* 212 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7147,7 +7163,7 @@ function asinh(x) {
 $export($export.S + $export.F * !($asinh && 1 / $asinh(0) > 0), 'Math', { asinh: asinh });
 
 /***/ }),
-/* 213 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7165,7 +7181,7 @@ $export($export.S + $export.F * !($atanh && 1 / $atanh(-0) < 0), 'Math', {
 });
 
 /***/ }),
-/* 214 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7182,7 +7198,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 215 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7198,7 +7214,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 216 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7215,7 +7231,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 217 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7228,7 +7244,7 @@ var $expm1 = __webpack_require__(86);
 $export($export.S + $export.F * ($expm1 != Math.expm1), 'Math', { expm1: $expm1 });
 
 /***/ }),
-/* 218 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7237,10 +7253,10 @@ $export($export.S + $export.F * ($expm1 != Math.expm1), 'Math', { expm1: $expm1 
 // 20.2.2.16 Math.fround(x)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Math', { fround: __webpack_require__(126) });
+$export($export.S, 'Math', { fround: __webpack_require__(125) });
 
 /***/ }),
-/* 219 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7274,7 +7290,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 220 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7299,7 +7315,7 @@ $export($export.S + $export.F * __webpack_require__(3)(function () {
 });
 
 /***/ }),
-/* 221 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7315,7 +7331,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 222 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7324,10 +7340,10 @@ $export($export.S, 'Math', {
 // 20.2.2.20 Math.log1p(x)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Math', { log1p: __webpack_require__(125) });
+$export($export.S, 'Math', { log1p: __webpack_require__(124) });
 
 /***/ }),
-/* 223 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7343,7 +7359,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 224 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7355,7 +7371,7 @@ var $export = __webpack_require__(0);
 $export($export.S, 'Math', { sign: __webpack_require__(85) });
 
 /***/ }),
-/* 225 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7376,7 +7392,7 @@ $export($export.S + $export.F * __webpack_require__(3)(function () {
 });
 
 /***/ }),
-/* 226 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7396,7 +7412,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 227 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7412,7 +7428,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 228 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7441,7 +7457,7 @@ $export($export.S + $export.F * (!!$fromCodePoint && $fromCodePoint.length != 1)
 });
 
 /***/ }),
-/* 229 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7467,7 +7483,7 @@ $export($export.S, 'String', {
 });
 
 /***/ }),
-/* 230 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7481,7 +7497,7 @@ __webpack_require__(48)('trim', function ($trim) {
 });
 
 /***/ }),
-/* 231 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7505,7 +7521,7 @@ __webpack_require__(88)(String, 'String', function (iterated) {
 });
 
 /***/ }),
-/* 232 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7521,7 +7537,7 @@ $export($export.P, 'String', {
 });
 
 /***/ }),
-/* 233 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7546,7 +7562,7 @@ $export($export.P + $export.F * __webpack_require__(91)(ENDS_WITH), 'String', {
 });
 
 /***/ }),
-/* 234 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7564,7 +7580,7 @@ $export($export.P + $export.F * __webpack_require__(91)(INCLUDES), 'String', {
 });
 
 /***/ }),
-/* 235 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7578,7 +7594,7 @@ $export($export.P, 'String', {
 });
 
 /***/ }),
-/* 236 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7601,7 +7617,7 @@ $export($export.P + $export.F * __webpack_require__(91)(STARTS_WITH), 'String', 
 });
 
 /***/ }),
-/* 237 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7615,7 +7631,7 @@ __webpack_require__(18)('anchor', function (createHTML) {
 });
 
 /***/ }),
-/* 238 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7629,7 +7645,7 @@ __webpack_require__(18)('big', function (createHTML) {
 });
 
 /***/ }),
-/* 239 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7643,7 +7659,7 @@ __webpack_require__(18)('blink', function (createHTML) {
 });
 
 /***/ }),
-/* 240 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7657,7 +7673,7 @@ __webpack_require__(18)('bold', function (createHTML) {
 });
 
 /***/ }),
-/* 241 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7671,7 +7687,7 @@ __webpack_require__(18)('fixed', function (createHTML) {
 });
 
 /***/ }),
-/* 242 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7685,7 +7701,7 @@ __webpack_require__(18)('fontcolor', function (createHTML) {
 });
 
 /***/ }),
-/* 243 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7699,7 +7715,7 @@ __webpack_require__(18)('fontsize', function (createHTML) {
 });
 
 /***/ }),
-/* 244 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7713,7 +7729,7 @@ __webpack_require__(18)('italics', function (createHTML) {
 });
 
 /***/ }),
-/* 245 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7727,7 +7743,7 @@ __webpack_require__(18)('link', function (createHTML) {
 });
 
 /***/ }),
-/* 246 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7741,7 +7757,7 @@ __webpack_require__(18)('small', function (createHTML) {
 });
 
 /***/ }),
-/* 247 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7755,7 +7771,7 @@ __webpack_require__(18)('strike', function (createHTML) {
 });
 
 /***/ }),
-/* 248 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7769,7 +7785,7 @@ __webpack_require__(18)('sub', function (createHTML) {
 });
 
 /***/ }),
-/* 249 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7783,7 +7799,7 @@ __webpack_require__(18)('sup', function (createHTML) {
 });
 
 /***/ }),
-/* 250 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7797,7 +7813,7 @@ $export($export.S, 'Date', { now: function now() {
   } });
 
 /***/ }),
-/* 251 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7821,7 +7837,7 @@ $export($export.P + $export.F * __webpack_require__(3)(function () {
 });
 
 /***/ }),
-/* 252 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7829,7 +7845,7 @@ $export($export.P + $export.F * __webpack_require__(3)(function () {
 
 // 20.3.4.36 / 15.9.5.43 Date.prototype.toISOString()
 var $export = __webpack_require__(0);
-var toISOString = __webpack_require__(253);
+var toISOString = __webpack_require__(254);
 
 // PhantomJS / old WebKit has a broken implementations
 $export($export.P + $export.F * (Date.prototype.toISOString !== toISOString), 'Date', {
@@ -7837,7 +7853,7 @@ $export($export.P + $export.F * (Date.prototype.toISOString !== toISOString), 'D
 });
 
 /***/ }),
-/* 253 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7867,7 +7883,7 @@ module.exports = fails(function () {
 } : $toISOString;
 
 /***/ }),
-/* 254 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7887,7 +7903,7 @@ if (new Date(NaN) + '' != INVALID_DATE) {
 }
 
 /***/ }),
-/* 255 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7896,10 +7912,10 @@ if (new Date(NaN) + '' != INVALID_DATE) {
 var TO_PRIMITIVE = __webpack_require__(5)('toPrimitive');
 var proto = Date.prototype;
 
-if (!(TO_PRIMITIVE in proto)) __webpack_require__(15)(proto, TO_PRIMITIVE, __webpack_require__(256));
+if (!(TO_PRIMITIVE in proto)) __webpack_require__(15)(proto, TO_PRIMITIVE, __webpack_require__(257));
 
 /***/ }),
-/* 256 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7915,7 +7931,7 @@ module.exports = function (hint) {
 };
 
 /***/ }),
-/* 257 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7927,7 +7943,7 @@ var $export = __webpack_require__(0);
 $export($export.S, 'Array', { isArray: __webpack_require__(58) });
 
 /***/ }),
-/* 258 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7936,7 +7952,7 @@ $export($export.S, 'Array', { isArray: __webpack_require__(58) });
 var ctx = __webpack_require__(21);
 var $export = __webpack_require__(0);
 var toObject = __webpack_require__(10);
-var call = __webpack_require__(127);
+var call = __webpack_require__(126);
 var isArrayIter = __webpack_require__(92);
 var toLength = __webpack_require__(9);
 var createProperty = __webpack_require__(93);
@@ -7973,7 +7989,7 @@ $export($export.S + $export.F * !__webpack_require__(61)(function (iter) {
 });
 
 /***/ }),
-/* 259 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8000,7 +8016,7 @@ $export($export.S + $export.F * __webpack_require__(3)(function () {
 });
 
 /***/ }),
-/* 260 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8019,7 +8035,7 @@ $export($export.P + $export.F * (__webpack_require__(51) != Object || !__webpack
 });
 
 /***/ }),
-/* 261 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8053,14 +8069,14 @@ $export($export.P + $export.F * __webpack_require__(3)(function () {
 });
 
 /***/ }),
-/* 262 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var $export = __webpack_require__(0);
-var aFunction = __webpack_require__(12);
+var aFunction = __webpack_require__(13);
 var toObject = __webpack_require__(10);
 var fails = __webpack_require__(3);
 var $sort = [].sort;
@@ -8081,7 +8097,7 @@ $export($export.P + $export.F * (fails(function () {
 });
 
 /***/ }),
-/* 263 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8099,7 +8115,7 @@ $export($export.P + $export.F * !STRICT, 'Array', {
 });
 
 /***/ }),
-/* 264 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8123,7 +8139,7 @@ module.exports = function (original) {
 };
 
 /***/ }),
-/* 265 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8140,7 +8156,7 @@ $export($export.P + $export.F * !__webpack_require__(23)([].map, true), 'Array',
 });
 
 /***/ }),
-/* 266 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8157,7 +8173,7 @@ $export($export.P + $export.F * !__webpack_require__(23)([].filter, true), 'Arra
 });
 
 /***/ }),
-/* 267 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8174,7 +8190,7 @@ $export($export.P + $export.F * !__webpack_require__(23)([].some, true), 'Array'
 });
 
 /***/ }),
-/* 268 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8191,14 +8207,14 @@ $export($export.P + $export.F * !__webpack_require__(23)([].every, true), 'Array
 });
 
 /***/ }),
-/* 269 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var $export = __webpack_require__(0);
-var $reduce = __webpack_require__(128);
+var $reduce = __webpack_require__(127);
 
 $export($export.P + $export.F * !__webpack_require__(23)([].reduce, true), 'Array', {
   // 22.1.3.18 / 15.4.4.21 Array.prototype.reduce(callbackfn [, initialValue])
@@ -8208,14 +8224,14 @@ $export($export.P + $export.F * !__webpack_require__(23)([].reduce, true), 'Arra
 });
 
 /***/ }),
-/* 270 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var $export = __webpack_require__(0);
-var $reduce = __webpack_require__(128);
+var $reduce = __webpack_require__(127);
 
 $export($export.P + $export.F * !__webpack_require__(23)([].reduceRight, true), 'Array', {
   // 22.1.3.19 / 15.4.4.22 Array.prototype.reduceRight(callbackfn [, initialValue])
@@ -8225,7 +8241,7 @@ $export($export.P + $export.F * !__webpack_require__(23)([].reduceRight, true), 
 });
 
 /***/ }),
-/* 271 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8246,7 +8262,7 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(23)($nati
 });
 
 /***/ }),
-/* 272 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8276,7 +8292,7 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(23)($nati
 });
 
 /***/ }),
-/* 273 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8285,12 +8301,12 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(23)($nati
 // 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
 var $export = __webpack_require__(0);
 
-$export($export.P, 'Array', { copyWithin: __webpack_require__(129) });
+$export($export.P, 'Array', { copyWithin: __webpack_require__(128) });
 
-__webpack_require__(35)('copyWithin');
+__webpack_require__(34)('copyWithin');
 
 /***/ }),
-/* 274 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8301,10 +8317,10 @@ var $export = __webpack_require__(0);
 
 $export($export.P, 'Array', { fill: __webpack_require__(96) });
 
-__webpack_require__(35)('fill');
+__webpack_require__(34)('fill');
 
 /***/ }),
-/* 275 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8324,10 +8340,10 @@ $export($export.P + $export.F * forced, 'Array', {
     return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
   }
 });
-__webpack_require__(35)(KEY);
+__webpack_require__(34)(KEY);
 
 /***/ }),
-/* 276 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8347,10 +8363,10 @@ $export($export.P + $export.F * forced, 'Array', {
     return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
   }
 });
-__webpack_require__(35)(KEY);
+__webpack_require__(34)(KEY);
 
 /***/ }),
-/* 277 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8359,7 +8375,7 @@ __webpack_require__(35)(KEY);
 __webpack_require__(42)('Array');
 
 /***/ }),
-/* 278 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8411,13 +8427,13 @@ if (__webpack_require__(7) && (!CORRECT_NEW || __webpack_require__(3)(function (
 __webpack_require__(42)('RegExp');
 
 /***/ }),
-/* 279 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(131);
+__webpack_require__(130);
 var anObject = __webpack_require__(1);
 var $flags = __webpack_require__(62);
 var DESCRIPTORS = __webpack_require__(7);
@@ -8444,7 +8460,7 @@ if (__webpack_require__(3)(function () {
 }
 
 /***/ }),
-/* 280 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8463,7 +8479,7 @@ __webpack_require__(63)('match', 1, function (defined, MATCH, $match) {
 });
 
 /***/ }),
-/* 281 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8482,7 +8498,7 @@ __webpack_require__(63)('replace', 2, function (defined, REPLACE, $replace) {
 });
 
 /***/ }),
-/* 282 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8501,7 +8517,7 @@ __webpack_require__(63)('search', 1, function (defined, SEARCH, $search) {
 });
 
 /***/ }),
-/* 283 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8573,7 +8589,7 @@ __webpack_require__(63)('split', 2, function (defined, SPLIT, $split) {
 });
 
 /***/ }),
-/* 284 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8585,15 +8601,15 @@ var ctx = __webpack_require__(21);
 var classof = __webpack_require__(53);
 var $export = __webpack_require__(0);
 var isObject = __webpack_require__(4);
-var aFunction = __webpack_require__(12);
+var aFunction = __webpack_require__(13);
 var anInstance = __webpack_require__(43);
 var forOf = __webpack_require__(44);
 var speciesConstructor = __webpack_require__(64);
 var task = __webpack_require__(98).set;
 var microtask = __webpack_require__(99)();
 var newPromiseCapabilityModule = __webpack_require__(100);
-var perform = __webpack_require__(132);
-var promiseResolve = __webpack_require__(133);
+var perform = __webpack_require__(131);
+var promiseResolve = __webpack_require__(132);
 var PROMISE = 'Promise';
 var TypeError = global.TypeError;
 var process = global.process;
@@ -8867,13 +8883,13 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(61)(function
 });
 
 /***/ }),
-/* 285 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var weak = __webpack_require__(138);
+var weak = __webpack_require__(137);
 var validate = __webpack_require__(50);
 var WEAK_SET = 'WeakSet';
 
@@ -8890,7 +8906,7 @@ __webpack_require__(65)(WEAK_SET, function (get) {
 }, weak, false, true);
 
 /***/ }),
-/* 286 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8943,7 +8959,7 @@ $export($export.P + $export.U + $export.F * __webpack_require__(3)(function () {
 __webpack_require__(42)(ARRAY_BUFFER);
 
 /***/ }),
-/* 287 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8955,7 +8971,7 @@ $export($export.G + $export.W + $export.F * !__webpack_require__(66).ABV, {
 });
 
 /***/ }),
-/* 288 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8968,7 +8984,7 @@ __webpack_require__(30)('Int8', 1, function (init) {
 });
 
 /***/ }),
-/* 289 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8981,7 +8997,7 @@ __webpack_require__(30)('Uint8', 1, function (init) {
 });
 
 /***/ }),
-/* 290 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8994,7 +9010,7 @@ __webpack_require__(30)('Uint8', 1, function (init) {
 }, true);
 
 /***/ }),
-/* 291 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9007,7 +9023,7 @@ __webpack_require__(30)('Int16', 2, function (init) {
 });
 
 /***/ }),
-/* 292 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9020,7 +9036,7 @@ __webpack_require__(30)('Uint16', 2, function (init) {
 });
 
 /***/ }),
-/* 293 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9033,7 +9049,7 @@ __webpack_require__(30)('Int32', 4, function (init) {
 });
 
 /***/ }),
-/* 294 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9046,7 +9062,7 @@ __webpack_require__(30)('Uint32', 4, function (init) {
 });
 
 /***/ }),
-/* 295 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9059,7 +9075,7 @@ __webpack_require__(30)('Float32', 4, function (init) {
 });
 
 /***/ }),
-/* 296 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9072,7 +9088,7 @@ __webpack_require__(30)('Float64', 8, function (init) {
 });
 
 /***/ }),
-/* 297 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9080,7 +9096,7 @@ __webpack_require__(30)('Float64', 8, function (init) {
 
 // 26.1.1 Reflect.apply(target, thisArgument, argumentsList)
 var $export = __webpack_require__(0);
-var aFunction = __webpack_require__(12);
+var aFunction = __webpack_require__(13);
 var anObject = __webpack_require__(1);
 var rApply = (__webpack_require__(2).Reflect || {}).apply;
 var fApply = Function.apply;
@@ -9096,7 +9112,7 @@ $export($export.S + $export.F * !__webpack_require__(3)(function () {
 });
 
 /***/ }),
-/* 298 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9105,11 +9121,11 @@ $export($export.S + $export.F * !__webpack_require__(3)(function () {
 // 26.1.2 Reflect.construct(target, argumentsList [, newTarget])
 var $export = __webpack_require__(0);
 var create = __webpack_require__(40);
-var aFunction = __webpack_require__(12);
+var aFunction = __webpack_require__(13);
 var anObject = __webpack_require__(1);
 var isObject = __webpack_require__(4);
 var fails = __webpack_require__(3);
-var bind = __webpack_require__(120);
+var bind = __webpack_require__(119);
 var rConstruct = (__webpack_require__(2).Reflect || {}).construct;
 
 // MS Edge supports only 2 arguments and argumentsList argument is optional
@@ -9156,7 +9172,7 @@ $export($export.S + $export.F * (NEW_TARGET_BUG || ARGS_BUG), 'Reflect', {
 });
 
 /***/ }),
-/* 299 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9187,7 +9203,7 @@ $export($export.S + $export.F * __webpack_require__(3)(function () {
 });
 
 /***/ }),
-/* 300 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9206,7 +9222,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 301 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9241,7 +9257,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 302 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9266,7 +9282,7 @@ function get(target, propertyKey /* , receiver */) {
 $export($export.S, 'Reflect', { get: get });
 
 /***/ }),
-/* 303 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9284,7 +9300,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 304 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9302,7 +9318,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 305 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9318,7 +9334,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 306 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9337,7 +9353,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 307 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9346,10 +9362,10 @@ $export($export.S, 'Reflect', {
 // 26.1.11 Reflect.ownKeys(target)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Reflect', { ownKeys: __webpack_require__(140) });
+$export($export.S, 'Reflect', { ownKeys: __webpack_require__(139) });
 
 /***/ }),
-/* 308 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9373,7 +9389,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 309 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9412,7 +9428,7 @@ function set(target, propertyKey, V /* , receiver */) {
 $export($export.S, 'Reflect', { set: set });
 
 /***/ }),
-/* 310 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9435,7 +9451,7 @@ if (setProto) $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 311 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9451,10 +9467,10 @@ $export($export.P, 'Array', {
   }
 });
 
-__webpack_require__(35)('includes');
+__webpack_require__(34)('includes');
 
 /***/ }),
-/* 312 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9462,10 +9478,10 @@ __webpack_require__(35)('includes');
 // https://tc39.github.io/proposal-flatMap/#sec-Array.prototype.flatMap
 
 var $export = __webpack_require__(0);
-var flattenIntoArray = __webpack_require__(141);
+var flattenIntoArray = __webpack_require__(140);
 var toObject = __webpack_require__(10);
 var toLength = __webpack_require__(9);
-var aFunction = __webpack_require__(12);
+var aFunction = __webpack_require__(13);
 var arraySpeciesCreate = __webpack_require__(95);
 
 $export($export.P, 'Array', {
@@ -9480,10 +9496,10 @@ $export($export.P, 'Array', {
   }
 });
 
-__webpack_require__(35)('flatMap');
+__webpack_require__(34)('flatMap');
 
 /***/ }),
-/* 313 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9491,7 +9507,7 @@ __webpack_require__(35)('flatMap');
 // https://tc39.github.io/proposal-flatMap/#sec-Array.prototype.flatten
 
 var $export = __webpack_require__(0);
-var flattenIntoArray = __webpack_require__(141);
+var flattenIntoArray = __webpack_require__(140);
 var toObject = __webpack_require__(10);
 var toLength = __webpack_require__(9);
 var toInteger = __webpack_require__(27);
@@ -9508,10 +9524,10 @@ $export($export.P, 'Array', {
   }
 });
 
-__webpack_require__(35)('flatten');
+__webpack_require__(34)('flatten');
 
 /***/ }),
-/* 314 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9528,23 +9544,6 @@ $export($export.P, 'String', {
 });
 
 /***/ }),
-/* 315 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// https://github.com/tc39/proposal-string-pad-start-end
-
-var $export = __webpack_require__(0);
-var $pad = __webpack_require__(142);
-
-$export($export.P, 'String', {
-  padStart: function padStart(maxLength /* , fillString = ' ' */) {
-    return $pad(this, maxLength, arguments.length > 1 ? arguments[1] : undefined, true);
-  }
-});
-
-/***/ }),
 /* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9553,7 +9552,24 @@ $export($export.P, 'String', {
 // https://github.com/tc39/proposal-string-pad-start-end
 
 var $export = __webpack_require__(0);
-var $pad = __webpack_require__(142);
+var $pad = __webpack_require__(141);
+
+$export($export.P, 'String', {
+  padStart: function padStart(maxLength /* , fillString = ' ' */) {
+    return $pad(this, maxLength, arguments.length > 1 ? arguments[1] : undefined, true);
+  }
+});
+
+/***/ }),
+/* 317 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// https://github.com/tc39/proposal-string-pad-start-end
+
+var $export = __webpack_require__(0);
+var $pad = __webpack_require__(141);
 
 $export($export.P, 'String', {
   padEnd: function padEnd(maxLength /* , fillString = ' ' */) {
@@ -9562,7 +9578,7 @@ $export($export.P, 'String', {
 });
 
 /***/ }),
-/* 317 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9576,7 +9592,7 @@ __webpack_require__(48)('trimLeft', function ($trim) {
 }, 'trimStart');
 
 /***/ }),
-/* 318 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9590,7 +9606,7 @@ __webpack_require__(48)('trimRight', function ($trim) {
 }, 'trimEnd');
 
 /***/ }),
-/* 319 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9627,7 +9643,7 @@ $export($export.P, 'String', {
 });
 
 /***/ }),
-/* 320 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9636,7 +9652,7 @@ $export($export.P, 'String', {
 __webpack_require__(77)('asyncIterator');
 
 /***/ }),
-/* 321 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9645,7 +9661,7 @@ __webpack_require__(77)('asyncIterator');
 __webpack_require__(77)('observable');
 
 /***/ }),
-/* 322 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9653,7 +9669,7 @@ __webpack_require__(77)('observable');
 
 // https://github.com/tc39/proposal-object-getownpropertydescriptors
 var $export = __webpack_require__(0);
-var ownKeys = __webpack_require__(140);
+var ownKeys = __webpack_require__(139);
 var toIObject = __webpack_require__(17);
 var gOPD = __webpack_require__(19);
 var createProperty = __webpack_require__(93);
@@ -9675,23 +9691,6 @@ $export($export.S, 'Object', {
 });
 
 /***/ }),
-/* 323 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// https://github.com/tc39/proposal-object-values-entries
-var $export = __webpack_require__(0);
-var $values = __webpack_require__(143)(false);
-
-$export($export.S, 'Object', {
-  values: function values(it) {
-    return $values(it);
-  }
-});
-
-/***/ }),
 /* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9700,11 +9699,11 @@ $export($export.S, 'Object', {
 
 // https://github.com/tc39/proposal-object-values-entries
 var $export = __webpack_require__(0);
-var $entries = __webpack_require__(143)(true);
+var $values = __webpack_require__(142)(false);
 
 $export($export.S, 'Object', {
-  entries: function entries(it) {
-    return $entries(it);
+  values: function values(it) {
+    return $values(it);
   }
 });
 
@@ -9715,15 +9714,13 @@ $export($export.S, 'Object', {
 "use strict";
 
 
+// https://github.com/tc39/proposal-object-values-entries
 var $export = __webpack_require__(0);
-var toObject = __webpack_require__(10);
-var aFunction = __webpack_require__(12);
-var $defineProperty = __webpack_require__(8);
+var $entries = __webpack_require__(142)(true);
 
-// B.2.2.2 Object.prototype.__defineGetter__(P, getter)
-__webpack_require__(7) && $export($export.P + __webpack_require__(67), 'Object', {
-  __defineGetter__: function __defineGetter__(P, getter) {
-    $defineProperty.f(toObject(this), P, { get: aFunction(getter), enumerable: true, configurable: true });
+$export($export.S, 'Object', {
+  entries: function entries(it) {
+    return $entries(it);
   }
 });
 
@@ -9736,7 +9733,26 @@ __webpack_require__(7) && $export($export.P + __webpack_require__(67), 'Object',
 
 var $export = __webpack_require__(0);
 var toObject = __webpack_require__(10);
-var aFunction = __webpack_require__(12);
+var aFunction = __webpack_require__(13);
+var $defineProperty = __webpack_require__(8);
+
+// B.2.2.2 Object.prototype.__defineGetter__(P, getter)
+__webpack_require__(7) && $export($export.P + __webpack_require__(67), 'Object', {
+  __defineGetter__: function __defineGetter__(P, getter) {
+    $defineProperty.f(toObject(this), P, { get: aFunction(getter), enumerable: true, configurable: true });
+  }
+});
+
+/***/ }),
+/* 327 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var $export = __webpack_require__(0);
+var toObject = __webpack_require__(10);
+var aFunction = __webpack_require__(13);
 var $defineProperty = __webpack_require__(8);
 
 // B.2.2.3 Object.prototype.__defineSetter__(P, setter)
@@ -9747,7 +9763,7 @@ __webpack_require__(7) && $export($export.P + __webpack_require__(67), 'Object',
 });
 
 /***/ }),
-/* 327 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9772,7 +9788,7 @@ __webpack_require__(7) && $export($export.P + __webpack_require__(67), 'Object',
 });
 
 /***/ }),
-/* 328 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9797,18 +9813,6 @@ __webpack_require__(7) && $export($export.P + __webpack_require__(67), 'Object',
 });
 
 /***/ }),
-/* 329 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// https://github.com/DavidBruant/Map-Set.prototype.toJSON
-var $export = __webpack_require__(0);
-
-$export($export.P + $export.R, 'Map', { toJSON: __webpack_require__(144)('Map') });
-
-/***/ }),
 /* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9818,10 +9822,22 @@ $export($export.P + $export.R, 'Map', { toJSON: __webpack_require__(144)('Map') 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var $export = __webpack_require__(0);
 
-$export($export.P + $export.R, 'Set', { toJSON: __webpack_require__(144)('Set') });
+$export($export.P + $export.R, 'Map', { toJSON: __webpack_require__(143)('Map') });
 
 /***/ }),
 /* 331 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// https://github.com/DavidBruant/Map-Set.prototype.toJSON
+var $export = __webpack_require__(0);
+
+$export($export.P + $export.R, 'Set', { toJSON: __webpack_require__(143)('Set') });
+
+/***/ }),
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9831,7 +9847,7 @@ $export($export.P + $export.R, 'Set', { toJSON: __webpack_require__(144)('Set') 
 __webpack_require__(68)('Map');
 
 /***/ }),
-/* 332 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9841,7 +9857,7 @@ __webpack_require__(68)('Map');
 __webpack_require__(68)('Set');
 
 /***/ }),
-/* 333 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9851,7 +9867,7 @@ __webpack_require__(68)('Set');
 __webpack_require__(68)('WeakMap');
 
 /***/ }),
-/* 334 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9861,7 +9877,7 @@ __webpack_require__(68)('WeakMap');
 __webpack_require__(68)('WeakSet');
 
 /***/ }),
-/* 335 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9871,7 +9887,7 @@ __webpack_require__(68)('WeakSet');
 __webpack_require__(69)('Map');
 
 /***/ }),
-/* 336 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9881,7 +9897,7 @@ __webpack_require__(69)('Map');
 __webpack_require__(69)('Set');
 
 /***/ }),
-/* 337 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9891,7 +9907,7 @@ __webpack_require__(69)('Set');
 __webpack_require__(69)('WeakMap');
 
 /***/ }),
-/* 338 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9899,18 +9915,6 @@ __webpack_require__(69)('WeakMap');
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-weakset.from
 __webpack_require__(69)('WeakSet');
-
-/***/ }),
-/* 339 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// https://github.com/tc39/proposal-global
-var $export = __webpack_require__(0);
-
-$export($export.G, { global: __webpack_require__(2) });
 
 /***/ }),
 /* 340 */
@@ -9922,10 +9926,22 @@ $export($export.G, { global: __webpack_require__(2) });
 // https://github.com/tc39/proposal-global
 var $export = __webpack_require__(0);
 
-$export($export.S, 'System', { global: __webpack_require__(2) });
+$export($export.G, { global: __webpack_require__(2) });
 
 /***/ }),
 /* 341 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// https://github.com/tc39/proposal-global
+var $export = __webpack_require__(0);
+
+$export($export.S, 'System', { global: __webpack_require__(2) });
+
+/***/ }),
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9942,7 +9958,7 @@ $export($export.S, 'Error', {
 });
 
 /***/ }),
-/* 342 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9958,7 +9974,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 343 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9970,7 +9986,7 @@ var $export = __webpack_require__(0);
 $export($export.S, 'Math', { DEG_PER_RAD: Math.PI / 180 });
 
 /***/ }),
-/* 344 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9987,7 +10003,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 345 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9995,8 +10011,8 @@ $export($export.S, 'Math', {
 
 // https://rwaldron.github.io/proposal-math-extensions/
 var $export = __webpack_require__(0);
-var scale = __webpack_require__(146);
-var fround = __webpack_require__(126);
+var scale = __webpack_require__(145);
+var fround = __webpack_require__(125);
 
 $export($export.S, 'Math', {
   fscale: function fscale(x, inLow, inHigh, outLow, outHigh) {
@@ -10005,7 +10021,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 346 */
+/* 347 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10024,7 +10040,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 347 */
+/* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10043,7 +10059,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 348 */
+/* 349 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10067,7 +10083,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 349 */
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10079,7 +10095,7 @@ var $export = __webpack_require__(0);
 $export($export.S, 'Math', { RAD_PER_DEG: 180 / Math.PI });
 
 /***/ }),
-/* 350 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10096,7 +10112,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 351 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10105,10 +10121,10 @@ $export($export.S, 'Math', {
 // https://rwaldron.github.io/proposal-math-extensions/
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Math', { scale: __webpack_require__(146) });
+$export($export.S, 'Math', { scale: __webpack_require__(145) });
 
 /***/ }),
-/* 352 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10132,7 +10148,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 353 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10147,7 +10163,7 @@ $export($export.S, 'Math', { signbit: function signbit(x) {
   } });
 
 /***/ }),
-/* 354 */
+/* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10158,7 +10174,7 @@ var $export = __webpack_require__(0);
 var core = __webpack_require__(24);
 var global = __webpack_require__(2);
 var speciesConstructor = __webpack_require__(64);
-var promiseResolve = __webpack_require__(133);
+var promiseResolve = __webpack_require__(132);
 
 $export($export.P + $export.R, 'Promise', { 'finally': function _finally(onFinally) {
     var C = speciesConstructor(this, core.Promise || global.Promise);
@@ -10175,7 +10191,7 @@ $export($export.P + $export.R, 'Promise', { 'finally': function _finally(onFinal
   } });
 
 /***/ }),
-/* 355 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10184,7 +10200,7 @@ $export($export.P + $export.R, 'Promise', { 'finally': function _finally(onFinal
 
 var $export = __webpack_require__(0);
 var newPromiseCapability = __webpack_require__(100);
-var perform = __webpack_require__(132);
+var perform = __webpack_require__(131);
 
 $export($export.S, 'Promise', { 'try': function _try(callbackfn) {
     var promiseCapability = newPromiseCapability.f(this);
@@ -10194,7 +10210,7 @@ $export($export.S, 'Promise', { 'try': function _try(callbackfn) {
   } });
 
 /***/ }),
-/* 356 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10210,7 +10226,7 @@ metadata.exp({ defineMetadata: function defineMetadata(metadataKey, metadataValu
   } });
 
 /***/ }),
-/* 357 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10233,7 +10249,7 @@ metadata.exp({ deleteMetadata: function deleteMetadata(metadataKey, target /* , 
   } });
 
 /***/ }),
-/* 358 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10258,14 +10274,14 @@ metadata.exp({ getMetadata: function getMetadata(metadataKey, target /* , target
   } });
 
 /***/ }),
-/* 359 */
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Set = __webpack_require__(136);
-var from = __webpack_require__(145);
+var Set = __webpack_require__(135);
+var from = __webpack_require__(144);
 var metadata = __webpack_require__(31);
 var anObject = __webpack_require__(1);
 var getPrototypeOf = __webpack_require__(20);
@@ -10285,7 +10301,7 @@ metadata.exp({ getMetadataKeys: function getMetadataKeys(target /* , targetKey *
   } });
 
 /***/ }),
-/* 360 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10301,7 +10317,7 @@ metadata.exp({ getOwnMetadata: function getOwnMetadata(metadataKey, target /* , 
   } });
 
 /***/ }),
-/* 361 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10317,7 +10333,7 @@ metadata.exp({ getOwnMetadataKeys: function getOwnMetadataKeys(target /* , targe
   } });
 
 /***/ }),
-/* 362 */
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10341,7 +10357,7 @@ metadata.exp({ hasMetadata: function hasMetadata(metadataKey, target /* , target
   } });
 
 /***/ }),
-/* 363 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10357,7 +10373,7 @@ metadata.exp({ hasOwnMetadata: function hasOwnMetadata(metadataKey, target /* , 
   } });
 
 /***/ }),
-/* 364 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10365,7 +10381,7 @@ metadata.exp({ hasOwnMetadata: function hasOwnMetadata(metadataKey, target /* , 
 
 var $metadata = __webpack_require__(31);
 var anObject = __webpack_require__(1);
-var aFunction = __webpack_require__(12);
+var aFunction = __webpack_require__(13);
 var toMetaKey = $metadata.key;
 var ordinaryDefineOwnMetadata = $metadata.set;
 
@@ -10376,7 +10392,7 @@ $metadata.exp({ metadata: function metadata(metadataKey, metadataValue) {
   } });
 
 /***/ }),
-/* 365 */
+/* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10396,7 +10412,7 @@ $export($export.G, {
 });
 
 /***/ }),
-/* 366 */
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10408,7 +10424,7 @@ var global = __webpack_require__(2);
 var core = __webpack_require__(24);
 var microtask = __webpack_require__(99)();
 var OBSERVABLE = __webpack_require__(5)('observable');
-var aFunction = __webpack_require__(12);
+var aFunction = __webpack_require__(13);
 var anObject = __webpack_require__(1);
 var anInstance = __webpack_require__(43);
 var redefineAll = __webpack_require__(45);
@@ -10612,7 +10628,7 @@ $export($export.G, { Observable: $Observable });
 __webpack_require__(42)('Observable');
 
 /***/ }),
-/* 367 */
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10622,7 +10638,7 @@ __webpack_require__(42)('Observable');
 var global = __webpack_require__(2);
 var $export = __webpack_require__(0);
 var invoke = __webpack_require__(59);
-var partial = __webpack_require__(368);
+var partial = __webpack_require__(369);
 var navigator = global.navigator;
 var MSIE = !!navigator && /MSIE .\./.test(navigator.userAgent); // <- dirty ie9- check
 var wrap = function wrap(set) {
@@ -10638,15 +10654,15 @@ $export($export.G + $export.B + $export.F * MSIE, {
 });
 
 /***/ }),
-/* 368 */
+/* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var path = __webpack_require__(369);
+var path = __webpack_require__(370);
 var invoke = __webpack_require__(59);
-var aFunction = __webpack_require__(12);
+var aFunction = __webpack_require__(13);
 module.exports = function () /* ...pargs */{
   var fn = aFunction(this);
   var length = arguments.length;
@@ -10673,7 +10689,7 @@ module.exports = function () /* ...pargs */{
 };
 
 /***/ }),
-/* 369 */
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10682,7 +10698,7 @@ module.exports = function () /* ...pargs */{
 module.exports = __webpack_require__(2);
 
 /***/ }),
-/* 370 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10696,14 +10712,14 @@ $export($export.G + $export.B, {
 });
 
 /***/ }),
-/* 371 */
+/* 372 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var $iterators = __webpack_require__(97);
-var getKeys = __webpack_require__(34);
+var getKeys = __webpack_require__(33);
 var redefine = __webpack_require__(16);
 var global = __webpack_require__(2);
 var hide = __webpack_require__(15);
@@ -10764,7 +10780,7 @@ for (var collections = getKeys(DOMIterables), i = 0; i < collections.length; i++
 }
 
 /***/ }),
-/* 372 */
+/* 373 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11474,10 +11490,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 // object, this seems to be the most reliable technique that does not
 // use indirect eval (which violates Content Security Policy).
 (typeof global === "undefined" ? "undefined" : _typeof(global)) === "object" ? global : (typeof window === "undefined" ? "undefined" : _typeof(window)) === "object" ? window : (typeof self === "undefined" ? "undefined" : _typeof(self)) === "object" ? self : undefined);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(75), __webpack_require__(373)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(75), __webpack_require__(374)(module)))
 
 /***/ }),
-/* 373 */
+/* 374 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11507,17 +11523,17 @@ module.exports = function (module) {
 };
 
 /***/ }),
-/* 374 */
+/* 375 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(375);
+__webpack_require__(376);
 module.exports = __webpack_require__(24).RegExp.escape;
 
 /***/ }),
-/* 375 */
+/* 376 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11525,14 +11541,14 @@ module.exports = __webpack_require__(24).RegExp.escape;
 
 // https://github.com/benjamingr/RexExp.escape
 var $export = __webpack_require__(0);
-var $re = __webpack_require__(376)(/[\\^$*+?.()|[\]{}]/g, '\\$&');
+var $re = __webpack_require__(377)(/[\\^$*+?.()|[\]{}]/g, '\\$&');
 
 $export($export.S, 'RegExp', { escape: function escape(it) {
     return $re(it);
   } });
 
 /***/ }),
-/* 376 */
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11548,7 +11564,7 @@ module.exports = function (regExp, replace) {
 };
 
 /***/ }),
-/* 377 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11557,8 +11573,8 @@ module.exports = function (regExp, replace) {
 var _require = __webpack_require__(6),
     render = _require.render;
 
-var createNavigation = __webpack_require__(429);
-var routes = __webpack_require__(451);
+var createNavigation = __webpack_require__(430);
+var routes = __webpack_require__(438);
 
 var $cache = document.getElementById('app-cache');
 
@@ -11573,11 +11589,11 @@ var navigation = createNavigation({ routes: routes, cache: cache }, function (pa
       callback = params.callback;
 
 
-  var Component = __webpack_require__(532)("./" + component.name);
+  var Component = __webpack_require__(539)("./" + component.name);
 
   var templateNodes = [Component.v(component.props, component.context)];
 
-  var context = { navigate: navigate };
+  var context = Object.assign({}, { navigate: navigate }, component.context);
 
   var $app = document.getElementById('app');
 
@@ -11589,7 +11605,7 @@ var navigation = createNavigation({ routes: routes, cache: cache }, function (pa
 navigation.listen();
 
 /***/ }),
-/* 378 */
+/* 379 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11599,28 +11615,28 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var humanizeNodes = __webpack_require__(147);
+var humanizeNodes = __webpack_require__(146);
 
-var _require = __webpack_require__(13),
+var _require = __webpack_require__(11),
     flatten = _require.flatten,
     omit = _require.omit,
     clone = _require.clone;
 
 var countDomNodes = __webpack_require__(104);
-var createLiveTree = __webpack_require__(149);
-var filterDomNodes = __webpack_require__(154);
-var getParentNodes = __webpack_require__(408);
-var filterNodesOffsets = __webpack_require__(409);
-var createPatchTree = __webpack_require__(155);
-var findDomNode = __webpack_require__(416);
-var updateDomTree = __webpack_require__(156);
+var createLiveTree = __webpack_require__(148);
+var filterDomNodes = __webpack_require__(153);
+var getParentNodes = __webpack_require__(409);
+var filterNodesOffsets = __webpack_require__(410);
+var createPatchTree = __webpack_require__(154);
+var findDomNode = __webpack_require__(417);
+var updateDomTree = __webpack_require__(155);
 var eachNodes = __webpack_require__(105);
 var hookNode = __webpack_require__(70);
 
 var _require2 = __webpack_require__(71),
     AFTER_DOM_CREATE = _require2.AFTER_DOM_CREATE;
 
-var _require3 = __webpack_require__(11),
+var _require3 = __webpack_require__(12),
     INSTANCE_TYPE = _require3.INSTANCE_TYPE,
     CLASS_TYPE = _require3.CLASS_TYPE;
 
@@ -11764,7 +11780,7 @@ var Base = function () {
 module.exports = Base;
 
 /***/ }),
-/* 379 */
+/* 380 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11805,7 +11821,7 @@ module.exports = function (items, mapper, callback) {
 };
 
 /***/ }),
-/* 380 */
+/* 381 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11890,7 +11906,7 @@ var clone = function clone(argument) {
 module.exports = clone;
 
 /***/ }),
-/* 381 */
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11911,7 +11927,7 @@ var pick = function pick(object) {
 module.exports = pick;
 
 /***/ }),
-/* 382 */
+/* 383 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11932,7 +11948,7 @@ var omit = function omit(object) {
 module.exports = omit;
 
 /***/ }),
-/* 383 */
+/* 384 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11947,7 +11963,7 @@ var union = function union(first, second) {
 module.exports = union;
 
 /***/ }),
-/* 384 */
+/* 385 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11958,7 +11974,7 @@ module.exports = function (string) {
 };
 
 /***/ }),
-/* 385 */
+/* 386 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11966,7 +11982,7 @@ module.exports = function (string) {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var flatten = __webpack_require__(148);
+var flatten = __webpack_require__(147);
 var kindOf = __webpack_require__(102);
 var include = __webpack_require__(103);
 
@@ -12031,7 +12047,7 @@ module.exports = function () {
 // return classNames..join(' ')
 
 /***/ }),
-/* 386 */
+/* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12043,7 +12059,7 @@ module.exports = function (array) {
 };
 
 /***/ }),
-/* 387 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12055,7 +12071,7 @@ module.exports = function (array) {
 };
 
 /***/ }),
-/* 388 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12074,7 +12090,7 @@ module.exports = function (left, right) {
 };
 
 /***/ }),
-/* 389 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12088,7 +12104,7 @@ module.exports = function (count) {
 };
 
 /***/ }),
-/* 390 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12107,7 +12123,7 @@ module.exports = function (items, match) {
 };
 
 /***/ }),
-/* 391 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12128,7 +12144,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 392 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12167,7 +12183,7 @@ var decode = function decode(string) {
 module.exports = { encode: encode, decode: decode };
 
 /***/ }),
-/* 393 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12264,16 +12280,16 @@ var createNodes = function createNodes(_ref) {
 module.exports = createNodes;
 
 /***/ }),
-/* 394 */
+/* 395 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createNode = __webpack_require__(395);
+var createNode = __webpack_require__(396);
 var hookNode = __webpack_require__(70);
-var getCreateAction = __webpack_require__(404);
-var handleError = __webpack_require__(151);
+var getCreateAction = __webpack_require__(405);
+var handleError = __webpack_require__(150);
 
 var _require = __webpack_require__(71),
     BEFORE_EACH_ITERATION = _require.BEFORE_EACH_ITERATION,
@@ -12460,7 +12476,7 @@ module.exports = function (_ref) {
 };
 
 /***/ }),
-/* 395 */
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12468,12 +12484,12 @@ module.exports = function (_ref) {
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var createRootNode = __webpack_require__(396);
-var createInstanceNode = __webpack_require__(397);
-var updateInstanceNode = __webpack_require__(401);
-var createTagNode = __webpack_require__(402);
-var createTextNode = __webpack_require__(403);
-var handleError = __webpack_require__(151);
+var createRootNode = __webpack_require__(397);
+var createInstanceNode = __webpack_require__(398);
+var updateInstanceNode = __webpack_require__(402);
+var createTagNode = __webpack_require__(403);
+var createTextNode = __webpack_require__(404);
+var handleError = __webpack_require__(150);
 
 var _require = __webpack_require__(107),
     CREATE_ROOT = _require.CREATE_ROOT,
@@ -12571,7 +12587,7 @@ module.exports = function (_ref, callback) {
 };
 
 /***/ }),
-/* 396 */
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12594,7 +12610,7 @@ module.exports = function (_ref) {
 };
 
 /***/ }),
-/* 397 */
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12602,13 +12618,13 @@ module.exports = function (_ref) {
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-var _require = __webpack_require__(13),
+var _require = __webpack_require__(11),
     flatten = _require.flatten,
     pick = _require.pick;
 
 var hookNode = __webpack_require__(70);
 
-var _require2 = __webpack_require__(11),
+var _require2 = __webpack_require__(12),
     INSTANCE_TYPE = _require2.INSTANCE_TYPE;
 
 var createNodesWithRefs = __webpack_require__(106);
@@ -12656,13 +12672,13 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 398 */
+/* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _require = __webpack_require__(11),
+var _require = __webpack_require__(12),
     ROOT_TYPE = _require.ROOT_TYPE,
     TEXT_TYPE = _require.TEXT_TYPE,
     TAG_TYPE = _require.TAG_TYPE,
@@ -12731,7 +12747,7 @@ module.exports = function (liveNode, templateNode) {
 };
 
 /***/ }),
-/* 399 */
+/* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12790,13 +12806,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 400 */
+/* 401 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _require = __webpack_require__(13),
+var _require = __webpack_require__(11),
     kindOf = _require.kindOf;
 
 var loop = function loop(node, callback) {
@@ -12825,7 +12841,7 @@ var loop = function loop(node, callback) {
 module.exports = loop;
 
 /***/ }),
-/* 401 */
+/* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12833,7 +12849,7 @@ module.exports = loop;
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-var _require = __webpack_require__(13),
+var _require = __webpack_require__(11),
     flatten = _require.flatten,
     pick = _require.pick;
 
@@ -12880,7 +12896,7 @@ module.exports = function (_ref) {
 };
 
 /***/ }),
-/* 402 */
+/* 403 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12914,7 +12930,7 @@ module.exports = function (_ref) {
 };
 
 /***/ }),
-/* 403 */
+/* 404 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12936,7 +12952,7 @@ module.exports = function (_ref) {
 };
 
 /***/ }),
-/* 404 */
+/* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12944,7 +12960,7 @@ module.exports = function (_ref) {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _require = __webpack_require__(11),
+var _require = __webpack_require__(12),
     ROOT_TYPE = _require.ROOT_TYPE,
     TEXT_TYPE = _require.TEXT_TYPE,
     TAG_TYPE = _require.TAG_TYPE,
@@ -12998,7 +13014,7 @@ module.exports = function (liveNode, templateNode) {
 };
 
 /***/ }),
-/* 405 */
+/* 406 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13006,10 +13022,10 @@ module.exports = function (liveNode, templateNode) {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _require = __webpack_require__(13),
+var _require = __webpack_require__(11),
     flatten = _require.flatten;
 
-var _require2 = __webpack_require__(11),
+var _require2 = __webpack_require__(12),
     TEXT_TYPE = _require2.TEXT_TYPE;
 
 module.exports = function (childs) {
@@ -13033,18 +13049,18 @@ module.exports = function (childs) {
 };
 
 /***/ }),
-/* 406 */
+/* 407 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Statistic = __webpack_require__(407);
+var Statistic = __webpack_require__(408);
 
 module.exports = new Statistic();
 
 /***/ }),
-/* 407 */
+/* 408 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13079,7 +13095,7 @@ var Statistic = function () {
 module.exports = Statistic;
 
 /***/ }),
-/* 408 */
+/* 409 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13089,7 +13105,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 var countDomNodes = __webpack_require__(104);
 
-var _require = __webpack_require__(11),
+var _require = __webpack_require__(12),
     INSTANCE_TYPE = _require.INSTANCE_TYPE;
 
 var loop = function loop(node) {
@@ -13119,7 +13135,7 @@ var loop = function loop(node) {
 module.exports = loop;
 
 /***/ }),
-/* 409 */
+/* 410 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13134,7 +13150,7 @@ module.exports = function (nodes) {
 };
 
 /***/ }),
-/* 410 */
+/* 411 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13198,7 +13214,7 @@ module.exports = function (liveNodes, _ref) {
 };
 
 /***/ }),
-/* 411 */
+/* 412 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13260,7 +13276,7 @@ module.exports = function (liveNodes, _ref) {
 };
 
 /***/ }),
-/* 412 */
+/* 413 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13268,7 +13284,7 @@ module.exports = function (liveNodes, _ref) {
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-var _require = __webpack_require__(13),
+var _require = __webpack_require__(11),
     times = _require.times;
 
 var createNodes = function createNodes(_ref) {
@@ -13338,17 +13354,17 @@ var createNodes = function createNodes(_ref) {
 module.exports = createNodes;
 
 /***/ }),
-/* 413 */
+/* 414 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _require = __webpack_require__(13),
+var _require = __webpack_require__(11),
     intersect = _require.intersect;
 
-var countActionsScore = __webpack_require__(414);
-var getNodeActions = __webpack_require__(415);
+var countActionsScore = __webpack_require__(415);
+var getNodeActions = __webpack_require__(416);
 
 var _require2 = __webpack_require__(72),
     DELETE_NODE = _require2.DELETE_NODE,
@@ -13380,7 +13396,7 @@ module.exports = function (_ref) {
 };
 
 /***/ }),
-/* 414 */
+/* 415 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13419,7 +13435,7 @@ module.exports = function (actions) {
 };
 
 /***/ }),
-/* 415 */
+/* 416 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13434,7 +13450,7 @@ var _require = __webpack_require__(72),
     REPLACE_NODE = _require.REPLACE_NODE,
     DELETE_NODE = _require.DELETE_NODE;
 
-var _require2 = __webpack_require__(11),
+var _require2 = __webpack_require__(12),
     TAG_TYPE = _require2.TAG_TYPE,
     TEXT_TYPE = _require2.TEXT_TYPE;
 
@@ -13493,7 +13509,7 @@ module.exports = function (_ref6) {
 };
 
 /***/ }),
-/* 416 */
+/* 417 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13515,7 +13531,7 @@ var loop = function loop(node, offsets) {
 module.exports = loop;
 
 /***/ }),
-/* 417 */
+/* 418 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13523,17 +13539,17 @@ module.exports = loop;
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-var _require = __webpack_require__(150),
+var _require = __webpack_require__(149),
     addRef = _require.addRef,
     removeRef = _require.removeRef;
 
-var _require2 = __webpack_require__(418),
+var _require2 = __webpack_require__(419),
     createElement = _require2.createElement,
     insertAt = _require2.insertAt,
     updateProps = _require2.updateProps;
 
-var sortProps = __webpack_require__(157);
-var isPropsEqual = __webpack_require__(420);
+var sortProps = __webpack_require__(156);
+var isPropsEqual = __webpack_require__(421);
 
 var _require3 = __webpack_require__(72),
     CREATE_NODE = _require3.CREATE_NODE,
@@ -13542,7 +13558,7 @@ var _require3 = __webpack_require__(72),
     REPLACE_NODE = _require3.REPLACE_NODE,
     INSERT_NODE = _require3.INSERT_NODE;
 
-var _require4 = __webpack_require__(11),
+var _require4 = __webpack_require__(12),
     TEXT_TYPE = _require4.TEXT_TYPE;
 
 module.exports = function (_ref) {
@@ -13664,19 +13680,19 @@ module.exports = function (_ref) {
 };
 
 /***/ }),
-/* 418 */
+/* 419 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _require = __webpack_require__(11),
+var _require = __webpack_require__(12),
     TEXT_TYPE = _require.TEXT_TYPE,
     TAG_TYPE = _require.TAG_TYPE;
 
-var sortProps = __webpack_require__(157);
-var events = __webpack_require__(158);
-var diffProps = __webpack_require__(419);
+var sortProps = __webpack_require__(156);
+var events = __webpack_require__(157);
+var diffProps = __webpack_require__(420);
 
 var updateProps = function updateProps(domNode, liveProps, templateProps, isPropsEqual) {
 
@@ -13799,7 +13815,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 419 */
+/* 420 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13807,7 +13823,7 @@ module.exports = {
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-var _require = __webpack_require__(13),
+var _require = __webpack_require__(11),
     union = _require.union;
 
 module.exports = function () {
@@ -13870,13 +13886,13 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 420 */
+/* 421 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _require = __webpack_require__(13),
+var _require = __webpack_require__(11),
     kindOf = _require.kindOf;
 
 module.exports = function (leftProp, rightProp) {
@@ -13919,7 +13935,7 @@ module.exports = function (leftProp, rightProp) {
 };
 
 /***/ }),
-/* 421 */
+/* 422 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13953,19 +13969,19 @@ var updateNodes = function updateNodes(_ref) {
 module.exports = updateNodes;
 
 /***/ }),
-/* 422 */
+/* 423 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _require = __webpack_require__(11),
+var _require = __webpack_require__(12),
     TAG_TYPE = _require.TAG_TYPE,
     TEXT_TYPE = _require.TEXT_TYPE;
 
-var tags = __webpack_require__(423);
+var tags = __webpack_require__(424);
 
-var _require2 = __webpack_require__(13),
+var _require2 = __webpack_require__(11),
     flatten = _require2.flatten,
     include = _require2.include,
     omit = _require2.omit;
@@ -14008,7 +14024,7 @@ tags.forEach(function (tag) {
 });
 
 /***/ }),
-/* 423 */
+/* 424 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14017,31 +14033,31 @@ tags.forEach(function (tag) {
 module.exports = ["a", "abbr", "address", "area", "article", "aside", "audio", "b", "base", "bdi", "bdo", "blockquote", "body", "br", "button", "canvas", "caption", "cite", "code", "col", "colgroup", "data", "datalist", "dd", "del", "details", "dfn", "dialog", "div", "dl", "dt", "em", "embed", "fieldset", "figcaption", "figure", "footer", "form", "h1", "h2", "h3", "h4", "h5", "h6", "head", "header", "hr", "html", "i", "iframe", "img", "input", "ins", "kbd", "keygen", "label", "legend", "li", "link", "main", "map", "mark", "math", "menu", "menuitem", "meta", "meter", "nav", "noscript", "object", "ol", "optgroup", "option", "output", "p", "param", "picture", "pre", "progress", "q", "rb", "rp", "rt", "rtc", "ruby", "s", "samp", "script", "section", "select", "small", "source", "span", "strong", "style", "sub", "summary", "sup", "svg", "table", "tbody", "td", "template", "textarea", "tfoot", "th", "thead", "time", "title", "tr", "track", "u", "ul", "var", "video", "wbr"];
 
 /***/ }),
-/* 424 */
+/* 425 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _require = __webpack_require__(13),
+var _require = __webpack_require__(11),
     flatten = _require.flatten;
 
-var _require2 = __webpack_require__(11),
+var _require2 = __webpack_require__(12),
     ROOT_TYPE = _require2.ROOT_TYPE,
     INSTANCE_TYPE = _require2.INSTANCE_TYPE;
 
-var createLiveTree = __webpack_require__(149);
-var filterDomNodes = __webpack_require__(154);
+var createLiveTree = __webpack_require__(148);
+var filterDomNodes = __webpack_require__(153);
 var eachNodes = __webpack_require__(105);
 var hookNode = __webpack_require__(70);
 
 var _require3 = __webpack_require__(71),
     AFTER_DOM_CREATE = _require3.AFTER_DOM_CREATE;
 
-var createPatchTree = __webpack_require__(155);
-var updateDomTree = __webpack_require__(156);
-var dom2vqua = __webpack_require__(425);
-var humanizeNodes = __webpack_require__(147);
+var createPatchTree = __webpack_require__(154);
+var updateDomTree = __webpack_require__(155);
+var dom2vqua = __webpack_require__(426);
+var humanizeNodes = __webpack_require__(146);
 
 module.exports = function (parentDomNode, liveNodes, templateNodes) {
   var context = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
@@ -14083,15 +14099,15 @@ module.exports = function (parentDomNode, liveNodes, templateNodes) {
 };
 
 /***/ }),
-/* 425 */
+/* 426 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var convertTag = __webpack_require__(426);
-var convertText = __webpack_require__(427);
-var mapNodes = __webpack_require__(428);
+var convertTag = __webpack_require__(427);
+var convertText = __webpack_require__(428);
+var mapNodes = __webpack_require__(429);
 
 module.exports = function (nodes) {
 
@@ -14114,7 +14130,7 @@ module.exports = function (nodes) {
 };
 
 /***/ }),
-/* 426 */
+/* 427 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14122,7 +14138,7 @@ module.exports = function (nodes) {
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var _require = __webpack_require__(11),
+var _require = __webpack_require__(12),
     TAG_TYPE = _require.TAG_TYPE;
 
 module.exports = function (node) {
@@ -14146,13 +14162,13 @@ module.exports = function (node) {
 };
 
 /***/ }),
-/* 427 */
+/* 428 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _require = __webpack_require__(11),
+var _require = __webpack_require__(12),
     TEXT_TYPE = _require.TEXT_TYPE;
 
 module.exports = function (node) {
@@ -14165,7 +14181,7 @@ module.exports = function (node) {
 };
 
 /***/ }),
-/* 428 */
+/* 429 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14203,19 +14219,19 @@ var loop = function loop(node, createNode) {
 module.exports = loop;
 
 /***/ }),
-/* 429 */
+/* 430 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Store = __webpack_require__(430);
-var navigate = __webpack_require__(431);
+var Store = __webpack_require__(431);
+var navigate = __webpack_require__(432);
 
-var _require = __webpack_require__(32),
+var _require = __webpack_require__(11),
     htmlQuotes = _require.htmlQuotes;
 
-var _require2 = __webpack_require__(108),
+var _require2 = __webpack_require__(158),
     separateRoutes = _require2.separateRoutes;
 
 var createParams = function createParams(params) {
@@ -14273,7 +14289,7 @@ var createNavigation = function createNavigation(_ref, onNavigate) {
 module.exports = createNavigation;
 
 /***/ }),
-/* 430 */
+/* 431 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14310,7 +14326,7 @@ var Store = function () {
 module.exports = Store;
 
 /***/ }),
-/* 431 */
+/* 432 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14319,7 +14335,7 @@ module.exports = Store;
 var _require = __webpack_require__(6),
     render = _require.render;
 
-var _require2 = __webpack_require__(108),
+var _require2 = __webpack_require__(158),
     matchRoutes = _require2.matchRoutes;
 
 var _navigate = function _navigate(_ref) {
@@ -14344,11 +14360,8 @@ var _navigate = function _navigate(_ref) {
       var request = Object.assign({}, route.request, { url: path });
 
       var response = {
-        send: function send(statusCode, name) {
-          var props = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-          var params = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
-
-          resolve({ statusCode: statusCode, name: name, props: props, params: params });
+        send: function send(statusCode, name, params) {
+          resolve(Object.assign({}, { statusCode: statusCode, name: name }, params));
         }
       };
 
@@ -14382,7 +14395,7 @@ var _navigate = function _navigate(_ref) {
 module.exports = _navigate;
 
 /***/ }),
-/* 432 */
+/* 433 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14401,15 +14414,15 @@ module.exports = function (path, action) {
 };
 
 /***/ }),
-/* 433 */
+/* 434 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var matchSegments = __webpack_require__(434);
+var matchSegments = __webpack_require__(435);
 var path2segments = __webpack_require__(159);
-var paramsFromSegments = __webpack_require__(435);
+var paramsFromSegments = __webpack_require__(436);
 
 module.exports = function (routes, path) {
 
@@ -14436,7 +14449,7 @@ module.exports = function (routes, path) {
 };
 
 /***/ }),
-/* 434 */
+/* 435 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14471,7 +14484,7 @@ module.exports = function (templateSegments, requestSegments) {
 };
 
 /***/ }),
-/* 435 */
+/* 436 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14500,7 +14513,7 @@ module.exports = function (templateSegments, requestSegments) {
 };
 
 /***/ }),
-/* 436 */
+/* 437 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14508,7 +14521,7 @@ module.exports = function (templateSegments, requestSegments) {
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-var _require = __webpack_require__(32),
+var _require = __webpack_require__(11),
     omit = _require.omit;
 
 var separateRoutes = function separateRoutes(nestedRoutes) {
@@ -14536,7 +14549,199 @@ var separateRoutes = function separateRoutes(nestedRoutes) {
 module.exports = separateRoutes;
 
 /***/ }),
-/* 437 */
+/* 438 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _require = __webpack_require__(439),
+    route = _require.route;
+
+var _require2 = __webpack_require__(6),
+    Component = _require2.Component,
+    html = _require2.html;
+
+var MainController = __webpack_require__(459);
+var ArticleController = __webpack_require__(460);
+var ErrorController = __webpack_require__(167);
+
+var _require3 = __webpack_require__(538),
+    localeMatcher = _require3.localeMatcher;
+
+var routes = [route('/', MainController.index), route([localeMatcher], ArticleController.show, {}, route('/:humanId', ArticleController.show)), route('*', ErrorController.notFound)];
+
+module.exports = routes;
+
+/***/ }),
+/* 439 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+  route: __webpack_require__(440),
+  matchRoutes: __webpack_require__(441),
+  separateRoutes: __webpack_require__(444)
+};
+
+/***/ }),
+/* 440 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var path2segments = __webpack_require__(160);
+
+module.exports = function (path, action) {
+  var props = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+  var childs = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : [];
+
+
+  var segments = typeof path == 'string' ? path2segments(path) : path;
+
+  return { path: path, action: action, segments: segments, props: props, childs: childs };
+};
+
+/***/ }),
+/* 441 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var matchSegments = __webpack_require__(442);
+var path2segments = __webpack_require__(160);
+var paramsFromSegments = __webpack_require__(443);
+
+module.exports = function (routes, path) {
+
+  var segments = path2segments(path);
+
+  var route = routes.find(function (route) {
+
+    return matchSegments(route.segments, segments);
+  });
+
+  if (!route) return false;
+
+  var params = paramsFromSegments(route.segments, segments);
+
+  var request = {
+    request: {
+      path: path,
+      segments: segments,
+      params: params
+    }
+  };
+
+  return Object.assign({}, route, request);
+};
+
+/***/ }),
+/* 442 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+module.exports = function (templateSegments, requestSegments) {
+
+  if (templateSegments.length == 1 && templateSegments[0] == '*') return true;
+
+  if (templateSegments.length != requestSegments.length) return false;
+
+  return templateSegments.every(function (templateSegment, index) {
+
+    var requestSegment = requestSegments[index];
+
+    if ((typeof templateSegment === 'undefined' ? 'undefined' : _typeof(templateSegment)) == 'object') {
+
+      return templateSegment.match(requestSegment);
+    } else if (templateSegment[0] == ':') {
+
+      return true;
+    } else if (templateSegment == requestSegment) {
+
+      return true;
+    } else {
+
+      return false;
+    }
+  });
+};
+
+/***/ }),
+/* 443 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+module.exports = function (templateSegments, requestSegments) {
+
+  return templateSegments.reduce(function (params, templateSegment, index) {
+
+    var requestSegment = requestSegments[index];
+
+    if ((typeof templateSegment === 'undefined' ? 'undefined' : _typeof(templateSegment)) == 'object') {
+
+      return Object.assign({}, params, _defineProperty({}, templateSegment.key, requestSegment));
+    } else if (templateSegment[0] == ':') {
+
+      return Object.assign({}, params, _defineProperty({}, templateSegment.slice(1), requestSegment));
+    }
+
+    return params;
+  }, {});
+};
+
+/***/ }),
+/* 444 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var _require = __webpack_require__(35),
+    omit = _require.omit;
+
+var separateRoutes = function separateRoutes(nestedRoutes) {
+  var segments = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+
+
+  if (Array.isArray(nestedRoutes)) {
+
+    return nestedRoutes.reduce(function (separatedRoutes, nestedRoute, index) {
+
+      return [].concat(_toConsumableArray(separatedRoutes), _toConsumableArray(separateRoutes(nestedRoute, segments)));
+    }, []);
+  } else {
+
+    var nestedRoute = nestedRoutes;
+
+    var newSegments = [].concat(_toConsumableArray(segments), _toConsumableArray(nestedRoute.segments));
+
+    var separatedRoute = Object.assign({}, nestedRoute, { segments: newSegments });
+
+    return [omit(separatedRoute, 'childs')].concat(_toConsumableArray(separateRoutes(nestedRoute.childs, newSegments)));
+  }
+};
+
+module.exports = separateRoutes;
+
+/***/ }),
+/* 445 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14577,14 +14782,14 @@ module.exports = function (items, mapper, callback) {
 };
 
 /***/ }),
-/* 438 */
+/* 446 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var kindOf = __webpack_require__(109);
-var include = __webpack_require__(110);
+var kindOf = __webpack_require__(108);
+var include = __webpack_require__(109);
 
 var clone = function clone(argument) {
 
@@ -14662,7 +14867,7 @@ var clone = function clone(argument) {
 module.exports = clone;
 
 /***/ }),
-/* 439 */
+/* 447 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14683,7 +14888,7 @@ var pick = function pick(object) {
 module.exports = pick;
 
 /***/ }),
-/* 440 */
+/* 448 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14704,7 +14909,7 @@ var omit = function omit(object) {
 module.exports = omit;
 
 /***/ }),
-/* 441 */
+/* 449 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14719,7 +14924,7 @@ var union = function union(first, second) {
 module.exports = union;
 
 /***/ }),
-/* 442 */
+/* 450 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14730,7 +14935,7 @@ module.exports = function (string) {
 };
 
 /***/ }),
-/* 443 */
+/* 451 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14738,9 +14943,9 @@ module.exports = function (string) {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var flatten = __webpack_require__(160);
-var kindOf = __webpack_require__(109);
-var include = __webpack_require__(110);
+var flatten = __webpack_require__(161);
+var kindOf = __webpack_require__(108);
+var include = __webpack_require__(109);
 
 module.exports = function () {
   for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
@@ -14803,7 +15008,7 @@ module.exports = function () {
 // return classNames..join(' ')
 
 /***/ }),
-/* 444 */
+/* 452 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14815,7 +15020,7 @@ module.exports = function (array) {
 };
 
 /***/ }),
-/* 445 */
+/* 453 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14827,7 +15032,7 @@ module.exports = function (array) {
 };
 
 /***/ }),
-/* 446 */
+/* 454 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14846,7 +15051,7 @@ module.exports = function (left, right) {
 };
 
 /***/ }),
-/* 447 */
+/* 455 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14860,7 +15065,7 @@ module.exports = function (count) {
 };
 
 /***/ }),
-/* 448 */
+/* 456 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14879,7 +15084,7 @@ module.exports = function (items, match) {
 };
 
 /***/ }),
-/* 449 */
+/* 457 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14900,7 +15105,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 450 */
+/* 458 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14939,32 +15144,7 @@ var decode = function decode(string) {
 module.exports = { encode: encode, decode: decode };
 
 /***/ }),
-/* 451 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _require = __webpack_require__(108),
-    route = _require.route;
-
-var _require2 = __webpack_require__(6),
-    Component = _require2.Component,
-    html = _require2.html;
-
-var MainController = __webpack_require__(452);
-var ArticleController = __webpack_require__(453);
-var ErrorController = __webpack_require__(166);
-
-var _require3 = __webpack_require__(531),
-    localeMatcher = _require3.localeMatcher;
-
-var routes = [route('/', MainController.index), route([localeMatcher], ArticleController.show, {}, route('/:humanId', ArticleController.show)), route('*', ErrorController.notFound)];
-
-module.exports = routes;
-
-/***/ }),
-/* 452 */
+/* 459 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14993,7 +15173,7 @@ var MainController = function () {
 module.exports = MainController;
 
 /***/ }),
-/* 453 */
+/* 460 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15005,9 +15185,9 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ArticleModel = __webpack_require__(454);
-var ExampleModel = __webpack_require__(162);
-var ErrorController = __webpack_require__(166);
+var ArticleModel = __webpack_require__(461);
+var ExampleModel = __webpack_require__(163);
+var ErrorController = __webpack_require__(167);
 
 var ArticleController = function () {
   function ArticleController() {
@@ -15040,12 +15220,14 @@ var ArticleController = function () {
                 if (!article) ErrorController.notFound(req, res);
 
                 res.send(200, 'ArticleContainer', {
-                  path: req.url,
-                  segments: req.segments,
-                  humanId: humanId,
-                  locale: locale,
-                  article: article,
-                  rawExamples: rawExamples
+                  props: {
+                    path: req.url,
+                    segments: req.segments,
+                    humanId: humanId,
+                    locale: locale,
+                    article: article,
+                    rawExamples: rawExamples
+                  }
                 });
 
               case 10:
@@ -15070,7 +15252,7 @@ var ArticleController = function () {
 module.exports = ArticleController;
 
 /***/ }),
-/* 454 */
+/* 461 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15090,7 +15272,7 @@ module.exports = {
 
         try {
 
-          var file = __webpack_require__(455)("./" + humanId + '/articles/' + locale + '.html');
+          var file = __webpack_require__(462)("./" + humanId + '/articles/' + locale + '.html');
 
           resolve(file);
         } catch (error) {
@@ -15118,35 +15300,35 @@ module.exports = {
 };
 
 /***/ }),
-/* 455 */
+/* 462 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./boilerplate/articles/en.html": 456,
-	"./boilerplate/articles/ru.html": 457,
-	"./browser-navigation/articles/en.html": 458,
-	"./browser-navigation/articles/ru.html": 459,
-	"./context/articles/en.html": 460,
-	"./context/articles/ru.html": 461,
-	"./create-server/articles/en.html": 462,
-	"./create-server/articles/ru.html": 463,
-	"./fast-start/articles/en.html": 464,
-	"./fast-start/articles/ru.html": 465,
-	"./fast-start/examples/hello-world-html.html": 161,
-	"./hooks/articles/en.html": 466,
-	"./hooks/articles/ru.html": 467,
-	"./introduction/articles/en.html": 468,
-	"./introduction/articles/ru.html": 469,
-	"./props/articles/en.html": 470,
-	"./props/articles/ru.html": 471,
-	"./references/articles/en.html": 472,
-	"./references/articles/ru.html": 473,
-	"./router/articles/en.html": 474,
-	"./router/articles/ru.html": 475,
-	"./server-render/articles/en.html": 476,
-	"./server-render/articles/ru.html": 477,
-	"./state/articles/en.html": 478,
-	"./state/articles/ru.html": 479
+	"./boilerplate/articles/en.html": 463,
+	"./boilerplate/articles/ru.html": 464,
+	"./browser-navigation/articles/en.html": 465,
+	"./browser-navigation/articles/ru.html": 466,
+	"./context/articles/en.html": 467,
+	"./context/articles/ru.html": 468,
+	"./create-server/articles/en.html": 469,
+	"./create-server/articles/ru.html": 470,
+	"./fast-start/articles/en.html": 471,
+	"./fast-start/articles/ru.html": 472,
+	"./fast-start/examples/hello-world-html.html": 162,
+	"./hooks/articles/en.html": 473,
+	"./hooks/articles/ru.html": 474,
+	"./introduction/articles/en.html": 475,
+	"./introduction/articles/ru.html": 476,
+	"./props/articles/en.html": 477,
+	"./props/articles/ru.html": 478,
+	"./references/articles/en.html": 479,
+	"./references/articles/ru.html": 480,
+	"./router/articles/en.html": 481,
+	"./router/articles/ru.html": 482,
+	"./server-render/articles/en.html": 483,
+	"./server-render/articles/ru.html": 484,
+	"./state/articles/en.html": 485,
+	"./state/articles/ru.html": 486
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -15162,154 +15344,154 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 455;
-
-/***/ }),
-/* 456 */
-/***/ (function(module, exports) {
-
-module.exports = "<h1>Boilerplate</h1>\n\n<p>Boilerplate will allow you to quickly start creating a web-interface with server prerendering.</p>\n\n<h2>How to install?</h2>\n\n{{ install }}\n\n<p>\n  Then open the browser page http://localhost:8080/\n  and you should see:\n  <br>\n  <i>Welcome! Test page.</i>\n</p>\n\n<h2>How to edit the code?</h2>\n\n<p>To make changes immediately after saving, open a new window and use the command:</p>\n\n{{ webpack }}\n\n<a href=\"https://webpack.js.org/\" target=\"_blank\">More about webpack</a>\n\n<h2>How to edit css styles?</h2>\n\n<p>To track changes in styles in a new window, run:</p>\n\n{{ gulp }}\n\n<p>\n  It is preferable to place styles in folders with components.\n  The order of styles should not matter.\n  For this you can take advantage of <a\n    target=\"_blank\"\n    href=\"https://ru.bem.info/methodology/css/\"\n  >bem methodology</a>.\n</p>\n\n<a href=\"https://gulpjs.com/\" target=\"_blank\">More information on gulp</a>\n"
-
-/***/ }),
-/* 457 */
-/***/ (function(module, exports) {
-
-module.exports = "<h1>Готовый каркас</h1>\n\n<p>Готовый каркас позволит вам быстро приступить к созданию веб-интерфейса с серверным пререндерингом.</p>\n\n<h2>Как установить?</h2>\n\n{{ install }}\n\n<p>\n  После чего откройте в браузере страницу http://localhost:8080/\n  и вы должны увидеть:\n  <br>\n  <i>Welcome! Test page.</i>\n</p>\n\n<h2>Как редактировать код?</h2>\n\n<p>Чтобы изменения вносились сразу после сохранения откройте новое окно треминала и используйте команду:</p>\n\n{{ webpack }}\n\n<a href=\"https://webpack.js.org/\" target=\"_blank\">Подробнее о webpack</a>\n\n<h2>Как редактировать css стили?</h2>\n\n<p>Для того чтобы отслеживать изменение стилей в новом окне запустите:</p>\n\n{{ gulp }}\n\n<p>\n  Предпочтительнее всего размещать стили в папках с компонентами.\n  Порядок стилей не должен иметь значения.\n  Для этого вы можете воспользоваться <a\n    target=\"_blank\"\n    href=\"https://ru.bem.info/methodology/css/\"\n  >бэм методологией</a>.\n</p>\n\n<a href=\"https://gulpjs.com/\" target=\"_blank\">Подробнее о gulp</a>\n"
-
-/***/ }),
-/* 458 */
-/***/ (function(module, exports) {
-
-module.exports = "<h1>Browser navigation</h1>\n\n<h2>How to install?</h2>\n\n{{ install }}\n\n<h2>Example</h2>\n\n{{ create-navigation }}\n\n<h2>Description</h2>\n\n<p>\n  The createNavigation function creates a navigation object. Its task is to:\n</p>\n\n<ol>\n  <li>\n    Find the route along the requested path and its handler\n  </li>\n  <li>\n    Execute the route handler and pass its result to the navigation handler\n    <br>\n    And also use the cached version of the result in the case of the first download\n  </li>\n  <li>\n    Keep the current state of the virtual tree\n  </li>\n  <li>\n    Provide a method for managing navigation\n  </li>\n</ol>\n\n<h2>Function createNavigation(params = {}, navigationCallback = (...) => {})</h2>\n\n<p>\n  <b>params</b>\n  <ul>\n    <li>\n      <i>routes</i> - array of routes (vqua-routes)\n    </li>\n    <li>\n      <i>cache</i> - JSON string with the result of the first route handler\n    </li>\n  </ul>\n</p>\n\n<p>\n  <b>navigationCallback</b>\n  <ul>\n    <li>\n      <i>liveNodes</i> - array of virtual vqua objects (current state)\n    </li>\n    <li>\n      <i>component</i> - component object (the result of the route handler response)\n      <ul>\n        <li>\n          <i>name</i> - component name string\n        </li>\n        <li>\n          <i>props</i> - component parameters object\n        </li>\n        <li>\n          <i>context</i> - component context object\n        </li>\n      </ul>\n    </li>\n    <li>\n      <i>navigate(path)</i> - navigation control method\n      <ul>\n        <li>\n          <i>path</i> - new path string\n        </li>\n      </ul>\n    </li>\n    <li>\n      <i>callback(liveNodes) - navigation handler</i>.\n      <br> Required to save the current state of the virtual tree.\n      <ul>\n        <li>\n          <i>liveNodes</i> - array of virtual vqua tree elements\n        </li>\n      </ul>\n    </li>\n  </ul>\n</p>\n"
-
-/***/ }),
-/* 459 */
-/***/ (function(module, exports) {
-
-module.exports = "<h1>Браузерная навигация</h1>\n\n<h2>Как установить?</h2>\n\n{{ install }}\n\n<h2>Пример</h2>\n\n{{ create-navigation }}\n\n<h2>Описание</h2>\n\n<p>\n  Функция createNavigation создает объект навигации. Его задача состоит в том чтобы:\n</p>\n\n<ol>\n  <li>\n    Найти маршрут по запрашиваемому пути и его обработчик\n  </li>\n  <li>\n    Исполнить обработчик маршрута и его результат передать обработчику навигации\n    <br>\n    А так же воспользоваться кэшированной версией результата в случае первой загрузки\n  </li>\n  <li>\n    Хранить актуальное состояние виртуального дерева\n  </li>\n  <li>\n    Предоставить метод для управления навигацией\n  </li>\n</ol>\n\n<h2>Функция createNavigation(params = {}, navigationCallback = (...) => {})</h2>\n\n<p>\n  <b>params</b>\n  <ul>\n    <li>\n      <i>routes</i> - массив маршрутов (vqua-routes)\n    </li>\n    <li>\n      <i>cache</i> - строка JSON с результатом обработчика первого маршрута\n    </li>\n  </ul>\n</p>\n\n<p>\n  <b>navigationCallback</b>\n  <ul>\n    <li>\n      <i>liveNodes</i> - массив объектов виртуального vqua дерева (актуальное состояние)\n    </li>\n    <li>\n      <i>component</i> - объект компонента (результат ответа обработчика маршрута)\n      <ul>\n        <li>\n          <i>name</i> - название компонента\n        </li>\n        <li>\n          <i>props</i> - параметры компонента\n        </li>\n        <li>\n          <i>context</i> - контекст компонента\n        </li>\n      </ul>\n    </li>\n    <li>\n      <i>navigate(path)</i> - метод увправления навигацией\n      <ul>\n        <li>\n          <i>path</i> - строка нового пути\n        </li>\n      </ul>\n    </li>\n    <li>\n      <i>callback(liveNodes) - обработчик навигации</i>.\n      <br> Необходим для сохранения текущего состояния виртуального дерева.\n      <ul>\n        <li>\n          <i>liveNodes</i> - массив элементов виртуального vqua дерева\n        </li>\n      </ul>\n    </li>\n  </ul>\n</p>\n"
-
-/***/ }),
-/* 460 */
-/***/ (function(module, exports) {
-
-module.exports = "<h1>Context</h1>\n\n<p>\n  Sometimes you may need to throw parameters into several components at once.\n  For example, you need to provide all of your components with translations.\n  And each time to transmit props will be simply tedious.\n  Here you will be helped by the context.\n</p>\n\n<p>\n  To pass the context to the children you need to implement a method <b>passContext</b> in\n  the parent component and return the context object.\n</p>\n\n<p>\n  Also inside the method <b>passContext</b> you can use objects <b>this.props</b> and <b>this.state</b>\n</p>\n\n<p>\n  And in the component, the expecting context is to implement a static method <b>injectContext</b>\n  and return an array of properties of the expected context.\n</p>\n\n<p>Example:</p>\n\n{{ app }}\n"
-
-/***/ }),
-/* 461 */
-/***/ (function(module, exports) {
-
-module.exports = "<h1>Контекст</h1>\n\n<p>\n  Иногда вам может понадобиться прокинуть параметры сразу в несколько компонентов.\n  Например вам нужно обеспечить все ваши компоненты переводами.\n  И каждый раз передавать props будет просто утомительно.\n  Здесь вам на помощь прийдет контекст.\n</p>\n\n<p>\n  Чтобы передать контекст детям вам необходимо реализовать метод <b>passContext</b> в компоненте родителе и вернуть\n  объект контекста.\n</p>\n\n<p>\n  Также внутри метода <b>passContext</b> вы можете использовать объекты <b>this.props</b> и <b>this.state</b>\n</p>\n\n<p>\n  А в компоненте, ожидающий контект, реализовать статический метод <b>injectContext</b>\n  и вернуть массив свойств ожидаемого контекста.\n</p>\n\n<p>Пример:</p>\n\n{{ app }}\n"
-
-/***/ }),
-/* 462 */
-/***/ (function(module, exports) {
-
-module.exports = "<h1>Create server</h1>\n\n<h2>How to install?</h2>\n\n{{ install }}\n\n<h2>Example</h2>\n\n{{ create-server }}\n\n<h2>Description</h2>\n\n<p>\n  Function createServer return instance of simple\n  node <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_class_http_server\"\n  >http server</a>.\n  <br>\n  <br>\n  When a request arrives at the server, the path is parsed and the first matched vqua route is located on it.\n  After that, control is passed to the action function specified in the route.\n  <br>\n  <br>\n  The action method takes two request, response arguments.\n  With one exception, for response object is added two callbacks - send and redirect,\n  which will work both on the server and in the browser.\n  Of course for the browser you need to use\n  package <a href='/en/browser-navigation' class='navigation_link'>vqua-browser</a>.\n  <br>\n  <br>\n  To see how everything works right away and together,\n  use <a href='http://localhost:8080/en/boilerplate' class='navigation_link'>ready boilerplate</a>\n</p>\n\n<h2>Arguments for createServer(<b>object</b>)</h2>\n\n<p>All arguments are required.</p>\n\n<p>\n  <b>routes</b> - array of routes  (vqua-routes)\n</p>\n\n<p>\n  <b>layout</b> - function callback(html, data)\n  <br>\n  <i>html</i> - component of the controller, converted to an html string\n  <br>\n  <i>data</i> - The data returned by the controller is converted into a JSON string\n</p>\n\n<p>Example layout:</p>\n\n{{ layout }}\n\n<p>\n  <b>publicPath</b> - the path to the folder where static files are stored\n  <br/>\n\n</p>\n\n<p>\n  <b>containerPath</b> - the path to the folder where the containers are stored (vqua top-level components)\n</p>\n\n<h2>Function action(request, response)</h2>\n\n<p>\n  <b>request</b>- in addition to the standard parameters <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_http_request_options_callback\"\n  >http request</a> contain:\n  <ul>\n    <li>\n      <b>params</b> - object of routing parameters\n    </li>\n    <li>\n      <b>segments</b> - array of route segments\n    </li>\n  </ul>\n</p>\n\n<p>\n  <b>response</b>- in addition to the standard parameters <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_class_http_serverresponse\"\n  >http response</a> contain:\n  <ul>\n    <li>\n      <b>redirect(statusCode, url)</b>\n      <br>\n      <i>statusCode</i> - numeric server response code (300, 301, etc.)\n      <br>\n      <i>url</i> - redirection path string\n    </li>\n    <li>\n      <b>send(statusCode, containerName, containerProps, containerContext)</b>\n      <br>\n      <i>statusCode</i> - numeric server response code (200, 500, etc.)\n      <br>\n      <i>containerName</i> - the string name of the component's vqua\n      <br>\n      <i>containerProps</i> - component vqua parameter object\n      <br>\n      <i>containerContext</i> - context object of the component's vqua\n    </li>\n  </ul>\n</p>\n"
+webpackContext.id = 462;
 
 /***/ }),
 /* 463 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Создание сервера</h1>\n\n<h2>Как установить?</h2>\n\n{{ install }}\n\n<h2>Пример</h2>\n\n{{ create-server }}\n\n<h2>Описание</h2>\n\n<p>\n  Функция createServer возвращает экземпляр обычного\n  нодовского <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_class_http_server\"\n  >http сервера</a>.\n  <br>\n  <br>\n  Когда запрос поступает на сервер, строка пути разбирается и по ней находится первый подходящий vqua маршрут.\n  После чего управление передается функции action, указанной в маршруте.\n  <br>\n  <br>\n  Метод action принимает два аргумента request, response .\n  За одним исключением что к response добавляются два колбека это send и redirect,\n  которые будут отрабатывать как на сервере так и в браузере.\n  Конечно для браузера необходимо использовать\n  пакет <a href='/ru/browser-navigation' class='navigation_link'>vqua-browser</a>.\n  <br>\n  <br>\n  Чтобы посмотреть на то как все работает сразу и вместе,\n  воспользуйтесь <a href='http://localhost:8080/ru/boilerplate' class='navigation_link'>готовым каркасом</a>\n</p>\n\n<h2>Аргументы для createServer(<b>object</b>)</h2>\n\n<p>Все аргументы обязательны.</p>\n\n<p>\n  <b>routes</b> - массив роутов  (vqua-routes)\n</p>\n\n<p>\n  <b>layout</b> - функция callback(html, data)\n  <br>\n  <i>html</i> - компонент контроллера, преобразованный в html строку\n  <br>\n  <i>data</i> - отданные контроллером данные, преобразованные в JSON строку\n</p>\n\n<p>Пример layout:</p>\n\n{{ layout }}\n\n<p>\n  <b>publicPath</b> - строка пути к папке где хранятся статические файлы\n  <br/>\n\n</p>\n\n<p>\n  <b>containerPath</b> - строка пути к папке где хранятся контейнеры (vqua компоненты верхнего уровня)\n</p>\n\n<h2>Фунцкия action(request, response)</h2>\n\n<p>\n  <b>request</b>- помимо стандатных параметров <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_http_request_options_callback\"\n  >http request</a> содержит:\n  <ul>\n    <li>\n      <b>params</b> - объект параметров роута\n    </li>\n    <li>\n      <b>segments</b> - массив сегментов роута\n    </li>\n  </ul>\n</p>\n\n<p>\n  <b>response</b>- помимо стандатных параметров <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_class_http_serverresponse\"\n  >http response</a> содержит:\n  <ul>\n    <li>\n      <b>redirect(statusCode, url)</b>\n      <br>\n      <i>statusCode</i> - числовой код ответа сервера (300, 301 и т.д.)\n      <br>\n      <i>url</i> - строка пути редиректа\n    </li>\n    <li>\n      <b>send(statusCode, containerName, containerProps, containerContext)</b>\n      <br>\n      <i>statusCode</i> - числовой код ответа сервера (200, 500 и т.д.)\n      <br>\n      <i>containerName</i> - строковое название vqua компонента\n      <br>\n      <i>containerProps</i> - объект параметров vqua компонента\n      <br>\n      <i>containerContext</i> - объект контекста vqua компонента\n    </li>\n  </ul>\n</p>\n"
+module.exports = "<h1>Boilerplate</h1>\n\n<p>Boilerplate will allow you to quickly start creating a web-interface with server prerendering.</p>\n\n<h2>How to install?</h2>\n\n{{ install }}\n\n<p>\n  Then open the browser page http://localhost:8080/\n  and you should see:\n  <br>\n  <i>Welcome! Test page.</i>\n</p>\n\n<h2>How to edit the code?</h2>\n\n<p>To make changes immediately after saving, open a new window and use the command:</p>\n\n{{ webpack }}\n\n<a href=\"https://webpack.js.org/\" target=\"_blank\">More about webpack</a>\n\n<h2>How to edit css styles?</h2>\n\n<p>To track changes in styles in a new window, run:</p>\n\n{{ gulp }}\n\n<p>\n  It is preferable to place styles in folders with components.\n  The order of styles should not matter.\n  For this you can take advantage of <a\n    target=\"_blank\"\n    href=\"https://ru.bem.info/methodology/css/\"\n  >bem methodology</a>.\n</p>\n\n<a href=\"https://gulpjs.com/\" target=\"_blank\">More information on gulp</a>\n"
 
 /***/ }),
 /* 464 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Fast start</h1>\n\n<p>Create a project folder, install dependencies</p>\n\n{{ webpack-install }}\n\n<p>Create file webpack.config.js</p>\n\n{{ webpack-config }}\n\n<p>Create file index.js</p>\n\n{{ hello-world-js }}\n\n<p>Create file index.html</p>\n\n{{ hello-world-html }}\n\n<p>Run build</p>\n\n{{ webpack-run }}\n\n<p>Ready, open file index.html in browser.</p>\n"
+module.exports = "<h1>Готовый каркас</h1>\n\n<p>Готовый каркас позволит вам быстро приступить к созданию веб-интерфейса с серверным пререндерингом.</p>\n\n<h2>Как установить?</h2>\n\n{{ install }}\n\n<p>\n  После чего откройте в браузере страницу http://localhost:8080/\n  и вы должны увидеть:\n  <br>\n  <i>Welcome! Test page.</i>\n</p>\n\n<h2>Как редактировать код?</h2>\n\n<p>Чтобы изменения вносились сразу после сохранения откройте новое окно треминала и используйте команду:</p>\n\n{{ webpack }}\n\n<a href=\"https://webpack.js.org/\" target=\"_blank\">Подробнее о webpack</a>\n\n<h2>Как редактировать css стили?</h2>\n\n<p>Для того чтобы отслеживать изменение стилей в новом окне запустите:</p>\n\n{{ gulp }}\n\n<p>\n  Предпочтительнее всего размещать стили в папках с компонентами.\n  Порядок стилей не должен иметь значения.\n  Для этого вы можете воспользоваться <a\n    target=\"_blank\"\n    href=\"https://ru.bem.info/methodology/css/\"\n  >бэм методологией</a>.\n</p>\n\n<a href=\"https://gulpjs.com/\" target=\"_blank\">Подробнее о gulp</a>\n"
 
 /***/ }),
 /* 465 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Быстрый старт</h1>\n\n<p>Создаем папку проекта, устанавливаем зависимости</p>\n\n{{ webpack-install }}\n\n<p>Создаем файл webpack.config.js</p>\n\n{{ webpack-config }}\n\n<p>Создаем файл index.js</p>\n\n{{ hello-world-js }}\n\n<p>Создаем файл index.html</p>\n\n{{ hello-world-html }}\n\n<p>Запускаем сборку</p>\n\n{{ webpack-run }}\n\n<p>Готово, открываем файл index.html в браузере.</p>\n"
+module.exports = "<h1>Browser navigation</h1>\n\n<h2>How to install?</h2>\n\n{{ install }}\n\n<h2>Example</h2>\n\n{{ create-navigation }}\n\n<h2>Description</h2>\n\n<p>\n  The createNavigation function creates a navigation object. Its task is to:\n</p>\n\n<ol>\n  <li>\n    Find the route along the requested path and its handler\n  </li>\n  <li>\n    Execute the route handler and pass its result to the navigation handler\n    <br>\n    And also use the cached version of the result in the case of the first download\n  </li>\n  <li>\n    Keep the current state of the virtual tree\n  </li>\n  <li>\n    Provide a method for managing navigation\n  </li>\n</ol>\n\n<h2>Function createNavigation(params = {}, navigationCallback = (...) => {})</h2>\n\n<p>\n  <b>params</b>\n  <ul>\n    <li>\n      <i>routes</i> - array of routes (vqua-routes)\n    </li>\n    <li>\n      <i>cache</i> - JSON string with the result of the first route handler\n    </li>\n  </ul>\n</p>\n\n<p>\n  <b>navigationCallback</b>\n  <ul>\n    <li>\n      <i>liveNodes</i> - array of virtual vqua objects (current state)\n    </li>\n    <li>\n      <i>component</i> - component object (the result of the route handler response)\n      <ul>\n        <li>\n          <i>name</i> - component name string\n        </li>\n        <li>\n          <i>props</i> - component parameters object\n        </li>\n        <li>\n          <i>context</i> - component context object\n        </li>\n      </ul>\n    </li>\n    <li>\n      <i>navigate(path)</i> - navigation control method\n      <ul>\n        <li>\n          <i>path</i> - new path string\n        </li>\n      </ul>\n    </li>\n    <li>\n      <i>callback(liveNodes) - navigation handler</i>.\n      <br> Required to save the current state of the virtual tree.\n      <ul>\n        <li>\n          <i>liveNodes</i> - array of virtual vqua tree elements\n        </li>\n      </ul>\n    </li>\n  </ul>\n</p>\n"
 
 /***/ }),
 /* 466 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Hooks</h1>\n\n<h3>Before mount</h3>\n\n<p>\n  Before drawing a DOM tree\n</p>\n\n{{ before-mount }}\n\n<br>\n\n<h3>After mount</h3>\n\n<p>\n  After drawing a DOM tree\n</p>\n\n{{ after-mount }}\n\n<br>\n\n<h3>Before unmount</h3>\n\n<p>\n  Before the component is removed from the DOM tree\n</p>\n\n{{ before-unmount }}\n\n<br>\n\n<h3>Before update</h3>\n\n<p>\n  Before dom is updated\n</p>\n\n{{ before-update }}\n\n<br>\n\n<h3>After update</h3>\n\n<p>\n  After dom is updated\n</p>\n\n{{ after-update }}\n\n<br>\n\n<h3>Need to update</h3>\n\n<p>\n  Specifies whether to update the component. It is necessary to return:\n  <br>\n  <br>\n  <b>true</b> - the component will be updated\n  <br>\n  <b>false</b> - component will not be updated\n  <br>\n  <br>\n  By default, always <b>true</b>\n</p>\n\n{{ is-need-update }}\n"
+module.exports = "<h1>Браузерная навигация</h1>\n\n<h2>Как установить?</h2>\n\n{{ install }}\n\n<h2>Пример</h2>\n\n{{ create-navigation }}\n\n<h2>Описание</h2>\n\n<p>\n  Функция createNavigation создает объект навигации. Его задача состоит в том чтобы:\n</p>\n\n<ol>\n  <li>\n    Найти маршрут по запрашиваемому пути и его обработчик\n  </li>\n  <li>\n    Исполнить обработчик маршрута и его результат передать обработчику навигации\n    <br>\n    А так же воспользоваться кэшированной версией результата в случае первой загрузки\n  </li>\n  <li>\n    Хранить актуальное состояние виртуального дерева\n  </li>\n  <li>\n    Предоставить метод для управления навигацией\n  </li>\n</ol>\n\n<h2>Функция createNavigation(params = {}, navigationCallback = (...) => {})</h2>\n\n<p>\n  <b>params</b>\n  <ul>\n    <li>\n      <i>routes</i> - массив маршрутов (vqua-routes)\n    </li>\n    <li>\n      <i>cache</i> - строка JSON с результатом обработчика первого маршрута\n    </li>\n  </ul>\n</p>\n\n<p>\n  <b>navigationCallback</b>\n  <ul>\n    <li>\n      <i>liveNodes</i> - массив объектов виртуального vqua дерева (актуальное состояние)\n    </li>\n    <li>\n      <i>component</i> - объект компонента (результат ответа обработчика маршрута)\n      <ul>\n        <li>\n          <i>name</i> - название компонента\n        </li>\n        <li>\n          <i>props</i> - параметры компонента\n        </li>\n        <li>\n          <i>context</i> - контекст компонента\n        </li>\n      </ul>\n    </li>\n    <li>\n      <i>navigate(path)</i> - метод увправления навигацией\n      <ul>\n        <li>\n          <i>path</i> - строка нового пути\n        </li>\n      </ul>\n    </li>\n    <li>\n      <i>callback(liveNodes) - обработчик навигации</i>.\n      <br> Необходим для сохранения текущего состояния виртуального дерева.\n      <ul>\n        <li>\n          <i>liveNodes</i> - массив элементов виртуального vqua дерева\n        </li>\n      </ul>\n    </li>\n  </ul>\n</p>\n"
 
 /***/ }),
 /* 467 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Хуки</h1>\n\n<h3>Перед монтированием</h3>\n\n<p>\n  Перед отрисовкой dom дерева\n</p>\n\n{{ before-mount }}\n\n<br>\n\n<h3>После монтирования</h3>\n\n<p>\n  После отрисовки dom дерева\n</p>\n\n{{ after-mount }}\n\n<br>\n\n<h3>Перед размонтированием</h3>\n\n<p>\n  Перед тем как компонент будет удален из dom дерева\n</p>\n\n{{ before-unmount }}\n\n<br>\n\n<h3>Перед обновлением</h3>\n\n<p>\n  Перед тем как dom будет обновлен\n</p>\n\n{{ before-update }}\n\n<br>\n\n<h3>После обновления</h3>\n\n<p>\n  После того как dom будет обновлен\n</p>\n\n{{ after-update }}\n\n<br>\n\n<h3>Необходимость обновления</h3>\n\n<p>\n  Определяет необходимость обновления компонента. Необходимо вернуть:\n  <br>\n  <br>\n  <b>true</b> - компонент будет обновлен\n  <br>\n  <b>false</b> - компонент не будет обновлен\n  <br>\n  <br>\n  По умолчанию всегда <b>true</b>\n</p>\n\n{{ is-need-update }}\n"
+module.exports = "<h1>Context</h1>\n\n<p>\n  Sometimes you may need to throw parameters into several components at once.\n  For example, you need to provide all of your components with translations.\n  And each time to transmit props will be simply tedious.\n  Here you will be helped by the context.\n</p>\n\n<p>\n  To pass the context to the children you need to implement a method <b>passContext</b> in\n  the parent component and return the context object.\n</p>\n\n<p>\n  Also inside the method <b>passContext</b> you can use objects <b>this.props</b> and <b>this.state</b>\n</p>\n\n<p>\n  And in the component, the expecting context is to implement a static method <b>injectContext</b>\n  and return an array of properties of the expected context.\n</p>\n\n<p>Example:</p>\n\n{{ app }}\n"
 
 /***/ }),
 /* 468 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Introduction</h1>\n\n<p>\n  <b>Vqua</b> is a JavaScript library for creating web interfaces,\n  oriented on creation isomorphic / universal applications.\n  Or speaking in a simpler language then your site will be better\n  indexed by search engines.\n</p>\n\n<br>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/a6YrNX_ECtI\" frameborder=\"0\" allowfullscreen></iframe>\n\n<h2>\n  Ecosystem\n</h2>\n\n<h3>Main</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua\">vqua</a> - virtual DOM</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-utils\">vqua-utils</a> - utilities used in vqua</li>\n</ul>\n\n<h3>Server prerender</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-router\">vqua-router</a> - universal router</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-navigation\">vqua-navigation</a> - browser navigation</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-server\">vqua-server</a> - server prerender</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-boilerplate-ssr\">vqua-boilerplate-ssr</a> - universal boilerplate</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-todo-ssr\">vqua-todo-ssr</a> - todo example as in the video</li>\n</ul>\n\n<br>\n\n<h3>Other</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/memorux\">memorux</a> - state container for vqua components</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/dom2vqua\">dom2vqua</a> - transfrom dom nodes to vqua nodes</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/html2vqua\">html2vqua</a> - transfrom html string to vqua nodes</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua2string\">vqua2string</a> - tranform vqua nodes to string</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-interpolate\">vqua-interpolate</a> - transform variables in text nodes</li>\n</ul>\n"
+module.exports = "<h1>Контекст</h1>\n\n<p>\n  Иногда вам может понадобиться прокинуть параметры сразу в несколько компонентов.\n  Например вам нужно обеспечить все ваши компоненты переводами.\n  И каждый раз передавать props будет просто утомительно.\n  Здесь вам на помощь прийдет контекст.\n</p>\n\n<p>\n  Чтобы передать контекст детям вам необходимо реализовать метод <b>passContext</b> в компоненте родителе и вернуть\n  объект контекста.\n</p>\n\n<p>\n  Также внутри метода <b>passContext</b> вы можете использовать объекты <b>this.props</b> и <b>this.state</b>\n</p>\n\n<p>\n  А в компоненте, ожидающий контект, реализовать статический метод <b>injectContext</b>\n  и вернуть массив свойств ожидаемого контекста.\n</p>\n\n<p>Пример:</p>\n\n{{ app }}\n"
 
 /***/ }),
 /* 469 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Вступление</h1>\n\n<p>\n  <b>Vqua</b> это JavaScript бибилиотека для создание веб-интерфейсов,\n  ориентированная на создания изморфных/унивесральных приложений.\n  Или говоря более простым языком то ваш сайт будет лучше индексироваться поисковыми системами.\n</p>\n\n<br>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/a6YrNX_ECtI\" frameborder=\"0\" allowfullscreen></iframe>\n\n<h2>\n  Экосистема\n</h2>\n\n<h3>Основное</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua\">vqua</a> - виртуальный DOM</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-utils\">vqua-utils</a> - утилиты использумые в vqua</li>\n</ul>\n\n<h3>Серверный рендер</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-router\">vqua-router</a> - универсальный роутер</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-navigation\">vqua-navigation</a> - браузерная навигация</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-server\">vqua-server</a> - серверный пререндер</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-boilerplate-ssr\">vqua-boilerplate-ssr</a> - каркас универсального приложения</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-todo-ssr\">vqua-todo-ssr</a> - пример заметок как на видео</li>\n</ul>\n\n<br>\n\n<h3>Другое</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/memorux\">memorux</a> - контейнер состояний для vqua компонентов</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/dom2vqua\">dom2vqua</a> - преобразует dom ноды в vqua ноды</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/html2vqua\">html2vqua</a> - преобразует html строку в vqua ноды</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua2string\">vqua2string</a> - преобразует vqua ноды в строку</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-interpolate\">vqua-interpolate</a> - преобразует переменные в текстовых нодах</li>\n</ul>\n"
+module.exports = "<h1>Create server</h1>\n\n<h2>How to install?</h2>\n\n{{ install }}\n\n<h2>Example</h2>\n\n{{ create-server }}\n\n<h2>Description</h2>\n\n<p>\n  Function createServer return instance of simple\n  node <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_class_http_server\"\n  >http server</a>.\n  <br>\n  <br>\n  When a request arrives at the server, the path is parsed and the first matched vqua route is located on it.\n  After that, control is passed to the action function specified in the route.\n  <br>\n  <br>\n  The action method takes two request, response arguments.\n  With one exception, for response object is added two callbacks - send and redirect,\n  which will work both on the server and in the browser.\n  Of course for the browser you need to use\n  package <a href='/en/browser-navigation' class='navigation_link'>vqua-browser</a>.\n  <br>\n  <br>\n  To see how everything works right away and together,\n  use <a href='http://localhost:8080/en/boilerplate' class='navigation_link'>ready boilerplate</a>\n</p>\n\n<h2>Arguments for createServer(<b>object</b>)</h2>\n\n<p>All arguments are required.</p>\n\n<p>\n  <b>routes</b> - array of routes  (vqua-routes)\n</p>\n\n<p>\n  <b>layout</b> - function callback(html, data)\n  <br>\n  <i>html</i> - component of the controller, converted to an html string\n  <br>\n  <i>data</i> - The data returned by the controller is converted into a JSON string\n</p>\n\n<p>Example layout:</p>\n\n{{ layout }}\n\n<p>\n  <b>publicPath</b> - the path to the folder where static files are stored\n  <br/>\n\n</p>\n\n<p>\n  <b>containerPath</b> - the path to the folder where the containers are stored (vqua top-level components)\n</p>\n\n<h2>Function action(request, response)</h2>\n\n<p>\n  <b>request</b>- in addition to the standard parameters <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_http_request_options_callback\"\n  >http request</a> contain:\n  <ul>\n    <li>\n      <b>params</b> - object of routing parameters\n    </li>\n    <li>\n      <b>segments</b> - array of route segments\n    </li>\n  </ul>\n</p>\n\n<p>\n  <b>response</b>- in addition to the standard parameters <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_class_http_serverresponse\"\n  >http response</a> contain:\n  <ul>\n    <li>\n      <b>redirect(statusCode, url)</b>\n      <br>\n      <i>statusCode</i> - numeric server response code (300, 301, etc.)\n      <br>\n      <i>url</i> - redirection path string\n    </li>\n    <li>\n      <b>send(statusCode, containerName, params)</b>\n      <br>\n      <i>statusCode</i> - numeric server response code (200, 500, etc.)\n      <br>\n      <i>containerName</i> - the string name of the component's vqua\n      <br>\n      <i>params</i> - parameters object\n      <ul>\n        <i>props</i> - component vqua parameter object\n        <br>\n        <i>context</i> - context object of the component's vqua\n        <br>\n        <i>layout</i> - layout path\n      </ul>\n    </li>\n  </ul>\n</p>\n"
 
 /***/ }),
 /* 470 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Props</h1>\n\n<p>Each component has its own input properties - props.</p>\n\n<p>Unlike state, props are static parameters that can not be changed.</p>\n\n<p>\n  For example, this component expects a parameter name,\n  <br>and method <b>defaultProps</b> sets default parameters.\n</p>\n\n{{ hello }}\n\n<p>That's how you can pass parameters to another component:</p>\n\n{{ universe }}\n\n<h2>Childs</h2>\n\n<p>\n  Special property <b>props.childs</b> allows you to combine components with each other.\n</p>\n\n{{ board }}\n\n<h2>Keys</h2>\n\n<p>\n  Special property <b>props.key</b> will allow vqua to use a more efficient algorithm for redrawing a DOM tree.\n</p>\n\n<p>In this example, vqua simply swaps the elements, instead of redrawn the elements.</p>\n\n{{ keys-dom }}\n\n<p>By the same principle, you can synchronize vqua components:</p>\n\n{{ keys-instance }}\n"
+module.exports = "<h1>Создание сервера</h1>\n\n<h2>Как установить?</h2>\n\n{{ install }}\n\n<h2>Пример</h2>\n\n{{ create-server }}\n\n<h2>Описание</h2>\n\n<p>\n  Функция createServer возвращает экземпляр обычного\n  нодовского <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_class_http_server\"\n  >http сервера</a>.\n  <br>\n  <br>\n  Когда запрос поступает на сервер, строка пути разбирается и по ней находится первый подходящий vqua маршрут.\n  После чего управление передается функции action, указанной в маршруте.\n  <br>\n  <br>\n  Метод action принимает два аргумента request, response .\n  За одним исключением что к response добавляются два колбека это send и redirect,\n  которые будут отрабатывать как на сервере так и в браузере.\n  Конечно для браузера необходимо использовать\n  пакет <a href='/ru/browser-navigation' class='navigation_link'>vqua-browser</a>.\n  <br>\n  <br>\n  Чтобы посмотреть на то как все работает сразу и вместе,\n  воспользуйтесь <a href='http://localhost:8080/ru/boilerplate' class='navigation_link'>готовым каркасом</a>\n</p>\n\n<h2>Аргументы для createServer(<b>object</b>)</h2>\n\n<p>Все аргументы обязательны.</p>\n\n<p>\n  <b>routes</b> - массив роутов  (vqua-routes)\n</p>\n\n<p>\n  <b>layout</b> - функция callback(html, data)\n  <br>\n  <i>html</i> - компонент контроллера, преобразованный в html строку\n  <br>\n  <i>data</i> - отданные контроллером данные, преобразованные в JSON строку\n</p>\n\n<p>Пример layout:</p>\n\n{{ layout }}\n\n<p>\n  <b>publicPath</b> - строка пути к папке где хранятся статические файлы\n  <br/>\n\n</p>\n\n<p>\n  <b>containerPath</b> - строка пути к папке где хранятся контейнеры (vqua компоненты верхнего уровня)\n</p>\n\n<h2>Фунцкия action(request, response)</h2>\n\n<p>\n  <b>request</b>- помимо стандатных параметров <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_http_request_options_callback\"\n  >http request</a> содержит:\n  <ul>\n    <li>\n      <b>params</b> - объект параметров роута\n    </li>\n    <li>\n      <b>segments</b> - массив сегментов роута\n    </li>\n  </ul>\n</p>\n\n<p>\n  <b>response</b>- помимо стандатных параметров <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_class_http_serverresponse\"\n  >http response</a> содержит:\n  <ul>\n    <li>\n      <b>redirect(statusCode, url)</b>\n      <br>\n      <i>statusCode</i> - числовой код ответа сервера (300, 301 и т.д.)\n      <br>\n      <i>url</i> - строка пути редиректа\n    </li>\n    <li>\n      <b>send(statusCode, containerName, params)</b>\n      <br>\n      <i>statusCode</i> - числовой код ответа сервера (200, 500 и т.д.)\n      <br>\n      <i>containerName</i> - строковое название vqua компонента\n      <br>\n      <i>params</i> - объект параметров\n      <ul>\n        <i>props</i> - объект параметров vqua компонента\n        <br>\n        <i>context</i> - объект контекста vqua компонента\n        <br>\n        <i>layout</i> - строка пути layout\n      </ul>\n    </li>\n  </ul>\n</p>\n"
 
 /***/ }),
 /* 471 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Параметры</h1>\n\n<p>Каждый компонент имеет свои параметры на вход - props.</p>\n\n<p>В отличии от state, props это статические параметры которые нельзя изменять.</p>\n\n<p>\n  Например этот компонент ожидает от вас параметр name,\n  <br>а метод <b>defaultProps</b> устаналивает параметры по умолчанию.\n</p>\n\n{{ hello }}\n\n<p>Вот так можно передать параметры другому компоненту:</p>\n\n{{ universe }}\n\n<h2>Дети</h2>\n\n<p>\n  Специальный параметр <b>props.childs</b> позволит вам комбинировать компоненты между собой.\n</p>\n\n{{ board }}\n\n<h2>Ключи</h2>\n\n<p>\n  Специальный параметр <b>props.key</b> позволит vqua использовать более эффективный алгоритм перерисовки DOM дерева.\n</p>\n\n<p>Например в этом примере vqua просто меняет элементы местами, вместо того чтобы заново перерисовать элементы.</p>\n\n{{ keys-dom }}\n\n<p>По такому же принципу вы можете синхронизировать vqua компоненты:</p>\n\n{{ keys-instance }}\n"
+module.exports = "<h1>Fast start</h1>\n\n<p>Create a project folder, install dependencies</p>\n\n{{ webpack-install }}\n\n<p>Create file webpack.config.js</p>\n\n{{ webpack-config }}\n\n<p>Create file index.js</p>\n\n{{ hello-world-js }}\n\n<p>Create file index.html</p>\n\n{{ hello-world-html }}\n\n<p>Run build</p>\n\n{{ webpack-run }}\n\n<p>Ready, open file index.html in browser.</p>\n"
 
 /***/ }),
 /* 472 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>References</h1>\n\n<p>\n  If you need to access directly the dom element,\n  you can do this using <b>props.ref</b>, like this:\n</p>\n\n{{ dom }}\n\n<p>\n  Also you can access the instance of the component, like so:\n</p>\n\n{{ component }}\n"
+module.exports = "<h1>Быстрый старт</h1>\n\n<p>Создаем папку проекта, устанавливаем зависимости</p>\n\n{{ webpack-install }}\n\n<p>Создаем файл webpack.config.js</p>\n\n{{ webpack-config }}\n\n<p>Создаем файл index.js</p>\n\n{{ hello-world-js }}\n\n<p>Создаем файл index.html</p>\n\n{{ hello-world-html }}\n\n<p>Запускаем сборку</p>\n\n{{ webpack-run }}\n\n<p>Готово, открываем файл index.html в браузере.</p>\n"
 
 /***/ }),
 /* 473 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Ссылки</h1>\n\n<p>\n  Если вам необходимо получить доступ напрямую к dom элементу,\n  вы можете сделать это используя <b>props.ref</b>, например так:\n</p>\n\n{{ dom }}\n\n<p>\n  Также вы можете получить доступ и к инстансу компонента, вот так:\n</p>\n\n{{ component }}\n"
+module.exports = "<h1>Hooks</h1>\n\n<h3>Before mount</h3>\n\n<p>\n  Before drawing a DOM tree\n</p>\n\n{{ before-mount }}\n\n<br>\n\n<h3>After mount</h3>\n\n<p>\n  After drawing a DOM tree\n</p>\n\n{{ after-mount }}\n\n<br>\n\n<h3>Before unmount</h3>\n\n<p>\n  Before the component is removed from the DOM tree\n</p>\n\n{{ before-unmount }}\n\n<br>\n\n<h3>Before update</h3>\n\n<p>\n  Before dom is updated\n</p>\n\n{{ before-update }}\n\n<br>\n\n<h3>After update</h3>\n\n<p>\n  After dom is updated\n</p>\n\n{{ after-update }}\n\n<br>\n\n<h3>Need to update</h3>\n\n<p>\n  Specifies whether to update the component. It is necessary to return:\n  <br>\n  <br>\n  <b>true</b> - the component will be updated\n  <br>\n  <b>false</b> - component will not be updated\n  <br>\n  <br>\n  By default, always <b>true</b>\n</p>\n\n{{ is-need-update }}\n"
 
 /***/ }),
 /* 474 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Router</h1>\n\n<h2>How to install?</h2>\n\n{{ install }}\n\n<h2>Example</h2>\n\n{{ match-routes }}\n\n<h2>Description</h2>\n\n<p>\n  A set of utilities for organizing routing.\n</p>\n\n<h2>Function route(matchers|path, action, props = {}, childs = [])</h2>\n\n<p>\n\n</p>\n\n<p>\n  <b>matchers|path</b>\n  - an array consisting of lines of paths and matcher objects | or one line of the path string\n  <ul>\n    <li>\n      <i>path</i> - path string\n    </li>\n    <li>\n      <i>matcher</i> - match object\n      <ul>\n        <li>\n          <i>key</i> - matching segment name\n        </li>\n        <li>\n          <i>match</i> - callback function, takes the value as an argument <i>key</i>.\n          Must return true if it matches | false in case of no match.\n        </li>\n      </ul>\n\n      Example of the match object:\n\n      {{ matcher }}\n\n    </li>\n  </ul>\n  <b>action</b> - handler function\n  <br>\n  <b>props</b> - properties object\n  <br>\n  <b>childs</b> - array of nested routes\n  <br>\n</p>\n\n<p>Returns the route object:</p>\n\n<ul>\n  <li>\n    <b>segments</b> - array of path string segments\n  </li>\n  <li>\n    <b>path</b> - path string\n  </li>\n  <li>\n    <b>action</b> - request handler function\n  </li>\n  <li>\n    <b>props</b> - query properties object\n  </li>\n  <li>\n    <b>childs</b> - array of nested routes\n  </li>\n</ul>\n\n<h2>Function separateRoutes(routes, segments = [])</h2>\n\n<p>\n  Splits all nested routes to the first level\n</p>\n\n<p>\n  <b>routes</b> - array of nested routes\n  <br>\n  <b>segments</b> - array of segments of the current context (optional)\n  <br>\n</p>\n\n<p>Returns an array of routes.</p>\n\n\n<h2>Function matchRoutes(routes, path)</h2>\n\n<p>\n  Finds the first route it finds on the basis of the specified path.\n</p>\n\n<p>\n  <b>routes</b> - array of routes\n  <br>\n  <b>path</b> - path string\n  <br>\n</p>\n\n<p>\n  Return object <b>routeInfo</b>:\n  <ul>\n    <li>\n      <b>path</b> - path string\n    </li>\n    <li>\n      <b>segments</b> - array of routes\n    </li>\n    <li>\n      <b>action</b> - route handler function\n    </li>\n    <li>\n      <b>props</b> - route object properties\n    </li>\n    <li>\n      <b>childs</b> - array of nested routes\n    </li>\n    <li>\n      <b>request</b> - request object\n      <ul>\n        <li>\n          <b>path</b> - path string\n        </li>\n        <li>\n          <b>segments</b> - array of routes\n        </li>\n        <li>\n          <b>params</b> - route object properties\n        </li>\n      </ul>\n    </li>\n  </ul>\n</p>\n"
+module.exports = "<h1>Хуки</h1>\n\n<h3>Перед монтированием</h3>\n\n<p>\n  Перед отрисовкой dom дерева\n</p>\n\n{{ before-mount }}\n\n<br>\n\n<h3>После монтирования</h3>\n\n<p>\n  После отрисовки dom дерева\n</p>\n\n{{ after-mount }}\n\n<br>\n\n<h3>Перед размонтированием</h3>\n\n<p>\n  Перед тем как компонент будет удален из dom дерева\n</p>\n\n{{ before-unmount }}\n\n<br>\n\n<h3>Перед обновлением</h3>\n\n<p>\n  Перед тем как dom будет обновлен\n</p>\n\n{{ before-update }}\n\n<br>\n\n<h3>После обновления</h3>\n\n<p>\n  После того как dom будет обновлен\n</p>\n\n{{ after-update }}\n\n<br>\n\n<h3>Необходимость обновления</h3>\n\n<p>\n  Определяет необходимость обновления компонента. Необходимо вернуть:\n  <br>\n  <br>\n  <b>true</b> - компонент будет обновлен\n  <br>\n  <b>false</b> - компонент не будет обновлен\n  <br>\n  <br>\n  По умолчанию всегда <b>true</b>\n</p>\n\n{{ is-need-update }}\n"
 
 /***/ }),
 /* 475 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Роутер</h1>\n\n<h2>Как установить?</h2>\n\n{{ install }}\n\n<h2>Пример</h2>\n\n{{ match-routes }}\n\n<h2>Описание</h2>\n\n<p>\n  Набор утилит для организации маршрутиризации.\n</p>\n\n<h2>Функция route(matchers|path, action, props = {}, childs = [])</h2>\n\n<p>\n\n</p>\n\n<p>\n  <b>matchers|path</b> - массив состоящий из строк путей и объектов совпадений | или одна строка пути\n  <ul>\n    <li>\n      <i>path</i> - строка пути\n    </li>\n    <li>\n      <i>matcher</i> - объект совпадения\n      <ul>\n        <li>\n          <i>key</i> - название сегмента совпадения\n        </li>\n        <li>\n          <i>match</i> - функция обратного вызова, в качестве аргумента принимает значение <i>key</i>.\n          Должна вернуть true в случае совпадения| false в случае не совпадения.\n        </li>\n      </ul>\n\n      Пример объекта совпадения:\n\n      {{ matcher }}\n\n    </li>\n  </ul>\n  <b>action</b> - функция обработчик\n  <br>\n  <b>props</b> - объект параметров\n  <br>\n  <b>childs</b> - массив вложенных маршрутов\n  <br>\n</p>\n\n<p>Возвращает объект роута:</p>\n\n<ul>\n  <li>\n    <b>segments</b> - массив сегментов строки пути\n  </li>\n  <li>\n    <b>path</b> - строка пути\n  </li>\n  <li>\n    <b>action</b> - функция обработки запроса\n  </li>\n  <li>\n    <b>props</b> - объект параметров запроса\n  </li>\n  <li>\n    <b>childs</b> - массив вложенных маршрутов\n  </li>\n</ul>\n\n<h2>Функция separateRoutes(routes, segments = [])</h2>\n\n<p>\n  Разделяет все вложенные маршруты на первый уровень\n</p>\n\n<p>\n  <b>routes</b> - массив маршрутов\n  <br>\n  <b>segments</b> - массив сегментов текущего контекста (не обязательно)\n  <br>\n</p>\n\n<p>Возвращает массив маршрутов.</p>\n\n\n<h2>Фунцкия matchRoutes(routes, path)</h2>\n\n<p>\n  Находит первый попавшийся маршрут на основе заданного пути.\n</p>\n\n<p>\n  <b>routes</b> - массив маршрутов\n  <br>\n  <b>path</b> - строка пути\n  <br>\n</p>\n\n<p>\n  Возвращает объект <b>routeInfo</b>:\n  <ul>\n    <li>\n      <b>path</b> - строка пути\n    </li>\n    <li>\n      <b>segments</b> - массив элементов пути\n    </li>\n    <li>\n      <b>action</b> - функция обработчика маршрута\n    </li>\n    <li>\n      <b>props</b> - объект параметров маршрута\n    </li>\n    <li>\n      <b>childs</b> - массив вложенных маршрутов\n    </li>\n    <li>\n      <b>request</b> - объект запроса\n      <ul>\n        <li>\n          <b>path</b> - строка пути\n        </li>\n        <li>\n          <b>segments</b> - массив элементов пути\n        </li>\n        <li>\n          <b>params</b> - объект параметров маршрута\n        </li>\n      </ul>\n    </li>\n  </ul>\n</p>\n"
+module.exports = "<h1>Introduction</h1>\n\n<p>\n  <b>Vqua</b> is a JavaScript library for creating web interfaces,\n  oriented on creation isomorphic / universal applications.\n  Or speaking in a simpler language then your site will be better\n  indexed by search engines.\n</p>\n\n<br>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/a6YrNX_ECtI\" frameborder=\"0\" allowfullscreen></iframe>\n\n<h2>\n  Ecosystem\n</h2>\n\n<h3>Main</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua\">vqua</a> - virtual DOM</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-utils\">vqua-utils</a> - utilities used in vqua</li>\n</ul>\n\n<h3>Server prerender</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-router\">vqua-router</a> - universal router</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-navigation\">vqua-navigation</a> - browser navigation</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-server\">vqua-server</a> - server prerender</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-boilerplate-ssr\">vqua-boilerplate-ssr</a> - universal boilerplate</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-todo-ssr\">vqua-todo-ssr</a> - todo example as in the video</li>\n</ul>\n\n<br>\n\n<h3>Other</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/memorux\">memorux</a> - state container for vqua components</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/dom2vqua\">dom2vqua</a> - transfrom dom nodes to vqua nodes</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/html2vqua\">html2vqua</a> - transfrom html string to vqua nodes</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua2string\">vqua2string</a> - tranform vqua nodes to string</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-interpolate\">vqua-interpolate</a> - transform variables in text nodes</li>\n</ul>\n"
 
 /***/ }),
 /* 476 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Server render</h1>\n\n<p>\n  To try server render, use this boilerplate.\n  Next, we will analyze it:\n  In order to test server rendering in action\n  use <a href='/en/boilerplate' class='navigate_link'>ready boilerplate</a>.\n  <br>\n  <br>\n  Next, we will disassemble it:\n</p>\n\n<h2>\n  Algorithm server rendering\n</h2>\n\n<img src=\"/content/server-render/images/ssr-algo-en.jpg\">\n\n<h2>Create a server</h2>\n\n<p>/build/server/index.js</p>\n\n{{ create-server }}\n\n<p>\n  The server accepts the request, and finds the matched route and controller.\n</p>\n\n<a href='/en/create-server' class='navigate_link'>Learn more about creating a server</a>\n\n\n<h2>Controller</h2>\n\n<p>/build/controllers/WelcomeController.js</p>\n\n{{ controller }}\n\n<p>\n  Controller return <b>response code</b>, <b>component name</b> and his <b>properties</b>.\n  <br>\n  <br>\n  After that, the server finds in the folder /build/containers the requested component and\n  creates a virtual tree from it. On the basis of this tree, it creates an html string, places it\n  in your main template (layout) and sends a request to the browser.\n  <br>\n  <br>\n  Also, along with the main template in the script#app-cache, the server places the JSON string\n  with the data from request.send (). This is done in order to not cause the controller once again\n  in the browser.\n</p>\n\n\n<h2>Browser navigation</h2>\n\n<p>/build/index.js</p>\n\n{{ browser-navigation }}\n\n<p>The browser received a response from the server. Now we need to build <b>two virtual trees</b>.</p>\n\n\n<p><b>1st tree</b> we build on the basis of the DOM that provided us with a browser.</p>\n\n<p><b>2nd tree</b> we build on the basis of JSON controller cache from the script tag mentioned above.</p>\n\n<p>\n  Now the render method will compare two trees and restore the difference between them.\n  More precisely, hangs the missing events, and it will go all the way through the life cycle\n  of the callbacks of each component.\n</p>\n\n<a href='/en/browser-navigation' class='navigate_link'>More about browser navigation</a>\n"
+module.exports = "<h1>Вступление</h1>\n\n<p>\n  <b>Vqua</b> это JavaScript бибилиотека для создание веб-интерфейсов,\n  ориентированная на создания изморфных/унивесральных приложений.\n  Или говоря более простым языком то ваш сайт будет лучше индексироваться поисковыми системами.\n</p>\n\n<br>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/a6YrNX_ECtI\" frameborder=\"0\" allowfullscreen></iframe>\n\n<h2>\n  Экосистема\n</h2>\n\n<h3>Основное</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua\">vqua</a> - виртуальный DOM</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-utils\">vqua-utils</a> - утилиты использумые в vqua</li>\n</ul>\n\n<h3>Серверный рендер</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-router\">vqua-router</a> - универсальный роутер</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-navigation\">vqua-navigation</a> - браузерная навигация</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-server\">vqua-server</a> - серверный пререндер</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-boilerplate-ssr\">vqua-boilerplate-ssr</a> - каркас универсального приложения</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-todo-ssr\">vqua-todo-ssr</a> - пример заметок как на видео</li>\n</ul>\n\n<br>\n\n<h3>Другое</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/memorux\">memorux</a> - контейнер состояний для vqua компонентов</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/dom2vqua\">dom2vqua</a> - преобразует dom ноды в vqua ноды</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/html2vqua\">html2vqua</a> - преобразует html строку в vqua ноды</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua2string\">vqua2string</a> - преобразует vqua ноды в строку</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-interpolate\">vqua-interpolate</a> - преобразует переменные в текстовых нодах</li>\n</ul>\n"
 
 /***/ }),
 /* 477 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Серверный рендер</h1>\n\n<p>\n  Для того чтобы опробовать серверный рендер в действии\n  воспользуйтесь <a href='/ru/boilerplate' class='navigate_link'>готовым каркасом</a>.\n  <br>\n  <br>\n  Далее мы будем разбирать ее:\n</p>\n\n<h2>\n  Алгоритм серверного рендера\n</h2>\n\n<img src=\"/content/server-render/images/ssr-algo-ru.jpg\">\n\n<h2>Создание сервера</h2>\n\n<p>/build/server/index.js</p>\n\n{{ create-server }}\n\n<p>\n  Сервер принимает запрос, и находит соответствующий ему маршрут и контроллер.\n</p>\n\n<a href='/ru/create-server' class='navigate_link'>Подробнее о создании сервера</a>\n\n\n<h2>Контроллер</h2>\n\n<p>/build/controllers/WelcomeController.js</p>\n\n{{ controller }}\n\n<p>\n  Контроллер возвращает <b>код ответа</b>, <b>название компонента</b> и его <b>параметры props</b>.\n  <br>\n  <br>\n  После этого сервер находит в папке /build/containers запрашиваемый компонент и\n  создает из него виртуальное дерево. На основе этого дерева он создает html строку, помещает ее\n  в ваш основной шаблон (layout) и отправляет запрос браузеру.\n  <br>\n  <br>\n  Также вместе с основным шаблоном в теге script#app-cache сервер размещает JSON строку с данными из\n  request.send(). Делается это для того чтобы в браузере не вызывать контроллер лишний раз.\n</p>\n\n\n<h2>Браузерная навигация</h2>\n\n<p>/build/index.js</p>\n\n{{ browser-navigation }}\n\n<p>Браузер получил ответ от сервера. Теперь нам надо построить <b>два виртуальных дерева</b>.</p>\n\n\n<p><b>1-ое дерево</b> мы строим на основе DOM который предоставил нам браузер.</p>\n\n<p><b>2-ое дерево</b> мы строим на основе JSON кеша контроллера из тега script, упомянутом выше.</p>\n\n<p>\n  Теперь метод render сравнит два дерева и восстановит между ними разницу.\n  А именно, навесит недостающие события, и пройдет полностью по всему жизненному цилку колбеков каждого компонента.\n</p>\n\n<a href='/ru/browser-navigation' class='navigate_link'>Подробнее о браузерной навигации</a>\n"
+module.exports = "<h1>Props</h1>\n\n<p>Each component has its own input properties - props.</p>\n\n<p>Unlike state, props are static parameters that can not be changed.</p>\n\n<p>\n  For example, this component expects a parameter name,\n  <br>and method <b>defaultProps</b> sets default parameters.\n</p>\n\n{{ hello }}\n\n<p>That's how you can pass parameters to another component:</p>\n\n{{ universe }}\n\n<h2>Childs</h2>\n\n<p>\n  Special property <b>props.childs</b> allows you to combine components with each other.\n</p>\n\n{{ board }}\n\n<h2>Keys</h2>\n\n<p>\n  Special property <b>props.key</b> will allow vqua to use a more efficient algorithm for redrawing a DOM tree.\n</p>\n\n<p>In this example, vqua simply swaps the elements, instead of redrawn the elements.</p>\n\n{{ keys-dom }}\n\n<p>By the same principle, you can synchronize vqua components:</p>\n\n{{ keys-instance }}\n"
 
 /***/ }),
 /* 478 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>State</h1>\n\n<p>Let's write a simple counter, and below we will analyze it in more detail</p>\n\n{{ counter }}\n\n<h2>Default state</h2>\n\n<p>\n  To set the default counter state, we need to implement the constructor\n  and pass the props and context arguments to the base class via the super method.\n  Now you can set the initial state in this.state.\n</p>\n\n<h2>New state</h2>\n\n<p>In the handleClick method, we set a new state through the this.setState method.</p>\n<p>When you install it the following happens:</p>\n\n<ul>\n  <li>Based on the new state, a new object of the virtual DOM tree is created</li>\n  <li>Then this.state merges with the new state</li>\n  <li>Based on the difference between the current and the new tree, a patch tree is created</li>\n  <li>Based on the patch of the tree, dom is redrawn</li>\n</ul>\n\n<p>\n  Do not modify this.state object directly, always use\n  this.setState method otherwise nothing will happen.\n</p>\n\n<h2>Click handler</h2>\n<p>\n  In the render method for the link, set the onClick property\n  handleClick. Wrap the handler into arrow function so this refers to this object.\n</p>\n<br>\n<p>Our counter is ready.</p>\n"
+module.exports = "<h1>Параметры</h1>\n\n<p>Каждый компонент имеет свои параметры на вход - props.</p>\n\n<p>В отличии от state, props это статические параметры которые нельзя изменять.</p>\n\n<p>\n  Например этот компонент ожидает от вас параметр name,\n  <br>а метод <b>defaultProps</b> устаналивает параметры по умолчанию.\n</p>\n\n{{ hello }}\n\n<p>Вот так можно передать параметры другому компоненту:</p>\n\n{{ universe }}\n\n<h2>Дети</h2>\n\n<p>\n  Специальный параметр <b>props.childs</b> позволит вам комбинировать компоненты между собой.\n</p>\n\n{{ board }}\n\n<h2>Ключи</h2>\n\n<p>\n  Специальный параметр <b>props.key</b> позволит vqua использовать более эффективный алгоритм перерисовки DOM дерева.\n</p>\n\n<p>Например в этом примере vqua просто меняет элементы местами, вместо того чтобы заново перерисовать элементы.</p>\n\n{{ keys-dom }}\n\n<p>По такому же принципу вы можете синхронизировать vqua компоненты:</p>\n\n{{ keys-instance }}\n"
 
 /***/ }),
 /* 479 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Состояние</h1>\n\n<p>Давайте напишем простой счетчик, а ниже разберем его более подробно</p>\n\n{{ counter }}\n\n<h2>Состояние по умолчанию</h2>\n\n<p>\n  Чтобы установить состояние счетчика по умолчанию нам необходимо реализовать метод constructor\n  и передать базовому классу его аргументы props и context через метод super.\n  Теперь можно установать начальное состояние в this.state.\n</p>\n\n<h2>Новое состояние</h2>\n\n<p>В методе handleClick мы устанавливаем новое состояние через метод this.setState.</p>\n<p>При его установке происходит следующее:</p>\n\n<ul>\n  <li>На основе нового состояние создается новый объект вирутального DOM дерева</li>\n  <li>Далее this.state сливается с новым состоянием</li>\n  <li>На основе разницы между текущим и новым деревом создается patch дерево</li>\n  <li>На основе patch дерева перерисвовыается dom</li>\n</ul>\n\n<p>\n  Не следует изменять объект this.state напрямую, всегда используйте\n  метод this.setState иначе просто ничего не произойдет.\n</p>\n\n<h2>Обработчик клика</h2>\n<p>\n  В методе render для ссылки устанавливаем свойство onClick\n  обработчик handleClick. И чтобы this ссылался на текущий объект оборачиваем\n  его в стрелочную функцию.\n</p>\n<br>\n<p>Наш счетчик готов.</p>\n"
+module.exports = "<h1>References</h1>\n\n<p>\n  If you need to access directly the dom element,\n  you can do this using <b>props.ref</b>, like this:\n</p>\n\n{{ dom }}\n\n<p>\n  Also you can access the instance of the component, like so:\n</p>\n\n{{ component }}\n"
 
 /***/ }),
 /* 480 */
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Ссылки</h1>\n\n<p>\n  Если вам необходимо получить доступ напрямую к dom элементу,\n  вы можете сделать это используя <b>props.ref</b>, например так:\n</p>\n\n{{ dom }}\n\n<p>\n  Также вы можете получить доступ и к инстансу компонента, вот так:\n</p>\n\n{{ component }}\n"
+
+/***/ }),
+/* 481 */
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Router</h1>\n\n<h2>How to install?</h2>\n\n{{ install }}\n\n<h2>Example</h2>\n\n{{ match-routes }}\n\n<h2>Description</h2>\n\n<p>\n  A set of utilities for organizing routing.\n</p>\n\n<h2>Function route(matchers|path, action, props = {}, childs = [])</h2>\n\n<p>\n\n</p>\n\n<p>\n  <b>matchers|path</b>\n  - an array consisting of lines of paths and matcher objects | or one line of the path string\n  <ul>\n    <li>\n      <i>path</i> - path string\n    </li>\n    <li>\n      <i>matcher</i> - match object\n      <ul>\n        <li>\n          <i>key</i> - matching segment name\n        </li>\n        <li>\n          <i>match</i> - callback function, takes the value as an argument <i>key</i>.\n          Must return true if it matches | false in case of no match.\n        </li>\n      </ul>\n\n      Example of the match object:\n\n      {{ matcher }}\n\n    </li>\n  </ul>\n  <b>action</b> - handler function\n  <br>\n  <b>props</b> - properties object\n  <br>\n  <b>childs</b> - array of nested routes\n  <br>\n</p>\n\n<p>Returns the route object:</p>\n\n<ul>\n  <li>\n    <b>segments</b> - array of path string segments\n  </li>\n  <li>\n    <b>path</b> - path string\n  </li>\n  <li>\n    <b>action</b> - request handler function\n  </li>\n  <li>\n    <b>props</b> - query properties object\n  </li>\n  <li>\n    <b>childs</b> - array of nested routes\n  </li>\n</ul>\n\n<h2>Function separateRoutes(routes, segments = [])</h2>\n\n<p>\n  Splits all nested routes to the first level\n</p>\n\n<p>\n  <b>routes</b> - array of nested routes\n  <br>\n  <b>segments</b> - array of segments of the current context (optional)\n  <br>\n</p>\n\n<p>Returns an array of routes.</p>\n\n\n<h2>Function matchRoutes(routes, path)</h2>\n\n<p>\n  Finds the first route it finds on the basis of the specified path.\n</p>\n\n<p>\n  <b>routes</b> - array of routes\n  <br>\n  <b>path</b> - path string\n  <br>\n</p>\n\n<p>\n  Return object <b>routeInfo</b>:\n  <ul>\n    <li>\n      <b>path</b> - path string\n    </li>\n    <li>\n      <b>segments</b> - array of routes\n    </li>\n    <li>\n      <b>action</b> - route handler function\n    </li>\n    <li>\n      <b>props</b> - route object properties\n    </li>\n    <li>\n      <b>childs</b> - array of nested routes\n    </li>\n    <li>\n      <b>request</b> - request object\n      <ul>\n        <li>\n          <b>path</b> - path string\n        </li>\n        <li>\n          <b>segments</b> - array of routes\n        </li>\n        <li>\n          <b>params</b> - route object properties\n        </li>\n      </ul>\n    </li>\n  </ul>\n</p>\n"
+
+/***/ }),
+/* 482 */
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Роутер</h1>\n\n<h2>Как установить?</h2>\n\n{{ install }}\n\n<h2>Пример</h2>\n\n{{ match-routes }}\n\n<h2>Описание</h2>\n\n<p>\n  Набор утилит для организации маршрутиризации.\n</p>\n\n<h2>Функция route(matchers|path, action, props = {}, childs = [])</h2>\n\n<p>\n\n</p>\n\n<p>\n  <b>matchers|path</b> - массив состоящий из строк путей и объектов совпадений | или одна строка пути\n  <ul>\n    <li>\n      <i>path</i> - строка пути\n    </li>\n    <li>\n      <i>matcher</i> - объект совпадения\n      <ul>\n        <li>\n          <i>key</i> - название сегмента совпадения\n        </li>\n        <li>\n          <i>match</i> - функция обратного вызова, в качестве аргумента принимает значение <i>key</i>.\n          Должна вернуть true в случае совпадения| false в случае не совпадения.\n        </li>\n      </ul>\n\n      Пример объекта совпадения:\n\n      {{ matcher }}\n\n    </li>\n  </ul>\n  <b>action</b> - функция обработчик\n  <br>\n  <b>props</b> - объект параметров\n  <br>\n  <b>childs</b> - массив вложенных маршрутов\n  <br>\n</p>\n\n<p>Возвращает объект роута:</p>\n\n<ul>\n  <li>\n    <b>segments</b> - массив сегментов строки пути\n  </li>\n  <li>\n    <b>path</b> - строка пути\n  </li>\n  <li>\n    <b>action</b> - функция обработки запроса\n  </li>\n  <li>\n    <b>props</b> - объект параметров запроса\n  </li>\n  <li>\n    <b>childs</b> - массив вложенных маршрутов\n  </li>\n</ul>\n\n<h2>Функция separateRoutes(routes, segments = [])</h2>\n\n<p>\n  Разделяет все вложенные маршруты на первый уровень\n</p>\n\n<p>\n  <b>routes</b> - массив маршрутов\n  <br>\n  <b>segments</b> - массив сегментов текущего контекста (не обязательно)\n  <br>\n</p>\n\n<p>Возвращает массив маршрутов.</p>\n\n\n<h2>Фунцкия matchRoutes(routes, path)</h2>\n\n<p>\n  Находит первый попавшийся маршрут на основе заданного пути.\n</p>\n\n<p>\n  <b>routes</b> - массив маршрутов\n  <br>\n  <b>path</b> - строка пути\n  <br>\n</p>\n\n<p>\n  Возвращает объект <b>routeInfo</b>:\n  <ul>\n    <li>\n      <b>path</b> - строка пути\n    </li>\n    <li>\n      <b>segments</b> - массив элементов пути\n    </li>\n    <li>\n      <b>action</b> - функция обработчика маршрута\n    </li>\n    <li>\n      <b>props</b> - объект параметров маршрута\n    </li>\n    <li>\n      <b>childs</b> - массив вложенных маршрутов\n    </li>\n    <li>\n      <b>request</b> - объект запроса\n      <ul>\n        <li>\n          <b>path</b> - строка пути\n        </li>\n        <li>\n          <b>segments</b> - массив элементов пути\n        </li>\n        <li>\n          <b>params</b> - объект параметров маршрута\n        </li>\n      </ul>\n    </li>\n  </ul>\n</p>\n"
+
+/***/ }),
+/* 483 */
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Server render</h1>\n\n<p>\n  To try server render, use this boilerplate.\n  Next, we will analyze it:\n  In order to test server rendering in action\n  use <a href='/en/boilerplate' class='navigate_link'>ready boilerplate</a>.\n  <br>\n  <br>\n  Next, we will disassemble it:\n</p>\n\n<h2>\n  Algorithm server rendering\n</h2>\n\n<img src=\"/content/server-render/images/ssr-algo-en.jpg\">\n\n<h2>Create a server</h2>\n\n<p>/build/server/index.js</p>\n\n{{ create-server }}\n\n<p>\n  The server accepts the request, and finds the matched route and controller.\n</p>\n\n<a href='/en/create-server' class='navigate_link'>Learn more about creating a server</a>\n\n\n<h2>Controller</h2>\n\n<p>/build/controllers/WelcomeController.js</p>\n\n{{ controller }}\n\n<p>\n  Controller return <b>response code</b>, <b>component name</b> and his <b>properties</b>.\n  <br>\n  <br>\n  After that, the server finds in the folder /build/containers the requested component and\n  creates a virtual tree from it. On the basis of this tree, it creates an html string, places it\n  in your main template (layout) and sends a request to the browser.\n  <br>\n  <br>\n  Also, along with the main template in the script#app-cache, the server places the JSON string\n  with the data from request.send (). This is done in order to not cause the controller once again\n  in the browser.\n</p>\n\n\n<h2>Browser navigation</h2>\n\n<p>/build/index.js</p>\n\n{{ browser-navigation }}\n\n<p>The browser received a response from the server. Now we need to build <b>two virtual trees</b>.</p>\n\n\n<p><b>1st tree</b> we build on the basis of the DOM that provided us with a browser.</p>\n\n<p><b>2nd tree</b> we build on the basis of JSON controller cache from the script tag mentioned above.</p>\n\n<p>\n  Now the render method will compare two trees and restore the difference between them.\n  More precisely, hangs the missing events, and it will go all the way through the life cycle\n  of the callbacks of each component.\n</p>\n\n<a href='/en/browser-navigation' class='navigate_link'>More about browser navigation</a>\n"
+
+/***/ }),
+/* 484 */
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Серверный рендер</h1>\n\n<p>\n  Для того чтобы опробовать серверный рендер в действии\n  воспользуйтесь <a href='/ru/boilerplate' class='navigate_link'>готовым каркасом</a>.\n  <br>\n  <br>\n  Далее мы будем разбирать ее:\n</p>\n\n<h2>\n  Алгоритм серверного рендера\n</h2>\n\n<img src=\"/content/server-render/images/ssr-algo-ru.jpg\">\n\n<h2>Создание сервера</h2>\n\n<p>/build/server/index.js</p>\n\n{{ create-server }}\n\n<p>\n  Сервер принимает запрос, и находит соответствующий ему маршрут и контроллер.\n</p>\n\n<a href='/ru/create-server' class='navigate_link'>Подробнее о создании сервера</a>\n\n\n<h2>Контроллер</h2>\n\n<p>/build/controllers/WelcomeController.js</p>\n\n{{ controller }}\n\n<p>\n  Контроллер возвращает <b>код ответа</b>, <b>название компонента</b> и его <b>параметры props</b>.\n  <br>\n  <br>\n  После этого сервер находит в папке /build/containers запрашиваемый компонент и\n  создает из него виртуальное дерево. На основе этого дерева он создает html строку, помещает ее\n  в ваш основной шаблон (layout) и отправляет запрос браузеру.\n  <br>\n  <br>\n  Также вместе с основным шаблоном в теге script#app-cache сервер размещает JSON строку с данными из\n  request.send(). Делается это для того чтобы в браузере не вызывать контроллер лишний раз.\n</p>\n\n\n<h2>Браузерная навигация</h2>\n\n<p>/build/index.js</p>\n\n{{ browser-navigation }}\n\n<p>Браузер получил ответ от сервера. Теперь нам надо построить <b>два виртуальных дерева</b>.</p>\n\n\n<p><b>1-ое дерево</b> мы строим на основе DOM который предоставил нам браузер.</p>\n\n<p><b>2-ое дерево</b> мы строим на основе JSON кеша контроллера из тега script, упомянутом выше.</p>\n\n<p>\n  Теперь метод render сравнит два дерева и восстановит между ними разницу.\n  А именно, навесит недостающие события, и пройдет полностью по всему жизненному цилку колбеков каждого компонента.\n</p>\n\n<a href='/ru/browser-navigation' class='navigate_link'>Подробнее о браузерной навигации</a>\n"
+
+/***/ }),
+/* 485 */
+/***/ (function(module, exports) {
+
+module.exports = "<h1>State</h1>\n\n<p>Let's write a simple counter, and below we will analyze it in more detail</p>\n\n{{ counter }}\n\n<h2>Default state</h2>\n\n<p>\n  To set the default counter state, we need to implement the constructor\n  and pass the props and context arguments to the base class via the super method.\n  Now you can set the initial state in this.state.\n</p>\n\n<h2>New state</h2>\n\n<p>In the handleClick method, we set a new state through the this.setState method.</p>\n<p>When you install it the following happens:</p>\n\n<ul>\n  <li>Based on the new state, a new object of the virtual DOM tree is created</li>\n  <li>Then this.state merges with the new state</li>\n  <li>Based on the difference between the current and the new tree, a patch tree is created</li>\n  <li>Based on the patch of the tree, dom is redrawn</li>\n</ul>\n\n<p>\n  Do not modify this.state object directly, always use\n  this.setState method otherwise nothing will happen.\n</p>\n\n<h2>Click handler</h2>\n<p>\n  In the render method for the link, set the onClick property\n  handleClick. Wrap the handler into arrow function so this refers to this object.\n</p>\n<br>\n<p>Our counter is ready.</p>\n"
+
+/***/ }),
+/* 486 */
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Состояние</h1>\n\n<p>Давайте напишем простой счетчик, а ниже разберем его более подробно</p>\n\n{{ counter }}\n\n<h2>Состояние по умолчанию</h2>\n\n<p>\n  Чтобы установить состояние счетчика по умолчанию нам необходимо реализовать метод constructor\n  и передать базовому классу его аргументы props и context через метод super.\n  Теперь можно установать начальное состояние в this.state.\n</p>\n\n<h2>Новое состояние</h2>\n\n<p>В методе handleClick мы устанавливаем новое состояние через метод this.setState.</p>\n<p>При его установке происходит следующее:</p>\n\n<ul>\n  <li>На основе нового состояние создается новый объект вирутального DOM дерева</li>\n  <li>Далее this.state сливается с новым состоянием</li>\n  <li>На основе разницы между текущим и новым деревом создается patch дерево</li>\n  <li>На основе patch дерева перерисвовыается dom</li>\n</ul>\n\n<p>\n  Не следует изменять объект this.state напрямую, всегда используйте\n  метод this.setState иначе просто ничего не произойдет.\n</p>\n\n<h2>Обработчик клика</h2>\n<p>\n  В методе render для ссылки устанавливаем свойство onClick\n  обработчик handleClick. И чтобы this ссылался на текущий объект оборачиваем\n  его в стрелочную функцию.\n</p>\n<br>\n<p>Наш счетчик готов.</p>\n"
+
+/***/ }),
+/* 487 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15396,46 +15578,46 @@ function escapeHtml(string) {
 }
 
 /***/ }),
-/* 481 */
+/* 488 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./boilerplate/examples/gulp.sh": 482,
-	"./boilerplate/examples/install.sh": 483,
-	"./boilerplate/examples/webpack.sh": 484,
-	"./browser-navigation/examples/create-navigation.js": 485,
-	"./browser-navigation/examples/install.sh": 486,
-	"./context/examples/app.preview.js": 487,
-	"./create-server/examples/create-server.sh": 488,
-	"./create-server/examples/install.js": 489,
-	"./create-server/examples/layout.js": 490,
-	"./fast-start/examples/hello-world-html.html": 161,
-	"./fast-start/examples/hello-world-js.js": 491,
-	"./fast-start/examples/webpack-config.js": 492,
-	"./fast-start/examples/webpack-install.sh": 493,
-	"./fast-start/examples/webpack-run.sh": 494,
-	"./hooks/examples/after-mount.js": 495,
-	"./hooks/examples/after-update.js": 496,
-	"./hooks/examples/before-mount.js": 497,
-	"./hooks/examples/before-unmount.js": 498,
-	"./hooks/examples/before-update.js": 499,
-	"./hooks/examples/is-need-update.js": 500,
-	"./introduction/examples/pure-javascript.js": 501,
-	"./props/examples/board.preview.js": 502,
-	"./props/examples/hello.preview.js": 503,
-	"./props/examples/keys-dom.preview.js": 504,
-	"./props/examples/keys-instance.js": 505,
-	"./props/examples/universe.preview.js": 506,
-	"./references/examples/component.js": 507,
-	"./references/examples/dom.preview.js": 508,
-	"./router/examples/install.sh": 509,
-	"./router/examples/match-routes.js": 510,
-	"./router/examples/matcher.js": 511,
-	"./sample/examples/test.preview.js": 512,
-	"./server-render/examples/browser-navigation.js": 513,
-	"./server-render/examples/controller.js": 514,
-	"./server-render/examples/create-server.js": 515,
-	"./state/examples/counter.preview.js": 516
+	"./boilerplate/examples/gulp.sh": 489,
+	"./boilerplate/examples/install.sh": 490,
+	"./boilerplate/examples/webpack.sh": 491,
+	"./browser-navigation/examples/create-navigation.js": 492,
+	"./browser-navigation/examples/install.sh": 493,
+	"./context/examples/app.preview.js": 494,
+	"./create-server/examples/create-server.sh": 495,
+	"./create-server/examples/install.js": 496,
+	"./create-server/examples/layout.js": 497,
+	"./fast-start/examples/hello-world-html.html": 162,
+	"./fast-start/examples/hello-world-js.js": 498,
+	"./fast-start/examples/webpack-config.js": 499,
+	"./fast-start/examples/webpack-install.sh": 500,
+	"./fast-start/examples/webpack-run.sh": 501,
+	"./hooks/examples/after-mount.js": 502,
+	"./hooks/examples/after-update.js": 503,
+	"./hooks/examples/before-mount.js": 504,
+	"./hooks/examples/before-unmount.js": 505,
+	"./hooks/examples/before-update.js": 506,
+	"./hooks/examples/is-need-update.js": 507,
+	"./introduction/examples/pure-javascript.js": 508,
+	"./props/examples/board.preview.js": 509,
+	"./props/examples/hello.preview.js": 510,
+	"./props/examples/keys-dom.preview.js": 511,
+	"./props/examples/keys-instance.js": 512,
+	"./props/examples/universe.preview.js": 513,
+	"./references/examples/component.js": 514,
+	"./references/examples/dom.preview.js": 515,
+	"./router/examples/install.sh": 516,
+	"./router/examples/match-routes.js": 517,
+	"./router/examples/matcher.js": 518,
+	"./sample/examples/test.preview.js": 519,
+	"./server-render/examples/browser-navigation.js": 520,
+	"./server-render/examples/controller.js": 521,
+	"./server-render/examples/create-server.js": 522,
+	"./state/examples/counter.preview.js": 523
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -15451,231 +15633,231 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 481;
-
-/***/ }),
-/* 482 */
-/***/ (function(module, exports) {
-
-module.exports = "gulp\n"
-
-/***/ }),
-/* 483 */
-/***/ (function(module, exports) {
-
-module.exports = "git clone git@github.com:sterjakovigor/vqua.git\ncp -R ./vqua/packages/vqua-boilerplate-ssr/ ./vqua-boilerplate-ssr\ncd vqua-boilerplate-ssr/\nnpm i\nnpm i -g nodemon\nnodemon server\n"
-
-/***/ }),
-/* 484 */
-/***/ (function(module, exports) {
-
-module.exports = "webpack -w\n"
-
-/***/ }),
-/* 485 */
-/***/ (function(module, exports) {
-
-module.exports = "const { render } = require('vqua')\nconst createNavigation = require('vqua-navigation')\nconst routes = require('./config/routes')\n\n\nconst $cache = document.getElementById('app-cache')\n\nconst cache = $cache.innerHTML\n\n$cache.parentNode.removeChild($cache)\n\n\nconst navigation = createNavigation({ routes, cache }, (params) => {\n\n  const { liveNodes, component, navigate, callback } = params\n\n  const Component = require('./containers/' + component.name)\n\n  const templateNodes = [ Component.v(component.props, component.context) ]\n\n  const context = { navigate }\n\n  const $app = document.getElementById('app')\n\n  const newLiveNodes = render($app, liveNodes, templateNodes, context)\n\n  callback(newLiveNodes)\n\n})\n\n\nnavigation.listen()\n"
-
-/***/ }),
-/* 486 */
-/***/ (function(module, exports) {
-
-module.exports = "npm i --save vqua-navigation\n"
-
-/***/ }),
-/* 487 */
-/***/ (function(module, exports) {
-
-module.exports = "const { Component } = require('vqua')\n\n// cut before\n\nclass User extends Component {\n\n  static injectContext() {\n\n    return ['username']\n\n  }\n\n  render() {\n\n    return this.context.username\n\n  }\n\n}\n\nclass App extends Component {\n\n  passContext() {\n\n    return {\n      username: 'Igor',\n    }\n\n  }\n\n  render() {\n\n    return User.v()\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = App\n"
-
-/***/ }),
-/* 488 */
-/***/ (function(module, exports) {
-
-module.exports = "const app =\n  createServer({\n    routes: [],\n    layout: (html, data) => '',\n    publicPath: './dist',\n    containerPath: './build/containers',\n  })\n\napp.listen(8080)\n"
+webpackContext.id = 488;
 
 /***/ }),
 /* 489 */
 /***/ (function(module, exports) {
 
-module.exports = "npm i --save vqua-server\n"
+module.exports = "gulp\n"
 
 /***/ }),
 /* 490 */
 /***/ (function(module, exports) {
 
-module.exports = "const layout = (html = '', data = '') => {\n\n  return (\n    '<html>' +\n      '<head>' +\n        '<meta charset=\"utf-8\">' +\n        '<link rel=\"stylesheet\" type=\"text/css\" href=\"/index.css\">' +\n      '</head>' +\n      '<body>' +\n        '<div id=\"app\">' +\n          html +\n        '</div>' +\n        '<script id=\"app-cache\" type=\"application/json\">' +\n          data +\n        '</script>' +\n        '<script src=\"/index.js\" type=\"text/javascript\"></script>' +\n      '</body>' +\n    '</html>'\n  )\n}\n"
+module.exports = "git clone git@github.com:sterjakovigor/vqua.git\ncp -R ./vqua/packages/vqua-boilerplate-ssr/ ./vqua-boilerplate-ssr\ncd vqua-boilerplate-ssr/\nnpm i\nnpm i -g nodemon\nnodemon server\n"
 
 /***/ }),
 /* 491 */
 /***/ (function(module, exports) {
 
-module.exports = "// { \"showPreview\": \"false\" }\n// cut before\n\nconst { html, Component, render } = require('vqua')\n\nclass HelloWorld extends Component {\n\n  render() {\n\n    const { div } = html\n\n    return (\n      div({},\n        'Hello world!'\n      )\n    )\n\n  }\n\n}\n\nconst app = document.getElementById('app')\n\nrender(app, HelloWorld.v(), (error) => {\n\n  if (error) throw error\n\n})\n\n// cut after\n\nmodule.exports = HelloWorld\n"
+module.exports = "webpack -w\n"
 
 /***/ }),
 /* 492 */
 /***/ (function(module, exports) {
 
-module.exports = "const path = require('path')\n\nmodule.exports = {\n  entry: './index.js',\n  output: {\n    filename: 'index.js',\n    path: path.resolve(__dirname)\n  },\n}\n"
+module.exports = "const { render } = require('vqua')\nconst createNavigation = require('vqua-navigation')\nconst routes = require('./config/routes')\n\n\nconst $cache = document.getElementById('app-cache')\n\nconst cache = $cache.innerHTML\n\n$cache.parentNode.removeChild($cache)\n\n\nconst navigation = createNavigation({ routes, cache }, (params) => {\n\n  const { liveNodes, component, navigate, callback } = params\n\n  const Component = require('./containers/' + component.name)\n\n  const templateNodes = [ Component.v(component.props, component.context) ]\n\n  const context = Object.assign({}, { navigate }, component.context)\n\n  const $app = document.getElementById('app')\n\n  const newLiveNodes = render($app, liveNodes, templateNodes, context)\n\n  callback(newLiveNodes)\n\n})\n\n\nnavigation.listen()\n"
 
 /***/ }),
 /* 493 */
 /***/ (function(module, exports) {
 
-module.exports = "mkdir ./hello-world\n\ncd ./hello-world\n\nnpm install --save vqua\n\nnpm install --save-dev webpack\n"
+module.exports = "npm i --save vqua-navigation\n"
 
 /***/ }),
 /* 494 */
 /***/ (function(module, exports) {
 
-module.exports = "webpack\n"
+module.exports = "const { Component } = require('vqua')\n\n// cut before\n\nclass User extends Component {\n\n  static injectContext() {\n\n    return ['username']\n\n  }\n\n  render() {\n\n    return this.context.username\n\n  }\n\n}\n\nclass App extends Component {\n\n  passContext() {\n\n    return {\n      username: 'Igor',\n    }\n\n  }\n\n  render() {\n\n    return User.v()\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = App\n"
 
 /***/ }),
 /* 495 */
 /***/ (function(module, exports) {
 
-module.exports = "afterMount() {}\n"
+module.exports = "const app =\n  createServer({\n    routes: [],\n    layout: (html, data) => '',\n    publicPath: './dist',\n    containerPath: './build/containers',\n  })\n\napp.listen(8080)\n"
 
 /***/ }),
 /* 496 */
 /***/ (function(module, exports) {
 
-module.exports = "afterUpdate(prevProps, prevState, prevContext) {}\n"
+module.exports = "npm i --save vqua-server\n"
 
 /***/ }),
 /* 497 */
 /***/ (function(module, exports) {
 
-module.exports = "beforeMount() {}\n"
+module.exports = "const layout = (html = '', data = '') => {\n\n  return (\n    '<html>' +\n      '<head>' +\n        '<meta charset=\"utf-8\">' +\n        '<link rel=\"stylesheet\" type=\"text/css\" href=\"/index.css\">' +\n      '</head>' +\n      '<body>' +\n        '<div id=\"app\">' +\n          html +\n        '</div>' +\n        '<script id=\"app-cache\" type=\"application/json\">' +\n          data +\n        '</script>' +\n        '<script src=\"/index.js\" type=\"text/javascript\"></script>' +\n      '</body>' +\n    '</html>'\n  )\n}\n"
 
 /***/ }),
 /* 498 */
 /***/ (function(module, exports) {
 
-module.exports = "beforeUnmount() {}\n"
+module.exports = "// { \"showPreview\": \"false\" }\n// cut before\n\nconst { html, Component, render } = require('vqua')\n\nclass HelloWorld extends Component {\n\n  render() {\n\n    const { div } = html\n\n    return (\n      div({},\n        'Hello world!'\n      )\n    )\n\n  }\n\n}\n\nconst app = document.getElementById('app')\n\nrender(app, HelloWorld.v(), (error) => {\n\n  if (error) throw error\n\n})\n\n// cut after\n\nmodule.exports = HelloWorld\n"
 
 /***/ }),
 /* 499 */
 /***/ (function(module, exports) {
 
-module.exports = "beforeUpdate(nextProps, nextState, nextContext) {}\n"
+module.exports = "const path = require('path')\n\nmodule.exports = {\n  entry: './index.js',\n  output: {\n    filename: 'index.js',\n    path: path.resolve(__dirname)\n  },\n}\n"
 
 /***/ }),
 /* 500 */
 /***/ (function(module, exports) {
 
-module.exports = "isNeedUpdate(nextProps, nextState, nextContext) {}\n"
+module.exports = "mkdir ./hello-world\n\ncd ./hello-world\n\nnpm install --save vqua\n\nnpm install --save-dev webpack\n"
 
 /***/ }),
 /* 501 */
 /***/ (function(module, exports) {
 
-module.exports = "const { html, Component } = require('vqua')\n\n// cut before\n\nclass Beatles extends Component {\n\n  render() {\n\n    const { p, a } = html\n \n    return [\n      p({ class: 'yellow' },\n        'We all live in a yellow submarine'\n      ),\n      p({ onClick: () => { alert('Hands up!') } },\n        'Yellow submarine, yellow submarine'\n      ),\n    ]\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Beatles\n"
+module.exports = "webpack\n"
 
 /***/ }),
 /* 502 */
 /***/ (function(module, exports) {
 
-module.exports = "const { Component, html } = require('vqua')\n\nconst Hello = require('./hello.preview')\n\n// cut before\n\nclass Board extends Component {\n\n  render() {\n\n    const { div } = html\n\n    return (\n      div({ id: 'board' },\n        this.props.childs\n      )\n    )\n\n  }\n\n}\n\nconst board = Board.v({}, 'Some text!')\n\n// cut after\n\nclass Wrapper extends Component {\n\n  render() {\n\n    return board\n\n  }\n\n}\n\n\nmodule.exports = Wrapper\n"
+module.exports = "afterMount() {}\n"
 
 /***/ }),
 /* 503 */
 /***/ (function(module, exports) {
 
-module.exports = "const { Component } = require('vqua')\n\n// cut before\n\nclass Hello extends Component {\n\n  static defaultProps() {\n\n    return {\n      name: 'World'\n    }\n\n  }\n\n  render() {\n\n    return (\n      'Hello, ' + this.props.name + '!'\n    )\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Hello\n"
+module.exports = "afterUpdate(prevProps, prevState, prevContext) {}\n"
 
 /***/ }),
 /* 504 */
 /***/ (function(module, exports) {
 
-module.exports = "const { Component, html } = require('vqua')\n\n// cut before\n\nclass Toggler extends Component {\n\n  constructor(props, context) {\n\n    super(props, context)\n\n    this.state = {\n      active: true\n    }\n\n  }\n\n  handleClick(event) {\n\n    event.preventDefault()\n\n    this.setState({ active: !this.state.active })\n\n  }\n\n  render() {\n\n    const { div, a, br } = html\n\n    const first = (\n      div({ key: 1 },\n        div({},\n          'first'\n        )\n      )\n    )\n\n    const second = (\n      div({ key: 2 },\n        'second'\n      )\n    )\n\n    const toggle = [\n      a({ href: '#toggle', onClick: (e) => this.handleClick(e) },\n        'Toggle!'\n      ),\n      br(),\n    ]\n\n    const combination = this.state.active\n      ? [ toggle, second, first ]\n      : [ toggle, first, second ]\n\n    return combination\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Toggler\n"
+module.exports = "beforeMount() {}\n"
 
 /***/ }),
 /* 505 */
 /***/ (function(module, exports) {
 
-module.exports = "const { Component, html } = require('vqua')\n\n// cut before\n\n[\n  Example.v({ key: 'first' }),\n  Example.v({ key: 'second' })\n]\n\n// cut after\n\nmodule.exports = Toggler\n"
+module.exports = "beforeUnmount() {}\n"
 
 /***/ }),
 /* 506 */
 /***/ (function(module, exports) {
 
-module.exports = "const { Component } = require('vqua')\n\nconst Hello = require('./hello.preview')\n\n// cut before\n\nclass Universe extends Component {\n\n  render() {\n\n    return (\n      Hello.v({ name: 'Universe' })\n    )\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Universe\n"
+module.exports = "beforeUpdate(nextProps, nextState, nextContext) {}\n"
 
 /***/ }),
 /* 507 */
 /***/ (function(module, exports) {
 
-module.exports = "class App extends Component {\n\n  // ...\n\n  render() {\n\n    return (\n      Hello.v({ ref: 'hello' },\n        'Hello world'\n      )\n    )\n\n  }\n\n  // ...\n\n}\n"
+module.exports = "isNeedUpdate(nextProps, nextState, nextContext) {}\n"
 
 /***/ }),
 /* 508 */
 /***/ (function(module, exports) {
 
-module.exports = "const { Component, html } = require('vqua')\n\n// cut before\n\nclass Hello extends Component {\n\n  afterMount() {\n\n    setTimeout(() => {\n\n      this.refs.text.style = 'color: tomato;'\n\n    }, 1000)\n\n  }\n\n  render() {\n\n    const { p } = html\n\n    return (\n      p({ ref: 'text' },\n        'Hello world'\n      )\n    )\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Hello\n"
+module.exports = "const { html, Component } = require('vqua')\n\n// cut before\n\nclass Beatles extends Component {\n\n  render() {\n\n    const { p, a } = html\n \n    return [\n      p({ class: 'yellow' },\n        'We all live in a yellow submarine'\n      ),\n      p({ onClick: () => { alert('Hands up!') } },\n        'Yellow submarine, yellow submarine'\n      ),\n    ]\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Beatles\n"
 
 /***/ }),
 /* 509 */
 /***/ (function(module, exports) {
 
-module.exports = "npm i --save vqua-router\n"
+module.exports = "const { Component, html } = require('vqua')\n\nconst Hello = require('./hello.preview')\n\n// cut before\n\nclass Board extends Component {\n\n  render() {\n\n    const { div } = html\n\n    return (\n      div({ id: 'board' },\n        this.props.childs\n      )\n    )\n\n  }\n\n}\n\nconst board = Board.v({}, 'Some text!')\n\n// cut after\n\nclass Wrapper extends Component {\n\n  render() {\n\n    return board\n\n  }\n\n}\n\n\nmodule.exports = Wrapper\n"
 
 /***/ }),
 /* 510 */
 /***/ (function(module, exports) {
 
-module.exports = "const { route, matchRoutes, separateRoutes } = require('vqua-router')\n\nconst routes = [\n  route('/', 'main', {}, [\n    route('/posts', 'all posts'),\n    route('/posts/:id', 'post by id'),\n  ]),\n]\n\nconst separatedRoutes = separateRoutes(routes)\n\n// separatedRoutes:\n// [\n//   route('/', 'main'),\n//   route('/posts', 'all posts'),\n//   route('/posts/:id', 'post by id'),\n// ]\n\nconst matchedRoute = matchRoutes(separatedRoutes, '/posts/2')\n\n// matchedRoute:\n// {\n//   path: '/posts/:id',\n//   segments: ['posts', ':id'],\n//   action: 'post by id',\n//   props: {},\n//   childs: [],\n//   request: {\n//     path: '/posts/2',\n//     segments: ['posts', '2'],\n//     params: { id: '2' },\n//   }\n// }\n"
+module.exports = "const { Component } = require('vqua')\n\n// cut before\n\nclass Hello extends Component {\n\n  static defaultProps() {\n\n    return {\n      name: 'World'\n    }\n\n  }\n\n  render() {\n\n    return (\n      'Hello, ' + this.props.name + '!'\n    )\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Hello\n"
 
 /***/ }),
 /* 511 */
 /***/ (function(module, exports) {
 
-module.exports = "{\n  key: 'id',\n  matcher: id => id == '5'\n}\n"
+module.exports = "const { Component, html } = require('vqua')\n\n// cut before\n\nclass Toggler extends Component {\n\n  constructor(props, context) {\n\n    super(props, context)\n\n    this.state = {\n      active: true\n    }\n\n  }\n\n  handleClick(event) {\n\n    event.preventDefault()\n\n    this.setState({ active: !this.state.active })\n\n  }\n\n  render() {\n\n    const { div, a, br } = html\n\n    const first = (\n      div({ key: 1 },\n        div({},\n          'first'\n        )\n      )\n    )\n\n    const second = (\n      div({ key: 2 },\n        'second'\n      )\n    )\n\n    const toggle = [\n      a({ href: '#toggle', onClick: (e) => this.handleClick(e) },\n        'Toggle!'\n      ),\n      br(),\n    ]\n\n    const combination = this.state.active\n      ? [ toggle, second, first ]\n      : [ toggle, first, second ]\n\n    return combination\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Toggler\n"
 
 /***/ }),
 /* 512 */
 /***/ (function(module, exports) {
 
-module.exports = "module.exports = 'sample'\n"
+module.exports = "const { Component, html } = require('vqua')\n\n// cut before\n\n[\n  Example.v({ key: 'first' }),\n  Example.v({ key: 'second' })\n]\n\n// cut after\n\nmodule.exports = Toggler\n"
 
 /***/ }),
 /* 513 */
 /***/ (function(module, exports) {
 
-module.exports = "const { render } = require('vqua')\nconst createNavigation = require('vqua-navigation')\nconst routes = require('./config/routes')\n\n\nconst $cache = document.getElementById('app-cache')\n\nconst cache = $cache.innerHTML\n\n$cache.parentNode.removeChild($cache)\n\n\nconst navigation = createNavigation({ routes, cache }, (params) => {\n\n  const { liveNodes, component, navigate, callback } = params\n\n  const Component = require('./containers/' + component.name)\n\n  const templateNodes = [ Component.v(component.props, component.context) ]\n\n  const context = { navigate }\n\n  const $app = document.getElementById('app')\n\n  const newLiveNodes = render($app, liveNodes, templateNodes, context)\n\n  callback(newLiveNodes)\n\n})\n\n\nnavigation.listen()\n"
+module.exports = "const { Component } = require('vqua')\n\nconst Hello = require('./hello.preview')\n\n// cut before\n\nclass Universe extends Component {\n\n  render() {\n\n    return (\n      Hello.v({ name: 'Universe' })\n    )\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Universe\n"
 
 /***/ }),
 /* 514 */
 /***/ (function(module, exports) {
 
-module.exports = "class WelcomeController {\n\n  static index(req, res) {\n\n    res.send(200, 'WelcomeContainer', {})\n\n  }\n\n}\n\nmodule.exports = WelcomeController\n"
+module.exports = "class App extends Component {\n\n  // ...\n\n  render() {\n\n    return (\n      Hello.v({ ref: 'hello' },\n        'Hello world'\n      )\n    )\n\n  }\n\n  // ...\n\n}\n"
 
 /***/ }),
 /* 515 */
 /***/ (function(module, exports) {
 
-module.exports = "const createServer = require('vqua-server')\nconst layout = require('./layout')\nconst routes = require('../build/config/routes')\n\nconst app =\n  createServer({\n    routes,\n    layout,\n    publicPath: './dist',\n    buildPath: './build',\n    containerPath: './build/containers',\n  })\n\napp.listen(8080)\n"
+module.exports = "const { Component, html } = require('vqua')\n\n// cut before\n\nclass Hello extends Component {\n\n  afterMount() {\n\n    setTimeout(() => {\n\n      this.refs.text.style = 'color: tomato;'\n\n    }, 1000)\n\n  }\n\n  render() {\n\n    const { p } = html\n\n    return (\n      p({ ref: 'text' },\n        'Hello world'\n      )\n    )\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Hello\n"
 
 /***/ }),
 /* 516 */
 /***/ (function(module, exports) {
 
-module.exports = "const { html, Component } = require('vqua')\n\n// cut before\n\nclass Counter extends Component {\n\n  constructor(props, context) {\n\n    super(props, context)\n\n    this.state = {\n      counter: 0\n    }\n\n  }\n\n  handleClick(event) {\n\n    event.preventDefault()\n\n    this.setState({ counter: this.state.counter + 1 })\n\n  }\n\n  render() {\n\n    const { div, a, p } = html\n\n    return (\n      div({},\n        p({}, this.state.counter),\n        a({\n          href: '#click',\n          onClick: event => this.handleClick(event)\n        },\n          'Click me!'\n        )\n      )\n    )\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Counter\n"
+module.exports = "npm i --save vqua-router\n"
 
 /***/ }),
 /* 517 */
+/***/ (function(module, exports) {
+
+module.exports = "const { route, matchRoutes, separateRoutes } = require('vqua-router')\n\nconst routes = [\n  route('/', 'main', {}, [\n    route('/posts', 'all posts'),\n    route('/posts/:id', 'post by id'),\n  ]),\n]\n\nconst separatedRoutes = separateRoutes(routes)\n\n// separatedRoutes:\n// [\n//   route('/', 'main'),\n//   route('/posts', 'all posts'),\n//   route('/posts/:id', 'post by id'),\n// ]\n\nconst matchedRoute = matchRoutes(separatedRoutes, '/posts/2')\n\n// matchedRoute:\n// {\n//   path: '/posts/:id',\n//   segments: ['posts', ':id'],\n//   action: 'post by id',\n//   props: {},\n//   childs: [],\n//   request: {\n//     path: '/posts/2',\n//     segments: ['posts', '2'],\n//     params: { id: '2' },\n//   }\n// }\n"
+
+/***/ }),
+/* 518 */
+/***/ (function(module, exports) {
+
+module.exports = "{\n  key: 'id',\n  matcher: id => id == '5'\n}\n"
+
+/***/ }),
+/* 519 */
+/***/ (function(module, exports) {
+
+module.exports = "module.exports = 'sample'\n"
+
+/***/ }),
+/* 520 */
+/***/ (function(module, exports) {
+
+module.exports = "const { render } = require('vqua')\nconst createNavigation = require('vqua-navigation')\nconst routes = require('./config/routes')\n\n\nconst $cache = document.getElementById('app-cache')\n\nconst cache = $cache.innerHTML\n\n$cache.parentNode.removeChild($cache)\n\n\nconst navigation = createNavigation({ routes, cache }, (params) => {\n\n  const { liveNodes, component, navigate, callback } = params\n\n  const Component = require('./containers/' + component.name)\n\n  const templateNodes = [ Component.v(component.props, component.context) ]\n\n  const context = { navigate }\n\n  const $app = document.getElementById('app')\n\n  const newLiveNodes = render($app, liveNodes, templateNodes, context)\n\n  callback(newLiveNodes)\n\n})\n\n\nnavigation.listen()\n"
+
+/***/ }),
+/* 521 */
+/***/ (function(module, exports) {
+
+module.exports = "class WelcomeController {\n\n  static index(req, res) {\n\n    res.send(200, 'WelcomeContainer', {})\n\n  }\n\n}\n\nmodule.exports = WelcomeController\n"
+
+/***/ }),
+/* 522 */
+/***/ (function(module, exports) {
+
+module.exports = "const createServer = require('vqua-server')\nconst layout = require('./layout')\nconst routes = require('../build/config/routes')\n\nconst app =\n  createServer({\n    routes,\n    layout,\n    publicPath: './dist',\n    buildPath: './build',\n    containerPath: './build/containers',\n  })\n\napp.listen(8080)\n"
+
+/***/ }),
+/* 523 */
+/***/ (function(module, exports) {
+
+module.exports = "const { html, Component } = require('vqua')\n\n// cut before\n\nclass Counter extends Component {\n\n  constructor(props, context) {\n\n    super(props, context)\n\n    this.state = {\n      counter: 0\n    }\n\n  }\n\n  handleClick(event) {\n\n    event.preventDefault()\n\n    this.setState({ counter: this.state.counter + 1 })\n\n  }\n\n  render() {\n\n    const { div, a, p } = html\n\n    return (\n      div({},\n        p({}, this.state.counter),\n        a({\n          href: '#click',\n          onClick: event => this.handleClick(event)\n        },\n          'Click me!'\n        )\n      )\n    )\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Counter\n"
+
+/***/ }),
+/* 524 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./context/examples/app.preview.js": 518,
-	"./props/examples/board.preview.js": 519,
-	"./props/examples/hello.preview.js": 111,
-	"./props/examples/keys-dom.preview.js": 520,
-	"./props/examples/universe.preview.js": 521,
-	"./references/examples/dom.preview.js": 522,
-	"./sample/examples/test.preview.js": 523,
-	"./state/examples/counter.preview.js": 524
+	"./context/examples/app.preview.js": 525,
+	"./props/examples/board.preview.js": 526,
+	"./props/examples/hello.preview.js": 110,
+	"./props/examples/keys-dom.preview.js": 527,
+	"./props/examples/universe.preview.js": 528,
+	"./references/examples/dom.preview.js": 529,
+	"./sample/examples/test.preview.js": 530,
+	"./state/examples/counter.preview.js": 531
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -15691,10 +15873,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 517;
+webpackContext.id = 524;
 
 /***/ }),
-/* 518 */
+/* 525 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15772,7 +15954,7 @@ var App = function (_Component2) {
 module.exports = App;
 
 /***/ }),
-/* 519 */
+/* 526 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15790,7 +15972,7 @@ var _require = __webpack_require__(6),
     Component = _require.Component,
     html = _require.html;
 
-var Hello = __webpack_require__(111);
+var Hello = __webpack_require__(110);
 
 // cut before
 
@@ -15843,7 +16025,7 @@ var Wrapper = function (_Component2) {
 module.exports = Wrapper;
 
 /***/ }),
-/* 520 */
+/* 527 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15918,7 +16100,7 @@ var Toggler = function (_Component) {
 module.exports = Toggler;
 
 /***/ }),
-/* 521 */
+/* 528 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15935,7 +16117,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var _require = __webpack_require__(6),
     Component = _require.Component;
 
-var Hello = __webpack_require__(111);
+var Hello = __webpack_require__(110);
 
 // cut before
 
@@ -15964,7 +16146,7 @@ var Universe = function (_Component) {
 module.exports = Universe;
 
 /***/ }),
-/* 522 */
+/* 529 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16021,7 +16203,7 @@ var Hello = function (_Component) {
 module.exports = Hello;
 
 /***/ }),
-/* 523 */
+/* 530 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16030,7 +16212,7 @@ module.exports = Hello;
 module.exports = 'sample';
 
 /***/ }),
-/* 524 */
+/* 531 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16100,7 +16282,7 @@ var Counter = function (_Component) {
 module.exports = Counter;
 
 /***/ }),
-/* 525 */
+/* 532 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16108,7 +16290,7 @@ module.exports = Counter;
 
 var fs = __webpack_require__(46);
 var p = __webpack_require__(46);
-var minimatch = __webpack_require__(526);
+var minimatch = __webpack_require__(533);
 
 function patternMatcher(pattern) {
   return function (path, stats) {
@@ -16202,7 +16384,7 @@ function readdir(path, ignores, callback) {
 module.exports = readdir;
 
 /***/ }),
-/* 526 */
+/* 533 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16217,7 +16399,7 @@ try {
 } catch (er) {}
 
 var GLOBSTAR = minimatch.GLOBSTAR = Minimatch.GLOBSTAR = {};
-var expand = __webpack_require__(527);
+var expand = __webpack_require__(534);
 
 var plTypes = {
   '!': { open: '(?:(?!(?:', close: '))[^/]*?)' },
@@ -17111,14 +17293,14 @@ function regExpEscape(s) {
 }
 
 /***/ }),
-/* 527 */
+/* 534 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var concatMap = __webpack_require__(528);
-var balanced = __webpack_require__(529);
+var concatMap = __webpack_require__(535);
+var balanced = __webpack_require__(536);
 
 module.exports = expandTop;
 
@@ -17297,7 +17479,7 @@ function expand(str, isTop) {
 }
 
 /***/ }),
-/* 528 */
+/* 535 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17317,7 +17499,7 @@ var isArray = Array.isArray || function (xs) {
 };
 
 /***/ }),
-/* 529 */
+/* 536 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17383,16 +17565,16 @@ function range(a, b, str) {
 }
 
 /***/ }),
-/* 530 */
+/* 537 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./__tests/browser.Spec": 163,
-	"./__tests/browser.Spec.js": 163,
-	"./__tests/getPathInfo.spec": 164,
-	"./__tests/getPathInfo.spec.js": 164,
-	"./__tests/server.spec": 165,
-	"./__tests/server.spec.js": 165,
+	"./__tests/browser.Spec": 164,
+	"./__tests/browser.Spec.js": 164,
+	"./__tests/getPathInfo.spec": 165,
+	"./__tests/getPathInfo.spec.js": 165,
+	"./__tests/server.spec": 166,
+	"./__tests/server.spec.js": 166,
 	"./browser": 73,
 	"./browser.js": 73,
 	"./getPathInfo": 54,
@@ -17414,10 +17596,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 530;
+webpackContext.id = 537;
 
 /***/ }),
-/* 531 */
+/* 538 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17439,14 +17621,14 @@ module.exports = {
 };
 
 /***/ }),
-/* 532 */
+/* 539 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./ArticleContainer": 167,
-	"./ArticleContainer.js": 167,
-	"./ErrorContainer": 169,
-	"./ErrorContainer.js": 169
+	"./ArticleContainer": 168,
+	"./ArticleContainer.js": 168,
+	"./ErrorContainer": 170,
+	"./ErrorContainer.js": 170
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -17462,10 +17644,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 532;
+webpackContext.id = 539;
 
 /***/ }),
-/* 533 */
+/* 540 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17483,11 +17665,11 @@ var _require = __webpack_require__(6),
     Component = _require.Component,
     html = _require.html;
 
-var MenuSite = __webpack_require__(534);
-var MenuGuide = __webpack_require__(536);
-var MenuLocale = __webpack_require__(537);
+var MenuSite = __webpack_require__(541);
+var MenuGuide = __webpack_require__(543);
+var MenuLocale = __webpack_require__(544);
 
-var Logo = __webpack_require__(538);
+var Logo = __webpack_require__(545);
 
 var Sidebar = function (_Component) {
   _inherits(Sidebar, _Component);
@@ -17516,7 +17698,7 @@ var Sidebar = function (_Component) {
 module.exports = Sidebar;
 
 /***/ }),
-/* 534 */
+/* 541 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17534,7 +17716,7 @@ var _require = __webpack_require__(6),
     Component = _require.Component,
     html = _require.html;
 
-var MenuItems = __webpack_require__(112);
+var MenuItems = __webpack_require__(111);
 
 var MenuSite = function (_Component) {
   _inherits(MenuSite, _Component);
@@ -17573,7 +17755,7 @@ var MenuSite = function (_Component) {
 module.exports = MenuSite;
 
 /***/ }),
-/* 535 */
+/* 542 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17593,7 +17775,7 @@ var _require = __webpack_require__(6),
     html = _require.html,
     Component = _require.Component;
 
-var _require2 = __webpack_require__(32),
+var _require2 = __webpack_require__(35),
     omit = _require2.omit;
 
 var Link = function (_Component) {
@@ -17646,7 +17828,7 @@ var Link = function (_Component) {
 module.exports = Link;
 
 /***/ }),
-/* 536 */
+/* 543 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17664,8 +17846,8 @@ var _require = __webpack_require__(6),
     Component = _require.Component,
     html = _require.html;
 
-var MenuItems = __webpack_require__(112);
-var translations = __webpack_require__(113);
+var MenuItems = __webpack_require__(111);
+var translations = __webpack_require__(112);
 
 var decorateItems = function decorateItems(_ref) {
   var items = _ref.items,
@@ -17789,7 +17971,7 @@ var MenuGuide = function (_Component) {
 module.exports = MenuGuide;
 
 /***/ }),
-/* 537 */
+/* 544 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17807,10 +17989,10 @@ var _require = __webpack_require__(6),
     Component = _require.Component,
     html = _require.html;
 
-var _require2 = __webpack_require__(32),
+var _require2 = __webpack_require__(35),
     classNames = _require2.classNames;
 
-var MenuItems = __webpack_require__(112);
+var MenuItems = __webpack_require__(111);
 
 var replacePathLocale = function replacePathLocale(pathname, locale) {
 
@@ -17909,7 +18091,7 @@ var MenuLocale = function (_Component) {
 module.exports = MenuLocale;
 
 /***/ }),
-/* 538 */
+/* 545 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17959,7 +18141,7 @@ var Logo = function (_Component) {
 module.exports = Logo;
 
 /***/ }),
-/* 539 */
+/* 546 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17977,7 +18159,7 @@ var _require = __webpack_require__(6),
     Component = _require.Component,
     html = _require.html;
 
-var createNavigationLinks = __webpack_require__(540);
+var createNavigationLinks = __webpack_require__(547);
 
 var Content = function (_Component) {
   _inherits(Content, _Component);
@@ -18017,7 +18199,7 @@ var Content = function (_Component) {
 module.exports = Content;
 
 /***/ }),
-/* 540 */
+/* 547 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18042,15 +18224,15 @@ var createNavigationLinks = function createNavigationLinks(navigate) {
 module.exports = createNavigationLinks;
 
 /***/ }),
-/* 541 */
+/* 548 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var html2vqua = __webpack_require__(542);
-var vquaInterpolate = __webpack_require__(554);
-var createArticleVars = __webpack_require__(558);
+var html2vqua = __webpack_require__(549);
+var vquaInterpolate = __webpack_require__(561);
+var createArticleVars = __webpack_require__(565);
 
 module.exports = function (_ref) {
   var article = _ref.article,
@@ -18080,20 +18262,20 @@ module.exports = function (_ref) {
 };
 
 /***/ }),
-/* 542 */
+/* 549 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _require = __webpack_require__(543),
+var _require = __webpack_require__(550),
     inspect = _require.inspect;
 
-var _require2 = __webpack_require__(547),
+var _require2 = __webpack_require__(554),
     html2json = _require2.html2json;
 
-var createNode = __webpack_require__(550);
-var mapNodes = __webpack_require__(553);
+var createNode = __webpack_require__(557);
+var mapNodes = __webpack_require__(560);
 
 module.exports = function (string) {
 
@@ -18105,7 +18287,7 @@ module.exports = function (string) {
 };
 
 /***/ }),
-/* 543 */
+/* 550 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18603,7 +18785,7 @@ function isPrimitive(arg) {
 }
 exports.isPrimitive = isPrimitive;
 
-exports.isBuffer = __webpack_require__(545);
+exports.isBuffer = __webpack_require__(552);
 
 function objectToString(o) {
   return Object.prototype.toString.call(o);
@@ -18640,7 +18822,7 @@ exports.log = function () {
  *     prototype.
  * @param {function} superCtor Constructor function to inherit prototype from.
  */
-exports.inherits = __webpack_require__(546);
+exports.inherits = __webpack_require__(553);
 
 exports._extend = function (origin, add) {
   // Don't do anything if add isn't an object
@@ -18657,10 +18839,10 @@ exports._extend = function (origin, add) {
 function hasOwnProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(75), __webpack_require__(544)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(75), __webpack_require__(551)))
 
 /***/ }),
-/* 544 */
+/* 551 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18853,7 +19035,7 @@ process.umask = function () {
 };
 
 /***/ }),
-/* 545 */
+/* 552 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18866,7 +19048,7 @@ module.exports = function isBuffer(arg) {
 };
 
 /***/ }),
-/* 546 */
+/* 553 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18897,14 +19079,14 @@ if (typeof Object.create === 'function') {
 }
 
 /***/ }),
-/* 547 */
+/* 554 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(548);
+module.exports = __webpack_require__(555);
 
 
 /***/ }),
-/* 548 */
+/* 555 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function(global) {
@@ -18912,7 +19094,7 @@ module.exports = __webpack_require__(548);
   var debug = DEBUG ? console.log.bind(console) : function(){};
 
   if (typeof module === 'object' && typeof module.exports === 'object') {
-    __webpack_require__(549);
+    __webpack_require__(556);
   }
 
   function q(v) {
@@ -19081,7 +19263,7 @@ module.exports = __webpack_require__(548);
 
 
 /***/ }),
-/* 549 */
+/* 556 */
 /***/ (function(module, exports) {
 
 /*
@@ -19454,19 +19636,19 @@ module.exports = __webpack_require__(548);
 
 
 /***/ }),
-/* 550 */
+/* 557 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _require = __webpack_require__(32),
+var _require = __webpack_require__(35),
     compose = _require.compose;
 
-var _require2 = __webpack_require__(11),
+var _require2 = __webpack_require__(12),
     TAG_TYPE = _require2.TAG_TYPE;
 
-var _require3 = __webpack_require__(551),
+var _require3 = __webpack_require__(558),
     filterSpaces = _require3.filterSpaces;
 
 var filterText = compose(filterSpaces);
@@ -19494,13 +19676,13 @@ module.exports = function (htmlNode) {
 };
 
 /***/ }),
-/* 551 */
+/* 558 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _require = __webpack_require__(552),
+var _require = __webpack_require__(559),
     getLeftSpaces = _require.getLeftSpaces,
     getRightSpaces = _require.getRightSpaces;
 
@@ -19532,7 +19714,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 552 */
+/* 559 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19555,7 +19737,7 @@ var getRightSpaces = function getRightSpaces(string) {
 module.exports = { getLeftSpaces: getLeftSpaces, getRightSpaces: getRightSpaces };
 
 /***/ }),
-/* 553 */
+/* 560 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19597,15 +19779,15 @@ module.exports = function (htmlNode, createNode) {
 };
 
 /***/ }),
-/* 554 */
+/* 561 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createNodes = __webpack_require__(555);
-var replaceVariables = __webpack_require__(556);
-var mergeNearbyStrings = __webpack_require__(557);
+var createNodes = __webpack_require__(562);
+var replaceVariables = __webpack_require__(563);
+var mergeNearbyStrings = __webpack_require__(564);
 
 module.exports = function (nodes, data) {
 
@@ -19623,7 +19805,7 @@ module.exports = function (nodes, data) {
 };
 
 /***/ }),
-/* 555 */
+/* 562 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19675,7 +19857,7 @@ module.exports = function (params) {
 };
 
 /***/ }),
-/* 556 */
+/* 563 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19738,7 +19920,7 @@ module.exports = function (text, params) {
 };
 
 /***/ }),
-/* 557 */
+/* 564 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19766,7 +19948,7 @@ module.exports = function (items) {
 };
 
 /***/ }),
-/* 558 */
+/* 565 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19774,8 +19956,8 @@ module.exports = function (items) {
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var filterCode = __webpack_require__(559);
-var Code = __webpack_require__(560);
+var filterCode = __webpack_require__(566);
+var Code = __webpack_require__(567);
 
 var extension2language = {
   '.js': 'javascript',
@@ -19821,7 +20003,7 @@ module.exports = function (_ref) {
 };
 
 /***/ }),
-/* 559 */
+/* 566 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19829,7 +20011,7 @@ module.exports = function (_ref) {
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-var _require = __webpack_require__(32),
+var _require = __webpack_require__(35),
     compose = _require.compose;
 
 var filters = {
@@ -19880,7 +20062,7 @@ var filter = function filter(string) {
 module.exports = filter;
 
 /***/ }),
-/* 560 */
+/* 567 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19894,13 +20076,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var highlightjs = __webpack_require__(561);
-var javascriptSyntax = __webpack_require__(562);
-var shellSyntax = __webpack_require__(563);
-var xmlSyntax = __webpack_require__(564);
-var CodePreview = __webpack_require__(565);
+var highlightjs = __webpack_require__(568);
+var javascriptSyntax = __webpack_require__(569);
+var shellSyntax = __webpack_require__(570);
+var xmlSyntax = __webpack_require__(571);
+var CodePreview = __webpack_require__(572);
 
-var _require = __webpack_require__(32),
+var _require = __webpack_require__(35),
     htmlQuotes = _require.htmlQuotes;
 
 var _require2 = __webpack_require__(6),
@@ -19956,7 +20138,7 @@ var Code = function (_Component) {
 module.exports = Code;
 
 /***/ }),
-/* 561 */
+/* 568 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20747,7 +20929,7 @@ https://highlightjs.org/
 });
 
 /***/ }),
-/* 562 */
+/* 569 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20855,7 +21037,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 563 */
+/* 570 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20875,7 +21057,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 564 */
+/* 571 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20957,7 +21139,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 565 */
+/* 572 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20976,7 +21158,7 @@ var _require = __webpack_require__(6),
     Component = _require.Component,
     render = _require.render;
 
-var translations = __webpack_require__(113);
+var translations = __webpack_require__(112);
 
 var CodePreview = function (_Component) {
   _inherits(CodePreview, _Component);
@@ -21047,7 +21229,7 @@ var CodePreview = function (_Component) {
 module.exports = CodePreview;
 
 /***/ }),
-/* 566 */
+/* 573 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21065,7 +21247,7 @@ var _require = __webpack_require__(6),
     Component = _require.Component,
     html = _require.html;
 
-var translations = __webpack_require__(113);
+var translations = __webpack_require__(112);
 
 var Error404 = function (_Component) {
   _inherits(Error404, _Component);

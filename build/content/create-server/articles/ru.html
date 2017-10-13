@@ -94,15 +94,20 @@
       <i>url</i> - строка пути редиректа
     </li>
     <li>
-      <b>send(statusCode, containerName, containerProps, containerContext)</b>
+      <b>send(statusCode, containerName, params)</b>
       <br>
       <i>statusCode</i> - числовой код ответа сервера (200, 500 и т.д.)
       <br>
       <i>containerName</i> - строковое название vqua компонента
       <br>
-      <i>containerProps</i> - объект параметров vqua компонента
-      <br>
-      <i>containerContext</i> - объект контекста vqua компонента
+      <i>params</i> - объект параметров
+      <ul>
+        <i>props</i> - объект параметров vqua компонента
+        <br>
+        <i>context</i> - объект контекста vqua компонента
+        <br>
+        <i>layout</i> - строка пути layout
+      </ul>
     </li>
   </ul>
 </p>

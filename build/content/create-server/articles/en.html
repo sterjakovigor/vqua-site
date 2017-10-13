@@ -94,15 +94,20 @@
       <i>url</i> - redirection path string
     </li>
     <li>
-      <b>send(statusCode, containerName, containerProps, containerContext)</b>
+      <b>send(statusCode, containerName, params)</b>
       <br>
       <i>statusCode</i> - numeric server response code (200, 500, etc.)
       <br>
       <i>containerName</i> - the string name of the component's vqua
       <br>
-      <i>containerProps</i> - component vqua parameter object
-      <br>
-      <i>containerContext</i> - context object of the component's vqua
+      <i>params</i> - parameters object
+      <ul>
+        <i>props</i> - component vqua parameter object
+        <br>
+        <i>context</i> - context object of the component's vqua
+        <br>
+        <i>layout</i> - layout path
+      </ul>
     </li>
   </ul>
 </p>

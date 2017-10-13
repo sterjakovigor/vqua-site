@@ -17,12 +17,14 @@ class ArticleController {
     if (!article) ErrorController.notFound(req, res)
 
     res.send(200, 'ArticleContainer', {
-      path: req.url,
-      segments: req.segments,
-      humanId,
-      locale,
-      article,
-      rawExamples,
+      props: {
+        path: req.url,
+        segments: req.segments,
+        humanId,
+        locale,
+        article,
+        rawExamples,
+      }
     })
 
 
