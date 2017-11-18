@@ -1,7 +1,5 @@
 const { Component, html } = require('vqua')
 
-const createNavigationLinks = require('./helpers/createNavigationLinks')
-
 class Content extends Component {
 
   static injectContext() {
@@ -10,9 +8,50 @@ class Content extends Component {
 
   }
 
+  constructor(props, context) {
+
+    super(props, context)
+
+    this.content = null
+
+    this.handleLinkClick = this.handleLinkClick.bind(this)
+
+  }
+
   afterMount() {
 
-    createNavigationLinks(this.context.navigate)
+    this.content = document.querySelector('.content')
+
+    this.content.addEventListener('click', this.handleLinkClick)
+
+  }
+
+  beforeUnmount() {
+
+    this.content.removeEventListener('click', this.handleLinkClick)
+
+  }
+
+  handleLinkClick(event) {
+    console.log('klatz')
+    const { navigate } = this.context
+
+    if (
+      event.target.tagName.toLowerCase() === 'a' &&
+      event.target.classList.contains('navigate_link')
+    ) {
+
+      event.preventDefault()
+
+      document.body.scrollTop = 0
+      document.documentElement.scrollTop = 0
+
+      history.pushState({}, '', event.target.pathname)
+
+      navigate(event.target.pathname)
+
+    }
+
 
   }
 

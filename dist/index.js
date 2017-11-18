@@ -14805,13 +14805,13 @@ module.exports = "<h1>Роутер</h1>\n\n<h2>Как установить?</h2>
 /* 459 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Server render</h1>\n\n<p>\n  To try server render, use this boilerplate.\n  Next, we will analyze it:\n  In order to test server rendering in action\n  use <a href='/en/boilerplate' class='navigate_link'>ready boilerplate</a>.\n  <br>\n  <br>\n  Next, we will disassemble it:\n</p>\n\n<h2>\n  Algorithm server rendering\n</h2>\n\n<img src=\"/content/server-render/images/ssr-algo-en.jpg\">\n\n<h2>Create a server</h2>\n\n<p>/build/server/index.js</p>\n\n{{ create-server }}\n\n<p>\n  The server accepts the request, and finds the matched route and controller.\n</p>\n\n<a href='/en/create-server' class='navigate_link'>Learn more about creating a server</a>\n\n\n<h2>Controller</h2>\n\n<p>/build/controllers/WelcomeController.js</p>\n\n{{ controller }}\n\n<p>\n  Controller return <b>response code</b>, <b>component name</b> and his <b>properties</b>.\n  <br>\n  <br>\n  After that, the server finds in the folder /build/containers the requested component and\n  creates a virtual tree from it. On the basis of this tree, it creates an html string, places it\n  in your main template (layout) and sends a request to the browser.\n  <br>\n  <br>\n  Also, along with the main template in the script#app-cache, the server places the JSON string\n  with the data from request.send (). This is done in order to not cause the controller once again\n  in the browser.\n</p>\n\n\n<h2>Browser navigation</h2>\n\n<p>/build/index.js</p>\n\n{{ browser-navigation }}\n\n<p>The browser received a response from the server. Now we need to build <b>two virtual trees</b>.</p>\n\n\n<p><b>1st tree</b> we build on the basis of the DOM that provided us with a browser.</p>\n\n<p><b>2nd tree</b> we build on the basis of JSON controller cache from the script tag mentioned above.</p>\n\n<p>\n  Now the render method will compare two trees and restore the difference between them.\n  More precisely, hangs the missing events, and it will go all the way through the life cycle\n  of the callbacks of each component.\n</p>\n\n<a href='/en/browser-navigation' class='navigate_link'>More about browser navigation</a>\n"
+module.exports = "<h1>Server render</h1>\n\n<p>\n  To try server render, use this boilerplate.\n  Next, we will analyze it:\n  In order to test server rendering in action\n  use <a href='/en/boilerplate' class='navigate_link'>ready boilerplate</a>.\n  <br>\n  <br>\n  Next, we will disassemble it:\n</p>\n\n<h2>\n  Algorithm server rendering\n</h2>\n\n<img src=\"/content/server-render/images/ssr-algo-en.jpg\">\n\n<h2>Create a server</h2>\n\n<p>/build/server/index.js</p>\n\n{{ create-server }}\n\n<p>\n  The server accepts the request, and finds the matched route and controller.\n</p>\n\n<a href='/en/create-server' class='navigate_link'>Learn more about creating a server</a>\n\n\n<h2>Controller</h2>\n\n<p>/build/controllers/WelcomeController.js</p>\n\n{{ controller }}\n\n<p>\n  Controller return <b>response code</b>, <b>component name</b> and his <b>props</b> and <b>context</b>.\n  <br>\n  <br>\n  After that, the server finds in the folder /build/containers the requested component and\n  creates a virtual tree from it. On the basis of this tree, it creates an html string, places it\n  in your main template (layout) and sends a request to the browser.\n  <br>\n  <br>\n  Also, along with the main template in the script#app-cache, the server places the JSON string\n  with the data from request.send (). This is done in order to not cause the controller once again\n  in the browser.\n</p>\n\n\n<h2>Browser navigation</h2>\n\n<p>/build/index.js</p>\n\n{{ browser-navigation }}\n\n<p>The browser received a response from the server. Now we need to build <b>two virtual trees</b>.</p>\n\n\n<p><b>1st tree</b> we build on the basis of the DOM that provided us with a browser.</p>\n\n<p><b>2nd tree</b> we build on the basis of JSON controller cache from the script tag mentioned above.</p>\n\n<p>\n  Now the render method will compare two trees and restore the difference between them.\n  More precisely, hangs the missing events, and it will go all the way through the life cycle\n  of the callbacks of each component.\n</p>\n\n<a href='/en/browser-navigation' class='navigate_link'>More about browser navigation</a>\n"
 
 /***/ }),
 /* 460 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Серверный рендер</h1>\n\n<p>\n  Для того чтобы опробовать серверный рендер в действии\n  воспользуйтесь <a href='/ru/boilerplate' class='navigate_link'>готовым каркасом</a>.\n  <br>\n  <br>\n  Далее мы будем разбирать ее:\n</p>\n\n<h2>\n  Алгоритм серверного рендера\n</h2>\n\n<img src=\"/content/server-render/images/ssr-algo-ru.jpg\">\n\n<h2>Создание сервера</h2>\n\n<p>/build/server/index.js</p>\n\n{{ create-server }}\n\n<p>\n  Сервер принимает запрос, и находит соответствующий ему маршрут и контроллер.\n</p>\n\n<a href='/ru/create-server' class='navigate_link'>Подробнее о создании сервера</a>\n\n\n<h2>Контроллер</h2>\n\n<p>/build/controllers/WelcomeController.js</p>\n\n{{ controller }}\n\n<p>\n  Контроллер возвращает <b>код ответа</b>, <b>название компонента</b> и его <b>параметры props</b>.\n  <br>\n  <br>\n  После этого сервер находит в папке /build/containers запрашиваемый компонент и\n  создает из него виртуальное дерево. На основе этого дерева он создает html строку, помещает ее\n  в ваш основной шаблон (layout) и отправляет запрос браузеру.\n  <br>\n  <br>\n  Также вместе с основным шаблоном в теге script#app-cache сервер размещает JSON строку с данными из\n  request.send(). Делается это для того чтобы в браузере не вызывать контроллер лишний раз.\n</p>\n\n\n<h2>Браузерная навигация</h2>\n\n<p>/build/index.js</p>\n\n{{ browser-navigation }}\n\n<p>Браузер получил ответ от сервера. Теперь нам надо построить <b>два виртуальных дерева</b>.</p>\n\n\n<p><b>1-ое дерево</b> мы строим на основе DOM который предоставил нам браузер.</p>\n\n<p><b>2-ое дерево</b> мы строим на основе JSON кеша контроллера из тега script, упомянутом выше.</p>\n\n<p>\n  Теперь метод render сравнит два дерева и восстановит между ними разницу.\n  А именно, навесит недостающие события, и пройдет полностью по всему жизненному цилку колбеков каждого компонента.\n</p>\n\n<a href='/ru/browser-navigation' class='navigate_link'>Подробнее о браузерной навигации</a>\n"
+module.exports = "<h1>Серверный рендер</h1>\n\n<p>\n  Для того чтобы опробовать серверный рендер в действии\n  воспользуйтесь <a href='/ru/boilerplate' class='navigate_link'>готовым каркасом</a>.\n  <br>\n  <br>\n  Далее мы будем разбирать его:\n</p>\n\n<h2>\n  Алгоритм серверного рендера\n</h2>\n\n<img src=\"/content/server-render/images/ssr-algo-ru.jpg\">\n\n<h2>Создание сервера</h2>\n\n<p>/build/server/index.js</p>\n\n{{ create-server }}\n\n<p>\n  Сервер принимает запрос, и находит соответствующий ему маршрут и контроллер.\n</p>\n\n<a href='/ru/create-server' class='navigate_link'>Подробнее о создании сервера</a>\n\n\n<h2>Контроллер</h2>\n\n<p>/build/controllers/WelcomeController.js</p>\n\n{{ controller }}\n\n<p>\n  Контроллер возвращает <b>код ответа</b>, <b>название компонента</b> и его параметры <b>props</b> и <b>context</b>.\n  <br>\n  <br>\n  После этого сервер находит в папке /build/containers запрашиваемый компонент и\n  создает из него виртуальное дерево. На основе этого дерева он создает html строку, помещает ее\n  в ваш основной шаблон (layout) и отправляет запрос браузеру.\n  <br>\n  <br>\n  Также вместе с основным шаблоном в теге script#app-cache сервер размещает JSON строку с данными из\n  request.send(). Делается это для того чтобы в браузере не вызывать контроллер лишний раз.\n</p>\n\n\n<h2>Браузерная навигация</h2>\n\n<p>/build/index.js</p>\n\n{{ browser-navigation }}\n\n<p>Браузер получил ответ от сервера. Теперь нам надо построить <b>два виртуальных дерева</b>.</p>\n\n\n<p><b>1-ое дерево</b> мы строим на основе DOM который предоставил нам браузер.</p>\n\n<p><b>2-ое дерево</b> мы строим на основе JSON кеша контроллера из тега script, упомянутом выше.</p>\n\n<p>\n  Теперь метод render сравнит два дерева и восстановит между ними разницу.\n  А именно, навесит недостающие события, и пройдет полностью по всему жизненному цилку колбеков каждого компонента.\n</p>\n\n<a href='/ru/browser-navigation' class='navigate_link'>Подробнее о браузерной навигации</a>\n"
 
 /***/ }),
 /* 461 */
@@ -15166,13 +15166,13 @@ module.exports = "const { render } = require('vqua')\nconst createNavigation = r
 /* 497 */
 /***/ (function(module, exports) {
 
-module.exports = "class WelcomeController {\n\n  static index(req, res) {\n\n    res.send(200, 'WelcomeContainer', {})\n\n  }\n\n}\n\nmodule.exports = WelcomeController\n"
+module.exports = "class WelcomeController {\n\n  index(req, res) {\n\n    res.send(200, 'WelcomeContainer', { props: {}, context: {} })\n\n  }\n\n}\n\nmodule.exports = WelcomeController\n"
 
 /***/ }),
 /* 498 */
 /***/ (function(module, exports) {
 
-module.exports = "const createServer = require('vqua-server')\nconst layout = require('./layout')\nconst routes = require('../build/config/routes')\n\nconst app =\n  createServer({\n    routes,\n    layout,\n    publicPath: './dist',\n    buildPath: './build',\n    containerPath: './build/containers',\n  })\n\napp.listen(8080)\n"
+module.exports = "const createServer = require('vqua-server')\nconst layout = require('./layout')\nconst initRoutes = require('../build/initializers/initRoutes')\n\ninitRoutes().then(routes => {\n\n  const app =\n    createServer({\n      routes,\n      layout,\n      publicPath: './dist',\n      componentPath: './build/containers',\n    })\n\n  app.listen(8000)\n\n\n})\n\n\nprocess.on('unhandledRejection', error => {\n\n  console.log('unhandledRejection', error)\n\n});\n"
 
 /***/ }),
 /* 499 */
@@ -17499,22 +17499,61 @@ var _require = __webpack_require__(7),
     Component = _require.Component,
     html = _require.html;
 
-var createNavigationLinks = __webpack_require__(523);
-
 var Content = function (_Component) {
   _inherits(Content, _Component);
 
-  function Content() {
+  _createClass(Content, null, [{
+    key: 'injectContext',
+    value: function injectContext() {
+
+      return ['navigate'];
+    }
+  }]);
+
+  function Content(props, context) {
     _classCallCheck(this, Content);
 
-    return _possibleConstructorReturn(this, (Content.__proto__ || Object.getPrototypeOf(Content)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Content.__proto__ || Object.getPrototypeOf(Content)).call(this, props, context));
+
+    _this.content = null;
+
+    _this.handleLinkClick = _this.handleLinkClick.bind(_this);
+
+    return _this;
   }
 
   _createClass(Content, [{
     key: 'afterMount',
     value: function afterMount() {
 
-      createNavigationLinks(this.context.navigate);
+      this.content = document.querySelector('.content');
+
+      this.content.addEventListener('click', this.handleLinkClick);
+    }
+  }, {
+    key: 'beforeUnmount',
+    value: function beforeUnmount() {
+
+      this.content.removeEventListener('click', this.handleLinkClick);
+    }
+  }, {
+    key: 'handleLinkClick',
+    value: function handleLinkClick(event) {
+      console.log('klatz');
+      var navigate = this.context.navigate;
+
+
+      if (event.target.tagName.toLowerCase() === 'a' && event.target.classList.contains('navigate_link')) {
+
+        event.preventDefault();
+
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+
+        history.pushState({}, '', event.target.pathname);
+
+        navigate(event.target.pathname);
+      }
     }
   }, {
     key: 'render',
@@ -17525,12 +17564,6 @@ var Content = function (_Component) {
 
       return div({ class: 'content' }, this.props.childs);
     }
-  }], [{
-    key: 'injectContext',
-    value: function injectContext() {
-
-      return ['navigate'];
-    }
   }]);
 
   return Content;
@@ -17539,31 +17572,7 @@ var Content = function (_Component) {
 module.exports = Content;
 
 /***/ }),
-/* 523 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var createNavigationLinks = function createNavigationLinks(navigate) {
-
-  document.querySelector('.content').addEventListener('click', function (event) {
-
-    if (event.target.tagName.toLowerCase() === 'a' && event.target.classList.contains('navigate_link')) {
-
-      event.preventDefault();
-
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-
-      navigate(event.target.pathname);
-    }
-  });
-};
-
-module.exports = createNavigationLinks;
-
-/***/ }),
+/* 523 */,
 /* 524 */
 /***/ (function(module, exports, __webpack_require__) {
 
