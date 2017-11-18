@@ -1,12 +1,12 @@
 class ErrorController {
 
-  static notFound(req, res) {
+  static notFound(request, response) {
 
-    res.send(404, 'ErrorContainer', {
-      props: {
-        path: req.url,
-        segments: req.segments,
-        locale: req.segments[0] || 'en',
+    response.send(404, 'ErrorContainer', {
+      context: {
+        path: request.path,
+        segments: request.segments,
+        locale: request.segments[0] || 'en',
       }
     })
 

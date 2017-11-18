@@ -1,4 +1,4 @@
-const { route } = require('vqua-router')
+const { route, initRoutes } = require('vqua-router')
 const { Component, html } = require('vqua')
 const MainController = require('../controllers/MainController')
 const ArticleController = require('../controllers/ArticleController')
@@ -6,11 +6,17 @@ const ErrorController = require('../controllers/ErrorController')
 const { localeMatcher } = require('./matchers')
 
 const routes = [
-  route('/', MainController.index),
-  route([localeMatcher], ArticleController.show, {},
-    route('/:humanId', ArticleController.show)
+  route('/', 'Main#index'),
+  route([localeMatcher], 'Article#show', {},
+    route('/:humanId', 'Article#show')
   ),
-  route('*', ErrorController.notFound)
+  route('*', 'Error#notFound')
 ]
 
-module.exports = routes
+const controllers = {
+  MainController,
+  ArticleController,
+  ErrorController,
+}
+
+module.exports = initRoutes({ routes, controllers })

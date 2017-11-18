@@ -1,5 +1,5 @@
 const { html, Component } = require('vqua')
-const { omit } = require('vqua-utils')
+const { omit } = require('berries')
 
 class Link extends Component {
 
@@ -15,7 +15,11 @@ class Link extends Component {
 
     const { navigate } = this.context
 
-    navigate(this.props.href)
+    const { href } = this.props
+
+    history.pushState({}, '', href)
+
+    navigate(href)
 
   }
 

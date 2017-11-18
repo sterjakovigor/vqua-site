@@ -1,4 +1,4 @@
-const { compose } = require('vqua-utils')
+const { compose } = require('berries')
 
 const filters = {
 

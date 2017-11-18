@@ -39,7 +39,7 @@ module.exports = (html = '', data = '') => {
           html +
         '</div>' +
         '<script id="app-cache" type="application/json">' +
-          data +
+          JSON.stringify(data) +
         '</script>' +
         '<script src="/index.js" type="text/javascript"></script>' +
       '</body>' +

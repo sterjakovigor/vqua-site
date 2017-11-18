@@ -3,6 +3,12 @@ const translations = require('../../translations')
 
 class CodePreview extends Component {
 
+  static injectContext() {
+
+    return ['locale']
+
+  }
+
   handleClick(event) {
 
     event.preventDefault()
@@ -50,7 +56,7 @@ class CodePreview extends Component {
           ref: 'refresh',
           onClick: (event) => this.handleClick(event)
         },
-          translations[this.props.locale].Code.refresh
+          translations[this.context.locale].Code.refresh
         ),
         div({ class: 'code__menu__line' })
       ),

@@ -1,29 +1,32 @@
 const ArticleModel = require('../models/Article')
 const ExampleModel = require('../models/Example')
 const ErrorController = require('./ErrorController')
+const { include } = require('berries')
 
 class ArticleController {
 
-  static async show(req, res) {
+  static async show(request, response) {
 
-    const { locale } = req.params
+    const { locale } = request.params
 
-    const humanId = req.params.humanId || 'introduction'
+    const humanId = request.params.humanId || 'introduction'
 
     const article = await ArticleModel.find({ humanId, locale })
 
     const rawExamples = await ExampleModel.all({ humanId, locale, raw: true })
 
-    if (!article) ErrorController.notFound(req, res)
+    if (!article) ErrorController.notFound(request, response)
 
-    res.send(200, 'ArticleContainer', {
+    response.send(200, 'ArticleContainer', {
       props: {
-        path: req.url,
-        segments: req.segments,
-        humanId,
-        locale,
         article,
         rawExamples,
+      },
+      context: {
+        locale: include(['en','ru'], locale) ? locale : 'en',
+        path: request.path,
+        segments: request.segments,
+        humanId,
       }
     })
 

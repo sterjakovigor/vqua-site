@@ -3,16 +3,13 @@ const App = require('../components/App')
 const ExampleModel = require('../models/Example')
 const createArticle = require('../helpers/createArticle')
 
-const loadExamples = ({ ExampleModel, props }, callback) => {
-
-  ExampleModel.all({
-    humanId: props.humanId,
-    locale: props.locale
-  }).then(callback)
-
-}
-
 class ArticleContainer extends Component {
+
+  static injectContext() {
+
+    return ['humanId', 'locale']
+
+  }
 
   constructor(props, context) {
 
@@ -26,21 +23,17 @@ class ArticleContainer extends Component {
 
   afterMount() {
 
-    loadExamples({ ExampleModel, props: this.props }, (examples) => {
+    const options = {
+      humanId: this.context.humanId,
+      locale: this.context.locale
+    }
+
+    ExampleModel.all(options).then(examples => {
 
       this.setState({ examples })
 
     })
 
-  }
-
-  afterUpdate() {
-
-    loadExamples({ ExampleModel, props: this.props }, (examples) => {
-
-      this.setState({ examples })
-
-    })
 
   }
 

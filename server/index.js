@@ -7,7 +7,7 @@ const app =
     routes,
     layout,
     publicPath: './dist',
-    containerPath: './build/containers',
+    componentPath: './build/containers',
   })
 
 app.listen(8080)

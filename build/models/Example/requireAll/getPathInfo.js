@@ -1,4 +1,4 @@
-const { last } = require('vqua-utils')
+const { last } = require('berries')
 
 module.exports = (pathname) => {
 

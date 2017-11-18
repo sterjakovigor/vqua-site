@@ -1,5 +1,5 @@
 const { Component, html } = require('vqua')
-const { classNames, omit } = require('vqua-utils')
+const { classNames, omit } = require('berries')
 const Link = require('../Link')
 
 class MenuItems extends Component {

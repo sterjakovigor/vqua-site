@@ -1,5 +1,5 @@
 const { Component, html } = require('vqua')
-const { classNames } = require('vqua-utils')
+const { classNames } = require('berries')
 const MenuItems = require('..//MenuItems')
 
 const replacePathLocale = (pathname, locale) => {

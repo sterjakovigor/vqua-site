@@ -3,7 +3,7 @@ const javascriptSyntax = require('highlight.js/lib/languages/javascript')
 const shellSyntax = require('highlight.js/lib/languages/shell')
 const xmlSyntax = require('highlight.js/lib/languages/xml')
 const CodePreview = require('../CodePreview')
-const { htmlQuotes } = require('vqua-utils')
+const { htmlQuotes } = require('berries')
 
 const { Component, html, render } = require('vqua')
 
