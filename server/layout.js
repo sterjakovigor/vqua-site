@@ -5,6 +5,7 @@ module.exports = (html = '', data = '') => {
       '<head>' +
         '<meta charset="utf-8">' +
         '<link rel="stylesheet" type="text/css" href="/index.css">' +
+        '<title>Vqua - virtual dom library</title>' +
       '</head>' +
       '<body>' +
 

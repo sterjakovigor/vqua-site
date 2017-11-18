@@ -48,6 +48,8 @@ class MenuLocale extends Component {
 
     if (locale != item.locale) {
 
+      history.pushState({}, '', '/' + item.locale)
+
       navigate(event.target.pathname)
 
     }

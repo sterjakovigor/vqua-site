@@ -19,6 +19,7 @@ class ArticleController {
 
     response.send(200, 'ArticleContainer', {
       props: {
+        key: Date.now(),
         article,
         rawExamples,
       },
