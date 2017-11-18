@@ -1,3 +1,5 @@
+const { htmlQuotes } = require('berries')
+
 module.exports = (html = '', data = '') => {
 
   return (
@@ -40,7 +42,7 @@ module.exports = (html = '', data = '') => {
           html +
         '</div>' +
         '<script id="app-cache" type="application/json">' +
-          JSON.stringify(data) +
+          htmlQuotes.encode(JSON.stringify(data)) +
         '</script>' +
         '<script src="/index.js" type="text/javascript"></script>' +
       '</body>' +

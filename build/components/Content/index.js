@@ -33,7 +33,7 @@ class Content extends Component {
   }
 
   handleLinkClick(event) {
-    console.log('klatz')
+
     const { navigate } = this.context
 
     if (

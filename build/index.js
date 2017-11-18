@@ -1,5 +1,6 @@
 const { render } = require('vqua')
 const Navigation = require('vqua-navigation')
+const { htmlQuotes } = require('berries')
 const routes = require('./config/routes')
 
 let liveNodes = []
@@ -7,7 +8,7 @@ let liveNodes = []
 const navigation = new Navigation(routes)
 
 navigation.onNavigate(({ path, statusCode, componentName, params }) => {
-  
+
   const $app = document.getElementById('app')
 
   const Component = require('./containers/' + componentName)
@@ -34,7 +35,7 @@ navigation.onRedirect(({ redirectPath, statusCode, params }) => {
 
 const $cache = document.getElementById('app-cache')
 
-const cache = $cache.innerHTML
+const cache = htmlQuotes.decode($cache.innerHTML)
 
 $cache.parentNode.removeChild($cache)
 

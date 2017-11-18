@@ -11334,6 +11334,10 @@ var _require = __webpack_require__(7),
     render = _require.render;
 
 var Navigation = __webpack_require__(424);
+
+var _require2 = __webpack_require__(5),
+    htmlQuotes = _require2.htmlQuotes;
+
 var routes = __webpack_require__(434);
 
 var liveNodes = [];
@@ -11373,7 +11377,7 @@ navigation.onRedirect(function (_ref2) {
 
 var $cache = document.getElementById('app-cache');
 
-var cache = $cache.innerHTML;
+var cache = htmlQuotes.decode($cache.innerHTML);
 
 $cache.parentNode.removeChild($cache);
 
@@ -17539,7 +17543,6 @@ var Content = function (_Component) {
   }, {
     key: 'handleLinkClick',
     value: function handleLinkClick(event) {
-      console.log('klatz');
       var navigate = this.context.navigate;
 
 
