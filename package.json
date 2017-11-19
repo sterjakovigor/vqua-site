@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "berries": "^1.0.2",
     "dom2vqua": "^1.0.22",
     "highlight.js": "^9.12.0",
     "html2vqua": "^1.0.22",
@@ -41,9 +42,8 @@
     "vqua": "^1.0.22",
     "vqua-interpolate": "^1.0.22",
     "vqua-navigation": "^1.0.22",
-    "vqua-router": "^1.0.22",
+    "vqua-router": "^1.0.23",
     "vqua-server": "^1.0.22",
-    "berries": "^1.0.2",
     "vqua2string": "^1.0.22"
   }
 }

@@ -14,24 +14,25 @@
   A set of utilities for organizing routing.
 </p>
 
-<h2>Function route(matchers|path, action, props = {}, childs = [])</h2>
+<h2>route(matchers|path, action, props = {}, childs = [])</h2>
 
 <p>
-
-</p>
-
-<p>
-  <b>matchers|path</b>
-  - an array consisting of lines of paths and matcher objects | or one line of the path string
+  <b>matchers|path</b> - an array consisting of lines of paths and coincidence objects | or one line of the path
   <ul>
     <li>
-      <i>path</i> - path string
+      <i>path</i> - string of path
+      <br>Examples:
+      <ul>
+        <li>'*' - any value</li>
+        <li>'/:id' - named value will be passed to request.params as { id: [value] }</li>
+        <li>'/segment' - searches for an exact segment entry </li>
+      </ul>
     </li>
     <li>
-      <i>matcher</i> - match object
+      <i>matcher</i> - object of matching
       <ul>
         <li>
-          <i>key</i> - matching segment name
+          <i>key</i> - name of match segment
         </li>
         <li>
           <i>match</i> - callback function, takes the value as an argument <i>key</i>.
@@ -45,9 +46,11 @@
 
     </li>
   </ul>
-  <b>action</b> - handler function
+  <b>action</b> - function handler or string in the format 'Controller#action'
   <br>
-  <b>props</b> - properties object
+  For example, for the PostsController controller and the show method, the path string will be 'Posts#show'
+  <br>
+  <b>props</b> - object of props
   <br>
   <b>childs</b> - array of nested routes
   <br>
@@ -60,39 +63,45 @@
     <b>segments</b> - array of path string segments
   </li>
   <li>
-    <b>path</b> - path string
+    <b>path</b> - string of path
   </li>
   <li>
-    <b>action</b> - request handler function
+    <b>action</b> - function of handle request
   </li>
   <li>
-    <b>props</b> - query properties object
+    <b>props</b> - object of request  props
   </li>
   <li>
     <b>childs</b> - array of nested routes
   </li>
 </ul>
 
-<h2>Function separateRoutes(routes, segments = [])</h2>
 
+<h2>initRoutes({ routes, controllers })</h2>
+  <ul>
+    <li>Assigns routes to the method in the appropriate controller </li>
+    <li>Indexes routes</li>
+    <li>Aligns all routes to one level of nesting</li>
+    <li>Prepares segments for correct search</li>
+  </ul>
 <p>
-  Splits all nested routes to the first level
+
 </p>
 
 <p>
-  <b>routes</b> - array of nested routes
+  <b>routes</b> - array of routes
   <br>
-  <b>segments</b> - array of segments of the current context (optional)
+  <b>controller</b> - object of controllers
   <br>
 </p>
 
 <p>Returns an array of routes.</p>
 
 
-<h2>Function matchRoutes(routes, path)</h2>
+<h2>matchRoutes(routes, path)</h2>
 
 <p>
-  Finds the first route it finds on the basis of the specified path.
+  Finds the first received route based on the specified path and adds a request object to it.
 </p>
 
 <p>

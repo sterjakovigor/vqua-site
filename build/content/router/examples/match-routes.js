@@ -1,33 +1,58 @@
-const { route, matchRoutes, separateRoutes } = require('vqua-router')
+const { route, matchRoutes, initRoutes } = require('vqua-router')
+
+class PostsController {
+
+  index() {}
+
+  show() {}
+
+  create() {}
+
+}
 
 const routes = [
-  route('/', 'main', {}, [
-    route('/posts', 'all posts'),
-    route('/posts/:id', 'post by id'),
+  route('/', 'Posts#index', {}, [
+    route('/posts/:id', 'Posts#show'),
+    route('/posts/create', 'Posts#create'),
   ]),
 ]
 
-const separatedRoutes = separateRoutes(routes)
+const controllers = { PostsController: new PostsController }
 
-// separatedRoutes:
-// [
-//   route('/', 'main'),
-//   route('/posts', 'all posts'),
-//   route('/posts/:id', 'post by id'),
-// ]
+const initedRoutes = initRoutes({ routes, controllers })
 
-const matchedRoute = matchRoutes(separatedRoutes, '/posts/2')
+// console.log(initedRoutes)
+//
+// [ { path: '/',
+//     action: [Function: index],
+//     segments: [ '' ],
+//     props: {},
+//     index: 0,
+//     controller: PostsController {} },
+//   { path: '/posts/:id',
+//     action: [Function: show],
+//     segments: [ 'posts', ':id' ],
+//     props: {},
+//     index: 1,
+//     controller: PostsController {} },
+//   { path: '/posts/create',
+//     action: [Function: create],
+//     segments: [ 'posts', 'create' ],
+//     props: {},
+//     index: 2,
+//     controller: PostsController {} } ]
 
-// matchedRoute:
-// {
-//   path: '/posts/:id',
-//   segments: ['posts', ':id'],
-//   action: 'post by id',
+const matchedRoute = matchRoutes(initedRoutes, '/posts/2')
+
+// console.log(matchedRoute)
+//
+// { path: '/posts/:id',
+//   action: [Function: show],
+//   segments: [ 'posts', ':id' ],
 //   props: {},
-//   childs: [],
-//   request: {
-//     path: '/posts/2',
-//     segments: ['posts', '2'],
-//     params: { id: '2' },
-//   }
-// }
+//   index: 1,
+//   controller: PostsController {},
+//   request:
+//    { path: '/posts/2',
+//      segments: [ 'posts', '2' ],
+//      params: { id: '2' } } }
