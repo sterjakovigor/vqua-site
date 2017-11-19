@@ -1,50 +1,55 @@
+const { htmlQuotes } = require('berries')
 const { render } = require('vqua')
 const Navigation = require('vqua-navigation')
-const { htmlQuotes } = require('berries')
-const routes = require('./config/routes')
+const initRoutes = require('./initializers/initRoutes')
 
-let liveNodes = []
+initRoutes().then(routes => {
 
-const navigation = new Navigation(routes)
+  let liveNodes = []
 
-navigation.onNavigate(({ path, statusCode, componentName, params }) => {
+  const navigation = new Navigation(routes)
 
-  const $app = document.getElementById('app')
+  navigation.onNavigate(({ path, statusCode, componentName, params }) => {
 
-  const Component = require('./containers/' + componentName)
+    const $app = document.getElementById('app')
 
-  const context = Object.assign(params.context || {}, {
-    navigate: navigation.navigate.bind(navigation)
+    const Component = require('./containers/' + componentName)
+
+    const context = Object.assign(params.context, {
+      navigate: navigation.navigate.bind(navigation)
+    })
+
+    const templateNodes = [ Component.v(params.props, context) ]
+
+    liveNodes = render($app, liveNodes, templateNodes, context)
+
   })
 
-  const templateNodes = [ Component.v(params.props, context) ]
 
-  liveNodes = render($app, liveNodes, templateNodes, context)
+  navigation.onRedirect(({ redirectPath, statusCode, params }) => {
+
+    window.history.pushState({}, '', redirectPath)
+
+    navigation.navigate(redirectPath)
+
+  })
+
+
+  const $cache = document.getElementById('app-cache')
+
+  const cache = htmlQuotes.decode($cache.innerHTML)
+
+  $cache.parentNode.removeChild($cache)
+
+
+  navigation.navigate(window.location.pathname, cache)
+
+
+  window.onpopstate = (event) => {
+
+    navigation.navigate(window.location.pathname)
+
+  }
+
 
 })
-
-
-navigation.onRedirect(({ redirectPath, statusCode, params }) => {
-
-  window.history.pushState({}, '', redirectPath)
-
-  navigation.navigate(redirectPath)
-
-})
-
-
-const $cache = document.getElementById('app-cache')
-
-const cache = htmlQuotes.decode($cache.innerHTML)
-
-$cache.parentNode.removeChild($cache)
-
-
-navigation.navigate(window.location.pathname, cache)
-
-
-window.onpopstate = (event) => {
-
-  navigation.navigate(window.location.pathname)
-
-}

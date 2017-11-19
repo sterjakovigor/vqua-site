@@ -1,6 +1,6 @@
 class ErrorController {
 
-  static notFound(request, response) {
+  notFound(request, response) {
 
     response.send(404, 'ErrorContainer', {
       context: {

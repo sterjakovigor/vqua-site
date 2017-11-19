@@ -5,7 +5,7 @@ const { include } = require('berries')
 
 class ArticleController {
 
-  static async show(request, response) {
+  async show(request, response) {
 
     const { locale } = request.params
 

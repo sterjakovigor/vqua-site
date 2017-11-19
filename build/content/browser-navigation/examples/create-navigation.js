@@ -1,32 +1,54 @@
 const { render } = require('vqua')
-const createNavigation = require('vqua-navigation')
-const routes = require('./config/routes')
+const Navigation = require('vqua-navigation')
+const initRoutes = require('./initializers/initRoutes')
+
+initRoutes().then(routes => {
+
+  let liveNodes = []
+
+  const navigation = new Navigation(routes)
 
 
-const $cache = document.getElementById('app-cache')
+  navigation.onNavigate(({ path, statusCode, componentName, params }) => {
 
-const cache = $cache.innerHTML
+    const $app = document.getElementById('app')
 
-$cache.parentNode.removeChild($cache)
+    const Component = require('./containers/' + componentName)
+
+    const context = Object.assign(params.context, {
+      navigate: navigation.navigate.bind(navigation)
+    })
+
+    const templateNodes = [ Component.v(params.props, context) ]
+
+    liveNodes = render($app, liveNodes, templateNodes, context)
+
+  })
 
 
-const navigation = createNavigation({ routes, cache }, (params) => {
+  navigation.onRedirect(({ redirectPath, statusCode, params }) => {
 
-  const { liveNodes, component, navigate, callback } = params
+    window.history.pushState({}, '', redirectPath)
 
-  const Component = require('./containers/' + component.name)
+    navigation.navigate(redirectPath)
 
-  const templateNodes = [ Component.v(component.props, component.context) ]
+  })
 
-  const context = Object.assign({}, { navigate }, component.context)
 
-  const $app = document.getElementById('app')
+  const $cache = document.getElementById('app-cache')
 
-  const newLiveNodes = render($app, liveNodes, templateNodes, context)
+  const cache = $cache.innerHTML
 
-  callback(newLiveNodes)
+  $cache.parentNode.removeChild($cache)
+
+
+  navigation.navigate(window.location.pathname, cache)
+
+
+  window.onpopstate = (event) => {
+
+    navigation.navigate(window.location.pathname)
+
+  }
 
 })
-
-
-navigation.listen()

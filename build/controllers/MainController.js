@@ -1,6 +1,6 @@
 class MainController {
 
-  static index(request, response) {
+  index(request, response) {
 
     response.redirect(302, '/en')
 
