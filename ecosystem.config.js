@@ -10,7 +10,7 @@ module.exports = {
       user : 'sterjakov',
       host : '194.67.194.137',
       ref  : 'origin/master',
-      repo : 'https://github.com/sterjakovigor/vqua-site',
+      repo : 'https://github.com/sterzhakov/vqua-site',
       path : '/home/sterjakov/vqua-site',
       'post-deploy' : [
         'npm install',

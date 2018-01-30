@@ -9,7 +9,7 @@ class MenuSite extends Component {
 
     this.items = [
       {
-        href: 'https://github.com/sterjakovigor/vqua',
+        href: 'https://github.com/sterzhakov/vqua',
         target: '_blank',
         name: 'Github',
         external: true,

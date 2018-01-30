@@ -1639,7 +1639,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var escapeHtml = __webpack_require__(466);
+var escapeHtml = __webpack_require__(467);
 
 var Example = function () {
   function Example() {
@@ -1717,7 +1717,7 @@ module.exports = function () {
       humanId = _ref.humanId,
       raw = _ref.raw;
 
-  var context = raw ? __webpack_require__(467) : __webpack_require__(503);
+  var context = raw ? __webpack_require__(468) : __webpack_require__(504);
 
   return context.keys().reduce(function (examples, pathname) {
 
@@ -1747,7 +1747,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
-var readDir = __webpack_require__(511);
+var readDir = __webpack_require__(512);
 var path = __webpack_require__(32);
 var fs = __webpack_require__(32);
 var getPathInfo = __webpack_require__(46);
@@ -1775,7 +1775,7 @@ module.exports = function () {
 
               if (pathInfo.articleName == humanId) {
 
-                var content = raw ? fs.readFileSync(pathname).toString() : pathInfo.isPreview ? __webpack_require__(516)("" + pathname) : null;
+                var content = raw ? fs.readFileSync(pathname).toString() : pathInfo.isPreview ? __webpack_require__(517)("" + pathname) : null;
 
                 var example = Object.assign({}, pathInfo, { content: content });
 
@@ -1876,7 +1876,7 @@ module.exports = {
 
         try {
 
-          var file = __webpack_require__(441)("./" + humanId + '/articles/' + locale + '.html');
+          var file = __webpack_require__(442)("./" + humanId + '/articles/' + locale + '.html');
 
           resolve(file);
         } catch (error) {
@@ -3818,7 +3818,7 @@ var Store = function () {
     key: 'allByBrowser',
     value: function allByBrowser() {
 
-      var context = __webpack_require__(439);
+      var context = __webpack_require__(440);
 
       var controllers = context.keys().reduce(function (controllers, filePath) {
 
@@ -3854,7 +3854,7 @@ var Store = function () {
 
               var controllerName = fileName.slice(0, -3);
 
-              var Controller = __webpack_require__(518)("" + filePath);
+              var Controller = __webpack_require__(519)("" + filePath);
 
               return Object.assign({}, controllers, _defineProperty({}, controllerName, new Controller()));
             }, {});
@@ -3947,7 +3947,7 @@ var _require2 = __webpack_require__(5),
     classNames = _require2.classNames,
     omit = _require2.omit;
 
-var Link = __webpack_require__(522);
+var Link = __webpack_require__(523);
 
 var MenuItems = function (_Component) {
   _inherits(MenuItems, _Component);
@@ -5750,7 +5750,7 @@ var _require = __webpack_require__(7),
 
 var App = __webpack_require__(166);
 var ExampleModel = __webpack_require__(51);
-var createArticle = __webpack_require__(527);
+var createArticle = __webpack_require__(528);
 
 var ArticleContainer = function (_Component) {
   _inherits(ArticleContainer, _Component);
@@ -5828,8 +5828,8 @@ var _require = __webpack_require__(7),
     Component = _require.Component,
     html = _require.html;
 
-var Sidebar = __webpack_require__(520);
-var Content = __webpack_require__(526);
+var Sidebar = __webpack_require__(521);
+var Content = __webpack_require__(527);
 
 var App = function (_Component) {
   _inherits(App, _Component);
@@ -5871,7 +5871,7 @@ var _require = __webpack_require__(7),
     Component = _require.Component;
 
 var App = __webpack_require__(166);
-var Error404 = __webpack_require__(552);
+var Error404 = __webpack_require__(553);
 
 var ErrorContainer = function (_Component) {
   _inherits(ErrorContainer, _Component);
@@ -11507,7 +11507,7 @@ var _require2 = __webpack_require__(7),
     render = _require2.render;
 
 var Navigation = __webpack_require__(426);
-var initRoutes = __webpack_require__(436);
+var initRoutes = __webpack_require__(437);
 
 initRoutes().then(function (routes) {
 
@@ -11524,7 +11524,7 @@ initRoutes().then(function (routes) {
 
     var $app = document.getElementById('app');
 
-    var Component = __webpack_require__(519)("./" + componentName);
+    var Component = __webpack_require__(520)("./" + componentName);
 
     var context = Object.assign(params.context, {
       navigate: navigation.navigate.bind(navigation)
@@ -14520,7 +14520,7 @@ module.exports = function () {
 var separateRoutes = __webpack_require__(433);
 var indexRoutes = __webpack_require__(434);
 var assignControllers = __webpack_require__(435);
-var cleanSegments = __webpack_require__(553);
+var cleanSegments = __webpack_require__(436);
 
 module.exports = function () {
   var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
@@ -14626,9 +14626,32 @@ module.exports = assignHandlers;
 "use strict";
 
 
+module.exports = function (routes) {
+
+  return routes.map(function (route) {
+    var segments = route.segments;
+
+
+    var newSegments = segments.every(function (segment) {
+      return segment == '';
+    }) ? [''] : segments.filter(function (segment) {
+      return segment != '';
+    });
+
+    return Object.assign({}, route, { segments: newSegments });
+  });
+};
+
+/***/ }),
+/* 437 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
-var routes = __webpack_require__(437);
+var routes = __webpack_require__(438);
 var Controller = __webpack_require__(112);
 
 var _require = __webpack_require__(111),
@@ -14656,7 +14679,7 @@ module.exports = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(functio
 }));
 
 /***/ }),
-/* 437 */
+/* 438 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14670,13 +14693,13 @@ var _require2 = __webpack_require__(7),
     Component = _require2.Component,
     html = _require2.html;
 
-var _require3 = __webpack_require__(438),
+var _require3 = __webpack_require__(439),
     localeMatcher = _require3.localeMatcher;
 
 module.exports = [route('/', 'Main#index'), route([localeMatcher], 'Article#show', {}, route('/:humanId', 'Article#show')), route('*', 'Error#notFound')];
 
 /***/ }),
-/* 438 */
+/* 439 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14698,13 +14721,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 439 */
+/* 440 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./ArticleController.js": 440,
+	"./ArticleController.js": 441,
 	"./ErrorController.js": 164,
-	"./MainController.js": 517
+	"./MainController.js": 518
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -14720,10 +14743,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 439;
+webpackContext.id = 440;
 
 /***/ }),
-/* 440 */
+/* 441 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14808,35 +14831,35 @@ var ArticleController = function () {
 module.exports = ArticleController;
 
 /***/ }),
-/* 441 */
+/* 442 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./boilerplate/articles/en.html": 442,
-	"./boilerplate/articles/ru.html": 443,
-	"./browser-navigation/articles/en.html": 444,
-	"./browser-navigation/articles/ru.html": 445,
-	"./context/articles/en.html": 446,
-	"./context/articles/ru.html": 447,
-	"./create-server/articles/en.html": 448,
-	"./create-server/articles/ru.html": 449,
-	"./fast-start/articles/en.html": 450,
-	"./fast-start/articles/ru.html": 451,
+	"./boilerplate/articles/en.html": 443,
+	"./boilerplate/articles/ru.html": 444,
+	"./browser-navigation/articles/en.html": 445,
+	"./browser-navigation/articles/ru.html": 446,
+	"./context/articles/en.html": 447,
+	"./context/articles/ru.html": 448,
+	"./create-server/articles/en.html": 449,
+	"./create-server/articles/ru.html": 450,
+	"./fast-start/articles/en.html": 451,
+	"./fast-start/articles/ru.html": 452,
 	"./fast-start/examples/hello-world-html.html": 163,
-	"./hooks/articles/en.html": 452,
-	"./hooks/articles/ru.html": 453,
-	"./introduction/articles/en.html": 454,
-	"./introduction/articles/ru.html": 455,
-	"./props/articles/en.html": 456,
-	"./props/articles/ru.html": 457,
-	"./references/articles/en.html": 458,
-	"./references/articles/ru.html": 459,
-	"./router/articles/en.html": 460,
-	"./router/articles/ru.html": 461,
-	"./server-render/articles/en.html": 462,
-	"./server-render/articles/ru.html": 463,
-	"./state/articles/en.html": 464,
-	"./state/articles/ru.html": 465
+	"./hooks/articles/en.html": 453,
+	"./hooks/articles/ru.html": 454,
+	"./introduction/articles/en.html": 455,
+	"./introduction/articles/ru.html": 456,
+	"./props/articles/en.html": 457,
+	"./props/articles/ru.html": 458,
+	"./references/articles/en.html": 459,
+	"./references/articles/ru.html": 460,
+	"./router/articles/en.html": 461,
+	"./router/articles/ru.html": 462,
+	"./server-render/articles/en.html": 463,
+	"./server-render/articles/ru.html": 464,
+	"./state/articles/en.html": 465,
+	"./state/articles/ru.html": 466
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -14852,154 +14875,154 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 441;
-
-/***/ }),
-/* 442 */
-/***/ (function(module, exports) {
-
-module.exports = "<h1>Boilerplate</h1>\n\n<p>Boilerplate will allow you to quickly start creating a web-interface with server prerendering.</p>\n\n<h2>How to install?</h2>\n\n{{ install }}\n\n<p>\n  Then open the browser page http://localhost:8080/\n  and you should see:\n  <br>\n  <i>Welcome! Test page.</i>\n</p>\n\n<h2>How to edit the code?</h2>\n\n<p>To make changes immediately after saving, open a new window and use the command:</p>\n\n{{ webpack }}\n\n<a href=\"https://webpack.js.org/\" target=\"_blank\">More about webpack</a>\n\n<h2>How to edit css styles?</h2>\n\n<p>To track changes in styles in a new window, run:</p>\n\n{{ gulp }}\n\n<p>\n  It is preferable to place styles in folders with components.\n  The order of styles should not matter.\n  For this you can take advantage of <a\n    target=\"_blank\"\n    href=\"https://ru.bem.info/methodology/css/\"\n  >bem methodology</a>.\n</p>\n\n<a href=\"https://gulpjs.com/\" target=\"_blank\">More information on gulp</a>\n"
+webpackContext.id = 442;
 
 /***/ }),
 /* 443 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Готовый каркас</h1>\n\n<p>Готовый каркас позволит вам быстро приступить к созданию веб-интерфейса с серверным пререндерингом.</p>\n\n<h2>Как установить?</h2>\n\n{{ install }}\n\n<p>\n  После чего откройте в браузере страницу http://localhost:8080/\n  и вы должны увидеть:\n  <br>\n  <i>Welcome! Test page.</i>\n</p>\n\n<h2>Как редактировать код?</h2>\n\n<p>Чтобы изменения вносились сразу после сохранения откройте новое окно треминала и используйте команду:</p>\n\n{{ webpack }}\n\n<a href=\"https://webpack.js.org/\" target=\"_blank\">Подробнее о webpack</a>\n\n<h2>Как редактировать css стили?</h2>\n\n<p>Для того чтобы отслеживать изменение стилей в новом окне запустите:</p>\n\n{{ gulp }}\n\n<p>\n  Предпочтительнее всего размещать стили в папках с компонентами.\n  Порядок стилей не должен иметь значения.\n  Для этого вы можете воспользоваться <a\n    target=\"_blank\"\n    href=\"https://ru.bem.info/methodology/css/\"\n  >бэм методологией</a>.\n</p>\n\n<a href=\"https://gulpjs.com/\" target=\"_blank\">Подробнее о gulp</a>\n"
+module.exports = "<h1>Boilerplate</h1>\n\n<p>Boilerplate will allow you to quickly start creating a web-interface with server prerendering.</p>\n\n<h2>How to install?</h2>\n\n{{ install }}\n\n<p>\n  Then open the browser page http://localhost:8080/\n  and you should see:\n  <br>\n  <i>Welcome! Test page.</i>\n</p>\n\n<h2>How to edit the code?</h2>\n\n<p>To make changes immediately after saving, open a new window and use the command:</p>\n\n{{ webpack }}\n\n<a href=\"https://webpack.js.org/\" target=\"_blank\">More about webpack</a>\n\n<h2>How to edit css styles?</h2>\n\n<p>To track changes in styles in a new window, run:</p>\n\n{{ gulp }}\n\n<p>\n  It is preferable to place styles in folders with components.\n  The order of styles should not matter.\n  For this you can take advantage of <a\n    target=\"_blank\"\n    href=\"https://ru.bem.info/methodology/css/\"\n  >bem methodology</a>.\n</p>\n\n<a href=\"https://gulpjs.com/\" target=\"_blank\">More information on gulp</a>\n"
 
 /***/ }),
 /* 444 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Browser navigation</h1>\n\n<h2>How to install?</h2>\n\n{{ install }}\n\n<h2>Example</h2>\n\n{{ create-navigation }}\n\n<h2>Class Navigation</h2>\n\n<p>\n  The main tasks of the class are:\n</p>\n\n<p>\n  <ol>\n    <li>\n      Provide navigation method navigation.navigate('/path/to')\n    </li>\n    <li>\n      When you call the navigation method, find and execute a route handler.\n      <br>\n      And its result is transferred to navigation.onNavigate({ ... })\n    </li>\n  </ol>\n</p>\n\n<p>\n  <b>constructor(routes)</b>\n  <ul>\n    <li>\n      <i>routes</i> - array of routes (vqua-routes)\n    </li>\n  </ul>\n</p>\n\n<p>\n  <b>navigation.navigate(path)</b>\n  <p>\n    <ul>\n      <li>\n        <i>path</i> - string path by which the route is searched\n      </li>\n      <li>\n        <i>cache</i> - JSON string (optional) containing the response from the route handler.\n        <br> In this case, its search and execution will not be performed.\n      </li>\n    </ul>\n  </p>\n</p>\n\n<p>\n  <b>navigation.onNavigate({ path, statusCode, componentName, params })</b>\n  <p>\n    <ul>\n      <li>\n        <i>path</i> - string of query path\n      </li>\n      <li>\n        <i>statusCode</i> - number of server response status code\n      </li>\n      <li>\n        <i>componentName</i> - string of component path relative to its parent folder\n      </li>\n      <li>\n        <i>params</i> - object of the result route handler, for example: { props: {}, context: {} }\n      </li>\n    </ul>\n  </p>\n</p>\n\n<p>\n  <b>navigation.onRedirect({ path, statusCode, params })</b>\n  <p>\n    <ul>\n      <li>\n        <i>path</i> - string of query path\n      </li>\n      <li>\n        <i>statusCode</i> - number of server response status code\n      </li>\n      <li>\n        <i>params</i> - object of the result route handler, for example: { props: {}, context: {} }\n      </li>\n    </ul>\n  </p>\n</p>\n"
+module.exports = "<h1>Готовый каркас</h1>\n\n<p>Готовый каркас позволит вам быстро приступить к созданию веб-интерфейса с серверным пререндерингом.</p>\n\n<h2>Как установить?</h2>\n\n{{ install }}\n\n<p>\n  После чего откройте в браузере страницу http://localhost:8080/\n  и вы должны увидеть:\n  <br>\n  <i>Welcome! Test page.</i>\n</p>\n\n<h2>Как редактировать код?</h2>\n\n<p>Чтобы изменения вносились сразу после сохранения откройте новое окно треминала и используйте команду:</p>\n\n{{ webpack }}\n\n<a href=\"https://webpack.js.org/\" target=\"_blank\">Подробнее о webpack</a>\n\n<h2>Как редактировать css стили?</h2>\n\n<p>Для того чтобы отслеживать изменение стилей в новом окне запустите:</p>\n\n{{ gulp }}\n\n<p>\n  Предпочтительнее всего размещать стили в папках с компонентами.\n  Порядок стилей не должен иметь значения.\n  Для этого вы можете воспользоваться <a\n    target=\"_blank\"\n    href=\"https://ru.bem.info/methodology/css/\"\n  >бэм методологией</a>.\n</p>\n\n<a href=\"https://gulpjs.com/\" target=\"_blank\">Подробнее о gulp</a>\n"
 
 /***/ }),
 /* 445 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Браузерная навигация</h1>\n\n<h2>Как установить?</h2>\n\n{{ install }}\n\n<h2>Пример</h2>\n\n{{ create-navigation }}\n\n<h2>Класс Navigation</h2>\n\n<p>\n  Основные задачи класса это:\n</p>\n\n<p>\n  <ol>\n    <li>\n      Предоставить метод навигации navigation.navigate('/path/to')\n    </li>\n    <li>\n      При вызове метода навигации найти и исполнить обработчик маршрута.\n      <br>\n      А его результат передать в navigation.onNavigate({ ... })\n    </li>\n  </ol>\n</p>\n\n<p>\n  <b>constructor(routes)</b>\n  <ul>\n    <li>\n      <i>routes</i> - массив маршрутов (vqua-routes)\n    </li>\n  </ul>\n</p>\n\n<p>\n  <b>navigation.navigate(path)</b>\n  <p>\n    <ul>\n      <li>\n        <i>path</i> - строка пути по которому ищется маршрут\n      </li>\n      <li>\n        <i>cache</i> - JSON строка (необязательно), содержащая ответ от обработчика маршурта.\n        <br> В этом случае его поиск и исполнение производится не будут.\n      </li>\n    </ul>\n  </p>\n</p>\n\n<p>\n  <b>navigation.onNavigate({ path, statusCode, componentName, params })</b>\n  <p>\n    <ul>\n      <li>\n        <i>path</i> - строка пути запроса\n      </li>\n      <li>\n        <i>statusCode</i> - числовой код статуса ответа сервера\n      </li>\n      <li>\n        <i>componentName</i> - строка пути компонента относительно его родительской папки\n      </li>\n      <li>\n        <i>params</i> - объект ответа обработчика маршрута, например: { props: {}, context: {} }\n      </li>\n    </ul>\n  </p>\n</p>\n\n<p>\n  <b>navigation.onRedirect({ path, statusCode, params })</b>\n  <p>\n    <ul>\n      <li>\n        <i>path</i> - строка пути запроса\n      </li>\n      <li>\n        <i>statusCode</i> - числовой код статуса ответа сервера\n      </li>\n      <li>\n        <i>params</i> - объект ответа обработчика маршрута, например: { props: {}, context: {} }\n      </li>\n    </ul>\n  </p>\n</p>\n"
+module.exports = "<h1>Browser navigation</h1>\n\n<h2>How to install?</h2>\n\n{{ install }}\n\n<h2>Example</h2>\n\n{{ create-navigation }}\n\n<h2>Class Navigation</h2>\n\n<p>\n  The main tasks of the class are:\n</p>\n\n<p>\n  <ol>\n    <li>\n      Provide navigation method navigation.navigate('/path/to')\n    </li>\n    <li>\n      When you call the navigation method, find and execute a route handler.\n      <br>\n      And its result is transferred to navigation.onNavigate({ ... })\n    </li>\n  </ol>\n</p>\n\n<p>\n  <b>constructor(routes)</b>\n  <ul>\n    <li>\n      <i>routes</i> - array of routes (vqua-routes)\n    </li>\n  </ul>\n</p>\n\n<p>\n  <b>navigation.navigate(path)</b>\n  <p>\n    <ul>\n      <li>\n        <i>path</i> - string path by which the route is searched\n      </li>\n      <li>\n        <i>cache</i> - JSON string (optional) containing the response from the route handler.\n        <br> In this case, its search and execution will not be performed.\n      </li>\n    </ul>\n  </p>\n</p>\n\n<p>\n  <b>navigation.onNavigate({ path, statusCode, componentName, params })</b>\n  <p>\n    <ul>\n      <li>\n        <i>path</i> - string of query path\n      </li>\n      <li>\n        <i>statusCode</i> - number of server response status code\n      </li>\n      <li>\n        <i>componentName</i> - string of component path relative to its parent folder\n      </li>\n      <li>\n        <i>params</i> - object of the result route handler, for example: { props: {}, context: {} }\n      </li>\n    </ul>\n  </p>\n</p>\n\n<p>\n  <b>navigation.onRedirect({ path, statusCode, params })</b>\n  <p>\n    <ul>\n      <li>\n        <i>path</i> - string of query path\n      </li>\n      <li>\n        <i>statusCode</i> - number of server response status code\n      </li>\n      <li>\n        <i>params</i> - object of the result route handler, for example: { props: {}, context: {} }\n      </li>\n    </ul>\n  </p>\n</p>\n"
 
 /***/ }),
 /* 446 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Context</h1>\n\n<p>\n  Sometimes you may need to throw parameters into several components at once.\n  For example, you need to provide all of your components with translations.\n  And each time to transmit props will be simply tedious.\n  Here you will be helped by the context.\n</p>\n\n<p>\n  To pass the context to the children you need to implement a method <b>passContext</b> in\n  the parent component and return the context object.\n</p>\n\n<p>\n  Also inside the method <b>passContext</b> you can use objects <b>this.props</b> and <b>this.state</b>\n</p>\n\n<p>\n  And in the component, the expecting context is to implement a static method <b>injectContext</b>\n  and return an array of properties of the expected context.\n</p>\n\n<p>Example:</p>\n\n{{ app }}\n"
+module.exports = "<h1>Браузерная навигация</h1>\n\n<h2>Как установить?</h2>\n\n{{ install }}\n\n<h2>Пример</h2>\n\n{{ create-navigation }}\n\n<h2>Класс Navigation</h2>\n\n<p>\n  Основные задачи класса это:\n</p>\n\n<p>\n  <ol>\n    <li>\n      Предоставить метод навигации navigation.navigate('/path/to')\n    </li>\n    <li>\n      При вызове метода навигации найти и исполнить обработчик маршрута.\n      <br>\n      А его результат передать в navigation.onNavigate({ ... })\n    </li>\n  </ol>\n</p>\n\n<p>\n  <b>constructor(routes)</b>\n  <ul>\n    <li>\n      <i>routes</i> - массив маршрутов (vqua-routes)\n    </li>\n  </ul>\n</p>\n\n<p>\n  <b>navigation.navigate(path)</b>\n  <p>\n    <ul>\n      <li>\n        <i>path</i> - строка пути по которому ищется маршрут\n      </li>\n      <li>\n        <i>cache</i> - JSON строка (необязательно), содержащая ответ от обработчика маршурта.\n        <br> В этом случае его поиск и исполнение производится не будут.\n      </li>\n    </ul>\n  </p>\n</p>\n\n<p>\n  <b>navigation.onNavigate({ path, statusCode, componentName, params })</b>\n  <p>\n    <ul>\n      <li>\n        <i>path</i> - строка пути запроса\n      </li>\n      <li>\n        <i>statusCode</i> - числовой код статуса ответа сервера\n      </li>\n      <li>\n        <i>componentName</i> - строка пути компонента относительно его родительской папки\n      </li>\n      <li>\n        <i>params</i> - объект ответа обработчика маршрута, например: { props: {}, context: {} }\n      </li>\n    </ul>\n  </p>\n</p>\n\n<p>\n  <b>navigation.onRedirect({ path, statusCode, params })</b>\n  <p>\n    <ul>\n      <li>\n        <i>path</i> - строка пути запроса\n      </li>\n      <li>\n        <i>statusCode</i> - числовой код статуса ответа сервера\n      </li>\n      <li>\n        <i>params</i> - объект ответа обработчика маршрута, например: { props: {}, context: {} }\n      </li>\n    </ul>\n  </p>\n</p>\n"
 
 /***/ }),
 /* 447 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Контекст</h1>\n\n<p>\n  Иногда вам может понадобиться прокинуть параметры сразу в несколько компонентов.\n  Например вам нужно обеспечить все ваши компоненты переводами.\n  И каждый раз передавать props будет просто утомительно.\n  Здесь вам на помощь прийдет контекст.\n</p>\n\n<p>\n  Чтобы передать контекст детям вам необходимо реализовать метод <b>passContext</b> в компоненте родителе и вернуть\n  объект контекста.\n</p>\n\n<p>\n  Также внутри метода <b>passContext</b> вы можете использовать объекты <b>this.props</b> и <b>this.state</b>\n</p>\n\n<p>\n  А в компоненте, ожидающий контект, реализовать статический метод <b>injectContext</b>\n  и вернуть массив свойств ожидаемого контекста.\n</p>\n\n<p>Пример:</p>\n\n{{ app }}\n"
+module.exports = "<h1>Context</h1>\n\n<p>\n  Sometimes you may need to throw parameters into several components at once.\n  For example, you need to provide all of your components with translations.\n  And each time to transmit props will be simply tedious.\n  Here you will be helped by the context.\n</p>\n\n<p>\n  To pass the context to the children you need to implement a method <b>passContext</b> in\n  the parent component and return the context object.\n</p>\n\n<p>\n  Also inside the method <b>passContext</b> you can use objects <b>this.props</b> and <b>this.state</b>\n</p>\n\n<p>\n  And in the component, the expecting context is to implement a static method <b>injectContext</b>\n  and return an array of properties of the expected context.\n</p>\n\n<p>Example:</p>\n\n{{ app }}\n"
 
 /***/ }),
 /* 448 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Create server</h1>\n\n<h2>How to install?</h2>\n\n{{ install }}\n\n<h2>Example</h2>\n\n{{ create-server }}\n\n<h2>Description</h2>\n\n<p>\n  Function createServer return instance of simple\n  node <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_class_http_server\"\n  >http server</a>.\n  <br>\n  <br>\n  When a request arrives at the server, the path is parsed and the first matched vqua route is located on it.\n  After that, control is passed to the action function specified in the route.\n  <br>\n  <br>\n  The action method takes two request, response arguments.\n  With one exception, for response object is added two callbacks - send and redirect,\n  which will work both on the server and in the browser.\n  Of course for the browser you need to use\n  package <a href='/en/browser-navigation' class='navigation_link'>vqua-browser</a>.\n  <br>\n  <br>\n  To see how everything works right away and together,\n  use <a href='http://localhost:8080/en/boilerplate' class='navigation_link'>ready boilerplate</a>\n</p>\n\n<h2>Arguments for createServer(<b>object</b>)</h2>\n\n<p>All arguments are required.</p>\n\n<p>\n  <b>routes</b> - array of routes  (vqua-routes)\n</p>\n\n<p>\n  <b>layout</b> - function callback(html, data)\n  <br>\n  <i>html</i> - component of the controller, converted to an html string\n  <br>\n  <i>data</i> - The data returned by the controller is converted into a JSON string\n</p>\n\n<p>Example layout:</p>\n\n{{ layout }}\n\n<p>\n  <b>publicPath</b> - the path to the folder where static files are stored\n  <br/>\n\n</p>\n\n<p>\n  <b>containerPath</b> - the path to the folder where the containers are stored (vqua top-level components)\n</p>\n\n<h2>Function action(request, response)</h2>\n\n<p>\n  <b>request</b>- in addition to the standard parameters <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_http_request_options_callback\"\n  >http request</a> contain:\n  <ul>\n    <li>\n      <b>params</b> - object of routing parameters\n    </li>\n    <li>\n      <b>segments</b> - array of route segments\n    </li>\n  </ul>\n</p>\n\n<p>\n  <b>response</b>- in addition to the standard parameters <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_class_http_serverresponse\"\n  >http response</a> contain:\n  <ul>\n    <li>\n      <b>redirect(statusCode, url)</b>\n      <br>\n      <i>statusCode</i> - numeric server response code (300, 301, etc.)\n      <br>\n      <i>url</i> - redirection path string\n    </li>\n    <li>\n      <b>send(statusCode, containerName, params)</b>\n      <br>\n      <i>statusCode</i> - numeric server response code (200, 500, etc.)\n      <br>\n      <i>containerName</i> - the string name of the component's vqua\n      <br>\n      <i>params</i> - parameters object\n      <ul>\n        <i>props</i> - component vqua parameter object\n        <br>\n        <i>context</i> - context object of the component's vqua\n        <br>\n        <i>layout</i> - layout path\n      </ul>\n    </li>\n  </ul>\n</p>\n"
+module.exports = "<h1>Контекст</h1>\n\n<p>\n  Иногда вам может понадобиться прокинуть параметры сразу в несколько компонентов.\n  Например вам нужно обеспечить все ваши компоненты переводами.\n  И каждый раз передавать props будет просто утомительно.\n  Здесь вам на помощь прийдет контекст.\n</p>\n\n<p>\n  Чтобы передать контекст детям вам необходимо реализовать метод <b>passContext</b> в компоненте родителе и вернуть\n  объект контекста.\n</p>\n\n<p>\n  Также внутри метода <b>passContext</b> вы можете использовать объекты <b>this.props</b> и <b>this.state</b>\n</p>\n\n<p>\n  А в компоненте, ожидающий контект, реализовать статический метод <b>injectContext</b>\n  и вернуть массив свойств ожидаемого контекста.\n</p>\n\n<p>Пример:</p>\n\n{{ app }}\n"
 
 /***/ }),
 /* 449 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Создание сервера</h1>\n\n<h2>Как установить?</h2>\n\n{{ install }}\n\n<h2>Пример</h2>\n\n{{ create-server }}\n\n<h2>Описание</h2>\n\n<p>\n  Функция createServer возвращает экземпляр обычного\n  нодовского <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_class_http_server\"\n  >http сервера</a>.\n  <br>\n  <br>\n  Когда запрос поступает на сервер, строка пути разбирается и по ней находится первый подходящий vqua маршрут.\n  После чего управление передается функции action, указанной в маршруте.\n  <br>\n  <br>\n  Метод action принимает два аргумента request, response .\n  За одним исключением что к response добавляются два колбека это send и redirect,\n  которые будут отрабатывать как на сервере так и в браузере.\n  Конечно для браузера необходимо использовать\n  пакет <a href='/ru/browser-navigation' class='navigation_link'>vqua-browser</a>.\n  <br>\n  <br>\n  Чтобы посмотреть на то как все работает сразу и вместе,\n  воспользуйтесь <a href='http://localhost:8080/ru/boilerplate' class='navigation_link'>готовым каркасом</a>\n</p>\n\n<h2>Аргументы для createServer(<b>object</b>)</h2>\n\n<p>Все аргументы обязательны.</p>\n\n<p>\n  <b>routes</b> - массив роутов  (vqua-routes)\n</p>\n\n<p>\n  <b>layout</b> - функция callback(html, data)\n  <br>\n  <i>html</i> - компонент контроллера, преобразованный в html строку\n  <br>\n  <i>data</i> - отданные контроллером данные, преобразованные в JSON строку\n</p>\n\n<p>Пример layout:</p>\n\n{{ layout }}\n\n<p>\n  <b>publicPath</b> - строка пути к папке где хранятся статические файлы\n  <br/>\n\n</p>\n\n<p>\n  <b>containerPath</b> - строка пути к папке где хранятся контейнеры (vqua компоненты верхнего уровня)\n</p>\n\n<h2>Фунцкия action(request, response)</h2>\n\n<p>\n  <b>request</b>- помимо стандатных параметров <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_http_request_options_callback\"\n  >http request</a> содержит:\n  <ul>\n    <li>\n      <b>params</b> - объект параметров роута\n    </li>\n    <li>\n      <b>segments</b> - массив сегментов роута\n    </li>\n  </ul>\n</p>\n\n<p>\n  <b>response</b>- помимо стандатных параметров <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_class_http_serverresponse\"\n  >http response</a> содержит:\n  <ul>\n    <li>\n      <b>redirect(statusCode, url)</b>\n      <br>\n      <i>statusCode</i> - числовой код ответа сервера (300, 301 и т.д.)\n      <br>\n      <i>url</i> - строка пути редиректа\n    </li>\n    <li>\n      <b>send(statusCode, containerName, params)</b>\n      <br>\n      <i>statusCode</i> - числовой код ответа сервера (200, 500 и т.д.)\n      <br>\n      <i>containerName</i> - строковое название vqua компонента\n      <br>\n      <i>params</i> - объект параметров\n      <ul>\n        <i>props</i> - объект параметров vqua компонента\n        <br>\n        <i>context</i> - объект контекста vqua компонента\n        <br>\n        <i>layout</i> - строка пути layout\n      </ul>\n    </li>\n  </ul>\n</p>\n"
+module.exports = "<h1>Create server</h1>\n\n<h2>How to install?</h2>\n\n{{ install }}\n\n<h2>Example</h2>\n\n{{ create-server }}\n\n<h2>Description</h2>\n\n<p>\n  Function createServer return instance of simple\n  node <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_class_http_server\"\n  >http server</a>.\n  <br>\n  <br>\n  When a request arrives at the server, the path is parsed and the first matched vqua route is located on it.\n  After that, control is passed to the action function specified in the route.\n  <br>\n  <br>\n  The action method takes two request, response arguments.\n  With one exception, for response object is added two callbacks - send and redirect,\n  which will work both on the server and in the browser.\n  Of course for the browser you need to use\n  package <a href='/en/browser-navigation' class='navigation_link'>vqua-browser</a>.\n  <br>\n  <br>\n  To see how everything works right away and together,\n  use <a href='http://localhost:8080/en/boilerplate' class='navigation_link'>ready boilerplate</a>\n</p>\n\n<h2>Arguments for createServer(<b>object</b>)</h2>\n\n<p>All arguments are required.</p>\n\n<p>\n  <b>routes</b> - array of routes  (vqua-routes)\n</p>\n\n<p>\n  <b>layout</b> - function callback(html, data)\n  <br>\n  <i>html</i> - component of the controller, converted to an html string\n  <br>\n  <i>data</i> - The data returned by the controller is converted into a JSON string\n</p>\n\n<p>Example layout:</p>\n\n{{ layout }}\n\n<p>\n  <b>publicPath</b> - the path to the folder where static files are stored\n  <br/>\n\n</p>\n\n<p>\n  <b>containerPath</b> - the path to the folder where the containers are stored (vqua top-level components)\n</p>\n\n<h2>Function action(request, response)</h2>\n\n<p>\n  <b>request</b>- in addition to the standard parameters <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_http_request_options_callback\"\n  >http request</a> contain:\n  <ul>\n    <li>\n      <b>params</b> - object of routing parameters\n    </li>\n    <li>\n      <b>segments</b> - array of route segments\n    </li>\n  </ul>\n</p>\n\n<p>\n  <b>response</b>- in addition to the standard parameters <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_class_http_serverresponse\"\n  >http response</a> contain:\n  <ul>\n    <li>\n      <b>redirect(statusCode, url)</b>\n      <br>\n      <i>statusCode</i> - numeric server response code (300, 301, etc.)\n      <br>\n      <i>url</i> - redirection path string\n    </li>\n    <li>\n      <b>send(statusCode, containerName, params)</b>\n      <br>\n      <i>statusCode</i> - numeric server response code (200, 500, etc.)\n      <br>\n      <i>containerName</i> - the string name of the component's vqua\n      <br>\n      <i>params</i> - parameters object\n      <ul>\n        <i>props</i> - component vqua parameter object\n        <br>\n        <i>context</i> - context object of the component's vqua\n        <br>\n        <i>layout</i> - layout path\n      </ul>\n    </li>\n  </ul>\n</p>\n"
 
 /***/ }),
 /* 450 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Fast start</h1>\n\n<p>Create a project folder, install dependencies</p>\n\n{{ webpack-install }}\n\n<p>Create file webpack.config.js</p>\n\n{{ webpack-config }}\n\n<p>Create file index.js</p>\n\n{{ hello-world-js }}\n\n<p>Create file index.html</p>\n\n{{ hello-world-html }}\n\n<p>Run build</p>\n\n{{ webpack-run }}\n\n<p>Ready, open file index.html in browser.</p>\n"
+module.exports = "<h1>Создание сервера</h1>\n\n<h2>Как установить?</h2>\n\n{{ install }}\n\n<h2>Пример</h2>\n\n{{ create-server }}\n\n<h2>Описание</h2>\n\n<p>\n  Функция createServer возвращает экземпляр обычного\n  нодовского <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_class_http_server\"\n  >http сервера</a>.\n  <br>\n  <br>\n  Когда запрос поступает на сервер, строка пути разбирается и по ней находится первый подходящий vqua маршрут.\n  После чего управление передается функции action, указанной в маршруте.\n  <br>\n  <br>\n  Метод action принимает два аргумента request, response .\n  За одним исключением что к response добавляются два колбека это send и redirect,\n  которые будут отрабатывать как на сервере так и в браузере.\n  Конечно для браузера необходимо использовать\n  пакет <a href='/ru/browser-navigation' class='navigation_link'>vqua-browser</a>.\n  <br>\n  <br>\n  Чтобы посмотреть на то как все работает сразу и вместе,\n  воспользуйтесь <a href='http://localhost:8080/ru/boilerplate' class='navigation_link'>готовым каркасом</a>\n</p>\n\n<h2>Аргументы для createServer(<b>object</b>)</h2>\n\n<p>Все аргументы обязательны.</p>\n\n<p>\n  <b>routes</b> - массив роутов  (vqua-routes)\n</p>\n\n<p>\n  <b>layout</b> - функция callback(html, data)\n  <br>\n  <i>html</i> - компонент контроллера, преобразованный в html строку\n  <br>\n  <i>data</i> - отданные контроллером данные, преобразованные в JSON строку\n</p>\n\n<p>Пример layout:</p>\n\n{{ layout }}\n\n<p>\n  <b>publicPath</b> - строка пути к папке где хранятся статические файлы\n  <br/>\n\n</p>\n\n<p>\n  <b>containerPath</b> - строка пути к папке где хранятся контейнеры (vqua компоненты верхнего уровня)\n</p>\n\n<h2>Фунцкия action(request, response)</h2>\n\n<p>\n  <b>request</b>- помимо стандатных параметров <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_http_request_options_callback\"\n  >http request</a> содержит:\n  <ul>\n    <li>\n      <b>params</b> - объект параметров роута\n    </li>\n    <li>\n      <b>segments</b> - массив сегментов роута\n    </li>\n  </ul>\n</p>\n\n<p>\n  <b>response</b>- помимо стандатных параметров <a\n    target=\"_blank\"\n    href=\"https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_class_http_serverresponse\"\n  >http response</a> содержит:\n  <ul>\n    <li>\n      <b>redirect(statusCode, url)</b>\n      <br>\n      <i>statusCode</i> - числовой код ответа сервера (300, 301 и т.д.)\n      <br>\n      <i>url</i> - строка пути редиректа\n    </li>\n    <li>\n      <b>send(statusCode, containerName, params)</b>\n      <br>\n      <i>statusCode</i> - числовой код ответа сервера (200, 500 и т.д.)\n      <br>\n      <i>containerName</i> - строковое название vqua компонента\n      <br>\n      <i>params</i> - объект параметров\n      <ul>\n        <i>props</i> - объект параметров vqua компонента\n        <br>\n        <i>context</i> - объект контекста vqua компонента\n        <br>\n        <i>layout</i> - строка пути layout\n      </ul>\n    </li>\n  </ul>\n</p>\n"
 
 /***/ }),
 /* 451 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Быстрый старт</h1>\n\n<p>Создаем папку проекта, устанавливаем зависимости</p>\n\n{{ webpack-install }}\n\n<p>Создаем файл webpack.config.js</p>\n\n{{ webpack-config }}\n\n<p>Создаем файл index.js</p>\n\n{{ hello-world-js }}\n\n<p>Создаем файл index.html</p>\n\n{{ hello-world-html }}\n\n<p>Запускаем сборку</p>\n\n{{ webpack-run }}\n\n<p>Готово, открываем файл index.html в браузере.</p>\n"
+module.exports = "<h1>Fast start</h1>\n\n<p>Create a project folder, install dependencies</p>\n\n{{ webpack-install }}\n\n<p>Create file webpack.config.js</p>\n\n{{ webpack-config }}\n\n<p>Create file index.js</p>\n\n{{ hello-world-js }}\n\n<p>Create file index.html</p>\n\n{{ hello-world-html }}\n\n<p>Run build</p>\n\n{{ webpack-run }}\n\n<p>Ready, open file index.html in browser.</p>\n"
 
 /***/ }),
 /* 452 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Hooks</h1>\n\n<h3>Before mount</h3>\n\n<p>\n  Before drawing a DOM tree\n</p>\n\n{{ before-mount }}\n\n<br>\n\n<h3>After mount</h3>\n\n<p>\n  After drawing a DOM tree\n</p>\n\n{{ after-mount }}\n\n<br>\n\n<h3>Before unmount</h3>\n\n<p>\n  Before the component is removed from the DOM tree\n</p>\n\n{{ before-unmount }}\n\n<br>\n\n<h3>Before update</h3>\n\n<p>\n  Before dom is updated\n</p>\n\n{{ before-update }}\n\n<br>\n\n<h3>After update</h3>\n\n<p>\n  After dom is updated\n</p>\n\n{{ after-update }}\n\n<br>\n\n<h3>Need to update</h3>\n\n<p>\n  Specifies whether to update the component. It is necessary to return:\n  <br>\n  <br>\n  <b>true</b> - the component will be updated\n  <br>\n  <b>false</b> - component will not be updated\n  <br>\n  <br>\n  By default, always <b>true</b>\n</p>\n\n{{ is-need-update }}\n"
+module.exports = "<h1>Быстрый старт</h1>\n\n<p>Создаем папку проекта, устанавливаем зависимости</p>\n\n{{ webpack-install }}\n\n<p>Создаем файл webpack.config.js</p>\n\n{{ webpack-config }}\n\n<p>Создаем файл index.js</p>\n\n{{ hello-world-js }}\n\n<p>Создаем файл index.html</p>\n\n{{ hello-world-html }}\n\n<p>Запускаем сборку</p>\n\n{{ webpack-run }}\n\n<p>Готово, открываем файл index.html в браузере.</p>\n"
 
 /***/ }),
 /* 453 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Хуки</h1>\n\n<h3>Перед монтированием</h3>\n\n<p>\n  Перед отрисовкой dom дерева\n</p>\n\n{{ before-mount }}\n\n<br>\n\n<h3>После монтирования</h3>\n\n<p>\n  После отрисовки dom дерева\n</p>\n\n{{ after-mount }}\n\n<br>\n\n<h3>Перед размонтированием</h3>\n\n<p>\n  Перед тем как компонент будет удален из dom дерева\n</p>\n\n{{ before-unmount }}\n\n<br>\n\n<h3>Перед обновлением</h3>\n\n<p>\n  Перед тем как dom будет обновлен\n</p>\n\n{{ before-update }}\n\n<br>\n\n<h3>После обновления</h3>\n\n<p>\n  После того как dom будет обновлен\n</p>\n\n{{ after-update }}\n\n<br>\n\n<h3>Необходимость обновления</h3>\n\n<p>\n  Определяет необходимость обновления компонента. Необходимо вернуть:\n  <br>\n  <br>\n  <b>true</b> - компонент будет обновлен\n  <br>\n  <b>false</b> - компонент не будет обновлен\n  <br>\n  <br>\n  По умолчанию всегда <b>true</b>\n</p>\n\n{{ is-need-update }}\n"
+module.exports = "<h1>Hooks</h1>\n\n<h3>Before mount</h3>\n\n<p>\n  Before drawing a DOM tree\n</p>\n\n{{ before-mount }}\n\n<br>\n\n<h3>After mount</h3>\n\n<p>\n  After drawing a DOM tree\n</p>\n\n{{ after-mount }}\n\n<br>\n\n<h3>Before unmount</h3>\n\n<p>\n  Before the component is removed from the DOM tree\n</p>\n\n{{ before-unmount }}\n\n<br>\n\n<h3>Before update</h3>\n\n<p>\n  Before dom is updated\n</p>\n\n{{ before-update }}\n\n<br>\n\n<h3>After update</h3>\n\n<p>\n  After dom is updated\n</p>\n\n{{ after-update }}\n\n<br>\n\n<h3>Need to update</h3>\n\n<p>\n  Specifies whether to update the component. It is necessary to return:\n  <br>\n  <br>\n  <b>true</b> - the component will be updated\n  <br>\n  <b>false</b> - component will not be updated\n  <br>\n  <br>\n  By default, always <b>true</b>\n</p>\n\n{{ is-need-update }}\n"
 
 /***/ }),
 /* 454 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Introduction</h1>\n\n<p>\n  <b>Vqua</b> is a JavaScript library for creating web interfaces,\n  oriented on creation isomorphic / universal applications.\n  Or speaking in a simpler language then your site will be better\n  indexed by search engines.\n</p>\n\n<br>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/a6YrNX_ECtI\" frameborder=\"0\" allowfullscreen></iframe>\n\n<h2>\n  Ecosystem\n</h2>\n\n<h3>Main</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua\">vqua</a> - virtual DOM</li>\n</ul>\n\n<h3>Server prerender</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-router\">vqua-router</a> - universal router</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-navigation\">vqua-navigation</a> - browser navigation</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-server\">vqua-server</a> - server prerender</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-boilerplate-ssr\">vqua-boilerplate-ssr</a> - universal boilerplate</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-todo-ssr\">vqua-todo-ssr</a> - todo example as in the video</li>\n</ul>\n\n<br>\n\n<h3>Other</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/berries\">berries</a> - set of utils</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/memorux\">memorux</a> - state container for vqua components</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/dom2vqua\">dom2vqua</a> - transfrom dom nodes to vqua nodes</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/html2vqua\">html2vqua</a> - transfrom html string to vqua nodes</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua2string\">vqua2string</a> - tranform vqua nodes to string</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-interpolate\">vqua-interpolate</a> - transform variables in text nodes</li>\n</ul>\n"
+module.exports = "<h1>Хуки</h1>\n\n<h3>Перед монтированием</h3>\n\n<p>\n  Перед отрисовкой dom дерева\n</p>\n\n{{ before-mount }}\n\n<br>\n\n<h3>После монтирования</h3>\n\n<p>\n  После отрисовки dom дерева\n</p>\n\n{{ after-mount }}\n\n<br>\n\n<h3>Перед размонтированием</h3>\n\n<p>\n  Перед тем как компонент будет удален из dom дерева\n</p>\n\n{{ before-unmount }}\n\n<br>\n\n<h3>Перед обновлением</h3>\n\n<p>\n  Перед тем как dom будет обновлен\n</p>\n\n{{ before-update }}\n\n<br>\n\n<h3>После обновления</h3>\n\n<p>\n  После того как dom будет обновлен\n</p>\n\n{{ after-update }}\n\n<br>\n\n<h3>Необходимость обновления</h3>\n\n<p>\n  Определяет необходимость обновления компонента. Необходимо вернуть:\n  <br>\n  <br>\n  <b>true</b> - компонент будет обновлен\n  <br>\n  <b>false</b> - компонент не будет обновлен\n  <br>\n  <br>\n  По умолчанию всегда <b>true</b>\n</p>\n\n{{ is-need-update }}\n"
 
 /***/ }),
 /* 455 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Вступление</h1>\n\n<p>\n  <b>Vqua</b> это JavaScript бибилиотека для создание веб-интерфейсов,\n  ориентированная на создания изморфных/унивесральных приложений.\n  Или говоря более простым языком то ваш сайт будет лучше индексироваться поисковыми системами.\n</p>\n\n<br>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/a6YrNX_ECtI\" frameborder=\"0\" allowfullscreen></iframe>\n\n<h2>\n  Экосистема\n</h2>\n\n<h3>Основное</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua\">vqua</a> - виртуальный DOM</li>\n</ul>\n\n<h3>Серверный рендер</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-router\">vqua-router</a> - универсальный роутер</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-navigation\">vqua-navigation</a> - браузерная навигация</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-server\">vqua-server</a> - серверный пререндер</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-boilerplate-ssr\">vqua-boilerplate-ssr</a> - каркас универсального приложения</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-todo-ssr\">vqua-todo-ssr</a> - пример заметок как на видео</li>\n</ul>\n\n<br>\n\n<h3>Другое</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/berries\">berries</a> - набор утилит</li>  \n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/memorux\">memorux</a> - контейнер состояний для vqua компонентов</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/dom2vqua\">dom2vqua</a> - преобразует dom ноды в vqua ноды</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/html2vqua\">html2vqua</a> - преобразует html строку в vqua ноды</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua2string\">vqua2string</a> - преобразует vqua ноды в строку</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterjakovigor/vqua/tree/master/packages/vqua-interpolate\">vqua-interpolate</a> - преобразует переменные в текстовых нодах</li>\n</ul>\n"
+module.exports = "<h1>Introduction</h1>\n\n<p>\n  <b>Vqua</b> is a JavaScript library for creating web interfaces,\n  oriented on creation isomorphic / universal applications.\n  Or speaking in a simpler language then your site will be better\n  indexed by search engines.\n</p>\n\n<br>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/a6YrNX_ECtI\" frameborder=\"0\" allowfullscreen></iframe>\n\n<h2>\n  Ecosystem\n</h2>\n\n<h3>Main</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/vqua\">vqua</a> - virtual DOM</li>\n</ul>\n\n<h3>Server prerender</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/vqua-router\">vqua-router</a> - universal router</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/vqua-navigation\">vqua-navigation</a> - browser navigation</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/vqua-server\">vqua-server</a> - server prerender</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/vqua-boilerplate-ssr\">vqua-boilerplate-ssr</a> - universal boilerplate</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/vqua-todo-ssr\">vqua-todo-ssr</a> - todo example as in the video</li>\n</ul>\n\n<br>\n\n<h3>Other</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/berries\">berries</a> - set of utils</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/memorux\">memorux</a> - state container for vqua components</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/dom2vqua\">dom2vqua</a> - transfrom dom nodes to vqua nodes</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/html2vqua\">html2vqua</a> - transfrom html string to vqua nodes</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/vqua2string\">vqua2string</a> - tranform vqua nodes to string</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/vqua-interpolate\">vqua-interpolate</a> - transform variables in text nodes</li>\n</ul>\n"
 
 /***/ }),
 /* 456 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Props</h1>\n\n<p>Each component has its own input properties - props.</p>\n\n<p>Unlike state, props are static parameters that can not be changed.</p>\n\n<p>\n  For example, this component expects a parameter name,\n  <br>and method <b>defaultProps</b> sets default parameters.\n</p>\n\n{{ hello }}\n\n<p>That's how you can pass parameters to another component:</p>\n\n{{ universe }}\n\n<h2>Childs</h2>\n\n<p>\n  Special property <b>props.childs</b> allows you to combine components with each other.\n</p>\n\n{{ board }}\n\n<h2>Keys</h2>\n\n<p>\n  Special property <b>props.key</b> will allow vqua to use a more efficient algorithm for redrawing a DOM tree.\n</p>\n\n<p>In this example, vqua simply swaps the elements, instead of redrawn the elements.</p>\n\n{{ keys-dom }}\n\n<p>By the same principle, you can synchronize vqua components:</p>\n\n{{ keys-instance }}\n"
+module.exports = "<h1>Вступление</h1>\n\n<p>\n  <b>Vqua</b> это JavaScript бибилиотека для создание веб-интерфейсов,\n  ориентированная на создания изморфных/унивесральных приложений.\n  Или говоря более простым языком то ваш сайт будет лучше индексироваться поисковыми системами.\n</p>\n\n<br>\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/a6YrNX_ECtI\" frameborder=\"0\" allowfullscreen></iframe>\n\n<h2>\n  Экосистема\n</h2>\n\n<h3>Основное</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/vqua\">vqua</a> - виртуальный DOM</li>\n</ul>\n\n<h3>Серверный рендер</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/vqua-router\">vqua-router</a> - универсальный роутер</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/vqua-navigation\">vqua-navigation</a> - браузерная навигация</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/vqua-server\">vqua-server</a> - серверный пререндер</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/vqua-boilerplate-ssr\">vqua-boilerplate-ssr</a> - каркас универсального приложения</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/vqua-todo-ssr\">vqua-todo-ssr</a> - пример заметок как на видео</li>\n</ul>\n\n<br>\n\n<h3>Другое</h3>\n\n<ul>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/berries\">berries</a> - набор утилит</li>  \n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/memorux\">memorux</a> - контейнер состояний для vqua компонентов</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/dom2vqua\">dom2vqua</a> - преобразует dom ноды в vqua ноды</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/html2vqua\">html2vqua</a> - преобразует html строку в vqua ноды</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/vqua2string\">vqua2string</a> - преобразует vqua ноды в строку</li>\n  <li><a target=\"_blank\" href=\"https://github.com/sterzhakov/vqua/tree/master/packages/vqua-interpolate\">vqua-interpolate</a> - преобразует переменные в текстовых нодах</li>\n</ul>\n"
 
 /***/ }),
 /* 457 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Параметры</h1>\n\n<p>Каждый компонент имеет свои параметры на вход - props.</p>\n\n<p>В отличии от state, props это статические параметры которые нельзя изменять.</p>\n\n<p>\n  Например этот компонент ожидает от вас параметр name,\n  <br>а метод <b>defaultProps</b> устаналивает параметры по умолчанию.\n</p>\n\n{{ hello }}\n\n<p>Вот так можно передать параметры другому компоненту:</p>\n\n{{ universe }}\n\n<h2>Дети</h2>\n\n<p>\n  Специальный параметр <b>props.childs</b> позволит вам комбинировать компоненты между собой.\n</p>\n\n{{ board }}\n\n<h2>Ключи</h2>\n\n<p>\n  Специальный параметр <b>props.key</b> позволит vqua использовать более эффективный алгоритм перерисовки DOM дерева.\n</p>\n\n<p>Например в этом примере vqua просто меняет элементы местами, вместо того чтобы заново перерисовать элементы.</p>\n\n{{ keys-dom }}\n\n<p>По такому же принципу вы можете синхронизировать vqua компоненты:</p>\n\n{{ keys-instance }}\n"
+module.exports = "<h1>Props</h1>\n\n<p>Each component has its own input properties - props.</p>\n\n<p>Unlike state, props are static parameters that can not be changed.</p>\n\n<p>\n  For example, this component expects a parameter name,\n  <br>and method <b>defaultProps</b> sets default parameters.\n</p>\n\n{{ hello }}\n\n<p>That's how you can pass parameters to another component:</p>\n\n{{ universe }}\n\n<h2>Childs</h2>\n\n<p>\n  Special property <b>props.childs</b> allows you to combine components with each other.\n</p>\n\n{{ board }}\n\n<h2>Keys</h2>\n\n<p>\n  Special property <b>props.key</b> will allow vqua to use a more efficient algorithm for redrawing a DOM tree.\n</p>\n\n<p>In this example, vqua simply swaps the elements, instead of redrawn the elements.</p>\n\n{{ keys-dom }}\n\n<p>By the same principle, you can synchronize vqua components:</p>\n\n{{ keys-instance }}\n"
 
 /***/ }),
 /* 458 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>References</h1>\n\n<p>\n  If you need to access directly the dom element,\n  you can do this using <b>props.ref</b>, like this:\n</p>\n\n{{ dom }}\n\n<p>\n  Also you can access the instance of the component, like so:\n</p>\n\n{{ component }}\n"
+module.exports = "<h1>Параметры</h1>\n\n<p>Каждый компонент имеет свои параметры на вход - props.</p>\n\n<p>В отличии от state, props это статические параметры которые нельзя изменять.</p>\n\n<p>\n  Например этот компонент ожидает от вас параметр name,\n  <br>а метод <b>defaultProps</b> устаналивает параметры по умолчанию.\n</p>\n\n{{ hello }}\n\n<p>Вот так можно передать параметры другому компоненту:</p>\n\n{{ universe }}\n\n<h2>Дети</h2>\n\n<p>\n  Специальный параметр <b>props.childs</b> позволит вам комбинировать компоненты между собой.\n</p>\n\n{{ board }}\n\n<h2>Ключи</h2>\n\n<p>\n  Специальный параметр <b>props.key</b> позволит vqua использовать более эффективный алгоритм перерисовки DOM дерева.\n</p>\n\n<p>Например в этом примере vqua просто меняет элементы местами, вместо того чтобы заново перерисовать элементы.</p>\n\n{{ keys-dom }}\n\n<p>По такому же принципу вы можете синхронизировать vqua компоненты:</p>\n\n{{ keys-instance }}\n"
 
 /***/ }),
 /* 459 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Ссылки</h1>\n\n<p>\n  Если вам необходимо получить доступ напрямую к dom элементу,\n  вы можете сделать это используя <b>props.ref</b>, например так:\n</p>\n\n{{ dom }}\n\n<p>\n  Также вы можете получить доступ и к инстансу компонента, вот так:\n</p>\n\n{{ component }}\n"
+module.exports = "<h1>References</h1>\n\n<p>\n  If you need to access directly the dom element,\n  you can do this using <b>props.ref</b>, like this:\n</p>\n\n{{ dom }}\n\n<p>\n  Also you can access the instance of the component, like so:\n</p>\n\n{{ component }}\n"
 
 /***/ }),
 /* 460 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Router</h1>\n\n<h2>How to install?</h2>\n\n{{ install }}\n\n<h2>Example</h2>\n\n{{ match-routes }}\n\n<h2>Description</h2>\n\n<p>\n  A set of utilities for organizing routing.\n</p>\n\n<h2>route(matchers|path, action, props = {}, childs = [])</h2>\n\n<p>\n  <b>matchers|path</b> - an array consisting of lines of paths and coincidence objects | or one line of the path\n  <ul>\n    <li>\n      <i>path</i> - string of path\n      <br>Examples:\n      <ul>\n        <li>'*' - any value</li>\n        <li>'/:id' - named value will be passed to request.params as { id: [value] }</li>\n        <li>'/segment' - searches for an exact segment entry </li>\n      </ul>\n    </li>\n    <li>\n      <i>matcher</i> - object of matching\n      <ul>\n        <li>\n          <i>key</i> - name of match segment\n        </li>\n        <li>\n          <i>match</i> - callback function, takes the value as an argument <i>key</i>.\n          Must return true if it matches | false in case of no match.\n        </li>\n      </ul>\n\n      Example of the match object:\n\n      {{ matcher }}\n\n    </li>\n  </ul>\n  <b>action</b> - function handler or string in the format 'Controller#action'\n  <br>\n  For example, for the PostsController controller and the show method, the path string will be 'Posts#show'\n  <br>\n  <b>props</b> - object of props\n  <br>\n  <b>childs</b> - array of nested routes\n  <br>\n</p>\n\n<p>Returns the route object:</p>\n\n<ul>\n  <li>\n    <b>segments</b> - array of path string segments\n  </li>\n  <li>\n    <b>path</b> - string of path\n  </li>\n  <li>\n    <b>action</b> - function of handle request\n  </li>\n  <li>\n    <b>props</b> - object of request  props\n  </li>\n  <li>\n    <b>childs</b> - array of nested routes\n  </li>\n</ul>\n\n\n<h2>initRoutes({ routes, controllers })</h2>\n  <ul>\n    <li>Assigns routes to the method in the appropriate controller </li>\n    <li>Indexes routes</li>\n    <li>Aligns all routes to one level of nesting</li>\n    <li>Prepares segments for correct search</li>\n  </ul>\n<p>\n\n</p>\n\n<p>\n  <b>routes</b> - array of routes\n  <br>\n  <b>controller</b> - object of controllers\n  <br>\n</p>\n\n<p>Returns an array of routes.</p>\n\n\n<h2>matchRoutes(routes, path)</h2>\n\n<p>\n  Finds the first received route based on the specified path and adds a request object to it.\n</p>\n\n<p>\n  <b>routes</b> - array of routes\n  <br>\n  <b>path</b> - path string\n  <br>\n</p>\n\n<p>\n  Return object <b>routeInfo</b>:\n  <ul>\n    <li>\n      <b>path</b> - path string\n    </li>\n    <li>\n      <b>segments</b> - array of routes\n    </li>\n    <li>\n      <b>action</b> - route handler function\n    </li>\n    <li>\n      <b>props</b> - route object properties\n    </li>\n    <li>\n      <b>childs</b> - array of nested routes\n    </li>\n    <li>\n      <b>request</b> - request object\n      <ul>\n        <li>\n          <b>path</b> - path string\n        </li>\n        <li>\n          <b>segments</b> - array of routes\n        </li>\n        <li>\n          <b>params</b> - route object properties\n        </li>\n      </ul>\n    </li>\n  </ul>\n</p>\n"
+module.exports = "<h1>Ссылки</h1>\n\n<p>\n  Если вам необходимо получить доступ напрямую к dom элементу,\n  вы можете сделать это используя <b>props.ref</b>, например так:\n</p>\n\n{{ dom }}\n\n<p>\n  Также вы можете получить доступ и к инстансу компонента, вот так:\n</p>\n\n{{ component }}\n"
 
 /***/ }),
 /* 461 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Роутер</h1>\n\n<h2>Как установить?</h2>\n\n{{ install }}\n\n<h2>Пример</h2>\n\n{{ match-routes }}\n\n<h2>Описание</h2>\n\n<p>\n  Набор утилит для организации маршрутиризации.\n</p>\n\n<h2>route(matchers|path, action, props = {}, childs = [])</h2>\n\n<p>\n  <b>matchers|path</b> - массив состоящий из строк путей и объектов совпадений | или одна строка пути\n  <ul>\n    <li>\n      <i>path</i> - строка пути\n      <br>Примеры:\n      <ul>\n        <li>'*' - любое значение</li>\n        <li>'/:id' - именованное любое значение будет передано в request.params как { id: [value] }</li>\n        <li>'/segment' - ищет точное вхождение сегмента </li>\n      </ul>\n    </li>\n    <li>\n      <i>matcher</i> - объект совпадения\n      <ul>\n        <li>\n          <i>key</i> - название сегмента совпадения\n        </li>\n        <li>\n          <i>match</i> - функция обратного вызова, в качестве аргумента принимает значение <i>key</i>.\n          Должна вернуть true в случае совпадения| false в случае не совпадения.\n        </li>\n      </ul>\n\n      Пример объекта совпадения:\n\n      {{ matcher }}\n\n    </li>\n  </ul>\n  <b>action</b> - функция обработчик или строка в формате 'Контроллер#действие'\n  <br>\n  Например для контроллера PostsController и метода show, строка пути будет 'Posts#show'\n  <br>\n  <b>props</b> - объект параметров\n  <br>\n  <b>childs</b> - массив вложенных маршрутов\n  <br>\n</p>\n\n<p>Возвращает объект роута:</p>\n\n<ul>\n  <li>\n    <b>segments</b> - массив сегментов строки пути\n  </li>\n  <li>\n    <b>path</b> - строка пути\n  </li>\n  <li>\n    <b>action</b> - функция обработки запроса\n  </li>\n  <li>\n    <b>props</b> - объект параметров запроса\n  </li>\n  <li>\n    <b>childs</b> - массив вложенных маршрутов\n  </li>\n</ul>\n\n<h2>initRoutes({ routes, controllers })</h2>\n  <ul>\n    <li>Назначает маршрутам метод в соответсвующем контроллере</li>\n    <li>Индексирует роуты</li>\n    <li>Выравнивает все маршруты на один уровень вложенности</li>\n    <li>Подготавливает сегменты к корректному поиску</li>\n  </ul>\n<p>\n\n</p>\n\n<p>\n  <b>routes</b> - массив маршрутов\n  <br>\n  <b>controller</b> - объект контроллеров\n  <br>\n</p>\n\n<p>Возвращает массив маршрутов.</p>\n\n\n<h2>matchRoutes(routes, path)</h2>\n\n<p>\n  Находит первый попавшийся маршрут на основе заданного пути и добавляет к нему объект request.\n</p>\n\n<p>\n  <b>routes</b> - массив маршрутов\n  <br>\n  <b>path</b> - строка пути\n  <br>\n</p>\n\n<p>\n  Возвращает объект <b>routeInfo</b>:\n  <ul>\n    <li>\n      <b>path</b> - строка пути\n    </li>\n    <li>\n      <b>segments</b> - массив элементов пути\n    </li>\n    <li>\n      <b>action</b> - функция обработчика маршрута\n    </li>\n    <li>\n      <b>props</b> - объект параметров маршрута\n    </li>\n    <li>\n      <b>childs</b> - массив вложенных маршрутов\n    </li>\n    <li>\n      <b>request</b> - объект запроса\n      <ul>\n        <li>\n          <b>path</b> - строка пути\n        </li>\n        <li>\n          <b>segments</b> - массив элементов пути\n        </li>\n        <li>\n          <b>params</b> - объект параметров маршрута\n        </li>\n      </ul>\n    </li>\n  </ul>\n</p>\n"
+module.exports = "<h1>Router</h1>\n\n<h2>How to install?</h2>\n\n{{ install }}\n\n<h2>Example</h2>\n\n{{ match-routes }}\n\n<h2>Description</h2>\n\n<p>\n  A set of utilities for organizing routing.\n</p>\n\n<br>\n\n<h2>route [Function]</h2>\n\n<p>Creates a route object.</p>\n\n<br>\n\n<p>Arguments:<p>\n\n<p>\n  <b>matcher|matchers</b> matcher [Object] | [Array]: matcher [Object] - matcher object(s)\n  <br>\n  <b>action</b> [Function] - function handler or string in the format 'Controller # action'\n  <br>\n  For example, for the PostsController controller and the show method, the path string will be 'Posts#show'\n  <br>\n  <b>props</b> [Object] - parameter object\n  <br>\n  <b>childs</b> [Array] - array of nested routes\n  <br>\n</p>\n\n<br>\n\n<p>\n  Return:\n</p>\n\n<br>\n\n<p>\n  route [Object]\n</p>\n\n<br>\n\n<h2>scope [Function]</h2>\n\n<p>Assigns to all children of the first level their segments.</p>\n\n<br>\n\n<p>Arguments:<p>\n\n<p>\n  <b>matcher|matchers</b> matcher [Object] | [Array]: matcher [Object] - matcher object(s)\n  <br>\n  <b>childs</b> [Array] - array of nested routes\n</p>\n\n<br>\n\n<p>Return:<p>\n\n<p>[Array]: route [Object]</p>\n\n<br>\n\n<h2>initRoutes [Function]</h2>\n\n<ul>\n  <li>Assigns routes to the method in the appropriate controller</li>\n  <li>Replaces the string segments of the route starting with \"!\" on objects of coincidence</li>\n  <li>Indexes routes</li>\n  <li>Aligns all routes to one level of nesting</li>\n  <li>Prepares segments for correct search</li>\n</ul>\n\n<br>\n\n<p>Arguments:</p>\n\n<br>\n\n<p>\n  <b>routes</b> [Array] - array of routes\n  <br>\n  <b>controller</b> [Object] - controllers object.\n  Where the keys are the name of the controllers.\n  <br>\n  <b>matchers</b> [Object] - matchers object.\n  Where the keys are the name of the matchers.\n  <br>\n</p>\n\n<br>\n\n<p>Return:</p>\n\n<br>\n\n<p>[Array]: route[Object]</p>\n\n<br>\n\n<h2>matchRoutes [Function]</h2>\n\n<p>\n  Finds the first available route based on the specified path and adds\n  to it is the request object.\n</p>\n\n<br>\n\n<p>Arguments:</p>\n\n<br>\n\n<p>\n  <b>routes</b> [Array] - array of routes\n  <br>\n  <b>path</b> [String] - path string\n  <br>\n</p>\n\n<br>\n\n<p>Return:</p>\n\n<br>\n\n<p>\n  [Object]: route[Object] & request[Object]\n</p>\n\n<br>\n\n<hr>\n\n<br>\n\n<h2>route [Object]</h2>\n\n<p>\n  Route object.\n</p>\n\n<br>\n\n<p>Keys:<p>\n\n<p>\n  <b>segments</b> [Array] - array of path string segments\n  <br>\n  <b>path</b> [String] - path string\n  <br>\n  <b>action</b> [Function] - request handler function\n  <br>\n  <b>props</b> [Object] - route parameters object\n  <br>\n  <b>childs</b> [Array] - array of nested routes\n</p>\n\n\n<br>\n\n\n<h2>request [Object]</h2>\n\n<p>Request object.</p>\n\n<br>\n\n<p>Keys:</p>\n\n<br>\n\n<p>\n  <b>path</b> [String] - path string\n  <br>\n  <b>segments</b> [Array] - array of path elements\n  <br>\n  <b>params</b> [Object] - route parameter object\n</p>\n\n\n\n<br>\n\n<h2>matcher [Object]</h2>\n\n<p>Match object.</p>\n\n<br>\n\n<p>Keys:<p>\n\n<p>\n  <b>key</b> [String] - matching segment name\n  <br>\n  <b>match</b> [Function] - function callback\n</p>\n\n<br>\n\n<p>\nExample:\n\n{{ matcher }}\n</p>\n\n<br>\n\n<h3>matcher.match [Function]</h3>\n\n<p>\n  Determines whether the value of the url segment is valid.\n</p>\n\n<br>\n\n<p>Arguments:</p>\n\n<p><b>value</b> [String] - value of the url segment</p>\n\n<br>\n\n<p>Return:</p>\n\n<br>\n\n<p>[Boolean]</p>\n\n<br>\n\n<h2>matcher [String]</h2>\n\n<p>\n  Match string\n</p>\n\n<br>\n\n<p>Examples:</p>\n\n<ul>\n  <li>'*' - any value</li>\n  <li>'/:id' - a named value will be passed to request.params as { id: [value] }</li>\n  <li>'/!matcher' - matching object name</li>\n  <li>'/segment' - searches for an exact segment entry</li>\n</ul>\n"
 
 /***/ }),
 /* 462 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Server render</h1>\n\n<p>\n  To try server render, use this boilerplate.\n  Next, we will analyze it:\n  In order to test server rendering in action\n  use <a href='/en/boilerplate' class='navigate_link'>ready boilerplate</a>.\n  <br>\n  <br>\n  Next, we will disassemble it:\n</p>\n\n<h2>\n  Algorithm server rendering\n</h2>\n\n<img src=\"/content/server-render/images/ssr-algo-en.jpg\">\n\n<h2>Create a server</h2>\n\n<p>/build/server/index.js</p>\n\n{{ create-server }}\n\n<p>\n  The server accepts the request, and finds the matched route and controller.\n</p>\n\n<a href='/en/create-server' class='navigate_link'>Learn more about creating a server</a>\n\n\n<h2>Controller</h2>\n\n<p>/build/controllers/WelcomeController.js</p>\n\n{{ controller }}\n\n<p>\n  Controller return <b>response code</b>, <b>component name</b> and his <b>params</b>.\n  <br>\n  <br>\n  After that, the server finds in the folder /build/containers the requested component and\n  creates a virtual tree from it. On the basis of this tree, it creates an html string, places it\n  in your main template (layout) and sends a request to the browser.\n  <br>\n  <br>\n  Also, along with the main template in the script#app-cache, the server places the JSON string\n  with the data from request.send (). This is done in order to not cause the controller once again\n  in the browser.\n</p>\n\n\n<h2>Browser navigation</h2>\n\n<p>/build/index.js</p>\n\n{{ browser-navigation }}\n\n<p>The browser received a response from the server. Now we need to build <b>two virtual trees</b>.</p>\n\n\n<p><b>1st tree</b> we build on the basis of the DOM that provided us with a browser.</p>\n\n<p><b>2nd tree</b> we build on the basis of JSON controller cache from the script tag mentioned above.</p>\n\n<p>\n  Now the render method will compare two trees and restore the difference between them.\n  More precisely, hangs the missing events, and it will go all the way through the life cycle\n  of the callbacks of each component.\n</p>\n\n<a href='/en/browser-navigation' class='navigate_link'>More about browser navigation</a>\n"
+module.exports = "<h1>Роутер</h1>\n\n<h2>Как установить?</h2>\n\n{{ install }}\n\n<h2>Пример</h2>\n\n{{ match-routes }}\n\n<h2>Описание</h2>\n\n<p>\n  Набор утилит для организации маршрутиризации.\n</p>\n\n<br>\n\n<h2>route [Function]</h2>\n\n<p>Создает объект роута.</p>\n\n<br>\n\n<p>Аргументы:<p>\n\n<p>\n  <b>matcher|matchers</b> matcher [Object] | [Array]: matcher [Object] - объект(ы) совпадения\n  <br>\n  <b>action</b> [Function] - функция обработчик или строка в формате 'Контроллер#действие'\n  <br>\n  Например для контроллера PostsController и метода show, строка пути будет 'Posts#show'\n  <br>\n  <b>props</b> [Object] - объект параметров\n  <br>\n  <b>childs</b> [Array] - массив вложенных маршрутов\n  <br>\n</p>\n\n<br>\n\n<p>\n  Возвращает:\n</p>\n\n<br>\n\n<p>\n  route [Object]\n</p>\n\n<br>\n\n<h2>scope [Function]</h2>\n\n<p>Назначает всем детям первого уровня свои сегменты.</p>\n\n<br>\n\n<p>Аргументы:<p>\n\n<p>\n  <b>matcher|matchers</b> matcher [Object] | [Array]: matcher [Object] - объект(ы) совпадения\n  <br>\n  <b>childs</b> [Array] - массив вложенных маршрутов\n</p>\n\n<br>\n\n<p>Возвращает:<p>\n\n<p>[Array]: route [Object]</p>\n\n<br>\n\n<h2>initRoutes [Function]</h2>\n\n<ul>\n  <li>Назначает маршрутам метод в соответсвующем контроллере</li>\n  <li>Заменяет строковые сегменты маршрута начинающейся с \"!\" на объекты сопадения</li>\n  <li>Индексирует роуты</li>\n  <li>Выравнивает все маршруты на один уровень вложенности</li>\n  <li>Подготавливает сегменты к корректному поиску</li>\n</ul>\n\n<br>\n\n<p>Аргументы:</p>\n\n<br>\n\n<p>\n  <b>routes</b> [Array] - массив маршрутов\n  <br>\n  <b>controller</b> [Object] - объект контроллеров.\n  Где ключи это название контроллеров.\n  <br>\n  <b>matchers</b> [Object] - объект совпадений.\n  Где ключи это название объектов совпадения.\n  <br>\n</p>\n\n<br>\n\n<p>Возвращает:</p>\n\n<br>\n\n<p>[Array]: route[Object]</p>\n\n<br>\n\n<h2>matchRoutes [Function]</h2>\n\n<p>\n  Находит первый попавшийся маршрут на основе заданного пути и добавляет\n  к нему объект request.\n</p>\n\n<br>\n\n<p>Аргументы:</p>\n\n<br>\n\n<p>\n  <b>routes</b> [Array] - массив маршрутов\n  <br>\n  <b>path</b> [String] - строка пути\n  <br>\n</p>\n\n<br>\n\n<p>Возвращает:</p>\n\n<br>\n\n<p>\n  [Object]: route[Object] & request[Object]\n</p>\n\n<br>\n\n<hr>\n\n<br>\n\n<h2>route [Object]</h2>\n\n<p>\n  Объект роута.\n</p>\n\n<br>\n\n<p>Ключи:<p>\n\n<p>\n  <b>segments</b> [Array] - массив сегментов строки пути\n  <br>\n  <b>path</b> [String] - строка пути\n  <br>\n  <b>action</b> [Function] - функция обработки запроса\n  <br>\n  <b>props</b> [Object] - объект параметров запроса\n  <br>\n  <b>childs</b> [Array] - массив вложенных маршрутов\n</p>\n\n\n<br>\n\n\n<h2>request [Object]</h2>\n\n<p>Объект запроса.</p>\n\n<br>\n\n<p>Ключи:</p>\n\n<br>\n\n<p>\n  <b>path</b> [String] - строка пути\n  <br>\n  <b>segments</b> [Array] - массив элементов пути\n  <br>\n  <b>params</b> [Object] - объект параметров маршрута\n</p>\n\n\n\n<br>\n\n<h2>matcher [Object]</h2>\n\n<p>Объект совпадения.</p>\n\n<br>\n\n<p>Ключи:<p>\n\n<p>\n  <b>key</b> [String] - название сегмента совпадения\n  <br>\n  <b>match</b> [Function] - функция обратного вызова\n</p>\n\n<br>\n\n<p>\nПример:\n\n{{ matcher }}\n</p>\n\n<br>\n\n<h3>matcher.match [Function]</h3>\n\n<p>\n  Определяет является ли значение сегмента url валидным.\n</p>\n\n<br>\n\n<p>Аргументы:</p>\n\n<p><b>value</b> [String] - значение сегмента url</p>\n\n<br>\n\n<p>Возвращает:</p>\n\n<br>\n\n<p>[Boolean]</p>\n\n<br>\n\n<h2>matcher [String]</h2>\n\n<p>\n  Строка совпадения\n</p>\n\n<br>\n\n<p>Примеры:</p>\n\n<ul>\n  <li>'*' - любое значение</li>\n  <li>'/:id' - именованное любое значение будет передано в request.params как { id: [value] }</li>\n  <li>'/!matcher' - название объекта совпадения</li>\n  <li>'/segment' - ищет точное вхождение сегмента </li>\n</ul>\n"
 
 /***/ }),
 /* 463 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Серверный рендер</h1>\n\n<p>\n  Для того чтобы опробовать серверный рендер в действии\n  воспользуйтесь <a href='/ru/boilerplate' class='navigate_link'>готовым каркасом</a>.\n  <br>\n  <br>\n  Далее мы будем разбирать его:\n</p>\n\n<h2>\n  Алгоритм серверного рендера\n</h2>\n\n<img src=\"/content/server-render/images/ssr-algo-ru.jpg\">\n\n<h2>Создание сервера</h2>\n\n<p>/build/server/index.js</p>\n\n{{ create-server }}\n\n<p>\n  Сервер принимает запрос, и находит соответствующий ему маршрут и контроллер.\n</p>\n\n<a href='/ru/create-server' class='navigate_link'>Подробнее о создании сервера</a>\n\n\n<h2>Контроллер</h2>\n\n<p>/build/controllers/WelcomeController.js</p>\n\n{{ controller }}\n\n<p>\n  Контроллер возвращает <b>код ответа</b>, <b>название компонента</b> и его <b>параметры</b>.\n  <br>\n  <br>\n  После этого сервер находит в папке /build/containers запрашиваемый компонент и\n  создает из него виртуальное дерево. На основе этого дерева он создает html строку, помещает ее\n  в ваш основной шаблон (layout) и отправляет запрос браузеру.\n  <br>\n  <br>\n  Также вместе с основным шаблоном в теге script#app-cache сервер размещает JSON строку с данными из\n  request.send(). Делается это для того чтобы в браузере не вызывать контроллер лишний раз.\n</p>\n\n\n<h2>Браузерная навигация</h2>\n\n<p>/build/index.js</p>\n\n{{ browser-navigation }}\n\n<p>Браузер получил ответ от сервера. Теперь нам надо построить <b>два виртуальных дерева</b>.</p>\n\n\n<p><b>1-ое дерево</b> мы строим на основе DOM который предоставил нам браузер.</p>\n\n<p><b>2-ое дерево</b> мы строим на основе JSON кеша контроллера из тега script, упомянутом выше.</p>\n\n<p>\n  Теперь метод render сравнит два дерева и восстановит между ними разницу.\n  А именно, навесит недостающие события, и пройдет полностью по всему жизненному цилку колбеков каждого компонента.\n</p>\n\n<a href='/ru/browser-navigation' class='navigate_link'>Подробнее о браузерной навигации</a>\n"
+module.exports = "<h1>Server render</h1>\n\n<p>\n  To try server render, use this boilerplate.\n  Next, we will analyze it:\n  In order to test server rendering in action\n  use <a href='/en/boilerplate' class='navigate_link'>ready boilerplate</a>.\n  <br>\n  <br>\n  Next, we will disassemble it:\n</p>\n\n<h2>\n  Algorithm server rendering\n</h2>\n\n<img src=\"/content/server-render/images/ssr-algo-en.jpg\">\n\n<h2>Create a server</h2>\n\n<p>/build/server/index.js</p>\n\n{{ create-server }}\n\n<p>\n  The server accepts the request, and finds the matched route and controller.\n</p>\n\n<a href='/en/create-server' class='navigate_link'>Learn more about creating a server</a>\n\n\n<h2>Controller</h2>\n\n<p>/build/controllers/WelcomeController.js</p>\n\n{{ controller }}\n\n<p>\n  Controller return <b>response code</b>, <b>component name</b> and his <b>params</b>.\n  <br>\n  <br>\n  After that, the server finds in the folder /build/containers the requested component and\n  creates a virtual tree from it. On the basis of this tree, it creates an html string, places it\n  in your main template (layout) and sends a request to the browser.\n  <br>\n  <br>\n  Also, along with the main template in the script#app-cache, the server places the JSON string\n  with the data from request.send (). This is done in order to not cause the controller once again\n  in the browser.\n</p>\n\n\n<h2>Browser navigation</h2>\n\n<p>/build/index.js</p>\n\n{{ browser-navigation }}\n\n<p>The browser received a response from the server. Now we need to build <b>two virtual trees</b>.</p>\n\n\n<p><b>1st tree</b> we build on the basis of the DOM that provided us with a browser.</p>\n\n<p><b>2nd tree</b> we build on the basis of JSON controller cache from the script tag mentioned above.</p>\n\n<p>\n  Now the render method will compare two trees and restore the difference between them.\n  More precisely, hangs the missing events, and it will go all the way through the life cycle\n  of the callbacks of each component.\n</p>\n\n<a href='/en/browser-navigation' class='navigate_link'>More about browser navigation</a>\n"
 
 /***/ }),
 /* 464 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>State</h1>\n\n<p>Let's write a simple counter, and below we will analyze it in more detail</p>\n\n{{ counter }}\n\n<h2>Default state</h2>\n\n<p>\n  To set the default counter state, we need to implement the constructor\n  and pass the props and context arguments to the base class via the super method.\n  Now you can set the initial state in this.state.\n</p>\n\n<h2>New state</h2>\n\n<p>In the handleClick method, we set a new state through the this.setState method.</p>\n<p>When you install it the following happens:</p>\n\n<ul>\n  <li>Based on the new state, a new object of the virtual DOM tree is created</li>\n  <li>Then this.state merges with the new state</li>\n  <li>Based on the difference between the current and the new tree, a patch tree is created</li>\n  <li>Based on the patch of the tree, dom is redrawn</li>\n</ul>\n\n<p>\n  Do not modify this.state object directly, always use\n  this.setState method otherwise nothing will happen.\n</p>\n\n<h2>Click handler</h2>\n<p>\n  In the render method for the link, set the onClick property\n  handleClick. Wrap the handler into arrow function so this refers to this object.\n</p>\n<br>\n<p>Our counter is ready.</p>\n"
+module.exports = "<h1>Серверный рендер</h1>\n\n<p>\n  Для того чтобы опробовать серверный рендер в действии\n  воспользуйтесь <a href='/ru/boilerplate' class='navigate_link'>готовым каркасом</a>.\n  <br>\n  <br>\n  Далее мы будем разбирать его:\n</p>\n\n<h2>\n  Алгоритм серверного рендера\n</h2>\n\n<img src=\"/content/server-render/images/ssr-algo-ru.jpg\">\n\n<h2>Создание сервера</h2>\n\n<p>/build/server/index.js</p>\n\n{{ create-server }}\n\n<p>\n  Сервер принимает запрос, и находит соответствующий ему маршрут и контроллер.\n</p>\n\n<a href='/ru/create-server' class='navigate_link'>Подробнее о создании сервера</a>\n\n\n<h2>Контроллер</h2>\n\n<p>/build/controllers/WelcomeController.js</p>\n\n{{ controller }}\n\n<p>\n  Контроллер возвращает <b>код ответа</b>, <b>название компонента</b> и его <b>параметры</b>.\n  <br>\n  <br>\n  После этого сервер находит в папке /build/containers запрашиваемый компонент и\n  создает из него виртуальное дерево. На основе этого дерева он создает html строку, помещает ее\n  в ваш основной шаблон (layout) и отправляет запрос браузеру.\n  <br>\n  <br>\n  Также вместе с основным шаблоном в теге script#app-cache сервер размещает JSON строку с данными из\n  request.send(). Делается это для того чтобы в браузере не вызывать контроллер лишний раз.\n</p>\n\n\n<h2>Браузерная навигация</h2>\n\n<p>/build/index.js</p>\n\n{{ browser-navigation }}\n\n<p>Браузер получил ответ от сервера. Теперь нам надо построить <b>два виртуальных дерева</b>.</p>\n\n\n<p><b>1-ое дерево</b> мы строим на основе DOM который предоставил нам браузер.</p>\n\n<p><b>2-ое дерево</b> мы строим на основе JSON кеша контроллера из тега script, упомянутом выше.</p>\n\n<p>\n  Теперь метод render сравнит два дерева и восстановит между ними разницу.\n  А именно, навесит недостающие события, и пройдет полностью по всему жизненному цилку колбеков каждого компонента.\n</p>\n\n<a href='/ru/browser-navigation' class='navigate_link'>Подробнее о браузерной навигации</a>\n"
 
 /***/ }),
 /* 465 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Состояние</h1>\n\n<p>Давайте напишем простой счетчик, а ниже разберем его более подробно</p>\n\n{{ counter }}\n\n<h2>Состояние по умолчанию</h2>\n\n<p>\n  Чтобы установить состояние счетчика по умолчанию нам необходимо реализовать метод constructor\n  и передать базовому классу его аргументы props и context через метод super.\n  Теперь можно установать начальное состояние в this.state.\n</p>\n\n<h2>Новое состояние</h2>\n\n<p>В методе handleClick мы устанавливаем новое состояние через метод this.setState.</p>\n<p>При его установке происходит следующее:</p>\n\n<ul>\n  <li>На основе нового состояние создается новый объект вирутального DOM дерева</li>\n  <li>Далее this.state сливается с новым состоянием</li>\n  <li>На основе разницы между текущим и новым деревом создается patch дерево</li>\n  <li>На основе patch дерева перерисвовыается dom</li>\n</ul>\n\n<p>\n  Не следует изменять объект this.state напрямую, всегда используйте\n  метод this.setState иначе просто ничего не произойдет.\n</p>\n\n<h2>Обработчик клика</h2>\n<p>\n  В методе render для ссылки устанавливаем свойство onClick\n  обработчик handleClick. И чтобы this ссылался на текущий объект оборачиваем\n  его в стрелочную функцию.\n</p>\n<br>\n<p>Наш счетчик готов.</p>\n"
+module.exports = "<h1>State</h1>\n\n<p>Let's write a simple counter, and below we will analyze it in more detail</p>\n\n{{ counter }}\n\n<h2>Default state</h2>\n\n<p>\n  To set the default counter state, we need to implement the constructor\n  and pass the props and context arguments to the base class via the super method.\n  Now you can set the initial state in this.state.\n</p>\n\n<h2>New state</h2>\n\n<p>In the handleClick method, we set a new state through the this.setState method.</p>\n<p>When you install it the following happens:</p>\n\n<ul>\n  <li>Based on the new state, a new object of the virtual DOM tree is created</li>\n  <li>Then this.state merges with the new state</li>\n  <li>Based on the difference between the current and the new tree, a patch tree is created</li>\n  <li>Based on the patch of the tree, dom is redrawn</li>\n</ul>\n\n<p>\n  Do not modify this.state object directly, always use\n  this.setState method otherwise nothing will happen.\n</p>\n\n<h2>Click handler</h2>\n<p>\n  In the render method for the link, set the onClick property\n  handleClick. Wrap the handler into arrow function so this refers to this object.\n</p>\n<br>\n<p>Our counter is ready.</p>\n"
 
 /***/ }),
 /* 466 */
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Состояние</h1>\n\n<p>Давайте напишем простой счетчик, а ниже разберем его более подробно</p>\n\n{{ counter }}\n\n<h2>Состояние по умолчанию</h2>\n\n<p>\n  Чтобы установить состояние счетчика по умолчанию нам необходимо реализовать метод constructor\n  и передать базовому классу его аргументы props и context через метод super.\n  Теперь можно установать начальное состояние в this.state.\n</p>\n\n<h2>Новое состояние</h2>\n\n<p>В методе handleClick мы устанавливаем новое состояние через метод this.setState.</p>\n<p>При его установке происходит следующее:</p>\n\n<ul>\n  <li>На основе нового состояние создается новый объект вирутального DOM дерева</li>\n  <li>Далее this.state сливается с новым состоянием</li>\n  <li>На основе разницы между текущим и новым деревом создается patch дерево</li>\n  <li>На основе patch дерева перерисвовыается dom</li>\n</ul>\n\n<p>\n  Не следует изменять объект this.state напрямую, всегда используйте\n  метод this.setState иначе просто ничего не произойдет.\n</p>\n\n<h2>Обработчик клика</h2>\n<p>\n  В методе render для ссылки устанавливаем свойство onClick\n  обработчик handleClick. И чтобы this ссылался на текущий объект оборачиваем\n  его в стрелочную функцию.\n</p>\n<br>\n<p>Наш счетчик готов.</p>\n"
+
+/***/ }),
+/* 467 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15086,46 +15109,46 @@ function escapeHtml(string) {
 }
 
 /***/ }),
-/* 467 */
+/* 468 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./boilerplate/examples/gulp.sh": 468,
-	"./boilerplate/examples/install.sh": 469,
-	"./boilerplate/examples/webpack.sh": 470,
-	"./browser-navigation/examples/create-navigation.js": 471,
-	"./browser-navigation/examples/install.sh": 472,
-	"./context/examples/app.preview.js": 473,
-	"./create-server/examples/create-server.sh": 474,
-	"./create-server/examples/install.js": 475,
-	"./create-server/examples/layout.js": 476,
+	"./boilerplate/examples/gulp.sh": 469,
+	"./boilerplate/examples/install.sh": 470,
+	"./boilerplate/examples/webpack.sh": 471,
+	"./browser-navigation/examples/create-navigation.js": 472,
+	"./browser-navigation/examples/install.sh": 473,
+	"./context/examples/app.preview.js": 474,
+	"./create-server/examples/create-server.sh": 475,
+	"./create-server/examples/install.js": 476,
+	"./create-server/examples/layout.js": 477,
 	"./fast-start/examples/hello-world-html.html": 163,
-	"./fast-start/examples/hello-world-js.js": 477,
-	"./fast-start/examples/webpack-config.js": 478,
-	"./fast-start/examples/webpack-install.sh": 479,
-	"./fast-start/examples/webpack-run.sh": 480,
-	"./hooks/examples/after-mount.js": 481,
-	"./hooks/examples/after-update.js": 482,
-	"./hooks/examples/before-mount.js": 483,
-	"./hooks/examples/before-unmount.js": 484,
-	"./hooks/examples/before-update.js": 485,
-	"./hooks/examples/is-need-update.js": 486,
-	"./introduction/examples/pure-javascript.js": 487,
-	"./props/examples/board.preview.js": 488,
-	"./props/examples/hello.preview.js": 489,
-	"./props/examples/keys-dom.preview.js": 490,
-	"./props/examples/keys-instance.js": 491,
-	"./props/examples/universe.preview.js": 492,
-	"./references/examples/component.js": 493,
-	"./references/examples/dom.preview.js": 494,
-	"./router/examples/install.sh": 495,
-	"./router/examples/match-routes.js": 496,
-	"./router/examples/matcher.js": 497,
-	"./sample/examples/test.preview.js": 498,
-	"./server-render/examples/browser-navigation.js": 499,
-	"./server-render/examples/controller.js": 500,
-	"./server-render/examples/create-server.js": 501,
-	"./state/examples/counter.preview.js": 502
+	"./fast-start/examples/hello-world-js.js": 478,
+	"./fast-start/examples/webpack-config.js": 479,
+	"./fast-start/examples/webpack-install.sh": 480,
+	"./fast-start/examples/webpack-run.sh": 481,
+	"./hooks/examples/after-mount.js": 482,
+	"./hooks/examples/after-update.js": 483,
+	"./hooks/examples/before-mount.js": 484,
+	"./hooks/examples/before-unmount.js": 485,
+	"./hooks/examples/before-update.js": 486,
+	"./hooks/examples/is-need-update.js": 487,
+	"./introduction/examples/pure-javascript.js": 488,
+	"./props/examples/board.preview.js": 489,
+	"./props/examples/hello.preview.js": 490,
+	"./props/examples/keys-dom.preview.js": 491,
+	"./props/examples/keys-instance.js": 492,
+	"./props/examples/universe.preview.js": 493,
+	"./references/examples/component.js": 494,
+	"./references/examples/dom.preview.js": 495,
+	"./router/examples/install.sh": 496,
+	"./router/examples/match-routes.js": 497,
+	"./router/examples/matcher.js": 498,
+	"./sample/examples/test.preview.js": 499,
+	"./server-render/examples/browser-navigation.js": 500,
+	"./server-render/examples/controller.js": 501,
+	"./server-render/examples/create-server.js": 502,
+	"./state/examples/counter.preview.js": 503
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -15141,231 +15164,231 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 467;
-
-/***/ }),
-/* 468 */
-/***/ (function(module, exports) {
-
-module.exports = "gulp\n"
+webpackContext.id = 468;
 
 /***/ }),
 /* 469 */
 /***/ (function(module, exports) {
 
-module.exports = "git clone git@github.com:sterjakovigor/vqua.git\ncp -R ./vqua/packages/vqua-boilerplate-ssr/ ./vqua-boilerplate-ssr\ncd vqua-boilerplate-ssr/\nnpm i\nnpm i -g nodemon\nnodemon server\n"
+module.exports = "gulp\n"
 
 /***/ }),
 /* 470 */
 /***/ (function(module, exports) {
 
-module.exports = "webpack -w\n"
+module.exports = "git clone git@github.com:sterzhakov/vqua.git\ncp -R ./vqua/packages/vqua-boilerplate-ssr/ ./vqua-boilerplate-ssr\ncd vqua-boilerplate-ssr/\nnpm i\nnpm i -g nodemon\nnodemon server\n"
 
 /***/ }),
 /* 471 */
 /***/ (function(module, exports) {
 
-module.exports = "const { render } = require('vqua')\nconst Navigation = require('vqua-navigation')\nconst initRoutes = require('./initializers/initRoutes')\n\ninitRoutes().then(routes => {\n\n  let liveNodes = []\n\n  const navigation = new Navigation(routes)\n\n\n  navigation.onNavigate(({ path, statusCode, componentName, params }) => {\n\n    const $app = document.getElementById('app')\n\n    const Component = require('./containers/' + componentName)\n\n    const context = Object.assign(params.context, {\n      navigate: navigation.navigate.bind(navigation)\n    })\n\n    const templateNodes = [ Component.v(params.props, context) ]\n\n    liveNodes = render($app, liveNodes, templateNodes, context)\n\n  })\n\n\n  navigation.onRedirect(({ redirectPath, statusCode, params }) => {\n\n    window.history.pushState({}, '', redirectPath)\n\n    navigation.navigate(redirectPath)\n\n  })\n\n\n  const $cache = document.getElementById('app-cache')\n\n  const cache = $cache.innerHTML\n\n  $cache.parentNode.removeChild($cache)\n\n\n  navigation.navigate(window.location.pathname, cache)\n\n\n  window.onpopstate = (event) => {\n\n    navigation.navigate(window.location.pathname)\n\n  }\n\n})\n"
+module.exports = "webpack -w\n"
 
 /***/ }),
 /* 472 */
 /***/ (function(module, exports) {
 
-module.exports = "npm i --save vqua-navigation\n"
+module.exports = "const { render } = require('vqua')\nconst Navigation = require('vqua-navigation')\nconst initRoutes = require('./initializers/initRoutes')\n\ninitRoutes().then(routes => {\n\n  let liveNodes = []\n\n  const navigation = new Navigation(routes)\n\n\n  navigation.onNavigate(({ path, statusCode, componentName, params }) => {\n\n    const $app = document.getElementById('app')\n\n    const Component = require('./containers/' + componentName)\n\n    const context = Object.assign(params.context, {\n      navigate: navigation.navigate.bind(navigation)\n    })\n\n    const templateNodes = [ Component.v(params.props, context) ]\n\n    liveNodes = render($app, liveNodes, templateNodes, context)\n\n  })\n\n\n  navigation.onRedirect(({ redirectPath, statusCode, params }) => {\n\n    window.history.pushState({}, '', redirectPath)\n\n    navigation.navigate(redirectPath)\n\n  })\n\n\n  const $cache = document.getElementById('app-cache')\n\n  const cache = $cache.innerHTML\n\n  $cache.parentNode.removeChild($cache)\n\n\n  navigation.navigate(window.location.pathname, cache)\n\n\n  window.onpopstate = (event) => {\n\n    navigation.navigate(window.location.pathname)\n\n  }\n\n})\n"
 
 /***/ }),
 /* 473 */
 /***/ (function(module, exports) {
 
-module.exports = "const { Component } = require('vqua')\n\n// cut before\n\nclass User extends Component {\n\n  static injectContext() {\n\n    return ['username']\n\n  }\n\n  render() {\n\n    return this.context.username\n\n  }\n\n}\n\nclass App extends Component {\n\n  passContext() {\n\n    return {\n      username: 'Igor',\n    }\n\n  }\n\n  render() {\n\n    return User.v()\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = App\n"
+module.exports = "npm i --save vqua-navigation\n"
 
 /***/ }),
 /* 474 */
 /***/ (function(module, exports) {
 
-module.exports = "const app =\n  createServer({\n    routes: [],\n    layout: (html, data) => '',\n    publicPath: './dist',\n    containerPath: './build/containers',\n  })\n\napp.listen(8080)\n"
+module.exports = "const { Component } = require('vqua')\n\n// cut before\n\nclass User extends Component {\n\n  static injectContext() {\n\n    return ['username']\n\n  }\n\n  render() {\n\n    return this.context.username\n\n  }\n\n}\n\nclass App extends Component {\n\n  passContext() {\n\n    return {\n      username: 'Igor',\n    }\n\n  }\n\n  render() {\n\n    return User.v()\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = App\n"
 
 /***/ }),
 /* 475 */
 /***/ (function(module, exports) {
 
-module.exports = "npm i --save vqua-server\n"
+module.exports = "const app =\n  createServer({\n    routes: [],\n    layout: (html, data) => '',\n    publicPath: './dist',\n    containerPath: './build/containers',\n  })\n\napp.listen(8080)\n"
 
 /***/ }),
 /* 476 */
 /***/ (function(module, exports) {
 
-module.exports = "const layout = (html = '', data = '') => {\n\n  return (\n    '<html>' +\n      '<head>' +\n        '<meta charset=\"utf-8\">' +\n        '<link rel=\"stylesheet\" type=\"text/css\" href=\"/index.css\">' +\n      '</head>' +\n      '<body>' +\n        '<div id=\"app\">' +\n          html +\n        '</div>' +\n        '<script id=\"app-cache\" type=\"application/json\">' +\n          data +\n        '</script>' +\n        '<script src=\"/index.js\" type=\"text/javascript\"></script>' +\n      '</body>' +\n    '</html>'\n  )\n}\n"
+module.exports = "npm i --save vqua-server\n"
 
 /***/ }),
 /* 477 */
 /***/ (function(module, exports) {
 
-module.exports = "// { \"showPreview\": \"false\" }\n// cut before\n\nconst { html, Component, render } = require('vqua')\n\nclass HelloWorld extends Component {\n\n  render() {\n\n    const { div } = html\n\n    return (\n      div({},\n        'Hello world!'\n      )\n    )\n\n  }\n\n}\n\nconst app = document.getElementById('app')\n\nrender(app, HelloWorld.v(), (error) => {\n\n  if (error) throw error\n\n})\n\n// cut after\n\nmodule.exports = HelloWorld\n"
+module.exports = "const layout = (html = '', data = '') => {\n\n  return (\n    '<html>' +\n      '<head>' +\n        '<meta charset=\"utf-8\">' +\n        '<link rel=\"stylesheet\" type=\"text/css\" href=\"/index.css\">' +\n      '</head>' +\n      '<body>' +\n        '<div id=\"app\">' +\n          html +\n        '</div>' +\n        '<script id=\"app-cache\" type=\"application/json\">' +\n          data +\n        '</script>' +\n        '<script src=\"/index.js\" type=\"text/javascript\"></script>' +\n      '</body>' +\n    '</html>'\n  )\n}\n"
 
 /***/ }),
 /* 478 */
 /***/ (function(module, exports) {
 
-module.exports = "const path = require('path')\n\nmodule.exports = {\n  entry: './index.js',\n  output: {\n    filename: 'index.js',\n    path: path.resolve(__dirname)\n  },\n}\n"
+module.exports = "// { \"showPreview\": \"false\" }\n// cut before\n\nconst { html, Component, render } = require('vqua')\n\nclass HelloWorld extends Component {\n\n  render() {\n\n    const { div } = html\n\n    return (\n      div({},\n        'Hello world!'\n      )\n    )\n\n  }\n\n}\n\nconst app = document.getElementById('app')\n\nrender(app, HelloWorld.v(), (error) => {\n\n  if (error) throw error\n\n})\n\n// cut after\n\nmodule.exports = HelloWorld\n"
 
 /***/ }),
 /* 479 */
 /***/ (function(module, exports) {
 
-module.exports = "mkdir ./hello-world\n\ncd ./hello-world\n\nnpm install --save vqua\n\nnpm install --save-dev webpack\n"
+module.exports = "const path = require('path')\n\nmodule.exports = {\n  entry: './index.js',\n  output: {\n    filename: 'index.js',\n    path: path.resolve(__dirname)\n  },\n}\n"
 
 /***/ }),
 /* 480 */
 /***/ (function(module, exports) {
 
-module.exports = "webpack\n"
+module.exports = "mkdir ./hello-world\n\ncd ./hello-world\n\nnpm install --save vqua\n\nnpm install --save-dev webpack\n"
 
 /***/ }),
 /* 481 */
 /***/ (function(module, exports) {
 
-module.exports = "afterMount() {}\n"
+module.exports = "webpack\n"
 
 /***/ }),
 /* 482 */
 /***/ (function(module, exports) {
 
-module.exports = "afterUpdate(prevProps, prevState, prevContext) {}\n"
+module.exports = "afterMount() {}\n"
 
 /***/ }),
 /* 483 */
 /***/ (function(module, exports) {
 
-module.exports = "beforeMount() {}\n"
+module.exports = "afterUpdate(prevProps, prevState, prevContext) {}\n"
 
 /***/ }),
 /* 484 */
 /***/ (function(module, exports) {
 
-module.exports = "beforeUnmount() {}\n"
+module.exports = "beforeMount() {}\n"
 
 /***/ }),
 /* 485 */
 /***/ (function(module, exports) {
 
-module.exports = "beforeUpdate(nextProps, nextState, nextContext) {}\n"
+module.exports = "beforeUnmount() {}\n"
 
 /***/ }),
 /* 486 */
 /***/ (function(module, exports) {
 
-module.exports = "isNeedUpdate(nextProps, nextState, nextContext) {}\n"
+module.exports = "beforeUpdate(nextProps, nextState, nextContext) {}\n"
 
 /***/ }),
 /* 487 */
 /***/ (function(module, exports) {
 
-module.exports = "const { html, Component } = require('vqua')\n\n// cut before\n\nclass Beatles extends Component {\n\n  render() {\n\n    const { p, a } = html\n \n    return [\n      p({ class: 'yellow' },\n        'We all live in a yellow submarine'\n      ),\n      p({ onClick: () => { alert('Hands up!') } },\n        'Yellow submarine, yellow submarine'\n      ),\n    ]\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Beatles\n"
+module.exports = "isNeedUpdate(nextProps, nextState, nextContext) {}\n"
 
 /***/ }),
 /* 488 */
 /***/ (function(module, exports) {
 
-module.exports = "const { Component, html } = require('vqua')\n\nconst Hello = require('./hello.preview')\n\n// cut before\n\nclass Board extends Component {\n\n  render() {\n\n    const { div } = html\n\n    return (\n      div({ id: 'board' },\n        this.props.childs\n      )\n    )\n\n  }\n\n}\n\nconst board = Board.v({}, 'Some text!')\n\n// cut after\n\nclass Wrapper extends Component {\n\n  render() {\n\n    return board\n\n  }\n\n}\n\n\nmodule.exports = Wrapper\n"
+module.exports = "const { html, Component } = require('vqua')\n\n// cut before\n\nclass Beatles extends Component {\n\n  render() {\n\n    const { p, a } = html\n \n    return [\n      p({ class: 'yellow' },\n        'We all live in a yellow submarine'\n      ),\n      p({ onClick: () => { alert('Hands up!') } },\n        'Yellow submarine, yellow submarine'\n      ),\n    ]\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Beatles\n"
 
 /***/ }),
 /* 489 */
 /***/ (function(module, exports) {
 
-module.exports = "const { Component } = require('vqua')\n\n// cut before\n\nclass Hello extends Component {\n\n  static defaultProps() {\n\n    return {\n      name: 'World'\n    }\n\n  }\n\n  render() {\n\n    return (\n      'Hello, ' + this.props.name + '!'\n    )\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Hello\n"
+module.exports = "const { Component, html } = require('vqua')\n\nconst Hello = require('./hello.preview')\n\n// cut before\n\nclass Board extends Component {\n\n  render() {\n\n    const { div } = html\n\n    return (\n      div({ id: 'board' },\n        this.props.childs\n      )\n    )\n\n  }\n\n}\n\nconst board = Board.v({}, 'Some text!')\n\n// cut after\n\nclass Wrapper extends Component {\n\n  render() {\n\n    return board\n\n  }\n\n}\n\n\nmodule.exports = Wrapper\n"
 
 /***/ }),
 /* 490 */
 /***/ (function(module, exports) {
 
-module.exports = "const { Component, html } = require('vqua')\n\n// cut before\n\nclass Toggler extends Component {\n\n  constructor(props, context) {\n\n    super(props, context)\n\n    this.state = {\n      active: true\n    }\n\n  }\n\n  handleClick(event) {\n\n    event.preventDefault()\n\n    this.setState({ active: !this.state.active })\n\n  }\n\n  render() {\n\n    const { div, a, br } = html\n\n    const first = (\n      div({ key: 1 },\n        div({},\n          'first'\n        )\n      )\n    )\n\n    const second = (\n      div({ key: 2 },\n        'second'\n      )\n    )\n\n    const toggle = [\n      a({ href: '#toggle', onClick: (e) => this.handleClick(e) },\n        'Toggle!'\n      ),\n      br(),\n    ]\n\n    const combination = this.state.active\n      ? [ toggle, second, first ]\n      : [ toggle, first, second ]\n\n    return combination\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Toggler\n"
+module.exports = "const { Component } = require('vqua')\n\n// cut before\n\nclass Hello extends Component {\n\n  static defaultProps() {\n\n    return {\n      name: 'World'\n    }\n\n  }\n\n  render() {\n\n    return (\n      'Hello, ' + this.props.name + '!'\n    )\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Hello\n"
 
 /***/ }),
 /* 491 */
 /***/ (function(module, exports) {
 
-module.exports = "const { Component, html } = require('vqua')\n\n// cut before\n\n[\n  Example.v({ key: 'first' }),\n  Example.v({ key: 'second' })\n]\n\n// cut after\n\nmodule.exports = Toggler\n"
+module.exports = "const { Component, html } = require('vqua')\n\n// cut before\n\nclass Toggler extends Component {\n\n  constructor(props, context) {\n\n    super(props, context)\n\n    this.state = {\n      active: true\n    }\n\n  }\n\n  handleClick(event) {\n\n    event.preventDefault()\n\n    this.setState({ active: !this.state.active })\n\n  }\n\n  render() {\n\n    const { div, a, br } = html\n\n    const first = (\n      div({ key: 1 },\n        div({},\n          'first'\n        )\n      )\n    )\n\n    const second = (\n      div({ key: 2 },\n        'second'\n      )\n    )\n\n    const toggle = [\n      a({ href: '#toggle', onClick: (e) => this.handleClick(e) },\n        'Toggle!'\n      ),\n      br(),\n    ]\n\n    const combination = this.state.active\n      ? [ toggle, second, first ]\n      : [ toggle, first, second ]\n\n    return combination\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Toggler\n"
 
 /***/ }),
 /* 492 */
 /***/ (function(module, exports) {
 
-module.exports = "const { Component } = require('vqua')\n\nconst Hello = require('./hello.preview')\n\n// cut before\n\nclass Universe extends Component {\n\n  render() {\n\n    return (\n      Hello.v({ name: 'Universe' })\n    )\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Universe\n"
+module.exports = "const { Component, html } = require('vqua')\n\n// cut before\n\n[\n  Example.v({ key: 'first' }),\n  Example.v({ key: 'second' })\n]\n\n// cut after\n\nmodule.exports = Toggler\n"
 
 /***/ }),
 /* 493 */
 /***/ (function(module, exports) {
 
-module.exports = "class App extends Component {\n\n  // ...\n\n  render() {\n\n    return (\n      Hello.v({ ref: 'hello' },\n        'Hello world'\n      )\n    )\n\n  }\n\n  // ...\n\n}\n"
+module.exports = "const { Component } = require('vqua')\n\nconst Hello = require('./hello.preview')\n\n// cut before\n\nclass Universe extends Component {\n\n  render() {\n\n    return (\n      Hello.v({ name: 'Universe' })\n    )\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Universe\n"
 
 /***/ }),
 /* 494 */
 /***/ (function(module, exports) {
 
-module.exports = "const { Component, html } = require('vqua')\n\n// cut before\n\nclass Hello extends Component {\n\n  afterMount() {\n\n    setTimeout(() => {\n\n      this.refs.text.style = 'color: tomato;'\n\n    }, 1000)\n\n  }\n\n  render() {\n\n    const { p } = html\n\n    return (\n      p({ ref: 'text' },\n        'Hello world'\n      )\n    )\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Hello\n"
+module.exports = "class App extends Component {\n\n  // ...\n\n  render() {\n\n    return (\n      Hello.v({ ref: 'hello' },\n        'Hello world'\n      )\n    )\n\n  }\n\n  // ...\n\n}\n"
 
 /***/ }),
 /* 495 */
 /***/ (function(module, exports) {
 
-module.exports = "npm i --save vqua-router\n"
+module.exports = "const { Component, html } = require('vqua')\n\n// cut before\n\nclass Hello extends Component {\n\n  afterMount() {\n\n    setTimeout(() => {\n\n      this.refs.text.style = 'color: tomato;'\n\n    }, 1000)\n\n  }\n\n  render() {\n\n    const { p } = html\n\n    return (\n      p({ ref: 'text' },\n        'Hello world'\n      )\n    )\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Hello\n"
 
 /***/ }),
 /* 496 */
 /***/ (function(module, exports) {
 
-module.exports = "const { route, matchRoutes, initRoutes } = require('vqua-router')\n\nclass PostsController {\n\n  index() {}\n\n  show() {}\n\n  create() {}\n\n}\n\nconst routes = [\n  route('/', 'Posts#index', {}, [\n    route('/posts/:id', 'Posts#show'),\n    route('/posts/create', 'Posts#create'),\n  ]),\n]\n\nconst controllers = { PostsController: new PostsController }\n\nconst initedRoutes = initRoutes({ routes, controllers })\n\n// console.log(initedRoutes)\n//\n// [ { path: '/',\n//     action: [Function: index],\n//     segments: [ '' ],\n//     props: {},\n//     index: 0,\n//     controller: PostsController {} },\n//   { path: '/posts/:id',\n//     action: [Function: show],\n//     segments: [ 'posts', ':id' ],\n//     props: {},\n//     index: 1,\n//     controller: PostsController {} },\n//   { path: '/posts/create',\n//     action: [Function: create],\n//     segments: [ 'posts', 'create' ],\n//     props: {},\n//     index: 2,\n//     controller: PostsController {} } ]\n\nconst matchedRoute = matchRoutes(initedRoutes, '/posts/2')\n\n// console.log(matchedRoute)\n//\n// { path: '/posts/:id',\n//   action: [Function: show],\n//   segments: [ 'posts', ':id' ],\n//   props: {},\n//   index: 1,\n//   controller: PostsController {},\n//   request:\n//    { path: '/posts/2',\n//      segments: [ 'posts', '2' ],\n//      params: { id: '2' } } }\n"
+module.exports = "npm i --save vqua-router\n"
 
 /***/ }),
 /* 497 */
 /***/ (function(module, exports) {
 
-module.exports = "{\n  key: 'id',\n  matcher: id => id == '5'\n}\n"
+module.exports = "const { route, matchRoutes, initRoutes } = require('vqua-router')\n\nclass PostsController {\n\n  index() {}\n\n  show() {}\n\n  create() {}\n\n}\n\nconst routes = [\n  route('/', 'Posts#index', {}, [\n    route('/posts/:id', 'Posts#show'),\n    route('/posts/create', 'Posts#create'),\n  ]),\n]\n\nconst controllers = { PostsController: new PostsController }\n\nconst initedRoutes = initRoutes({ routes, controllers })\n\n// console.log(initedRoutes)\n//\n// [ { path: '/',\n//     action: [Function: index],\n//     segments: [ '' ],\n//     props: {},\n//     index: 0,\n//     controller: PostsController {} },\n//   { path: '/posts/:id',\n//     action: [Function: show],\n//     segments: [ 'posts', ':id' ],\n//     props: {},\n//     index: 1,\n//     controller: PostsController {} },\n//   { path: '/posts/create',\n//     action: [Function: create],\n//     segments: [ 'posts', 'create' ],\n//     props: {},\n//     index: 2,\n//     controller: PostsController {} } ]\n\nconst matchedRoute = matchRoutes(initedRoutes, '/posts/2')\n\n// console.log(matchedRoute)\n//\n// { path: '/posts/:id',\n//   action: [Function: show],\n//   segments: [ 'posts', ':id' ],\n//   props: {},\n//   index: 1,\n//   controller: PostsController {},\n//   request:\n//    { path: '/posts/2',\n//      segments: [ 'posts', '2' ],\n//      params: { id: '2' } } }\n"
 
 /***/ }),
 /* 498 */
 /***/ (function(module, exports) {
 
-module.exports = "module.exports = 'sample'\n"
+module.exports = "{\n  key: 'id',\n  matcher: id => id == '5'\n}\n"
 
 /***/ }),
 /* 499 */
 /***/ (function(module, exports) {
 
-module.exports = "const { render } = require('vqua')\nconst Navigation = require('vqua-navigation')\nconst initRoutes = require('./initializers/initRoutes')\n\ninitRoutes().then(routes => {\n\n  let liveNodes = []\n\n  const navigation = new Navigation(routes)\n\n  navigation.onNavigate(({ path, statusCode, componentName, params }) => {\n\n    const $app = document.getElementById('app')\n\n    const Component = require('./containers/' + componentName)\n\n    const context = Object.assign(params.context, {\n      navigate: navigation.navigate.bind(navigation)\n    })\n\n    const templateNodes = [ Component.v(params.props, context) ]\n\n    liveNodes = render($app, liveNodes, templateNodes, context)\n\n  })\n\n\n  navigation.onRedirect(({ redirectPath, statusCode, params }) => {\n\n    window.history.pushState({}, '', redirectPath)\n\n    navigation.navigate(redirectPath)\n\n  })\n\n\n  const $cache = document.getElementById('app-cache')\n\n  const cache = $cache.innerHTML\n\n  $cache.parentNode.removeChild($cache)\n\n\n  navigation.navigate(window.location.pathname, cache)\n\n\n  window.onpopstate = (event) => {\n\n    navigation.navigate(window.location.pathname)\n\n  }\n\n\n})\n"
+module.exports = "module.exports = 'sample'\n"
 
 /***/ }),
 /* 500 */
 /***/ (function(module, exports) {
 
-module.exports = "class WelcomeController {\n\n  index(req, res) {\n\n    res.send(200, 'WelcomeContainer', { props: {}, context: {} })\n\n  }\n\n}\n\nmodule.exports = WelcomeController\n"
+module.exports = "const { render } = require('vqua')\nconst Navigation = require('vqua-navigation')\nconst initRoutes = require('./initializers/initRoutes')\n\ninitRoutes().then(routes => {\n\n  let liveNodes = []\n\n  const navigation = new Navigation(routes)\n\n  navigation.onNavigate(({ path, statusCode, componentName, params }) => {\n\n    const $app = document.getElementById('app')\n\n    const Component = require('./containers/' + componentName)\n\n    const context = Object.assign(params.context, {\n      navigate: navigation.navigate.bind(navigation)\n    })\n\n    const templateNodes = [ Component.v(params.props, context) ]\n\n    liveNodes = render($app, liveNodes, templateNodes, context)\n\n  })\n\n\n  navigation.onRedirect(({ redirectPath, statusCode, params }) => {\n\n    window.history.pushState({}, '', redirectPath)\n\n    navigation.navigate(redirectPath)\n\n  })\n\n\n  const $cache = document.getElementById('app-cache')\n\n  const cache = $cache.innerHTML\n\n  $cache.parentNode.removeChild($cache)\n\n\n  navigation.navigate(window.location.pathname, cache)\n\n\n  window.onpopstate = (event) => {\n\n    navigation.navigate(window.location.pathname)\n\n  }\n\n\n})\n"
 
 /***/ }),
 /* 501 */
 /***/ (function(module, exports) {
 
-module.exports = "const createServer = require('vqua-server')\nconst layout = require('./layout')\nconst initRoutes = require('../build/initializers/initRoutes')\n\ninitRoutes().then(routes => {\n\n  const app =\n    createServer({\n      routes,\n      layout,\n      publicPath: './dist',\n      componentPath: './build/containers',\n    })\n\n  app.listen(8000)\n\n\n})\n\n\nprocess.on('unhandledRejection', error => {\n\n  console.log('unhandledRejection', error)\n\n});\n"
+module.exports = "class WelcomeController {\n\n  index(req, res) {\n\n    res.send(200, 'WelcomeContainer', { props: {}, context: {} })\n\n  }\n\n}\n\nmodule.exports = WelcomeController\n"
 
 /***/ }),
 /* 502 */
 /***/ (function(module, exports) {
 
-module.exports = "const { html, Component } = require('vqua')\n\n// cut before\n\nclass Counter extends Component {\n\n  constructor(props, context) {\n\n    super(props, context)\n\n    this.state = {\n      counter: 0\n    }\n\n  }\n\n  handleClick(event) {\n\n    event.preventDefault()\n\n    this.setState({ counter: this.state.counter + 1 })\n\n  }\n\n  render() {\n\n    const { div, a, p } = html\n\n    return (\n      div({},\n        p({}, this.state.counter),\n        a({\n          href: '#click',\n          onClick: event => this.handleClick(event)\n        },\n          'Click me!'\n        )\n      )\n    )\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Counter\n"
+module.exports = "const createServer = require('vqua-server')\nconst layout = require('./layout')\nconst initRoutes = require('../build/initializers/initRoutes')\n\ninitRoutes().then(routes => {\n\n  const app =\n    createServer({\n      routes,\n      layout,\n      publicPath: './dist',\n      componentPath: './build/containers',\n    })\n\n  app.listen(8000)\n\n\n})\n\n\nprocess.on('unhandledRejection', error => {\n\n  console.log('unhandledRejection', error)\n\n});\n"
 
 /***/ }),
 /* 503 */
+/***/ (function(module, exports) {
+
+module.exports = "const { html, Component } = require('vqua')\n\n// cut before\n\nclass Counter extends Component {\n\n  constructor(props, context) {\n\n    super(props, context)\n\n    this.state = {\n      counter: 0\n    }\n\n  }\n\n  handleClick(event) {\n\n    event.preventDefault()\n\n    this.setState({ counter: this.state.counter + 1 })\n\n  }\n\n  render() {\n\n    const { div, a, p } = html\n\n    return (\n      div({},\n        p({}, this.state.counter),\n        a({\n          href: '#click',\n          onClick: event => this.handleClick(event)\n        },\n          'Click me!'\n        )\n      )\n    )\n\n  }\n\n}\n\n// cut after\n\nmodule.exports = Counter\n"
+
+/***/ }),
+/* 504 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./context/examples/app.preview.js": 504,
-	"./props/examples/board.preview.js": 505,
+	"./context/examples/app.preview.js": 505,
+	"./props/examples/board.preview.js": 506,
 	"./props/examples/hello.preview.js": 113,
-	"./props/examples/keys-dom.preview.js": 506,
-	"./props/examples/universe.preview.js": 507,
-	"./references/examples/dom.preview.js": 508,
-	"./sample/examples/test.preview.js": 509,
-	"./state/examples/counter.preview.js": 510
+	"./props/examples/keys-dom.preview.js": 507,
+	"./props/examples/universe.preview.js": 508,
+	"./references/examples/dom.preview.js": 509,
+	"./sample/examples/test.preview.js": 510,
+	"./state/examples/counter.preview.js": 511
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -15381,10 +15404,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 503;
+webpackContext.id = 504;
 
 /***/ }),
-/* 504 */
+/* 505 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15462,7 +15485,7 @@ var App = function (_Component2) {
 module.exports = App;
 
 /***/ }),
-/* 505 */
+/* 506 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15533,7 +15556,7 @@ var Wrapper = function (_Component2) {
 module.exports = Wrapper;
 
 /***/ }),
-/* 506 */
+/* 507 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15608,7 +15631,7 @@ var Toggler = function (_Component) {
 module.exports = Toggler;
 
 /***/ }),
-/* 507 */
+/* 508 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15654,7 +15677,7 @@ var Universe = function (_Component) {
 module.exports = Universe;
 
 /***/ }),
-/* 508 */
+/* 509 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15711,7 +15734,7 @@ var Hello = function (_Component) {
 module.exports = Hello;
 
 /***/ }),
-/* 509 */
+/* 510 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15720,7 +15743,7 @@ module.exports = Hello;
 module.exports = 'sample';
 
 /***/ }),
-/* 510 */
+/* 511 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15790,7 +15813,7 @@ var Counter = function (_Component) {
 module.exports = Counter;
 
 /***/ }),
-/* 511 */
+/* 512 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15798,7 +15821,7 @@ module.exports = Counter;
 
 var fs = __webpack_require__(32);
 var p = __webpack_require__(32);
-var minimatch = __webpack_require__(512);
+var minimatch = __webpack_require__(513);
 
 function patternMatcher(pattern) {
   return function (path, stats) {
@@ -15892,7 +15915,7 @@ function readdir(path, ignores, callback) {
 module.exports = readdir;
 
 /***/ }),
-/* 512 */
+/* 513 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15907,7 +15930,7 @@ try {
 } catch (er) {}
 
 var GLOBSTAR = minimatch.GLOBSTAR = Minimatch.GLOBSTAR = {};
-var expand = __webpack_require__(513);
+var expand = __webpack_require__(514);
 
 var plTypes = {
   '!': { open: '(?:(?!(?:', close: '))[^/]*?)' },
@@ -16801,14 +16824,14 @@ function regExpEscape(s) {
 }
 
 /***/ }),
-/* 513 */
+/* 514 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var concatMap = __webpack_require__(514);
-var balanced = __webpack_require__(515);
+var concatMap = __webpack_require__(515);
+var balanced = __webpack_require__(516);
 
 module.exports = expandTop;
 
@@ -16987,7 +17010,7 @@ function expand(str, isTop) {
 }
 
 /***/ }),
-/* 514 */
+/* 515 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17007,7 +17030,7 @@ var isArray = Array.isArray || function (xs) {
 };
 
 /***/ }),
-/* 515 */
+/* 516 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17073,7 +17096,7 @@ function range(a, b, str) {
 }
 
 /***/ }),
-/* 516 */
+/* 517 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -17104,10 +17127,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 516;
+webpackContext.id = 517;
 
 /***/ }),
-/* 517 */
+/* 518 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17136,7 +17159,7 @@ var MainController = function () {
 module.exports = MainController;
 
 /***/ }),
-/* 518 */
+/* 519 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -17177,10 +17200,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 518;
+webpackContext.id = 519;
 
 /***/ }),
-/* 519 */
+/* 520 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -17203,10 +17226,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 519;
+webpackContext.id = 520;
 
 /***/ }),
-/* 520 */
+/* 521 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17224,11 +17247,11 @@ var _require = __webpack_require__(7),
     Component = _require.Component,
     html = _require.html;
 
-var MenuSite = __webpack_require__(521);
-var MenuGuide = __webpack_require__(523);
-var MenuLocale = __webpack_require__(524);
+var MenuSite = __webpack_require__(522);
+var MenuGuide = __webpack_require__(524);
+var MenuLocale = __webpack_require__(525);
 
-var Logo = __webpack_require__(525);
+var Logo = __webpack_require__(526);
 
 var Sidebar = function (_Component) {
   _inherits(Sidebar, _Component);
@@ -17257,7 +17280,7 @@ var Sidebar = function (_Component) {
 module.exports = Sidebar;
 
 /***/ }),
-/* 521 */
+/* 522 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17286,7 +17309,7 @@ var MenuSite = function (_Component) {
     var _this = _possibleConstructorReturn(this, (MenuSite.__proto__ || Object.getPrototypeOf(MenuSite)).call(this, props, context));
 
     _this.items = [{
-      href: 'https://github.com/sterjakovigor/vqua',
+      href: 'https://github.com/sterzhakov/vqua',
       target: '_blank',
       name: 'Github',
       external: true
@@ -17314,7 +17337,7 @@ var MenuSite = function (_Component) {
 module.exports = MenuSite;
 
 /***/ }),
-/* 522 */
+/* 523 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17390,7 +17413,7 @@ var Link = function (_Component) {
 module.exports = Link;
 
 /***/ }),
-/* 523 */
+/* 524 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17533,7 +17556,7 @@ var MenuGuide = function (_Component) {
 module.exports = MenuGuide;
 
 /***/ }),
-/* 524 */
+/* 525 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17655,7 +17678,7 @@ var MenuLocale = function (_Component) {
 module.exports = MenuLocale;
 
 /***/ }),
-/* 525 */
+/* 526 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17705,7 +17728,7 @@ var Logo = function (_Component) {
 module.exports = Logo;
 
 /***/ }),
-/* 526 */
+/* 527 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17795,15 +17818,15 @@ var Content = function (_Component) {
 module.exports = Content;
 
 /***/ }),
-/* 527 */
+/* 528 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var html2vqua = __webpack_require__(528);
-var vquaInterpolate = __webpack_require__(540);
-var createArticleVars = __webpack_require__(544);
+var html2vqua = __webpack_require__(529);
+var vquaInterpolate = __webpack_require__(541);
+var createArticleVars = __webpack_require__(545);
 
 module.exports = function (_ref) {
   var article = _ref.article,
@@ -17833,20 +17856,20 @@ module.exports = function (_ref) {
 };
 
 /***/ }),
-/* 528 */
+/* 529 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _require = __webpack_require__(529),
+var _require = __webpack_require__(530),
     inspect = _require.inspect;
 
-var _require2 = __webpack_require__(533),
+var _require2 = __webpack_require__(534),
     html2json = _require2.html2json;
 
-var createNode = __webpack_require__(536);
-var mapNodes = __webpack_require__(539);
+var createNode = __webpack_require__(537);
+var mapNodes = __webpack_require__(540);
 
 module.exports = function (string) {
 
@@ -17858,7 +17881,7 @@ module.exports = function (string) {
 };
 
 /***/ }),
-/* 529 */
+/* 530 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18356,7 +18379,7 @@ function isPrimitive(arg) {
 }
 exports.isPrimitive = isPrimitive;
 
-exports.isBuffer = __webpack_require__(531);
+exports.isBuffer = __webpack_require__(532);
 
 function objectToString(o) {
   return Object.prototype.toString.call(o);
@@ -18393,7 +18416,7 @@ exports.log = function () {
  *     prototype.
  * @param {function} superCtor Constructor function to inherit prototype from.
  */
-exports.inherits = __webpack_require__(532);
+exports.inherits = __webpack_require__(533);
 
 exports._extend = function (origin, add) {
   // Don't do anything if add isn't an object
@@ -18410,10 +18433,10 @@ exports._extend = function (origin, add) {
 function hasOwnProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(78), __webpack_require__(530)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(78), __webpack_require__(531)))
 
 /***/ }),
-/* 530 */
+/* 531 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18606,7 +18629,7 @@ process.umask = function () {
 };
 
 /***/ }),
-/* 531 */
+/* 532 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18619,7 +18642,7 @@ module.exports = function isBuffer(arg) {
 };
 
 /***/ }),
-/* 532 */
+/* 533 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18650,14 +18673,14 @@ if (typeof Object.create === 'function') {
 }
 
 /***/ }),
-/* 533 */
+/* 534 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(534);
+module.exports = __webpack_require__(535);
 
 
 /***/ }),
-/* 534 */
+/* 535 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function(global) {
@@ -18665,7 +18688,7 @@ module.exports = __webpack_require__(534);
   var debug = DEBUG ? console.log.bind(console) : function(){};
 
   if (typeof module === 'object' && typeof module.exports === 'object') {
-    __webpack_require__(535);
+    __webpack_require__(536);
   }
 
   function q(v) {
@@ -18834,7 +18857,7 @@ module.exports = __webpack_require__(534);
 
 
 /***/ }),
-/* 535 */
+/* 536 */
 /***/ (function(module, exports) {
 
 /*
@@ -19207,7 +19230,7 @@ module.exports = __webpack_require__(534);
 
 
 /***/ }),
-/* 536 */
+/* 537 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19219,7 +19242,7 @@ var _require = __webpack_require__(5),
 var _require2 = __webpack_require__(12),
     TAG_TYPE = _require2.TAG_TYPE;
 
-var _require3 = __webpack_require__(537),
+var _require3 = __webpack_require__(538),
     filterSpaces = _require3.filterSpaces;
 
 var filterText = compose(filterSpaces);
@@ -19247,13 +19270,13 @@ module.exports = function (htmlNode) {
 };
 
 /***/ }),
-/* 537 */
+/* 538 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _require = __webpack_require__(538),
+var _require = __webpack_require__(539),
     getLeftSpaces = _require.getLeftSpaces,
     getRightSpaces = _require.getRightSpaces;
 
@@ -19285,7 +19308,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 538 */
+/* 539 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19308,7 +19331,7 @@ var getRightSpaces = function getRightSpaces(string) {
 module.exports = { getLeftSpaces: getLeftSpaces, getRightSpaces: getRightSpaces };
 
 /***/ }),
-/* 539 */
+/* 540 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19350,15 +19373,15 @@ module.exports = function (htmlNode, createNode) {
 };
 
 /***/ }),
-/* 540 */
+/* 541 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createNodes = __webpack_require__(541);
-var replaceVariables = __webpack_require__(542);
-var mergeNearbyStrings = __webpack_require__(543);
+var createNodes = __webpack_require__(542);
+var replaceVariables = __webpack_require__(543);
+var mergeNearbyStrings = __webpack_require__(544);
 
 module.exports = function (nodes, data) {
 
@@ -19376,7 +19399,7 @@ module.exports = function (nodes, data) {
 };
 
 /***/ }),
-/* 541 */
+/* 542 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19428,7 +19451,7 @@ module.exports = function (params) {
 };
 
 /***/ }),
-/* 542 */
+/* 543 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19491,7 +19514,7 @@ module.exports = function (text, params) {
 };
 
 /***/ }),
-/* 543 */
+/* 544 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19519,7 +19542,7 @@ module.exports = function (items) {
 };
 
 /***/ }),
-/* 544 */
+/* 545 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19527,8 +19550,8 @@ module.exports = function (items) {
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var filterCode = __webpack_require__(545);
-var Code = __webpack_require__(546);
+var filterCode = __webpack_require__(546);
+var Code = __webpack_require__(547);
 
 var extension2language = {
   '.js': 'javascript',
@@ -19574,7 +19597,7 @@ module.exports = function (_ref) {
 };
 
 /***/ }),
-/* 545 */
+/* 546 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19633,7 +19656,7 @@ var filter = function filter(string) {
 module.exports = filter;
 
 /***/ }),
-/* 546 */
+/* 547 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19647,11 +19670,11 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var highlightjs = __webpack_require__(547);
-var javascriptSyntax = __webpack_require__(548);
-var shellSyntax = __webpack_require__(549);
-var xmlSyntax = __webpack_require__(550);
-var CodePreview = __webpack_require__(551);
+var highlightjs = __webpack_require__(548);
+var javascriptSyntax = __webpack_require__(549);
+var shellSyntax = __webpack_require__(550);
+var xmlSyntax = __webpack_require__(551);
+var CodePreview = __webpack_require__(552);
 
 var _require = __webpack_require__(5),
     htmlQuotes = _require.htmlQuotes;
@@ -19709,7 +19732,7 @@ var Code = function (_Component) {
 module.exports = Code;
 
 /***/ }),
-/* 547 */
+/* 548 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20500,7 +20523,7 @@ https://highlightjs.org/
 });
 
 /***/ }),
-/* 548 */
+/* 549 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20608,7 +20631,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 549 */
+/* 550 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20628,7 +20651,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 550 */
+/* 551 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20710,7 +20733,7 @@ module.exports = function (hljs) {
 };
 
 /***/ }),
-/* 551 */
+/* 552 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20806,7 +20829,7 @@ var CodePreview = function (_Component) {
 module.exports = CodePreview;
 
 /***/ }),
-/* 552 */
+/* 553 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20857,29 +20880,6 @@ var Error404 = function (_Component) {
 }(Component);
 
 module.exports = Error404;
-
-/***/ }),
-/* 553 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = function (routes) {
-
-  return routes.map(function (route) {
-    var segments = route.segments;
-
-
-    var newSegments = segments.every(function (segment) {
-      return segment == '';
-    }) ? [''] : segments.filter(function (segment) {
-      return segment != '';
-    });
-
-    return Object.assign({}, route, { segments: newSegments });
-  });
-};
 
 /***/ })
 /******/ ]);

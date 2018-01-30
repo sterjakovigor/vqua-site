@@ -10726,7 +10726,7 @@ module.exports = "gulp\n"
 /* 376 */
 /***/ (function(module, exports) {
 
-module.exports = "git clone git@github.com:sterjakovigor/vqua.git\ncp -R ./vqua/packages/vqua-boilerplate-ssr/ ./vqua-boilerplate-ssr\ncd vqua-boilerplate-ssr/\nnpm i\nnpm i -g nodemon\nnodemon server\n"
+module.exports = "git clone git@github.com:sterzhakov/vqua.git\ncp -R ./vqua/packages/vqua-boilerplate-ssr/ ./vqua-boilerplate-ssr\ncd vqua-boilerplate-ssr/\nnpm i\nnpm i -g nodemon\nnodemon server\n"
 
 /***/ }),
 /* 377 */
